@@ -1,0 +1,9 @@
+{
+  "client_name": "Client 1 Store",
+  "features": {
+    "donations": true,
+    "paypal": true,
+    "pos_integration": false
+  }
+}
+

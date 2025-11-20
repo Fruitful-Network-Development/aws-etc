@@ -1,0 +1,16 @@
+{
+  "home": {
+    "section_1_title": "Welcome to Client 1's Farm",
+    "section_1_label1": "Fresh, local produce delivered weekly.",
+    "section_1_label2": "Join our CSA program to support regenerative agriculture.",
+    "section_2_paragraph": "We believe in transparent, sustainable food systems..."
+  },
+  "about_us": {
+    "hero_title": "About Our Farm",
+    "hero_paragraph": "Client 1 has been growing food in this region for over 20 years..."
+  },
+  "csa_program": {
+    "intro": "Our CSA (Community Supported Agriculture) program connects you..."
+  }
+}
+
