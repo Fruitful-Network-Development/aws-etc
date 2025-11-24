@@ -1,473 +1,357 @@
-:root {
-  --bg: #101318;
-  --bg-panel: #161a21;
-  --bg-panel-soft: #1a1f27;
-  --bg-card: #202632;
-  --fg: #e5e8f0;
-  --fg-muted: #9ca3b5;
-  --accent: #f6c453;
-  --accent-soft: #2b343f;
-  --border-subtle: #272d39;
-  --radius: 6px;
-  --gap: 1.4rem;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-*,
-*::before,
-*::after {
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
-  margin: 0;
-  font-family: var(--font-main);
-  background: radial-gradient(circle at top, #161a22 0, #090b10 55%);
-  color: var(--fg);
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: #101418;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
 }
 
-/* Root container that JS mounts into */
+/* SIDE MARGINS (1/22 each) */
+.margin-left,
+.margin-right {
+  background-color: #202122;
+  width: calc(100vw / 22);
+}
 
-#mysite-root {
+/* CENTER CONTENT STRIP (20/22) */
+.content-area {
+  background-color: #101418;
+  width: calc((100vw / 22) * 20);
   min-height: 100vh;
 }
 
-/* -------- Global shell & header -------- */
+/* Header is top-adjacent */
+.content-inner {
+  padding-top: 0;
+}
 
-.page-shell {
-  min-height: 100vh;
+/* Generic block wrapper so stacked sections don’t touch each other */
+.section-block {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+/* First section (header) flush to top */
+.page-header.section-block {
+  margin-top: 0;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+
+.page-header {
+  width: 100%;
+}
+
+.header-main-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  height: 22px;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 26px;
+}
+
+.header-title-group {
   display: flex;
   flex-direction: column;
+  gap: 0.1rem;
 }
 
-/* Top chrome (red in your overlay) */
-
-.global-header {
-  border-bottom: 1px solid var(--border-subtle);
-  background: #090b10;
+.header-title {
+  font-size: 1.1rem;
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
-/* First row: brand + search + actions */
-
-.header-top {
-  display: grid;
-  grid-template-columns: minmax(0, 260px) minmax(0, 1fr) auto;
-  align-items: center;
-  column-gap: 1.25rem;
-  padding: 0.65rem 2rem 0.4rem;
-}
-
-.brand-block {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.86rem;
-}
-
-.brand-logo {
-  width: 26px;
-  height: 26px;
-  border-radius: 4px;
-  background: url("assets/imgs/mycite_logo.png") center/cover no-repeat, var(--accent);
-}
-
-.brand-title {
-  font-weight: 600;
-}
-
-.brand-sub {
-  font-size: 0.78rem;
-  color: var(--fg-muted);
+.header-subtitle {
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .header-search {
-  justify-self: center;
-  max-width: 460px;
-  width: 100%;
-}
-
-.header-search input {
-  width: 100%;
-  padding: 0.32rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  background: #080a10;
-  color: var(--fg);
-  font-size: 0.86rem;
-}
-
-.header-actions {
-  justify-self: end;
-  display: flex;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-}
-
-.header-actions a {
-  color: var(--fg-muted);
-  text-decoration: none;
-}
-
-.header-actions a:hover {
-  text-decoration: underline;
-}
-
-/* Second row: section nav + language */
-
-.header-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.35rem 2rem 0.55rem;
-  font-size: 0.78rem;
+  margin-left: 2rem;
 }
 
-.section-nav {
+.search-input {
+  padding: 0.35rem 0.5rem;
+  background-color: #202122;
+  border: 1px solid #898f96;
+  color: white;
+  min-width: 220px;
+}
+
+.search-input::placeholder {
+  color: #898f96;
+}
+
+.search-button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #898f96;
+  border-left: none;
+  background-color: #202122;
+  color: white;
+  cursor: pointer;
+}
+
+/* -------------------------
+   MAIN 3-COLUMN AREA
+-------------------------- */
+
+.main-columns {
+  /* section-block already adds spacing & padding */
+}
+
+/* 3 main columns: left (date), middle (content), right (future) */
+.columns {
   display: flex;
-  gap: 1.1rem;
 }
 
-.section-nav a {
-  color: var(--fg-muted);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+/* Left + right columns: 4/22 each */
+.col-left,
+.col-right {
+  width: calc((100vw / 22) * 4);
 }
 
-.section-nav a:hover {
-  color: var(--fg);
+/* Middle column: 12/22 */
+.col-middle {
+  width: calc((100vw / 22) * 12);
 }
 
-.header-lang {
-  color: var(--fg-muted);
-}
+/* -------------------------
+   LEFT COLUMN (DATE)
+-------------------------- */
 
-/* -------- Body layout: timeline + main + sidebar -------- */
-
-.page-body {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 80px minmax(0, 3.4fr) minmax(260px, 1.1fr);
-  column-gap: 1.5rem;
-  padding: 1.4rem 2rem 1.8rem;
-}
-
-/* Left vertical timeline (pure chrome / red) */
-
-.timeline-rail {
-  border-right: 1px solid var(--border-subtle);
-  padding-right: 0.75rem;
+.meta-column {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
-.timeline-month {
-  font-size: 0.8rem;
-  color: var(--fg-muted);
-  margin-bottom: 0.5rem;
+.meta-date {
+  font-size: 0.85rem;
 }
 
-.timeline-month span {
-  display: block;
-}
+/* -------------------------
+   MIDDLE COLUMN (META BAR + INNER CONTENT)
+-------------------------- */
 
-.timeline-month span:nth-child(1) {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.7rem;
-}
-
-.timeline-month span:nth-child(2) {
-  font-weight: 600;
-}
-
-.timeline-line {
-  flex: 1;
-  border-left: 2px solid var(--border-subtle);
-  margin-left: 0.35rem;
-  position: relative;
-}
-
-.timeline-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  border: 2px solid #05070b;
-  position: absolute;
-  top: 18%;
-  left: -6px;
-}
-
-/* Main content area (center) */
-
-.main-column {
+/* Index + name bar */
+.meta-bar {
   display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-/* Header row: name + tabs (some text is JSON-driven) */
-
-.page-header {
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 0.5rem;
-}
-
-.page-header-top {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.page-title {
-  margin: 0;
-  font-size: 1.55rem;
-}
-
-.page-tabs {
-  margin-top: 0.4rem;
-  display: inline-flex;
-  gap: 0.4rem;
-}
-
-.page-tab {
-  font-size: 0.8rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  padding: 0.15rem 0.7rem;
-  background: transparent;
-  color: var(--fg-muted);
-}
-
-.page-tab.active {
-  background: var(--accent-soft);
-  color: var(--fg);
-  border-color: var(--accent);
-}
-
-/* Oeuvre text area (JSON-driven) */
-
-.oeuvre {
-  margin-top: 0.3rem;
-}
-
-.oeuvre-body p {
-  margin: 0 0 0.9rem;
-  line-height: 1.65;
-  color: var(--fg);
-}
-
-/* Anthology strip title */
-
-.anthology-section-title {
-  margin: 1.2rem 0 0.4rem;
-  font-size: 1rem;
-}
-
-/* Anthology grid (JSON-driven) */
-
-.anthology-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 0.7rem;
-}
-
-.anthology-card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-subtle);
-  overflow: hidden;
-}
-
-.anthology-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.anthology-thumb-wrapper {
-  aspect-ratio: 4 / 3;
-  background: #101218;
-}
-
-.anthology-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.anthology-card-body {
-  padding: 0.55rem 0.65rem 0.65rem;
-}
-
-.anthology-title {
-  margin: 0;
-  font-size: 0.86rem;
-}
-
-.anthology-summary {
-  margin: 0.15rem 0 0;
-  font-size: 0.76rem;
-  color: var(--fg-muted);
-}
-
-/* Right column: Compendium (JSON-driven) + series box (static) */
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.compendium {
-  background: var(--bg-panel);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-subtle);
-  padding: 0.8rem 0.85rem 0.9rem;
-}
-
-.compendium-title {
-  margin: 0 0 0.7rem;
-  font-size: 0.92rem;
-}
-
-.compendium-maps {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.35rem;
-  margin-bottom: 0.65rem;
-}
-
-.compendium-map-img {
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
-}
-
-.compendium-profile {
-  display: flex;
-  gap: 0.6rem;
   align-items: center;
-  margin-bottom: 0.6rem;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
-.profile-pic {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 2px solid var(--border-subtle);
-  object-fit: cover;
-  background: #22252e;
+.meta-index-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.profile-meta-name {
-  font-weight: 600;
+.meta-index-btn img {
+  height: 20px;
+  width: auto;
+}
+
+.meta-name {
   font-size: 0.9rem;
 }
 
-.profile-meta-location {
-  font-size: 0.78rem;
-  color: var(--fg-muted);
+/* Thin divider under meta bar, full width of middle column */
+.meta-bar-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #898f96;
+  margin-bottom: 1.2rem;
 }
 
-.profile-meta-title {
-  font-size: 0.78rem;
-  color: var(--fg-muted);
+/* INNER CONTENT: 2 columns (main text + compendium) */
+.middle-columns {
+  display: flex;
+  gap: 1.5rem;
 }
 
-/* meta dl */
-
-.compendium-meta {
-  margin: 0;
-  font-size: 0.76rem;
+/* Main text column (about 2/3 of middle column) */
+.middle-main {
+  flex: 5;
 }
 
-.compendium-meta dt {
-  font-weight: 600;
-  color: var(--fg-muted);
-  margin-top: 0.15rem;
+/* Compendium column (about 1/3) */
+.middle-compendium {
+  flex: 2;
 }
 
-.compendium-meta dd {
-  margin: 0 0 0.25rem;
+/* Text paragraphs */
+.middle-main p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
-.compendium-meta a {
-  color: var(--accent);
-  text-decoration: none;
+/* -------------------------
+   COMPENDIUM BLOCK
+-------------------------- */
+
+.block-title {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
 }
 
-.compendium-meta a:hover {
-  text-decoration: underline;
+.block-rect {
+  position: relative;          /* for internal lines */
+  width: 100%;
+  aspect-ratio: 5 / 9;        /* height = 13/5 * width */
+  border: 1px solid #898f96;
+  background-color: #202122;
 }
 
-/* Series box (static / red) */
-
-.series-box {
-  background: var(--bg-panel-soft);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-subtle);
-  padding: 0.75rem;
-  font-size: 0.78rem;
-}
-
-.series-box-title {
-  color: var(--fg-muted);
-  margin: 0 0 0.5rem;
-}
-
-.series-pill-row {
+/* Ensure the Compendium box behaves like a vertical stack:
+   top image grid + bottom empty area */
+.block-rect {
+  position: relative;
+  width: 100%;
+  border: 1px solid #898f96;
+  background-color: #202122;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
 }
 
-.series-pill {
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  padding: 0.25rem 0.6rem;
-  text-align: center;
+/* TOP SECTION: image grid with vertical divider */
+.compendium-top {
+  position: relative;
+  display: flex;
+  padding: 4px;
+  /* This controls how tall the image area is relative to the whole box */
+  flex: 0 0 45%;   /* ~top half; tweak if you want more/less */
 }
 
-/* Responsive tweaks */
-
-@media (max-width: 1040px) {
-  .page-body {
-    grid-template-columns: 60px minmax(0, 2.8fr) minmax(240px, 1.1fr);
-  }
+/* Vertical divider, inset so it doesn't touch outer border */
+.compendium-top::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 40%;              /* 2/5 of width */
+  width: 1px;
+  background-color: #898f96;
 }
 
-@media (max-width: 860px) {
-  .page-body {
-    grid-template-columns: 60px minmax(0, 1fr);
-    row-gap: 1.2rem;
-  }
-
-  .sidebar {
-    grid-column: span 2;
-  }
+/* LEFT 2/5 column */
+.comp-left {
+  width: 40%;             /* 2/5 */
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 700px) {
-  .header-top {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 0.65rem;
-  }
+/* RIGHT 3/5 column */
+.comp-right {
+  width: 60%;             /* 3/5 */
+  display: flex;
+  flex-direction: column;
+}
 
-  .header-search {
-    justify-self: stretch;
-  }
+/* Each image cell */
+.comp-img {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .header-actions {
-    justify-self: flex-start;
-  }
+/* Split left column into 3 equal-height rows with separating lines */
+.comp-left .comp-img {
+  flex: 1 1 0;
+  border-bottom: 1px solid #898f96;
+}
 
-  .page-body {
-    grid-template-columns: 40px minmax(0, 1fr);
-    padding: 1.1rem 1.2rem 1.6rem;
-  }
+.comp-left .comp-img:last-child {
+  border-bottom: none;    /* no line at bottom edge */
+}
+
+/* Right column gets two taller cells; let them share space */
+.comp-right .comp-img {
+  flex: 1 1 0;
+}
+
+/* Image styling */
+.comp-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* OPTIONAL: make small vs large feel different via aspect ratios */
+.comp-small img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.comp-large img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* BOTTOM SECTION OF COMPENDIUM (blank for now) */
+.compendium-bottom {
+  flex: 1 1 auto;
+  border-top: 1px solid #898f96;   /* line under image grid */
+  /* you can later add rows or text here */
+}
+
+/* -------------------------
+   ANTHOLOGY (inside main text column)
+-------------------------- */
+
+.anthology-section {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.sub-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #898f96;
+  margin-bottom: 1rem;
+}
+
+.anthology-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 3×2 grid of white boxes */
+.anthology-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.anthology-box {
+  background-color: white;
+  width: 90.9%;        /* 10/11 ratio */
+  padding-top: 90.9%;  /* height = 10/11 width -> square-ish */
+  border-radius: 2px;
 }
 

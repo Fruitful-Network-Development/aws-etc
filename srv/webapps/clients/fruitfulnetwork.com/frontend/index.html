@@ -1,20 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mycite Network – Profile</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mycite Layout Base</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- All layout (static + dynamic) is built inside this container.
-       Only some regions (green in your overlay) are populated from user_data.json. -->
-  <div id="mysite-root">
-    <noscript>
-      <p>This profile requires JavaScript to render the Mycite view.</p>
-    </noscript>
-  </div>
+
+  <!-- Outer side margins (1/22 width each are handled in CSS) -->
+  <div class="margin-left"></div>
+
+  <main class="content-area">
+    <div class="content-inner">
+
+      <!-- HEADER (top-adjacent) -->
+      <header class="page-header section-block">
+        <div class="header-main-row">
+          <img src="assets/menu.png" class="header-icon" alt="Menu">
+
+          <img src="assets/logo.png" class="header-logo" alt="Logo">
+
+          <div class="header-title-group">
+            <span class="header-title">Mycite Network</span>
+            <span class="header-subtitle">Fruitful Network Development</span>
+          </div>
+
+          <form class="header-search" onsubmit="return false;">
+            <input type="text" class="search-input" placeholder="Search">
+            <button type="submit" class="search-button">Search</button>
+          </form>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT AREA: 3 COLUMNS -->
+      <section class="section-block main-columns">
+
+        <div class="columns">
+
+          <!-- LEFT COLUMN: date -->
+          <article class="col col-left">
+            <div class="meta-column">
+              <span id="current-date" class="meta-date"></span>
+            </div>
+          </article>
+
+          <!-- MIDDLE COLUMN: index + name + divider + 2 inner columns -->
+          <article class="col col-middle">
+
+            <!-- index + name -->
+            <div class="meta-bar">
+              <button class="meta-index-btn" type="button">
+                <img src="assets/index.png" alt="Index">
+              </button>
+              <span class="meta-name">Dylan Montgomery</span>
+            </div>
+
+            <!-- Divider inside middle column -->
+            <div class="meta-bar-divider"></div>
+
+            <!-- Inner 2-column content region (main + compendium) -->
+            <div class="middle-columns">
+
+              <!-- MAIN CONTENT COLUMN (text + anthology) -->
+              <article class="middle-main">
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet vel lorem et dictum. Sed semper,
+                  neque sed mattis euismod, dui leo tincidunt risus, nec semper libero mi a magna. Pellentesque quis porttitor
+                  turpis, id hendrerit dui. Cras non mauris elementum, dapibus nisl vitae, varius urna. Suspendisse nec risus
+                  efficitur, commodo felis eget, vulputate urna. Vestibulum dapibus tellus cursus, suscipit eros sed, malesuada
+                  orci. Vestibulum blandit egestas efficitur. Duis sit amet lorem, feugiat vel metus in, mattis dictum lorem.
+                  Proin vel imperdiet est. Integer sed nibh at magna pharetra euismod non vel sem.
+                </p>
+
+                <p>
+                  Cras id maximus nunc, nec imperdiet sem. Morbi maximus, nulla vel egestas scelerisque, orci libero consequat
+                  orci, id gravida enim lorem sed turpis. Morbi ullamcorper pulvinar libero. Proin porta velit, sit amet suscipit
+                  nisl. Ut fermentum tellus at nunc vulputate pretium. Nulla vitae arcu et ipsum molestie finibus sit amet eu
+                  erat. Proin congue fermentum leo tincidunt scelerisque.
+                </p>
+
+                <p>
+                  Quisque a nibh sit amet lorem pretium euismod. Nunc eget ipsum eu erat ultrices faucibus. Duis commodo a lectus
+                  at convallis. Fusce vel volutpat nibh. Morbi ut sollicitudin odio, nec interdum eros. Fusce sollicitudin, purus
+                  sit amet efficitur interdum, erat felis sollicitudin sapien, vel maximus leo ipsum a urna. Pellentesque laoreet,
+                  purus vitae semper rhoncus, justo tellus placerat est, a aliquam ante lectus mattis tellus, et rhoncus odio
+                  quis metus.
+                </p>
+
+                <p>
+                  Praesent varius venenatis dui, quis maximus enim placerat et. Mauris sed nulla maximus, cursus nunc nec,
+                  gravida ex. Nunc molestie consequat suscipit.
+                </p>
+
+                <!-- ANTHOLOGY SECTION -->
+                <div class="anthology-section">
+                  <div class="sub-divider"></div>
+                  <div class="anthology-title">Anthology</div>
+
+                  <div class="anthology-grid">
+                    <div class="anthology-box"></div>
+                    <div class="anthology-box"></div>
+                    <div class="anthology-box"></div>
+                    <div class="anthology-box"></div>
+                    <div class="anthology-box"></div>
+                    <div class="anthology-box"></div>
+                  </div>
+                </div>
+
+              </article>
+
+              <!-- SECOND INNER COLUMN: COMPENDIUM BOX -->
+              <aside class="middle-compendium">
+                <div class="block-title">Compendium</div>
+
+                <div class="block-rect">
+                  <div class="compendium-top">
+                    <!-- LEFT 2/5: 3 stacked small images -->
+                    <div class="comp-left">
+                      <div class="comp-img comp-small">
+                        <img src="assets/comp-1.png" alt="Compendium item 1">
+                      </div>
+                      <div class="comp-img comp-small">
+                        <img src="assets/comp-2.png" alt="Compendium item 2">
+                      </div>
+                      <div class="comp-img comp-small">
+                        <img src="assets/comp-3.png" alt="Compendium item 3">
+                      </div>
+                    </div>
+
+                    <!-- RIGHT 3/5: 2 larger images -->
+                    <div class="comp-right">
+                      <div class="comp-img comp-large">
+                        <img src="assets/comp-4.png" alt="Compendium item 4">
+                      </div>
+                      <div class="comp-img comp-large">
+                        <img src="assets/comp-5.png" alt="Compendium item 5">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Lower part of compendium (empty slots for now) -->
+                  <div class="compendium-bottom">
+                    <!-- You can later turn these into rows/slots; for now it's a blank area. -->
+                  </div>
+                </div>
+              </aside>
+
+            </div>
+          </article>
+
+          <!-- RIGHT COLUMN: reserved / empty for now -->
+          <article class="col col-right">
+            <!-- Empty column (placeholder for future content) -->
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="margin-right"></div>
 
   <script src="app.js"></script>
 </body>
 </html>
-
