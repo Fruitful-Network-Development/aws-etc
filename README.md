@@ -6,7 +6,6 @@
 
 ## Project Layout
 
-- /infra-aws-linux
 - ├── /ect 
   - └── nginx/
     - ├── nginx.conf
@@ -18,40 +17,31 @@
   - └── webapps/
     - ├── platform/                         # shared Flask backend
       - ├── app.py                          # main Flask app
-      - ├── client_context.py               # figure out which client from Host etc.
-      - ├── data_access.py                  # read/write JSON for backend_data.json
-      - ├── modules/                        # reusable backend "tools"
-        - ├── __init__.py
-        - ├── donations.py                  # shared donation logic
-        - ├── payments.py                   # shared PayPal logic
-        - └── pos_integration.py            # shared POS logic
-      - └── requirements.txt
+      - └── modules/                        # reusable backend "tools"
+        - └── __init__.py
     - └── clients/
           └── fruitfulnetwork.com/
-              ├── frontend/
-              │   ├── index.html
-              │   ├── mycite.html
-              │   ├── webpage.html
-              │   ├── style.css
-              │   ├── app.js
-              │   ├── script.js
-              │   ├── user_data.js
-              │   ├── webpage/
-              │   │   ├── home.html
-              │   │   ├── csa_browser.html
-              │   │   ├── happenings.html
-              │   │   ├── about_us.html
-              │   │   └── about_csa_program.html
-              │   └── assets/
-              │       └── imgs/
-              │           ├── profile.png
-              │           └── logo.jpeg
-              ├── backend_data.json
-              └── config/
-                  └── settings.json
-          - ├── cuyahogavalleycountryside.com/
-          - ├── front9farm.com/
-          - └── trappfamilyfarm.com/
+          │    ├── frontend/
+          │    │   ├── mycite.html
+          │    │   ├── style.css
+          │    │   ├── app.js
+          │    │   ├── script.js
+          │    │   ├── user_data.js
+          │    │   ├── webpage/
+          │    │   │   ├── home.html
+          │    │   │   ├── csa_browser.html
+          │    │   │   ├── happenings.html
+          │    │   │   ├── about_us.html
+          │    │   │   └── about_csa_program.html
+          │    │   └── assets/
+          │    │       └── imgs/
+          │    │           ├── profile.png
+          │    │           └── logo.jpeg
+          │    ├── data/
+          │    │   └── backend_data.json
+          │    └── config/
+          │        └── settings.json
+          └── trappfamilyfarm.com/
 - └── [README](README.md)                   # <-- this file
 
 ---
@@ -64,57 +54,69 @@ The lego-style, modular, snap-in component, website system has three major layer
 - CONFIG LAYER (Client Feature Definitions)
 
 ### How Pages Load Components
-index.html chooses:
-  - which header
-  - which footer
-  - which pages (links/navigation)
-And each page HTML loads component-loader.js:
-        <div data-component="header"></div>
-        <div data-page></div>
-        <div data-component="footer"></div>
-
-        <script src="../components/component-loader.js"></script>
 
 ### Pages
-Each HTML page uses:
-1. Load config/settings.json
-2. For each component placeholder:
-   - fetch component HTML (e.g., 'components/header/header-001.html')
-   - insert into DOM
-   - find all data-text/data-img/data-button attributes
-   - replace with mapped content defined in 'bindings'
-3. If component is actually a widget, load widget-loader.js
 
 ### Widgets
-product browser, CSA, donation box, etc. live in:
-        components/widgets/
-And:
-  - Their HTML is imported like any other component
-  - Their JS connects to backend APIs
-  - They pull data dynamically from /api/products, /api/csa, /api/inventory, etc.
 
 ### Relationship Between Frontend + Backend
-Your frontend consumes backend APIs like:
-        /api/inventory
-        /api/products
-        /api/csa
-        /api/customers
-        /api/donations
-        /api/paypal/create-order
-        /api/pos/sync
-The backend:
-  - uses client_context.py to know client from request
-  - uses data_access.py to open correct JSON files
-  - uses each module (donations, payments, pos_integration) to handle logic
-This is clean, scalable, multi-tenant.
 
 ---
 
-## Background Concepts (for reference)
+## Mycite Profile Framework
 
----
+### Overview
+The Mycite Profile Framework provides a unified data schema (user_data.json) and a standardized rendering layer defined at the repository root (index.html, style.css, app.js), which together establish a neutral, interoperable profile format.
 
-## Development Roadmap
+This format is deliberately designed so that:
+1. Any website can embed or access a standardized version of a user’s profile.
+2. Creative, free-form websites (stored in /webpage/) can reinterpret the same data without layout constraints.
+3. The root-level index.html acts as the default profile view and canonical structural definition, but not the definitive layout for alternative pages.
+4. Third-party aggregators (markets, co-ops, directories, etc.) can load the same JSON file and render a consistent view.
+This project provides both:
+- A standardized profile interface (Mycite View)
+- A free-form creative layer that consumes the same schema
+The result is an extensible personal or organizational site with built-in interoperability and layout independence.
+
+### Conceptual Purpose
+
+The Mycite framework addresses a common problem:
+    Websites often contain rich personal or organizational content, but there is no universal, neutral way to exchange or display profiles across platforms.
+The Mycite approach solves this by:
+- Defining a data-first profile schema (Compendium, Oeuvre, Anthology)
+- Building a standardized UI that can be used anywhere
+- Allowing creative reinterpretation through a separate free-form site
+
+This allows:
+1. A single canonical profile source
+    - All information is stored structurally in user_data.json, independent of HTML layout.
+2. Multiple render layers
+    - Mycite Standard View → neutral, predictable, portable
+    - Free-form Webpage View → expressive, themeable, personal
+3. Interoperability
+    - Any third-party environment can pull the JSON and display a stable profile.
+4. Future-proof extension
+    - New sections (videos, certifications, links, project groups) can be added to the JSON without breaking existing pages.
+This achieves a philosophical and technical goal:
+separation of content and representation, enabling multi-context identity display.
+
+### Objectives and Design Principles
+
+- Separation of Content and Layout
+    - All content is stored structurally in JSON.
+    - The Mycite view and free-form site are merely renderers.
+- Interoperability and Portability
+    - Any host that understands the schema can generate a valid profile.
+    - This creates a “portable identity page” across contexts.
+- Extendability
+    - Add new sections to the JSON without breaking the Mycite viewer.
+- Neutral Standardization
+    The Mycite layout is intentionally simple and standardized:
+    - predictable typography
+    - consistent left/right column structure
+    - accessible and portable design
+- Creative Freedom
+    - The free-form website allows unrestricted design while still pulling accurate profile information.
 
 ---
 
