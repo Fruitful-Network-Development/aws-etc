@@ -54,7 +54,7 @@
               <button class="meta-index-btn" type="button">
                 <img src="assets/index.png" alt="Index">
               </button>
-              <span class="meta-name">Dylan Montgomery</span>
+              <span class="meta-name" data-slot="compendium.profile.name">Dylan Montgomery</span>
             </div>
 
             <!-- Divider inside middle column -->
@@ -63,63 +63,37 @@
             <!-- Inner 2-column content region (main + compendium) -->
             <div class="middle-columns">
 
-              <!-- MAIN CONTENT COLUMN (text + anthology) -->
+              <!-- MAIN CONTENT COLUMN (Oeuvre + Anthology) -->
               <article class="middle-main">
 
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet vel lorem et dictum. Sed semper,
-                  neque sed mattis euismod, dui leo tincidunt risus, nec semper libero mi a magna. Pellentesque quis porttitor
-                  turpis, id hendrerit dui. Cras non mauris elementum, dapibus nisl vitae, varius urna. Suspendisse nec risus
-                  efficitur, commodo felis eget, vulputate urna. Vestibulum dapibus tellus cursus, suscipit eros sed, malesuada
-                  orci. Vestibulum blandit egestas efficitur. Duis sit amet lorem, feugiat vel metus in, mattis dictum lorem.
-                  Proin vel imperdiet est. Integer sed nibh at magna pharetra euismod non vel sem.
-                </p>
-
-                <p>
-                  Cras id maximus nunc, nec imperdiet sem. Morbi maximus, nulla vel egestas scelerisque, orci libero consequat
-                  orci, id gravida enim lorem sed turpis. Morbi ullamcorper pulvinar libero. Proin porta velit, sit amet suscipit
-                  nisl. Ut fermentum tellus at nunc vulputate pretium. Nulla vitae arcu et ipsum molestie finibus sit amet eu
-                  erat. Proin congue fermentum leo tincidunt scelerisque.
-                </p>
-
-                <p>
-                  Quisque a nibh sit amet lorem pretium euismod. Nunc eget ipsum eu erat ultrices faucibus. Duis commodo a lectus
-                  at convallis. Fusce vel volutpat nibh. Morbi ut sollicitudin odio, nec interdum eros. Fusce sollicitudin, purus
-                  sit amet efficitur interdum, erat felis sollicitudin sapien, vel maximus leo ipsum a urna. Pellentesque laoreet,
-                  purus vitae semper rhoncus, justo tellus placerat est, a aliquam ante lectus mattis tellus, et rhoncus odio
-                  quis metus.
-                </p>
-
-                <p>
-                  Praesent varius venenatis dui, quis maximus enim placerat et. Mauris sed nulla maximus, cursus nunc nec,
-                  gravida ex. Nunc molestie consequat suscipit.
-                </p>
+                <!-- Oeuvre -->
+                <section class="oeuvre-section">
+                  <div class="oeuvre-title" data-slot="dossier.oeuvre.title">Oeuvre</div>
+                  <div class="oeuvre-textbox" data-slot="dossier.oeuvre.paragraphs">
+                    <p>Loading...</p>
+                  </div>
+                </section>
 
                 <!-- ANTHOLOGY SECTION -->
-                <div class="anthology-section">
+                <section class="anthology-section">
                   <div class="sub-divider"></div>
-                  <div class="anthology-title">Anthology</div>
+                  <div class="anthology-title" data-slot="dossier.anthology.title">Anthology</div>
 
-                  <div class="anthology-grid">
-                    <div class="anthology-box"></div>
-                    <div class="anthology-box"></div>
-                    <div class="anthology-box"></div>
-                    <div class="anthology-box"></div>
-                    <div class="anthology-box"></div>
-                    <div class="anthology-box"></div>
+                  <div class="anthology-grid" data-slot="dossier.anthology.blocks">
+                    <!-- JS will inject .anthology-box items here -->
                   </div>
-                </div>
+                </section>
 
               </article>
 
               <!-- SECOND INNER COLUMN: COMPENDIUM BOX -->
               <aside class="middle-compendium">
-                <div class="block-title">Compendium</div>
+                <div class="block-title" data-slot="compendium.title">Compendium</div>
 
                 <div class="block-rect">
 
-                  <!-- TOP IMAGE GRID (same idea as before) -->
-                  <div class="compendium-top">
+                  <!-- SECTION 0: TOP IMAGE GRID (now a comp-section) -->
+                  <section class="comp-section comp-section--grid compendium-top">
                     <!-- LEFT 2/5: 3 stacked small images -->
                     <div class="comp-left">
                       <div class="comp-img comp-small">
@@ -142,62 +116,73 @@
                         <img src="assets/comp-5.png" alt="Compendium item 5">
                       </div>
                     </div>
-                  </div>
+                  </section>
 
-                  <!-- BOTTOM STACK OF SECTIONS -->
-                  <div class="compendium-bottom">
+                  <!-- SECTION 1: PROFILE CARD -->
+                  <section class="comp-section comp-profile">
+                    <div class="comp-profile-left">
+                      <div class="comp-img comp-small">
+                        <!-- avatar is user-specific -->
+                        <img data-slot="compendium.profile.avatar"
+                             src="assets/profile-main.png"
+                             alt="Profile main">
+                      </div>
+                    </div>
 
-                    <!-- SECTION 1: PROFILE CARD (height = 1 × small-cell) -->
-                    <section class="comp-section comp-profile">
-                      <div class="comp-profile-left">
-                        <div class="comp-img comp-small">
-                          <img src="assets/profile-main.png" alt="Profile main">
-                        </div>
+                    <div class="comp-profile-right">
+                      <div class="comp-profile-name" data-slot="compendium.profile.name">
+                        Dylan Montgomery
+                      </div>
+                      <div class="comp-profile-handle" data-slot="compendium.profile.handleLine">
+                        dylcmonty • he/him
                       </div>
 
-                      <div class="comp-profile-right">
-                        <div class="comp-profile-name">Dylan Montgomery</div>
-                        <div class="comp-profile-handle">dylcmonty • he/him</div>
-
-                        <div class="comp-profile-bottom-row">
-                          <div class="comp-img comp-micro">
-                            <img src="assets/profile-micro.png" alt="Profile micro icon">
-                          </div>
-                          <div class="comp-profile-link">@Fruitful-Network-Development</div>
-                        </div>
-                      </div>
-                    </section>
-
-                    <!-- SECTION 2: LINKS (height = ½ small-cell) -->
-                    <section class="comp-section comp-links">
-                      <div class="comp-link-row">
+                      <div class="comp-profile-bottom-row">
                         <div class="comp-img comp-micro">
-                          <img src="assets/location-icon.png" alt="Location">
+                          <!-- micro icon can also be overridden but defaults to framework asset -->
+                          <img data-slot="compendium.profile.micro_icon"
+                               src="assets/profile-micro.png"
+                               alt="Profile micro icon">
                         </div>
-                        <span class="comp-link-text">Cuyahoga Valley</span>
-                      </div>
-
-                      <div class="comp-link-row">
-                        <div class="comp-img comp-micro">
-                          <img src="assets/linkedin-icon.png" alt="LinkedIn">
+                        <div class="comp-profile-link"
+                             data-slot="compendium.profile.displayHandle">
+                          @Fruitful-Network-Development
                         </div>
-                        <span class="comp-link-text">in/dylan-montgomery-352813196</span>
                       </div>
+                    </div>
+                  </section>
 
-                      <!-- you can add more rows of the same pattern later -->
-                    </section>
+                  <!-- SECTION 2: LINKS -->
+                  <section class="comp-section comp-links">
+                    <div class="comp-link-row">
+                      <div class="comp-img comp-micro">
+                        <img src="assets/location-icon.png" alt="Location">
+                      </div>
+                      <span class="comp-link-text"
+                            data-slot="compendium.profile.location">
+                        Cuyahoga Valley
+                      </span>
+                    </div>
 
-                    <!-- SECTION 3: ORGANIZATIONS (height = 2 × small-cell) -->
-                    <section class="comp-section comp-orgs">
-                      <div class="comp-orgs-title">Organizations</div>
-                      <ul class="comp-orgs-list">
-                        <li>Trade/Commodity Affiliated</li>
-                        <li>Vendor License</li>
-                        <li>Cooperatives</li>
-                      </ul>
-                    </section>
+                    <div class="comp-link-row">
+                      <div class="comp-img comp-micro">
+                        <img src="assets/linkedin-icon.png" alt="LinkedIn">
+                      </div>
+                      <span class="comp-link-text"
+                            data-slot="compendium.profile.linkedin">
+                        in/dylan-montgomery-352813196
+                      </span>
+                    </div>
+                  </section>
 
-                  </div>
+                  <!-- SECTION 3: ORGANIZATIONS -->
+                  <section class="comp-section comp-orgs">
+                    <div class="comp-orgs-title">Organizations</div>
+                    <ul class="comp-orgs-list" data-slot="compendium.organizations">
+                      <li>Loading...</li>
+                    </ul>
+                  </section>
+
                 </div>
               </aside>
             </div>
@@ -217,5 +202,6 @@
   <div class="margin-right"></div>
 
   <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
