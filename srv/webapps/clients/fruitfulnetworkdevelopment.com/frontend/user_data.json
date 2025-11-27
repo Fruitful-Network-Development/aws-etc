@@ -21,7 +21,7 @@
       },
 
       "organizations": [
-        "Fruitful Network Design",
+        "Fruitful Network Development",
         "Major"
       ]
     },
@@ -65,13 +65,13 @@
             "id": "other-site",
             "kind": "url",
             "title": "Fruitful Network Dev",
-            "target": "https://fruitfulnetworkdevelopment.com",
+            "target": "https://sites.google.com/view/fruitful-network-design/home",
             "thumbnail": null
-          },
-          "...",
-          "..."
+          }
         ]
       }
     }
   }
 }
+
+
