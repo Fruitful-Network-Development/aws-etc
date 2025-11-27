@@ -21,7 +21,7 @@
       },
 
       "organizations": [
-        "Fruitful Network Design",
+        "Fruitful Network Development",
         "Major"
       ]
     },
@@ -30,22 +30,43 @@
       "oeuvre": {
         "title": "Oeuvre",
         "paragraphs": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet vel lorem et dictum. Sed semper, neque sed mattis euismod, dui leo tincidunt risus, nec semper libero mi a magna. Pellentesque quis porttitor turpis, id hendrerit dui. Cras non mauris elementum, dapibus nisl vitae, varius urna. Suspendisse nec risus efficitur, commodo felis eget, vulputate urna. Vestibulum dapibus tellus cursus, suscipit eros sed, malesuada orci. Vestibulum blandit egestas efficitur. Duis sit amet lorem, feugiat vel metus in, mattis dictum lorem. Proin vel imperdiet est. Integer sed nibh at magna pharetra euismod non vel sem.",
-          "Quisque a nibh sit amet lorem pretium euismod. Nunc eget ipsum eu erat ultrices faucibus. Duis commodo a lectus at convallis. Fusce vel volutpat nibh. Morbi ut sollicitudin odio, nec interdum eros. Fusce sollicitudin, purus sit amet efficitur interdum, erat felis sollicitudin sapien, vel maximus leo ipsum a urna. Pellentesque laoreet, purus vitae semper rhoncus, justo tellus placerat est, a aliquam ante lectus mattis tellus, et rhoncus odio quis metus.",
-          "Cras id maximus nunc, nec imperdiet sem. Morbi maximus, nulla vel egestas scelerisque, orci libero consequat orci, id gravida enim lorem sed turpis. Morbi ullamcorper pulvinar libero. Proin porta velit, sit amet suscipit nisl. Ut fermentum tellus at nunc vulputate pretium. Nulla vitae arcu et ipsum molestie finibus sit amet eu erat. Proin congue fermentum leo tincidunt scelerisque.",
-          "Praesent varius venenatis dui, quis maximus enim placerat et. Mauris sed nulla maximus, cursus nunc nec, gravida ex. Nunc molestie consequat suscipit."
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet vel lorem et dictum.",
+          "Sed semper neque sed mattis euismod. Duis sit amet vulputate ligula. Cras id maximus nunc.",
+          "Cras id maximus nunc, nec imperdiet sem. Morbi maximus diam vitae arcu fermentum, ac dictum augue sodales."
         ]
       },
 
       "anthology": {
         "title": "Anthology",
         "blocks": [
-          "...",
-          "...",
-          "...",
-          "...",
-          "...",
-          "..."
+          {
+            "id": "resume",
+            "kind": "pdf",
+            "title": "Resume",
+            "target": "assets/resume.pdf",
+            "thumbnail": null
+          },
+          {
+            "id": "linkedin",
+            "kind": "url",
+            "title": "LinkedIn",
+            "target": "https://www.linkedin.com/in/dylan-montgomery-352813196",
+            "thumbnail": null
+          },
+          {
+            "id": "github",
+            "kind": "url",
+            "title": "GitHub",
+            "target": "https://github.com/dylcmonty",
+            "thumbnail": null
+          },
+          {
+            "id": "other-site",
+            "kind": "url",
+            "title": "Fruitful Network Dev",
+            "target": "https://fruitfulnetworkdevelopment.com",
+            "thumbnail": null
+          }
         ]
       }
     }
