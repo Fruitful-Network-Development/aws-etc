@@ -261,9 +261,19 @@ body {
 
 .anthology-box {
   background-color: #ffffff;
-  width: 90.9%;         /* 10/11 ratio */
-  padding-top: 90.9%;   /* height ≈ width for square tiles */
+  width: 90.9%;
+  padding-top: 90.9%;
   border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.anthology-box img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Are.na-style “fill tile” look */
 }
 
 /* =========================
