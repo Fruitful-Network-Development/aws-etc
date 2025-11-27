@@ -21,7 +21,7 @@
       },
 
       "organizations": [
-        "Fruitful Network Development",
+        "Fruitful Network Design",
         "Major"
       ]
     },
@@ -30,10 +30,10 @@
       "oeuvre": {
         "title": "Oeuvre",
         "paragraphs": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet vel lorem et dictum. Sed semper, neque sed mattis euismod, dui leo tincidunt risus, nec semper libero mi a magna. Pellentesque quis porttitor turpis, id hendrerit dui. Cras non mauris elementum, dapibus nisl vitae, varius urna. Suspendisse nec risus efficitur, commodo felis eget, vulputate urna. Vestibulum dapibus tellus cursus, suscipit eros sed, malesuada orci. Vestibulum blandit egestas efficitur. Duis sit amet lorem, feugiat vel metus in, mattis dictum lorem. Proin vel imperdiet est. Integer sed nibh at magna pharetra euismod non vel sem.",
-          "Quisque a nibh sit amet lorem pretium euismod. Nunc eget ipsum eu erat ultrices faucibus. Duis commodo a lectus at convallis. Fusce vel volutpat nibh. Morbi ut sollicitudin odio, nec interdum eros. Fusce sollicitudin, purus sit amet efficitur interdum, erat felis sollicitudin sapien, vel maximus leo ipsum a urna. Pellentesque laoreet, purus vitae semper rhoncus, justo tellus placerat est, a aliquam ante lectus mattis tellus, et rhoncus odio quis metus.",
-          "Cras id maximus nunc, nec imperdiet sem. Morbi maximus, nulla vel egestas scelerisque, orci libero consequat orci, id gravida enim lorem sed turpis. Morbi ullamcorper pulvinar libero. Proin porta velit, sit amet suscipit nisl. Ut fermentum tellus at nunc vulputate pretium. Nulla vitae arcu et ipsum molestie finibus sit amet eu erat. Proin congue fermentum leo tincidunt scelerisque.",
-          "Praesent varius venenatis dui, quis maximus enim placerat et. Mauris sed nulla maximus, cursus nunc nec, gravida ex. Nunc molestie consequat suscipit."
+          "I’m a Computer Engineering and Applied Mathematics student at the University of Akron, with a passion for building technology that empowers local communities and small organizations to thrive. Whether through data frameworks for agricultural networks, custom hardware interfaces, or applied mathematical models, my work is driven by one goal: making complex systems accessible and useful for real people.",
+          "My projects have ranged from modular ECU dashboards to salable ETL pipelines, but the common thread has always been bridging the gap between technical depth and practical application. I’ve spent the last few years exploring how open-source tools and semantic frameworks can help local agriculture operate with the same efficiency as large corporations; without sacrificing independence, transparency, or values.",
+          "I am the creator and CEO of FRUITFUL NETWORK DEVELOPMENT LLC, a Computer Engineering Contract firm that provides server and data framework services. Currently the company's aim to employ a newly created data framework to assist small to midsize farms and agricultural communities compete to provide their products to US, with out changing who's in charge or how they stay individual businesses. This is being accomplish by providing the FND sweet of tools that use a single source of data for updating and for informing. No subscriptions, only a new paradigm that we hope to allow for a new paradigm of food brokerage that utilizes local agriculture. At the same price as what is offered with harmful chemicals and no return to local economies. Out competing harmful practices in the private sector.",
+          "I like to think my most unique/particular work skill is being able to see the potential in change and being able to bring that potential to life. Accomplishing that is always a challenge because the path is always uncertain, but the key to success is finding joy in the process. If you can do that, anything is possible."
         ]
       },
 
@@ -65,9 +65,11 @@
             "id": "other-site",
             "kind": "url",
             "title": "Fruitful Network Dev",
-            "target": "https://sites.google.com/view/fruitful-network-design/home",
+            "target": "https://fruitfulnetworkdevelopment.com",
             "thumbnail": null
-          }
+          },
+          "...",
+          "..."
         ]
       }
     }
