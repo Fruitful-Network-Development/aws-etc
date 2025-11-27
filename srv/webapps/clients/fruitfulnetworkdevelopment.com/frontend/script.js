@@ -23,13 +23,14 @@ function setImgSrc(selector, value) {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const data = await loadUserData();
-    const mss = data.MSS;
-    const compendium = mss.compendium;
-    const dossier = mss.dossier;
+    const mss = data.MSS || {};
 
-    const profile = compendium.profile;
-    const oeuvre = dossier.oeuvre;
-    const anthology = dossier.anthology;
+    const compendium = mss.compendium || {};
+    const profile = compendium.profile || {};
+
+    const dossier = mss.dossier || {};
+    const oeuvre = dossier.oeuvre || {};
+    const anthology = dossier.anthology || {};
 
     /* ---------------- PROFILE / COMPENDIUM ---------------- */
 
@@ -62,36 +63,73 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    /* ---------------- OEUVRE ---------------- */
+    /* ---------------- DOSSIER / OEUVRE ---------------- */
 
-    // title
     setText("[data-slot='dossier.oeuvre.title']", oeuvre.title);
 
-    // paragraphs
-    const oeuvreBox = document.querySelector("[data-slot='dossier.oeuvre.paragraphs']");
-    if (oeuvreBox && Array.isArray(oeuvre.paragraphs)) {
-      oeuvreBox.innerHTML = "";
-      oeuvre.paragraphs.forEach(pText => {
-        const p = document.createElement('p');
-        p.textContent = pText;
-        oeuvreBox.appendChild(p);
+    const oeuvreBody = document.querySelector("[data-slot='dossier.oeuvre.paragraphs']");
+    if (oeuvreBody && Array.isArray(oeuvre.paragraphs)) {
+      oeuvreBody.innerHTML = "";
+      oeuvre.paragraphs.forEach(p => {
+        const para = document.createElement('p');
+        para.textContent = p;
+        oeuvreBody.appendChild(para);
       });
     }
 
-    /* ---------------- ANTHOLOGY ---------------- */
+    /* ---------------- DOSSIER / ANTHOLOGY ---------------- */
 
-    // title
     setText("[data-slot='dossier.anthology.title']", anthology.title);
 
     // blocks -> boxes in grid
     const anthGrid = document.querySelector("[data-slot='dossier.anthology.blocks']");
     if (anthGrid && Array.isArray(anthology.blocks)) {
       anthGrid.innerHTML = "";
+
       anthology.blocks.forEach(block => {
+        if (typeof block !== 'object' || block === null) {
+          return; // skip any non-object placeholders
+        }
+
         const box = document.createElement('div');
         box.className = 'anthology-box';
-        // For now, just put the block text inside; later this could be an image or icon.
-        box.textContent = block;
+
+        // clickable wrapper if there is a target
+        let inner = box;
+        if (block.target) {
+          const link = document.createElement('a');
+          link.href = block.target;
+          // open external URLs in new tab, PDFs/local paths can be same tab
+          if (block.kind === 'url' && /^https?:\/\//i.test(block.target)) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
+          link.className = 'anthology-link';
+          box.appendChild(link);
+          inner = link;
+        }
+
+        // Thumbnail (if exists) or text placeholder
+        if (block.thumbnail) {
+          const img = document.createElement('img');
+          img.className = 'anthology-thumb';
+          img.src = block.thumbnail;          // e.g. "assets/anthology/abc123.png"
+          img.alt = block.title || block.id || '';
+          inner.appendChild(img);
+
+          // Optional caption under the image
+          const caption = document.createElement('div');
+          caption.className = 'anthology-caption';
+          caption.textContent = block.title || block.id || '';
+          box.appendChild(caption);
+        } else {
+          // Text-only placeholder
+          const span = document.createElement('span');
+          span.className = 'anthology-placeholder';
+          span.textContent = block.title || block.id || '';
+          inner.appendChild(span);
+        }
+
         anthGrid.appendChild(box);
       });
     }
