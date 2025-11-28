@@ -218,27 +218,33 @@ def client_frontend_static(static_path: str):
     return serve_client_file(settings["_frontend_dir"], static_path)
 
 
-@app.route("/<path:filename>")
-def client_catch_all(filename: str):
-    """
-    Catch-all for other front-end files that live directly under frontend/.
-
-    Examples:
-      /style.css
-      /app.js
-      /script.js
-      /user_data.js
-      /mycite.html
-    (Note: /api/... is reserved for API endpoints.)
-    """
-    if filename.startswith("api/"):
-        abort(404)
-
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def client_catch_all(path: str):
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
-    settings = load_client_settings(client_slug, paths=paths)
 
-    return serve_client_file(settings["_frontend_dir"], filename)
+    frontend_root = paths["frontend_public"]  # e.g. /srv/webapps/clients/.../frontend
+
+    # 1) Root → mycite.html
+    if path == "" or path == "/":
+        return send_from_directory(frontend_root, "mycite.html")
+
+    # 2) Try a simple “/slug” → frontend/webpage/<slug>/<slug>.html
+    slug = path.strip("/")
+
+    demo_candidate = (
+        Path(frontend_root)
+        / "webpage"
+        / slug
+        / f"{slug}.html"
+    )
+
+    if demo_candidate.is_file():
+        return send_from_directory(demo_candidate.parent, demo_candidate.name)
+
+    # 3) Fall back to 404 (or to mycite.html if you prefer)
+    abort(404)
 
 
 # -------------------------------------------------------------------
