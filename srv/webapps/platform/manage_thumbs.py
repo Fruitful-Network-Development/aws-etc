@@ -41,7 +41,7 @@ def to_absolute_url(client: str, target: str) -> str:
     if parsed.scheme:
         return target
     # treat target as a path on this client's domain
-    return f"https://{client.rstrip('/')}/{target.lstrip('/')}"
+    return f"https://{client}{target}"
 
 
 async def capture_url(page, url: str, out_path: Path):
