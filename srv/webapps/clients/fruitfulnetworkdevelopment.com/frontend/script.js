@@ -1,3 +1,5 @@
+// /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/script.js
+
 async function loadUserData() {
   const response = await fetch('user_data.json');
   if (!response.ok) {
@@ -20,8 +22,141 @@ function setImgSrc(selector, value) {
   }
 }
 
+/* ---------------- ANTHOLOGY OVERLAY STATE ---------------- */
+
+let anthologyBlocks = [];
+let currentAnthologyIndex = -1;
+
+let overlayEls = {
+  overlay: null,
+  title: null,
+  description: null,
+  urlText: null,
+  kind: null,
+  targetLabel: null,
+  canvas: null,
+  closeBtn: null,
+  prevBtn: null,
+  nextBtn: null
+};
+
+function initOverlayElements() {
+  overlayEls.overlay = document.getElementById('anthology-overlay');
+  if (!overlayEls.overlay) return;
+
+  overlayEls.title = document.getElementById('anthology-overlay-title');
+  overlayEls.description = document.getElementById('anthology-overlay-description');
+  overlayEls.urlText = document.getElementById('anthology-overlay-url');
+  overlayEls.kind = document.getElementById('anthology-overlay-kind');
+  overlayEls.targetLabel = document.getElementById('anthology-overlay-target-label');
+  overlayEls.canvas = document.getElementById('anthology-overlay-canvas');
+  overlayEls.closeBtn = document.getElementById('anthology-overlay-close');
+  overlayEls.prevBtn = document.getElementById('anthology-overlay-prev');
+  overlayEls.nextBtn = document.getElementById('anthology-overlay-next');
+
+  // Close button
+  if (overlayEls.closeBtn) {
+    overlayEls.closeBtn.addEventListener('click', closeAnthologyOverlay);
+  }
+
+  // Clicking the dark background closes overlay
+  overlayEls.overlay.addEventListener('click', (evt) => {
+    if (evt.target === overlayEls.overlay) {
+      closeAnthologyOverlay();
+    }
+  });
+
+  // Keyboard controls
+  document.addEventListener('keydown', (evt) => {
+    if (!overlayEls.overlay || overlayEls.overlay.classList.contains('is-hidden')) {
+      return;
+    }
+    if (evt.key === 'Escape') {
+      closeAnthologyOverlay();
+    } else if (evt.key === 'ArrowRight') {
+      changeAnthologyOverlay(1);
+    } else if (evt.key === 'ArrowLeft') {
+      changeAnthologyOverlay(-1);
+    }
+  });
+
+  // Prev/next buttons
+  if (overlayEls.prevBtn) {
+    overlayEls.prevBtn.addEventListener('click', () => changeAnthologyOverlay(-1));
+  }
+  if (overlayEls.nextBtn) {
+    overlayEls.nextBtn.addEventListener('click', () => changeAnthologyOverlay(1));
+  }
+}
+
+function openAnthologyOverlay(index) {
+  if (!overlayEls.overlay || !anthologyBlocks.length) return;
+
+  currentAnthologyIndex = index;
+  updateAnthologyOverlay();
+
+  overlayEls.overlay.classList.remove('is-hidden');
+  document.body.classList.add('overlay-open');
+}
+
+function closeAnthologyOverlay() {
+  if (!overlayEls.overlay) return;
+  overlayEls.overlay.classList.add('is-hidden');
+  document.body.classList.remove('overlay-open');
+}
+
+function changeAnthologyOverlay(delta) {
+  if (!anthologyBlocks.length) return;
+  currentAnthologyIndex =
+    (currentAnthologyIndex + delta + anthologyBlocks.length) % anthologyBlocks.length;
+  updateAnthologyOverlay();
+}
+
+function updateAnthologyOverlay() {
+  const block = anthologyBlocks[currentAnthologyIndex];
+  if (!block || !overlayEls.overlay) return;
+
+  if (overlayEls.title) {
+    overlayEls.title.textContent = block.title || block.id || 'Anthology item';
+  }
+
+  if (overlayEls.description) {
+    // placeholder for future "description" field in JSON
+    if (block.description) {
+      overlayEls.description.textContent = block.description;
+    } else {
+      overlayEls.description.textContent =
+        'More information about this entry will go here as the data model evolves.';
+    }
+  }
+
+  const targetText = block.target || 'No link configured yet';
+
+  if (overlayEls.urlText) {
+    overlayEls.urlText.textContent = targetText;
+  }
+  if (overlayEls.kind) {
+    overlayEls.kind.textContent = block.kind || '—';
+  }
+  if (overlayEls.targetLabel) {
+    overlayEls.targetLabel.textContent = targetText;
+  }
+
+  if (overlayEls.canvas) {
+    if (block.thumbnail) {
+      overlayEls.canvas.style.backgroundImage = `url(${block.thumbnail})`;
+    } else {
+      overlayEls.canvas.style.backgroundImage = 'none';
+    }
+  }
+}
+
+/* ---------------- MAIN DATA LOADING & BINDING ---------------- */
+
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+    initOverlayElements();
+
     const data = await loadUserData();
     const mss = data.MSS || {};
 
@@ -81,53 +216,54 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     setText("[data-slot='dossier.anthology.title']", anthology.title);
 
-    // blocks -> boxes in grid
     const anthGrid = document.querySelector("[data-slot='dossier.anthology.blocks']");
     if (anthGrid && Array.isArray(anthology.blocks)) {
       anthGrid.innerHTML = "";
+      anthologyBlocks = [];
 
-      anthology.blocks.forEach(block => {
+      anthology.blocks.forEach((block) => {
         if (typeof block !== 'object' || block === null) {
           return; // skip any non-object placeholders
         }
 
+        const index = anthologyBlocks.length;
+        anthologyBlocks.push(block);
+
         const box = document.createElement('div');
         box.className = 'anthology-box';
 
-        // clickable wrapper if there is a target
-        let inner = box;
+        // default clickable element is the box itself
+        let clickableEl = box;
+
+        // if there is a target, keep href semantics but intercept to open overlay
         if (block.target) {
           const link = document.createElement('a');
           link.href = block.target;
-          // open external URLs in new tab, PDFs/local paths can be same tab
-          if (block.kind === 'url' && /^https?:\/\//i.test(block.target)) {
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-          }
           link.className = 'anthology-link';
+
+          link.addEventListener('click', (evt) => {
+            evt.preventDefault(); // do not navigate away
+            openAnthologyOverlay(index);
+          });
+
           box.appendChild(link);
-          inner = link;
+          clickableEl = link;
+        } else {
+          // no target: click on box itself opens overlay
+          box.addEventListener('click', () => openAnthologyOverlay(index));
         }
 
         // Thumbnail (if exists) or text placeholder
         if (block.thumbnail) {
           const img = document.createElement('img');
-          img.className = 'anthology-thumb';
-          img.src = block.thumbnail;          // e.g. "assets/anthology/abc123.png"
+          img.src = block.thumbnail;
           img.alt = block.title || block.id || '';
-          inner.appendChild(img);
-
-          // Optional caption under the image
-          const caption = document.createElement('div');
-          caption.className = 'anthology-caption';
-          caption.textContent = block.title || block.id || '';
-          box.appendChild(caption);
+          clickableEl.appendChild(img);
         } else {
-          // Text-only placeholder
-          const span = document.createElement('span');
-          span.className = 'anthology-placeholder';
-          span.textContent = block.title || block.id || '';
-          inner.appendChild(span);
+          const label = document.createElement('div');
+          label.className = 'anthology-placeholder';
+          label.textContent = block.title || block.id || '';
+          clickableEl.appendChild(label);
         }
 
         anthGrid.appendChild(box);
