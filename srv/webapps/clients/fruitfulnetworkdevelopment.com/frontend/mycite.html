@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mycite Layout Base</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/frontend/styles.css">
 </head>
 <body>
 
@@ -18,9 +18,9 @@
       <!-- HEADER (top-adjacent) -->
       <header class="page-header section-block">
         <div class="header-main-row">
-          <img src="assets/menu.png" class="header-icon" alt="Menu">
+          <img src="//assets/menu.png" class="header-icon" alt="Menu">
 
-          <img src="assets/logo.png" class="header-logo" alt="Logo">
+          <img src="//assets/logo.png" class="header-logo" alt="Logo">
 
           <div class="header-title-group">
             <span class="header-title">Mycite Network</span>
@@ -52,7 +52,7 @@
             <!-- index + name -->
             <div class="meta-bar">
               <button class="meta-index-btn" type="button">
-                <img src="assets/index.png" alt="Index">
+                <img src="/assets/index.png" alt="Index">
               </button>
               <span class="meta-name" data-slot="compendium.profile.name">Dylan Montgomery</span>
             </div>
@@ -97,23 +97,23 @@
                     <!-- LEFT 2/5: 3 stacked small images -->
                     <div class="comp-left">
                       <div class="comp-img comp-small">
-                        <img src="assets/comp-1.png" alt="Compendium item 1">
+                        <img src="/assets/comp-1.png" alt="Compendium item 1">
                       </div>
                       <div class="comp-img comp-small">
-                        <img src="assets/comp-2.png" alt="Compendium item 2">
+                        <img src="/assets/comp-2.png" alt="Compendium item 2">
                       </div>
                       <div class="comp-img comp-small">
-                        <img src="assets/comp-3.png" alt="Compendium item 3">
+                        <img src="/assets/comp-3.png" alt="Compendium item 3">
                       </div>
                     </div>
 
                     <!-- RIGHT 3/5: 2 larger images -->
                     <div class="comp-right">
                       <div class="comp-img comp-large">
-                        <img src="assets/comp-4.png" alt="Compendium item 4">
+                        <img src="/assets/comp-4.png" alt="Compendium item 4">
                       </div>
                       <div class="comp-img comp-large">
-                        <img src="assets/comp-5.png" alt="Compendium item 5">
+                        <img src="/assets/comp-5.png" alt="Compendium item 5">
                       </div>
                     </div>
                   </section>
@@ -124,7 +124,7 @@
                       <div class="comp-img comp-small">
                         <!-- avatar is user-specific -->
                         <img data-slot="compendium.profile.avatar"
-                             src="assets/profile-main.png"
+                             src="/assets/profile-main.png"
                              alt="Profile main">
                       </div>
                     </div>
@@ -141,7 +141,7 @@
                         <div class="comp-img comp-micro">
                           <!-- micro icon can also be overridden but defaults to framework asset -->
                           <img data-slot="compendium.profile.micro_icon"
-                               src="assets/profile-micro.png"
+                               src="/assets/profile-micro.png"
                                alt="Profile micro icon">
                         </div>
                         <div class="comp-profile-link"
@@ -156,7 +156,7 @@
                   <section class="comp-section comp-links">
                     <div class="comp-link-row">
                       <div class="comp-img comp-micro">
-                        <img src="assets/location-icon.png" alt="Location">
+                        <img src="/assets/location-icon.png" alt="Location">
                       </div>
                       <span class="comp-link-text"
                             data-slot="compendium.profile.location">
@@ -166,7 +166,7 @@
 
                     <div class="comp-link-row">
                       <div class="comp-img comp-micro">
-                        <img src="assets/linkedin-icon.png" alt="LinkedIn">
+                        <img src="/assets/linkedin-icon.png" alt="LinkedIn">
                       </div>
                       <span class="comp-link-text"
                             data-slot="compendium.profile.linkedin">
@@ -214,7 +214,7 @@
           <div class="anthology-url-bar">
             <div class="anthology-url-icon">
               <!-- globe / site icon -->
-              <img src="assets/overlay-globe.png" alt="Site icon">
+              <img src="/assets/overlay-globe.png" alt="Site icon">
             </div>
             <span class="anthology-url-text" id="anthology-overlay-url">
               <!-- filled by JS with block.target -->
@@ -224,7 +224,7 @@
 
           <!-- follow-link button (image only, behavior can be added later) -->
           <button class="overlay-icon-btn" type="button">
-            <img src="assets/overlay-follow-link.png" alt="Follow link">
+            <img src="/assets/overlay-follow-link.png" alt="Follow link">
           </button>
         </div>
       </header>
@@ -262,10 +262,10 @@
 
             <div class="anthology-meta-buttons">
               <button class="meta-btn-pill" type="button">
-                <img src="assets/overlay-view.png" alt="View">
+                <img src="/assets/overlay-view.png" alt="View">
               </button>
               <button class="meta-btn-pill" type="button">
-                <img src="assets/overlay-actions.png" alt="Actions">
+                <img src="/assets/overlay-actions.png" alt="Actions">
               </button>
             </div>
           </div>
@@ -277,20 +277,20 @@
 
       <!-- Close + nav arrows -->
       <button class="anthology-close" id="anthology-overlay-close" type="button">
-        <img src="assets/overlay-close.png" alt="Close overlay">
+        <img src="/assets/overlay-close.png" alt="Close overlay">
       </button>
 
       <button class="anthology-arrow anth-arrow-prev" id="anthology-overlay-prev" type="button">
-        <img src="assets/overlay-arrow-left.png" alt="Previous item">
+        <img src="/assets/overlay-arrow-left.png" alt="Previous item">
       </button>
 
       <button class="anthology-arrow anth-arrow-next" id="anthology-overlay-next" type="button">
-        <img src="assets/overlay-arrow-right.png" alt="Next item">
+        <img src="/assets/overlay-arrow-right.png" alt="Next item">
       </button>
     </div>
   </div>
 
-  <script src="app.js"></script>
-  <script src="script.js"></script>
+  <script src="/frontend/app.js"></script>
+  <script src="/frontend/script.js"></script>
 </body>
 </html>
