@@ -55,6 +55,13 @@
             "thumbnail": null
           },
           {
+            "id": "demo-design-2",
+            "kind": "url",
+            "title": "Demo Design 2",
+            "target": "/demo-design-2",
+            "thumbnail": null
+          },
+          {
             "id": "linkedin",
             "kind": "url",
             "title": "LinkedIn",
