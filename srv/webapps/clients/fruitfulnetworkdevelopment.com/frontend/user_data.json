@@ -48,6 +48,13 @@
             "thumbnail": "assets/resume-preview.png"
           },
           {
+            "id": "demo-design-1",
+            "kind": "url",
+            "title": "Demo Design 1",
+            "target": "/demo-design-1",
+            "thumbnail": null
+          },
+          {
             "id": "linkedin",
             "kind": "url",
             "title": "LinkedIn",
