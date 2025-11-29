@@ -49,31 +49,34 @@ project-root/
 
 ## Matenance Scipts
 
-### pull_srv.sh
-The CloudPanel tutorial notes that rsync -a recursively copies directories, and adding --delete keeps the destination in sync by removing files that have been deleted from the source
-- Because we set the remote source path to /srv/webapps/, /etc remains untouched.
-    #!/bin/bash
+### script/pull_srv.sh
     set -e
-    REMOTE_USER="username"
-    REMOTE_HOST="your.server.com"
+    
+    REMOTE_USER="admin"
+    REMOTE_HOST="34.199.61.64"
     REMOTE_PATH="/srv/webapps/"
     LOCAL_PATH="$(dirname "$0")/../deploy/srv/webapps/"
     
-    # Use rsync in “pull” mode to copy from remote to local.  The -a flag preserves
-    # permissions/timestamps, -z compresses the transfer, and --delete removes
-    # local files that no longer exist remotely.
     rsync -az --delete "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH" "$LOCAL_PATH"
 
-### deploy_repo.sh
-You can customise these scripts further—use --exclude to skip certain directories or files, as the tutorial illustrates, and consider --dry-run (-n) while testing.
-    #!/bin/bash
+### script/deploy_repo.sh
     set -e
-    REMOTE_USER="username"
-    REMOTE_HOST="your.server.com"
+    
+    REMOTE_USER="admin"
+    REMOTE_HOST="34.199.61.64"
     LOCAL_PATH="$(dirname "$0")/../repo/srv/webapps/"
     REMOTE_PATH="/srv/webapps/"
+
+
+### script/deploy_etc.sh
+    set -e
     
-    rsync -az --delete "$LOCAL_PATH" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
+    REMOTE_USER="admin"
+    REMOTE_HOST="34.199.61.64"
+    LOCAL_PATH="$(dirname "$0")/../deploy/etc/nginx/"
+    REMOTE_PATH="/etc/nginx/"
+    
+    rsync -az --delete "$LOCAL_PATH" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
 
 ---
 
