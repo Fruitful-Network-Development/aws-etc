@@ -77,6 +77,7 @@ Before a client's real domain exists, enable local mode:
 
 ```python
 LOCAL_PROXY_CLIENTS = { "trappfamilyfarm.com": True }
+```
 
 ---
 
