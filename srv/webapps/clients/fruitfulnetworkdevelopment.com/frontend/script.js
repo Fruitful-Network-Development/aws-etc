@@ -1,6 +1,25 @@
 // /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/script.js
 
 async function loadUserData() {
+  // Check for ?external=client-slug in the URL
+  const params = new URLSearchParams(window.location.search);
+  let dataUrl = '/frontend/user_data.json';  // default local path
+
+  const externalSlug = params.get('external');
+  if (externalSlug) {
+    // If present, point to our proxy route; the slug may include dots
+    dataUrl = `/proxy/${externalSlug}/user_data.json`;
+  }
+
+  // Fetch the chosen JSON URL
+  const response = await fetch(dataUrl);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json();
+}
+
+async function loadUserData() {
   const response = await fetch('/frontend/user_data.json');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
