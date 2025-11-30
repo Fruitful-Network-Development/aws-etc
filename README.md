@@ -87,9 +87,14 @@ LOCAL_PROXY_CLIENTS = { "trappfamilyfarm.com": True }
 ```bash
 #!/bin/bash
 set -euo pipefail
+
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$PROJECT_ROOT/repo"
+REPO_DIR="$PROJECT_ROOT/repo"
+
+cd "$REPO_DIR"
 git pull
+
+echo "Repo updated at: $REPO_DIR"
 ```
 
 ### ~/script/update_repo.sh
@@ -112,6 +117,88 @@ echo "Syncing $SRC -> $DST ..."
 sudo rsync -az --delete "$SRC" "$DST"
 
 echo "Deployed: $SRC  -->  $DST"
+```
+
+---
+
+## Nginx
+
+### ~deploy/etc/nginx/nginx.conf
+```conf
+# /etc/nginx/nginx.conf
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    # Log formats, gzip, etc. could go here
+
+    include /etc/nginx/sites-enabled/*;
+}
+
+```
+
+### ~deploy/etc/nginx/nginx.conf
+```bash
+# /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+
+# Redirect HTTP → HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name fruitfulnetworkdevelopment.com www.fruitfulnetworkdevelopment.com;
+
+    # Leave this for certbot HTTP challenge
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    return 301 https://$host$request_uri;
+}
+
+# HTTPS server
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name fruitfulnetworkdevelopment.com www.fruitfulnetworkdevelopment.com;
+
+    # --- SSL config (paths from certbot) ---
+    ssl_certificate     /etc/letsencrypt/live/fruitfulnetworkdevelopment.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/fruitfulnetworkdevelopment.com/privkey.pem;
+    include             /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam         /etc/letsencrypt/ssl-dhparams.pem;
+
+    access_log /var/log/nginx/fruitfulnetwork.access.log;
+    error_log  /var/log/nginx/fruitfulnetwork.error.log;
+
+    # If you *ever* want to serve static directly, this root is handy,
+    # but in this design, most traffic just goes to Flask.
+    root /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend;
+    index index.html;
+
+    # (Optional) Serve really heavy static assets directly from NGINX
+    # location /assets/ {
+    #     alias /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/assets/;
+    # }
+
+    # Everything else → shared Flask backend
+    location / {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:8000;
+        proxy_redirect off;
+    }
+}
 ```
 
 ---
