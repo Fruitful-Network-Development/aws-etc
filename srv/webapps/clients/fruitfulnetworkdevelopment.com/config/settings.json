@@ -4,12 +4,13 @@
   "mysite_page": "mycite.html",
   "fallback_index": "index.html",
   "webpage_home": "webpages/home.html",
+  "webpage_dir": "webpages",
   "routes": {
-    "home": "webpage/home.html",
-    "csa_browser": "webpage/csa_browser.html",
-    "happenings": "webpage/happenings.html",
-    "about_us": "webpage/about_us.html",
-    "about_csa_program": "webpage/about_csa_program.html"
+    "home": "webpages/home.html",
+    "csa_browser": "webpages/csa_browser.html",
+    "happenings": "webpages/happenings.html",
+    "about_us": "webpages/about_us.html",
+    "about_csa_program": "webpages/about_csa_program.html"
   },
 
   "backend_data_file": "backend_data.json"

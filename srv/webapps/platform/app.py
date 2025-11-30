@@ -5,7 +5,7 @@ from pathlib import Path
 
 from flask import Flask, request, jsonify, send_from_directory, abort, redirect, url_for
 from urllib.request import urlopen
-from client_context import get_client_slug, get_client_paths
+from client_context import CLIENTS_ROOT, get_client_slug, get_client_paths
 from data_access import load_json  # save_json not needed here
 
 app = Flask(__name__)
@@ -84,6 +84,44 @@ def serve_client_file(frontend_root: Path, rel_path: str):
         abort(404)
 
     return send_from_directory(full_path.parent, full_path.name)
+
+
+def extract_user_id_from_msn(msn_value) -> str:
+    """Create a stable user_id string from the MSN field in user_data.json."""
+    if isinstance(msn_value, list):
+        parts = [str(item).strip() for item in msn_value if str(item).strip()]
+        return "".join(parts)
+    if isinstance(msn_value, str):
+        return msn_value.strip()
+    return ""
+
+
+def build_user_map() -> dict:
+    """Auto-discover user_id -> client mappings from each client's user_data.json."""
+    user_map = {}
+    if not CLIENTS_ROOT.exists():
+        return user_map
+
+    for client_dir in CLIENTS_ROOT.iterdir():
+        if not client_dir.is_dir():
+            continue
+
+        user_data_path = client_dir / "frontend" / "user_data.json"
+        if not user_data_path.exists():
+            continue
+
+        try:
+            user_data = load_json(user_data_path)
+        except Exception:
+            # Skip clients with malformed JSON so one bad file doesn't break routing.
+            continue
+
+        msn_value = user_data.get("MSS", {}).get("MSN")
+        user_id = extract_user_id_from_msn(msn_value)
+        if user_id:
+            user_map[user_id] = client_dir.name
+
+    return user_map
 
 
 def get_default_page(settings: dict) -> str:
@@ -210,12 +248,16 @@ def client_root():
     rel_path = get_default_page(settings)
     return serve_client_file(settings["_frontend_dir"], rel_path)
 
+USER_MAP = build_user_map()
 
-
-USER_MAP = {'1234': 'example.com', '5678': 'another.com'}
 
 @app.route('/<user_id>')
 def user_profile(user_id):
+    """
+    Allow profile lookup by user_id derived from the MSN field in user_data.json.
+
+    Example: /323577191019 -> redirect to /mysite?external=trappfamilyfarm.com
+    """
     client = USER_MAP.get(user_id)
     if not client:
         abort(404)
@@ -251,10 +293,11 @@ def webpage_page(page_slug: str):
     settings = load_client_settings(client_slug, paths=paths)
 
     route_map = settings.get("routes", {})
+    page_dir = settings.get("webpage_dir", "webpage")
     if page_slug in route_map:
         rel_path = route_map[page_slug]
     else:
-        rel_path = f"webpage/{page_slug}.html"
+        rel_path = f"{page_dir}/{page_slug}.html"
 
     return serve_client_file(settings["_frontend_dir"], rel_path)
 
@@ -269,7 +312,7 @@ def demo_design_1():
     paths = get_client_paths(client_slug)
     settings = load_client_settings(client_slug, paths=paths)
 
-    rel_path = "webpage/demo-design-1/demo-design-1.html"
+    rel_path = f"{settings.get('webpage_dir', 'webpage')}/demo-design-1/demo-design-1.html"
     return serve_client_file(settings["_frontend_dir"], rel_path)
 
 
