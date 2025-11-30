@@ -1,7 +1,14 @@
 {
   "MSS": {
     "ecto": "ecto",
-    "MSN": "########",
+    "MSN": [
+      "3",
+      "2",
+      "35",
+      "77",
+      "6",
+      "7435",
+    ],
 
     "compendium": {
       "title": "Compendium",
