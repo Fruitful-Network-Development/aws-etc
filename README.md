@@ -29,7 +29,7 @@
       - └── backend_data.json
     - └── config/
       - └── settings.json
-  - └── trappfamilyfarm.com/
+  - └── trappfamilyfarm.com/...
 - └── [README](README.md)                   # <-- this file
 
 ### Server Layout
@@ -44,6 +44,39 @@ project-root/
 - │   ├── deploy_repo.sh
 - │   └── deploy_etc.sh
 - └── README.md
+
+---
+
+## Mycite Profile Directory — Intended Operation
+
+The **Fruitful Network Development** site acts as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `frontend/user_data.json`, which the directory loads and renders inside the Mycite layout.
+
+### How It Works
+1. User visits:  
+   **`/profiles/<client_slug>`**  
+   Example: `/profiles/trappfamilyfarm.com`
+
+2. Server redirects to:  
+   **`/mysite?external=<client_slug>`**
+
+3. Front-end reads the `external` parameter and fetches:  
+   **`/proxy/<client_slug>/user_data.json`**
+
+4. The proxy loads profile data using one of two modes:
+   - **Remote mode (production):**  
+     Fetch from  
+     `https://<client_slug>/frontend/user_data.json`
+   - **Local mode (development):**  
+     Load from  
+     `/srv/webapps/clients/<client_slug>/frontend/user_data.json`
+
+5. The Mycite framework renders the received JSON as a full profile page.
+
+### DNS Workaround (Development)
+Before a client's real domain exists, enable local mode:
+
+```python
+LOCAL_PROXY_CLIENTS = { "trappfamilyfarm.com": True }
 
 ---
 
