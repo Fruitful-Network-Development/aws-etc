@@ -3,8 +3,8 @@
 import json
 from pathlib import Path
 
+import requests
 from flask import Flask, request, jsonify, send_from_directory, abort, redirect, url_for
-from urllib.request import urlopen
 from client_context import CLIENTS_ROOT, get_client_slug, get_client_paths
 from data_access import load_json  # save_json not needed here
 
@@ -96,20 +96,41 @@ def extract_user_id_from_msn(msn_value) -> str:
     return ""
 
 
-def build_user_map() -> dict:
-    """Auto-discover user_id -> client mappings from each client's user_data.json."""
-    user_map = {}
+def _client_user_data_files() -> dict:
+    """Return mapping of client slug -> user_data.json Path for all clients."""
+    files = {}
     if not CLIENTS_ROOT.exists():
-        return user_map
+        return files
 
     for client_dir in CLIENTS_ROOT.iterdir():
         if not client_dir.is_dir():
             continue
 
         user_data_path = client_dir / "frontend" / "user_data.json"
-        if not user_data_path.exists():
-            continue
+        if user_data_path.exists():
+            files[client_dir.name] = user_data_path
 
+    return files
+
+
+def _user_data_mtimes(files: dict) -> dict:
+    return {slug: path.stat().st_mtime for slug, path in files.items()}
+
+
+USER_MAP_CACHE = {"map": {}, "mtimes": {}}
+
+
+def refresh_user_map(force_refresh: bool = False) -> dict:
+    """Rebuild user_id -> client mappings when files change or on demand."""
+
+    files = _client_user_data_files()
+    current_mtimes = _user_data_mtimes(files)
+
+    if not force_refresh and current_mtimes == USER_MAP_CACHE.get("mtimes"):
+        return USER_MAP_CACHE.get("map", {})
+
+    user_map: dict = {}
+    for client_slug, user_data_path in files.items():
         try:
             user_data = load_json(user_data_path)
         except Exception:
@@ -119,9 +140,15 @@ def build_user_map() -> dict:
         msn_value = user_data.get("MSS", {}).get("MSN")
         user_id = extract_user_id_from_msn(msn_value)
         if user_id:
-            user_map[user_id] = client_dir.name
+            user_map[user_id] = client_slug
 
+    USER_MAP_CACHE["map"] = user_map
+    USER_MAP_CACHE["mtimes"] = current_mtimes
     return user_map
+
+
+def get_user_map(force_refresh: bool = False) -> dict:
+    return refresh_user_map(force_refresh=force_refresh)
 
 
 def get_default_page(settings: dict) -> str:
@@ -168,56 +195,49 @@ def get_default_page(settings: dict) -> str:
 
     abort(404)
 
-def fetch_remote_json(url: str) -> dict:
-    from urllib.request import urlopen
-    resp = urlopen(url)
-    if resp.getcode() != 200:
-        raise RuntimeError(f"Non-200 response from {url}: {resp.getcode()}")
-    return json.loads(resp.read().decode("utf-8"))
-
-# -------------------------------------------------------------------
-# Frontend routes (per-client HTML + static assets)
-# -------------------------------------------------------------------
-
-# Which clients should be read from the local filesystem instead of remote HTTP?
-# Useful for development when the real domain is not live yet. Set a hostname to
-# False to force remote fetching once the live domain is available.
-LOCAL_PROXY_CLIENTS = {
-    "trappfamilyfarm.com": True,
-    # The real domain is live, so fetch remotely instead of using local files.
-    "fruitfulnetworkdevelopment.com": False,
-    # add others here as needed
-}
-
-
 @app.route("/proxy/<path:client_slug>/user_data.json")
 def proxy_user_data(client_slug):
-    """
-    For some clients (e.g. trappfamilyfarm.com) we read user_data.json locally
-    from /srv/webapps/clients/<client>/frontend/user_data.json.
+    """Fetch remote user_data.json with consistent error handling."""
 
-    For others, we fall back to an HTTP fetch like:
-      https://<client>/frontend/user_data.json
-    """
-    # 1) local mode for dev / when domain isn't live yet
-    if LOCAL_PROXY_CLIENTS.get(client_slug):
-        paths = get_client_paths(client_slug)
-        settings = load_client_settings(client_slug, paths=paths)
-        frontend_dir = settings["_frontend_dir"]
-        user_data_path = frontend_dir / "user_data.json"
+    remote_url = f"https://{client_slug}/user_data.json"
 
-        if not user_data_path.exists():
-            abort(404, description=f"user_data.json not found for {client_slug}")
-
-        data = load_json(user_data_path)
-        return jsonify(data)
-
-    # 2) default: remote HTTP mode (for when the domain is actually live)
-    remote_url = f"https://{client_slug}/frontend/user_data.json"
     try:
-        data = fetch_remote_json(remote_url)
-    except Exception as e:
-        abort(502, description=str(e))
+        response = requests.get(remote_url, timeout=10)
+    except requests.exceptions.Timeout:
+        return jsonify({"error": "timeout", "message": "Remote request timed out"}), 504
+    except requests.exceptions.ConnectionError as exc:
+        return jsonify(
+            {"error": "connection_error", "message": str(exc) or "Connection failed"}
+        ), 503
+    except requests.RequestException as exc:
+        return jsonify(
+            {"error": "request_error", "message": str(exc) or "Request failed"}
+        ), 502
+
+    if response.status_code == 404:
+        return (
+            jsonify({"error": "not_found", "message": "user_data.json not found"}),
+            404,
+        )
+
+    if response.status_code != 200:
+        return (
+            jsonify(
+                {
+                    "error": "upstream_error",
+                    "message": f"Upstream returned {response.status_code}",
+                }
+            ),
+            502,
+        )
+
+    try:
+        data = response.json()
+    except ValueError:
+        return (
+            jsonify({"error": "invalid_json", "message": "Remote data is not valid JSON"}),
+            500,
+        )
 
     return jsonify(data)
 
@@ -228,7 +248,6 @@ def profiles(client_slug):
     The front‑end will read this parameter and use it to load the
     proxied user_data.json.
     """
-    # url_for('mysite_view') builds the URL of the /mysite route:contentReference[oaicite:4]{index=4}.
     return redirect(url_for('mysite_view') + f'?external={client_slug}')
 
 @app.route("/")
@@ -248,17 +267,28 @@ def client_root():
     rel_path = get_default_page(settings)
     return serve_client_file(settings["_frontend_dir"], rel_path)
 
-USER_MAP = build_user_map()
 
+@app.route("/directory")
+def directory_listing():
+    """
+    Rebuild and return the directory of known user_ids -> client slugs.
+
+    Designed for FruitfulNetworkDevelopment.com to operate as a Mycite hub by
+    re-reading stored user_data.json files whenever the directory is accessed.
+    """
+
+    user_map = get_user_map(force_refresh=True)
+    return jsonify({"users": user_map})
 
 @app.route('/<user_id>')
 def user_profile(user_id):
     """
     Allow profile lookup by user_id derived from the MSN field in user_data.json.
 
-    Example: /323577191019 -> redirect to /mysite?external=trappfamilyfarm.com
+    Example: /323577191019 -> redirect to /mysite?external=cuyahogaterravita.com
     """
-    client = USER_MAP.get(user_id)
+    user_map = get_user_map()
+    client = user_map.get(user_id)
     if not client:
         abort(404)
     return redirect(url_for('mysite_view') + f'?external={client}')
@@ -337,7 +367,7 @@ def client_frontend_static(static_path: str):
       /frontend/style.css
       /frontend/app.js
       /frontend/script.js
-      /frontend/user_data.js
+      /frontend/user_data.json
     """
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
@@ -354,7 +384,7 @@ def client_catch_all(filename: str):
       /style.css
       /app.js
       /script.js
-      /user_data.js
+      /user_data.json
       /mycite.html
       /demo-design-1  -> demo-design-1.html
     (Note: /api/... is reserved for API endpoints.)

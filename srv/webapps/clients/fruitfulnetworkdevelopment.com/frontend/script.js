@@ -3,7 +3,7 @@
 async function loadUserData() {
   // Check for ?external=client-slug in the URL
   const params = new URLSearchParams(window.location.search);
-  let dataUrl = '/frontend/user_data.json';  // default local path
+  let dataUrl = '/user_data.json';  // default local path
 
   const externalSlug = params.get('external');
   if (externalSlug) {

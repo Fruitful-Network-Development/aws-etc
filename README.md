@@ -21,7 +21,7 @@
       - ├── style.css
       - ├── app.js
       - ├── script.js
-      - ├── user_data.js
+      - ├── user_data.json
       - ├── assets/...
       - └── webpage/
         - ├── demo/...
@@ -29,7 +29,7 @@
       - └── backend_data.json
     - └── config/
       - └── settings.json
-  - └── trappfamilyfarm.com/...
+  - └── cuyahogaterravita.com/...
 - └── [README](README.md)                   # <-- this file
 
 ### Server Layout
@@ -49,35 +49,20 @@ project-root/
 
 ## Mycite Profile Directory — Intended Operation
 
-The **Fruitful Network Development** site acts as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `frontend/user_data.json`, which the directory loads and renders inside the Mycite layout.
+The **Fruitful Network Development** site acts as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `/user_data.json`, which the directory loads and renders inside the Mycite layout.
 
 ### How It Works
-1. User visits:  
-   **`/profiles/<client_slug>`**  
-   Example: `/profiles/trappfamilyfarm.com`
+1. Every Mycite-capable domain must publish `https://<client>/user_data.json` using the shared schema.
 
-2. Server redirects to:  
-   **`/mysite?external=<client_slug>`**
+2. Remote profiles are visualized by visiting:
+   **`/profiles/<client_slug>`** (for example `/profiles/cuyahogaterravita.com`).
+   The server redirects to **`/mysite?external=<client_slug>`**, and the front‑end fetches the canonical `https://<client_slug>/user_data.json` through `/proxy/<client_slug>/user_data.json`.
 
-3. Front-end reads the `external` parameter and fetches:  
-   **`/proxy/<client_slug>/user_data.json`**
+3. The proxy always performs a remote HTTPS fetch with structured JSON error responses (no local fallbacks or dev overrides).
 
-4. The proxy loads profile data using one of two modes:
-   - **Remote mode (production):**  
-     Fetch from  
-     `https://<client_slug>/frontend/user_data.json`
-   - **Local mode (development):**  
-     Load from  
-     `/srv/webapps/clients/<client_slug>/frontend/user_data.json`
+4. User-specific routes such as `/<user_id>` resolve against the server-side directory of stored user_data.json files. Accessing `/directory` forces a refresh of those files so updates on disk become available immediately.
 
-5. The Mycite framework renders the received JSON as a full profile page.
-
-### DNS Workaround (Development)
-Before a client's real domain exists, enable local mode:
-
-```python
-LOCAL_PROXY_CLIENTS = { "trappfamilyfarm.com": True }
-```
+5. The Mycite framework renders the received JSON as a full profile page across both the hub domain and external client domains.
 
 ---
 
