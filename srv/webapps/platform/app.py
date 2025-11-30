@@ -142,11 +142,12 @@ def fetch_remote_json(url: str) -> dict:
 # -------------------------------------------------------------------
 
 # Which clients should be read from the local filesystem instead of remote HTTP?
-# Useful for development when the real domain is not live yet.
+# Useful for development when the real domain is not live yet. Set a hostname to
+# False to force remote fetching once the live domain is available.
 LOCAL_PROXY_CLIENTS = {
-    "trappfamilyfarm.com",
-    "fruitfulnetworkdevelopment.com",
-    # add others here as needed, or set to False when the real domain goes live
+    "trappfamilyfarm.com": True,
+    "fruitfulnetworkdevelopment.com": True,
+    # add others here as needed
 }
 
 
