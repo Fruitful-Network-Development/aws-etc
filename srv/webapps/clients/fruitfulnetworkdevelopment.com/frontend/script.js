@@ -19,14 +19,6 @@ async function loadUserData() {
   return response.json();
 }
 
-async function loadUserData() {
-  const response = await fetch('/frontend/user_data.json');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return response.json();
-}
-
 function setText(selector, value) {
   const el = document.querySelector(selector);
   if (el && value != null) {
