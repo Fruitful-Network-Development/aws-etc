@@ -130,12 +130,6 @@ def get_default_page(settings: dict) -> str:
 
     abort(404)
 
-
-# -------------------------------------------------------------------
-# Frontend routes (per-client HTML + static assets)
-# -------------------------------------------------------------------
-
-
 def fetch_remote_json(url):
     """Fetch JSON from a remote URL using urllib."""
     try:
@@ -148,6 +142,10 @@ def fetch_remote_json(url):
         raise RuntimeError(f'Could not fetch {url}: {exc}')
 
     raise RuntimeError(f'Non‑200 response for {url}')
+
+# -------------------------------------------------------------------
+# Frontend routes (per-client HTML + static assets)
+# -------------------------------------------------------------------
 
 @app.route('/proxy/<path:client_slug>/user_data.json')
 def proxy_user_data(client_slug):
@@ -175,7 +173,6 @@ def profiles(client_slug):
     # url_for('mysite_view') builds the URL of the /mysite route:contentReference[oaicite:4]{index=4}.
     return redirect(url_for('mysite_view') + f'?external={client_slug}')
 
-
 @app.route("/")
 def client_root():
     """
@@ -192,6 +189,18 @@ def client_root():
 
     rel_path = get_default_page(settings)
     return serve_client_file(settings["_frontend_dir"], rel_path)
+
+
+
+USER_MAP = {'1234': 'example.com', '5678': 'another.com'}
+
+@app.route('/<user_id>')
+def user_profile(user_id):
+    client = USER_MAP.get(user_id)
+    if not client:
+        abort(404)
+    return redirect(url_for('mysite_view') + f'?external={client}')
+
 
 
 @app.route("/mysite")
