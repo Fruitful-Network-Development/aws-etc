@@ -2,81 +2,83 @@
 
 ## Project Layout
 
-├── /ect 
-  └── nginx/
-    ├── nginx.conf
-    ├── sites-available/
-      └── fruitfulnetwork.com.conf
-    └── sites-enabled/
-      └── fruitfulnetwork.com.conf
-├── /srv/webapps
-  ├── platform/
-    ├── app.py
-    └── modules/
-      └── __init__.py
-  └── clients/
-  └── fruitfulnetwork.com/
-    ├── frontend/
-      ├── mycite.html
-      ├── style.css
-      ├── app.js
-      ├── script.js
-      ├── user_data.js
-      ├── assets/...
-      └── webpage/
-        ├── demo/...
-    ├── data/
-      └── backend_data.json
-    └── config/
-      └── settings.json
-  └── trappfamilyfarm.com/
-└── [README](README.md)                   # <-- this file
+- ├── /ect 
+  - └── nginx/
+    - ├── nginx.conf
+    - ├── sites-available/
+      - └── fruitfulnetwork.com.conf
+    - └── sites-enabled/
+      - └── fruitfulnetwork.com.conf
+- ├── /srv/webapps
+  - ├── platform/
+    - ├── app.py
+    - └── modules/
+      - └── __init__.py
+  - └── clients/
+  - └── fruitfulnetwork.com/
+    - ├── frontend/
+      - ├── mycite.html
+      - ├── style.css
+      - ├── app.js
+      - ├── script.js
+      - ├── user_data.js
+      - ├── assets/...
+      - └── webpage/
+        - ├── demo/...
+    - ├── data/
+      - └── backend_data.json
+    - └── config/
+      - └── settings.json
+  - └── trappfamilyfarm.com/
+- └── [README](README.md)                   # <-- this file
 
 ### Server Layout
 project-root/
-├── repo/
-│   └── srv/webapps/…      # Flask app and front‑end code
-├── deploy/
-│   ├── etc/nginx/…        # a local copy of the server’s /etc/nginx configuration
-│   └── srv/webapps/…      # a local copy of /srv/webapps from the server
-├── scripts/
-│   ├── pull_srv.sh
-│   ├── deploy_repo.sh
-│   └── deploy_etc.sh
-└── README.md
+- ├── repo/
+- │   └── srv/webapps/…      # Flask app and front‑end code
+- ├── deploy/
+- │   ├── etc/nginx/…        # a local copy of the server’s /etc/nginx configuration
+- │   └── srv/webapps/…      # a local copy of /srv/webapps from the server
+- ├── scripts/
+- │   ├── pull_srv.sh
+- │   ├── deploy_repo.sh
+- │   └── deploy_etc.sh
+- └── README.md
 
 ---
 
 ## Matenance Scipts
 
-### script/pull_srv.sh
-    set -e
-    
-    REMOTE_USER="admin"
-    REMOTE_HOST="34.199.61.64"
-    REMOTE_PATH="/srv/webapps/"
-    LOCAL_PATH="$(dirname "$0")/../deploy/srv/webapps/"
-    
-    rsync -az --delete "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH" "$LOCAL_PATH"
+### ~/script/update_repo.sh
+    #!/bin/bash
+    set -euo pipefail
+    PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+    cd "$PROJECT_ROOT/repo"
+    git pull
 
-### script/deploy_repo.sh
-    set -e
+### ~/script/update_repo.sh
+    #!/bin/bash
+    set -euo pipefail
     
-    REMOTE_USER="admin"
-    REMOTE_HOST="34.199.61.64"
-    LOCAL_PATH="$(dirname "$0")/../repo/srv/webapps/"
-    REMOTE_PATH="/srv/webapps/"
-
-
-### script/deploy_etc.sh
-    set -e
+    # Project root = one level up from scripts/
+    PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
     
-    REMOTE_USER="admin"
-    REMOTE_HOST="34.199.61.64"
-    LOCAL_PATH="$(dirname "$0")/../deploy/etc/nginx/"
-    REMOTE_PATH="/etc/nginx/"
+    SRC="$PROJECT_ROOT/repo/srv/"
+    DST="$PROJECT_ROOT/deploy/srv/"
     
-    rsync -az --delete "$LOCAL_PATH" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
+    # Make sure source exists
+    if [ ! -d "$SRC" ]; then
+      echo "Source path does not exist: $SRC"
+      exit 1
+    fi
+    
+    # Ensure destination exists
+    mkdir -p "$DST"
+    
+    # Sync repo/srv -> deploy/srv
+    rsync -az --delete "$SRC" "$DST"
+    
+    echo "Deployed: $SRC  -->  $DST"
 
 ---
 
