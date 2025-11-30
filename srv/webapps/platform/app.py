@@ -3,7 +3,8 @@
 import json
 from pathlib import Path
 
-from flask import Flask, request, jsonify, send_from_directory, abort
+from flask import Flask, request, jsonify, send_from_directory, abort, redirect, url_for
+from urllib.request import urlopen
 from client_context import get_client_slug, get_client_paths
 from data_access import load_json  # save_json not needed here
 
@@ -133,6 +134,47 @@ def get_default_page(settings: dict) -> str:
 # -------------------------------------------------------------------
 # Frontend routes (per-client HTML + static assets)
 # -------------------------------------------------------------------
+
+
+def fetch_remote_json(url):
+    """Fetch JSON from a remote URL using urllib."""
+    try:
+        resp = urlopen(url)
+        # Only proceed if we get HTTP 200 (OK)
+        if resp.getcode() == 200:
+            # Decode bytes and parse JSON:contentReference[oaicite:3]{index=3}.
+            return json.loads(resp.read().decode('utf-8'))
+    except Exception as exc:
+        raise RuntimeError(f'Could not fetch {url}: {exc}')
+
+    raise RuntimeError(f'Non‑200 response for {url}')
+
+@app.route('/proxy/<path:client_slug>/user_data.json')
+def proxy_user_data(client_slug):
+    """
+    Fetch a user_data.json file from another site and return it as JSON.
+    A client_slug like 'example.com' will be turned into
+    'https://example.com/frontend/user_data.json'.  Adjust the URL pattern
+    if your client sites expose the JSON elsewhere.
+    """
+    remote_url = f'https://{client_slug}/frontend/user_data.json'
+    try:
+        data = fetch_remote_json(remote_url)
+    except Exception as e:
+        abort(502, description=str(e))
+
+    return jsonify(data)
+
+@app.route('/profiles/<path:client_slug>')
+def profiles(client_slug):
+    """
+    Redirect to our Mycite page but include ?external=<client_slug>.
+    The front‑end will read this parameter and use it to load the
+    proxied user_data.json.
+    """
+    # url_for('mysite_view') builds the URL of the /mysite route:contentReference[oaicite:4]{index=4}.
+    return redirect(url_for('mysite_view') + f'?external={client_slug}')
+
 
 @app.route("/")
 def client_root():
