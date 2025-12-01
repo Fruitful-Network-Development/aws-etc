@@ -7,6 +7,22 @@ weather_bp = Blueprint("weather", __name__)
 
 OPEN_METEO_BASE_URL = "https://api.open-meteo.com/v1/forecast"
 
+# Open‑Meteo allows requesting multiple daily variables at once.  Keep them in
+# a single list so the query string and the response shaping stay in sync.
+DAILY_VARIABLES = [
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "temperature_2m_mean",
+    "apparent_temperature_max",
+    "apparent_temperature_min",
+    "sunrise",
+    "sunset",
+    "precipitation_sum",
+    "windspeed_10m_max",
+    "winddirection_10m_dominant",
+    "uv_index_max",
+]
+
 @weather_bp.route("/api/weather/daily")
 def get_daily_weather():
     """
@@ -43,13 +59,7 @@ def get_daily_weather():
     params = {
         "latitude": lat,
         "longitude": lon,
-        # choose whichever daily variables you want to show
-        "daily": ",".join([
-            "temperature_2m_max",
-            "temperature_2m_min",
-            "temperature_2m_mean",
-            "precipitation_sum"
-        ]),
+        "daily": ",".join(DAILY_VARIABLES),
         "timezone": "auto",
         "forecast_days": days,
         "past_days": past_days,
@@ -79,9 +89,16 @@ def get_daily_weather():
             "temperature_max": daily.get("temperature_2m_max", []),
             "temperature_min": daily.get("temperature_2m_min", []),
             "temperature_mean": daily.get("temperature_2m_mean", []),
+            "apparent_temperature_max": daily.get("apparent_temperature_max", []),
+            "apparent_temperature_min": daily.get("apparent_temperature_min", []),
+            "sunrise": daily.get("sunrise", []),
+            "sunset": daily.get("sunset", []),
             "precipitation_sum": daily.get("precipitation_sum", []),
+            "windspeed_max": daily.get("windspeed_10m_max", []),
+            "winddirection_dominant": daily.get("winddirection_10m_dominant", []),
+            "uv_index_max": daily.get("uv_index_max", []),
         },
-        "source": "open-meteo"
+        "source": "open-meteo",
     }
 
     return jsonify(out)

@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Newsletter form submitted");
   });
 
-  // WEATHER WIDGET MOCK
-  // The weather widget is broken down into individual elements within the
-  // markup.  These assignments populate the widget with placeholder values.
+  // WEATHER WIDGET (live data from /api/weather/daily)
   const locationEl = document.getElementById('weather-location');
   const dateEl = document.getElementById('weather-date');
   const tempEl = document.getElementById('weather-temp');
@@ -61,16 +59,80 @@ document.addEventListener('DOMContentLoaded', function() {
   const pressureEl = document.getElementById('weather-pressure');
   const uvEl = document.getElementById('weather-uv');
 
-  if (locationEl) locationEl.textContent = 'Hagen, Germany';
-  if (dateEl) dateEl.textContent = 'Sunday, 23 April';
-  if (tempEl) tempEl.textContent = '17°';
-  if (feelsEl) feelsEl.textContent = '15°';
-  if (humidityEl) humidityEl.textContent = '81%';
-  if (visibilityEl) visibilityEl.textContent = '11 km';
-  if (sunriseEl) sunriseEl.textContent = '06:18 a.m.';
-  if (sunsetEl) sunsetEl.textContent = '08:39 p.m.';
-  if (windEl) windEl.textContent = '18 km/h SW';
-  if (pressureEl) pressureEl.textContent = '1001 hPa';
-  if (uvEl) uvEl.textContent = '0 low';
-  
+  const WEATHER_COORDS = { lat: 41.241, lon: -81.548 }; // Cuyahoga Valley, OH
+
+  const formatDate = (isoDate) => {
+    if (!isoDate) return '—';
+    const date = new Date(`${isoDate}T00:00:00`);
+    return date.toLocaleDateString(undefined, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const formatTime = (isoDateTime) => {
+    if (!isoDateTime) return '—';
+    const date = new Date(isoDateTime);
+    return date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+  };
+
+  const formatWind = (speed, direction) => {
+    if (speed == null) return '—';
+    const dirs = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    const idx = Math.round(((direction ?? 0) % 360) / 45) % 8;
+    return `${Math.round(speed)} km/h ${dirs[idx]}`;
+  };
+
+  const setText = (el, value) => {
+    if (el) el.textContent = value;
+  };
+
+  const updateWeatherDisplay = (payload) => {
+    if (!payload || !payload.daily) return;
+
+    const daily = payload.daily;
+    const firstDay = {
+      date: daily.time?.[0],
+      tempMax: daily.temperature_max?.[0],
+      tempMean: daily.temperature_mean?.[0],
+      apparentMax: daily.apparent_temperature_max?.[0],
+      sunrise: daily.sunrise?.[0],
+      sunset: daily.sunset?.[0],
+      windspeed: daily.windspeed_max?.[0],
+      windDirection: daily.winddirection_dominant?.[0],
+      uvIndex: daily.uv_index_max?.[0],
+      precipitation: daily.precipitation_sum?.[0],
+    };
+
+    setText(locationEl, payload.timezone?.replace(/_/g, ' ') || 'Local forecast');
+    setText(dateEl, formatDate(firstDay.date));
+    setText(tempEl, firstDay.tempMax != null ? `${Math.round(firstDay.tempMax)}°` : '—');
+    setText(feelsEl, firstDay.apparentMax != null ? `${Math.round(firstDay.apparentMax)}°` : '—');
+    setText(humidityEl, '—');
+    setText(visibilityEl, firstDay.precipitation != null ? `${firstDay.precipitation} mm rain` : '—');
+    setText(sunriseEl, formatTime(firstDay.sunrise));
+    setText(sunsetEl, formatTime(firstDay.sunset));
+    setText(windEl, formatWind(firstDay.windspeed, firstDay.windDirection));
+    setText(pressureEl, '—');
+    setText(uvEl, firstDay.uvIndex != null ? `${firstDay.uvIndex} UV` : '—');
+  };
+
+  const fetchWeather = () => {
+    const url = `/api/weather/daily?lat=${WEATHER_COORDS.lat}&lon=${WEATHER_COORDS.lon}&days=1`;
+
+    fetch(url)
+      .then((resp) => {
+        if (!resp.ok) throw new Error(`Weather API error: ${resp.status}`);
+        return resp.json();
+      })
+      .then((data) => updateWeatherDisplay(data))
+      .catch((err) => {
+        console.error(err);
+        setText(locationEl, 'Weather unavailable');
+      });
+  };
+
+  fetchWeather();
+
 });
