@@ -2,191 +2,168 @@
  {
    "local_id": "0_0000_000_0001",
    "title": "mark_trap",
-    ]
   },
  {
    "local_id": "0_0100_001_0002",
    "title": "emily_trapp",
-    ]
   },
  {
    "local_id": "0_0100_002_0003",
    "title": "jack_trapp",
-    ]
   },
  {
    "local_id": "0_0100_002_0004",
    "title": "jill_trapp",
-    ]
   },
  {
    "local_id": "0_0200_001_0005",
    "title": "dylan_leipold",
-    ]
   },
  {
    "local_id": "0_0200_001_0006",
    "title": "india_nunn",
-    ]
   },
  {
    "local_id": "0_0301_001_0007",
    "title": "doc",
-    ]
   },
  {
    "local_id": "0_0301_001_0008",
    "title": "dan",
-    ]
   },
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  {
    "local_id": "0_0302_017_0025",
    "title": "goat_17",
-    ]
   },
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  {
    "local_id": "0_0303_089_0114",
    "title": "chicken_89",
-    ]
   },
  {
    "local_id": "sasha_miller",
    "title": "0_0400_001_0115",
-    ]
   },
  {
    "local_id": "kyla_werlin",
    "title": "0_0400_002_0116",
-    ]
   },
  {
    "local_id": "beth_lomske",
    "title": "0_0400_003_0117",
-    ]
   },
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  {
    "local_id": "0_0500_539_0663",
    "title": "buyer_546",
-    ]
   },
  {
    "local_id": "0_0601_000_0664",
    "title": "trapp_family_farm",
-    ]
   },
  {
    "local_id": "purple_brown_farm_store",
    "title": "0_0602_001_0665"
-    ]
   },
  {
    "local_id": "haymakers_farmers_market",
    "title": "0_0602_002_0666"
-    ]
   },
  {
    "local_id": "0_0602_003_0667",
    "title": "fresh_fork_csa"
-    ]
   },
  {
    "local_id": "0_0602_004_0668",
    "title": "ocp"
-    ]
   },
- },
  {
    "local_id": "0_0602_005_0669",
    "title": "szalays"
-    ]
   },
  {
    "local_id": "0_0602_006_0670",
    "title": "yellow_bird_food_shed_csa"
-    ]
   },
  {
    "local_id": "0_0603_001_0671",
    "title": "oxbow_orchard"
-    ]
   },
  {
    "local_id": "0_0603_002_0672",
    "title": "purple_brown_farm"
-    ]
   },
- },	
  {
-   "local_id": "0_0602_003_0673",
+   "local_id": "0_0603_003_0673",
    "title": "case_western_reserve_university_farm"
-    ]
   },
  {
    "local_id": "0_0603_004_0674",
-   "title": "HERE"
-    ]
+   "title": "green_field_berry_farm"
   },
  {
-   "local_id": "0_0602_011_0675",
-   "title": "HERE"
-    ]
+   "local_id": "0_0603_011_0675",
+   "title": "keleman_point_farm"
   },
  {
-   "local_id": "0_0602_012_0676",
-   "title": "HERE"
-    ]
-  },
- },
- {
-   "local_id": "0_0602_013_0677",
-   "title": "HERE"
-    ]
+   "local_id": "0_0603_012_0676",
+   "title": "sarahs_vineyard"
   },
  {
-   "local_id": "0_0602_014_0678",
-   "title": "HERE"
-    ]
+   "local_id": "0_0603_013_0677",
+   "title": "spice_acres"
   },
  {
-   "local_id": "0_0602_015_0679",
-   "title": "HERE"
-    ]
+   "local_id": "0_0603_014_0678",
+   "title": "pure_passion_farms"
   },
  {
-   "local_id": "0_0602_016_0680",
-   "title": "HER"
-    ]
+   "local_id": "0_0603_015_0679",
+   "title": "front_9_farms"
+  },
+ {
+   "local_id": "0_0603_016_0680",
+   "title": "wren_box_farm"
+  },
+ {
+   "local_id": "0_0604_001_0681",
+   "title": "farmers_union"
+  },
+ {
+   "local_id": "0_0604_002_0682",
+   "title": "farmers_bureau"
+  },
+ {
+   "local_id": "0_0605_001_0683",
+   "title": "city"
+  },
+ {
+   "local_id": "0_0605_002_0685",
+   "title": "county"
+  },
+ {
+   "local_id": "0_0605_003_0686",
+   "title": "state"
+  },
+ {
+   "local_id": "0_0605_004_0687",
+   "title": "country"
+  },
+ {
+   "local_id": "0_0606_001_0688",
+   "title": "osuep"
+  },
+ {
+   "local_id": "0_0607_002_0689",
+   "title": "usda"
+  },
+ {
+   "local_id": "HERE",
+   "title": "HERE"
+  },
+ {
+   "local_id": "HERE",
+   "title": "HERE"
   },
 ]
-
-city	0_0604_001_0681
-county	0_0604_002_0682
-state	0_0604_003_0683
-country	0_0604_004_0684
-usda	0_0605_001_0685
-osuep	0_0605_002_0686
-fb	0_0605_003_0687
-fu	0_0605_004_0688
-
-carrot	0_0700_001_0689
-butter_crunch	0_0700_002_0690
-iceberg_lettuce	0_0700_003_0691
-romain_lettuce	0_0700_004_0692
-tomato	0_0700_005_0693
-potato	0_0700_006_0694
-cabbage	0_0700_007_0695
-broccoli	0_0700_008_0696
-kale	0_0700_009_0697
-cauliflower	0_0700_010_0698
-green_bean	0_0700_011_0699
-cucumber	0_0700_012_0700
-zucchini	0_0700_013_0701
-cocozelle	0_0700_014_0702
-scallop	0_0700_015_0703
-spinach	0_0700_016_0704
-beet	0_0700_017_0705
-chard	0_0700_018_0706
-onion	0_0700_019_0707
