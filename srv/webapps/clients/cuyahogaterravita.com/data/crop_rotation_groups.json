@@ -1,0 +1,86 @@
+[
+ {
+   "local_id": "",
+   "title": "legumes",
+   "alias": "rotation_group_1"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "nightshades",
+   "alias": "rotation_group_2"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "brassicas",
+   "alias": "rotation_group_3"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "alliums",
+   "alias": "rotation_group_4"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "umbellifers",
+   "alias": "rotation_group_5"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "cucurbits",
+   "alias": "rotation_group_6"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "leafy_greens",
+   "alias": "rotation_group_7"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "chenopods",
+   "alias": "rotation_group_8"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "grasses",
+   "alias": "rotation_group_9"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "mallow_family",
+   "alias": "rotation_group_10"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "mint_family",
+   "alias": "rotation_group_11"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "sweet_potato",
+   "alias": "rotation_group_12"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "composites",
+   "alias": "rotation_group_13"
+    ]
+  },
+ {
+   "local_id": "",
+   "title": "other",
+   "alias": "rotation_group_14"
+    ]
+  },
+]
