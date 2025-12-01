@@ -286,3 +286,57 @@ a {
   font-size: 0.8rem;
 }
 
+/* --------------------------
+   WEATHER WIDGET (DEMO)
+--------------------------- */
+.weather-widget {
+  background: #f7f7f7;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.weather-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.weather-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.weather-form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.weather-form label {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.weather-form input {
+  padding: 6px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+#weather-btn {
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#weather-output {
+  background: #1e1e1e;
+  color: #9ef78d;
+  padding: 15px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
