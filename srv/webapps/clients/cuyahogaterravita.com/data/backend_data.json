@@ -1,0 +1,314 @@
+{
+  {"realm": [
+    {"archaea": "1"}, 
+    {"bacteria": "2"}, 
+    {"eukaryotes": "3"}
+  ]
+  }
+}
+
+{
+  {"topology": "domain"},
+  {"title": "eukaryotes"},
+  {"components": [
+    {"protista": "3_1"}, 
+    {"fungi": "3_2"}, 
+    {"plantae": "3_3"}, 
+    {"animalia": "3_4"}
+  ]
+  }
+}
+
+{
+  {"topology": "kingdom"},
+  {"title": "plantae"},
+  {"components": [
+    {"thallophyta": "3_3_1"}, 
+    {"bryophyta": "3_3_2"}, 
+    {"pteridophyta": "3_3_3"}, 
+    {"cycadophyta_cycads": "3_3_4"}
+    {"ginkgophyta_ginkgo": "3_3_5"}, 
+    {"pinophyta_conifers": "3_3_6"}, 
+    {"gnetophyta_gnetophytes": "3_3_7"}, 
+    {"magnoliophyta_angiosperms": "3_3_8"}
+  ]
+  }
+}
+
+{
+  {"topology": "divisions_phylum"},
+  {"title": "magnoliophyta_angiosperms"},
+  {"components": [
+    {"amborella": "3_3_8_1"}, 
+    {"nymphaeales": "3_3_8_2"}, 
+    {"austrobaileyales": "3_3_8_3"}, 
+    {"chloranthales": "3_3_8_4"}
+    {"magnoliids": "3_3_8_5"}, 
+    {"monocots": "3_3_8_6"}, 
+    {"ceratophyllum": "3_3_8_7"}, 
+    {"eudicots": "3_3_8_8"}
+  ]
+  }
+}
+
+{
+  {"topology": "class"},
+  {"title": "monocots"},
+  {"components": [
+    {"acorales": "3_3_8_6_1"}, 
+    {"alismatales": "3_3_8_6_2"}, 
+    {"petrosaviales": "3_3_8_6_3"}, 
+    {"dioscoreales": "3_3_8_6_4"}
+    {"pandanales": "3_3_8_6_5"}, 
+    {"liliales": "3_3_8_6_6"}, 
+    {"asparagales": "3_3_8_6_7"}, 
+    {"arecales": "3_3_8_6_8"}
+    {"commelinales": "3_3_8_6_9"}, 
+    {"poales": "3_3_8_6_10"}, 
+    {"zingiberales": "3_3_8_6_11"}
+  ]
+  }
+}
+
+{
+  {"topology": "class"},
+  {"title": "eudicots"},
+  {"components": [
+    {"ranunculales": "3_3_8_8_1"}, 
+    {"proteales": "3_3_8_8_2"}, 
+    {"trochodendrales": "3_3_8_8_3"}, 
+    {"buxales": "3_3_8_8_4"}, 
+    {"dilleniales": "3_3_8_8_5"}, 
+    {"gunnerales": "3_3_8_8_6"}, 
+    {"zygophyllales": "3_3_8_8_7"}, 
+    {"celastrales": "3_3_8_8_8"}, 
+    {"malpighiales": "3_3_8_8_9"}, 
+    {"oxalidales": "3_3_8_8_10"}, 
+    {"fabales": "3_3_8_8_11"}, 
+    {"rosales": "3_3_8_8_12"}, 
+    {"cucurbitales": "3_3_8_8_13"}, 
+    {"fagales": "3_3_8_8_14"}, 
+    {"geraniales": "3_3_8_8_15"}, 
+    {"myrtales": "3_3_8_8_16"}, 
+    {"crossosomatales": "3_3_8_8_17"}, 
+    {"picramniales": "3_3_8_8_18"}, 
+    {"sapindales": "3_3_8_8_19"}, 
+    {"huerteales": "3_3_8_8_20"}, 
+    {"brassicales": "3_3_8_8_21"}, 
+    {"malvales": "3_3_8_8_22"}, 
+    {"gentianales": "3_3_8_8_23"}, 
+    {"boraginales": "3_3_8_8_24"}, 
+    {"solanales": "3_3_8_8_25"}, 
+    {"lamiales": "3_3_8_8_26"}, 
+    {"garryales": "3_3_8_8_27"}, 
+    {"metteniusales": "3_3_8_8_28"}, 
+    {"icacinales": "3_3_8_8_29"}, 
+    {"aquifoliales": "3_3_8_8_30"}, 
+    {"asterales": "3_3_8_8_31"}, 
+    {"escalloniales": "3_3_8_8_32"}, 
+    {"bruniales": "3_3_8_8_33"}, 
+    {"apiales": "3_3_8_8_34"}, 
+    {"dipsacales": "3_3_8_8_35"}, 
+    {"paracryphiales": "3_3_8_8_36"}, 
+    {"caryophyllales": "3_3_8_8_37"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "asparagales"},
+  {"components": [
+    {"amaryllidaceae": "3_3_8_6_7_1"},
+Asparagaceae
+Asphodelaceae
+Asteliaceae
+Blandfordiaceae
+Boryaceae
+Doryanthaceae
+Hypoxidaceae
+Iridaceae
+Ixioliriaceae
+Lanariaceae
+Orchidaceae
+Tecophilaeaceae
+    {"xeronemataceae": "3_3_8_6_7_14"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "fabales"},
+  {"components": [
+    {"fabaceae_leguminosae": "3_3_8_8_11_1"},
+Polygalaceae_milkwort
+Quillajaceae
+    {"surianaceae": "3_3_8_8_11_4"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "cucurbitales"},
+  {"components": [
+    {"anisophylleaceae": "3_3_8_8_13_1"}, 
+Apodanthaceae
+Begoniaceae (begonia)
+Coriariaceae
+Corynocarpaceae
+Cucurbitaceae (gourd)
+Datiscaceae
+    {"tetramelaceae": "3_3_8_8_13_8"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "brassicales"},
+  {"components": [
+    {"akaniaceae": "3_3_8_8_21_1"}, 
+Bataceae
+Borthwickiaceae
+Brassicaceae
+Capparaceae (caper)
+Caricaceae (papaya)
+Cleomaceae
+Emblingiaceae
+Gyrostemonaceae
+Koeberliniaceae
+Limnanthaceae
+Moringaceae
+Pentadiplandraceae
+Resedaceae
+Salvadoraceae
+Setchellanthaceae
+Tovariaceae
+    {"tropaeolaceae": "3_3_8_8_21_18"}
+  ]
+  }
+}
+
+
+{
+  {"topology": "order"},
+  {"title": "solanales"},
+  {"components": [
+    {"solanaceae": "3_3_8_8_25_1"}, 
+Convolvulaceae
+Montiniaceae
+Sphenocleaceae
+    {"hydroleaceae": "3_3_8_8_25_5"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "asterales"},
+  {"components": [
+    {"alseuosmiaceae": "3_3_8_8_31_1"}, 
+Argophyllaceae
+Asteraceae
+Calyceraceae
+Campanulaceae
+Goodeniaceae
+Menyanthaceae
+Pentaphragmataceae
+Phellinaceae
+Stylidiaceae
+    {"donatiaceae": "3_3_8_8_31_11"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "apiales"},
+  {"components": [
+    {"apiaceae": "3_3_8_8_34_1"},
+Araliaceae
+Griseliniaceae
+Myodocarpaceae
+Pennantiaceae
+Pittosporaceae
+    {"torricelliaceae": "3_3_8_8_34_7"}
+  ]
+  }
+}
+
+{
+  {"topology": "order"},
+  {"title": "caryophyllales"},
+  {"components": [
+    {"achatocarpaceae": "3_3_8_8_37_1"}, 
+Aizoaceae
+Amaranthaceae
+Anacampserotaceae
+Ancistrocladaceae
+Asteropeiaceae
+Barbeuiaceae
+Basellaceae
+Bataceae
+Cactaceae
+Caryophyllaceae
+Didiereaceae
+Dioncophyllaceae
+Droseraceae
+Drosophyllaceae
+Frankeniaceae
+Gisekiaceae
+Halophytaceae
+Kewaceae
+Limeaceae
+Lophiocarpaceae
+Macarthuriaceae
+Microteaceae
+Molluginaceae
+Montiaceae
+Nepenthaceae
+Nyctaginaceae
+Petiveriaceae
+Phytolaccaceae
+Physenaceae
+Plumbaginaceae
+Polygonaceae
+Portulacaceae
+Rhabdodendraceae
+Sarcobataceae
+Simmondsiaceae
+Stegnospermataceae
+Talinaceae
+    {"tamaricaceae": "3_3_8_8_37_39"}
+  ]
+  }
+}
+
+{
+  {"topology": "family"},
+  {"title": "HERE"},
+  {"components": [
+    {"HERE": "HERE"}
+  ]
+  }
+}
+
+{
+  {"topology": "genus"},
+  {"title": "HERE"},
+  {"components": [
+    {"HERE": "HERE"}
+  ]
+  }
+}
+
+{
+  {"topology": "species"},
+  {"title": "HERE"},
+  {"components": [
+    {"HERE": "HERE"}
+  ]
+  }
+}
