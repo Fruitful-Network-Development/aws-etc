@@ -2,6 +2,7 @@
 
 ## Project Layout
 
+```
 - ├── /ect 
   - └── nginx/
     - ├── nginx.conf
@@ -31,6 +32,7 @@
       - └── settings.json
   - └── cuyahogaterravita.com/...
 - └── [README](README.md)                   # <-- this file
+```
 
 ### Server Layout
 project-root/
@@ -70,7 +72,7 @@ The **Fruitful Network Development** site acts as a **central profile directory*
 
 ### ~/script/update_repo.sh
 ```bash
-#!/bin/bash
+# !/bin/bash
 set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -84,7 +86,7 @@ echo "Repo updated at: $REPO_DIR"
 
 ### ~/script/update_repo.sh
 ```bash
-#!/bin/bash
+# !/bin/bash
 set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -109,9 +111,7 @@ echo "Deployed: $SRC  -->  $DST"
 ## Nginx
 
 ### ~deploy/etc/nginx/nginx.conf
-```conf
-# /etc/nginx/nginx.conf
-
+```nginx.conf
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
@@ -135,9 +135,7 @@ http {
 ```
 
 ### ~deploy/etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
-```bash
-# /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
-
+```fruitfulnetworkdevelopment.com.conf
 # Redirect HTTP → HTTPS
 server {
     listen 80;
@@ -186,8 +184,7 @@ server {
 }
 ```
 ### ~deploy/etc/nginx/sites-available/cuyahogaterravita.com.conf
-```bash
-# /etc/nginx/sites-available/cuyahogaterravita.com.com.conf
+```cuyahogaterravita.com.conf
 # HTTP → HTTPS
 server {
     listen 80;
