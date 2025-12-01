@@ -4,125 +4,107 @@
    "taxonomy_id": "3_3_8_8_34_1_434_35_1",
    "title": "daucus_carota_sativus",
    "alias": "carrot"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_31_3_32000_100_1",
    "title": "lactuca_sativa_capitata",
    "alias": "butter_crunch_lettuce"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_31_3_32000_100_2",
    "title": "lactuca_sativa_crispa",
    "alias": "iceberg_lettuce"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_31_3_32000_100_3",
    "title": "lactuca_sativa_longifolia",
    "alias": "romain_lettuce"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_21_4_90_1239_1",
    "title": "solanum_lycopersicum_sativus",
    "alias": "tomato"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_25_1_90_1240_1",
    "title": "solanum_tuberosum",
    "alias": "potato"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_350_100_1",
    "title": "brassica_oleracea_italica",
    "alias": "broccoli"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_350_100_2",
    "title": "brassica_oleracea_acephala",
    "alias": "kale"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_350_100_3",
    "title": "brassica_oleracea_botrytis",
    "alias": "cauliflower"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_11_1_750_70_1",
    "title": "phaseolus_vulgaris_vulgaris",
    "alias": "green_bean"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_95_32_1",
    "title": "cucumis_sativus_sativus",
    "alias": "cucumber"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_95_17_1",
    "title": "cucurbita_pepo_zucchini",
    "alias": "zucchini"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_95_17_2",
    "title": "cucurbita_pepo_cocozelle",
    "alias": "cocozelle"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_13_6_95_17_3",
    "title": "cucurbita_pepo_scallop",
    "alias": "scallop"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_37_3_164_3_1",
    "title": "spinacia_oleracea",
    "alias": "spinach"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_37_3_165_11_1",
    "title": "beta_vulgaris_vulgaris",
    "alias": "beet"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_8_37_3_165_11_2",
    "title": "beta_vulgaris_vulgaris_cicla",
    "alias": "chard"
-    ]
   },
  {
    "local_id": "",
    "taxonomy_id": "3_3_8_6_7_1_73_700_1",
    "title": "allium_cepa_cepa",
    "alias": "onion"
-    ]
   },
 ]
