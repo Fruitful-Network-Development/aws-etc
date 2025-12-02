@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!payload || !payload.daily) return;
 
     const daily = payload.daily;
+    const precipitationUnit = payload.unit_system?.precipitation_sum || 'mm';
     const firstDay = {
       date: daily.time?.[0],
       tempMax: daily.temperature_max?.[0],
@@ -112,7 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setText(humidityEl, '—');
     setText(
       precipitationEl,
-      firstDay.precipitation != null ? `${firstDay.precipitation} mm rain` : '—'
+      firstDay.precipitation != null
+        ? `${Math.round(firstDay.precipitation * 10) / 10} ${precipitationUnit}`
+        : '—'
     );
     setText(sunriseEl, formatTime(firstDay.sunrise));
     setText(sunsetEl, formatTime(firstDay.sunset));
