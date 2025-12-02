@@ -171,7 +171,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     initOverlayElements();
 
     const data = await loadUserData();
-    const mss = data.MSS || {};
+    // Support both legacy `mycite` root and canonical `MSS` root structures.
+    const mss = data.MSS || data.mycite || {};
 
     const compendium = mss.compendium || {};
     const profile = compendium.profile || {};
