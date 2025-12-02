@@ -1,5 +1,7 @@
 # /srv/webapps/platform/app.py
 
+from __future__ import annotations
+
 import json
 from pathlib import Path
 
@@ -87,8 +89,11 @@ def serve_client_file(frontend_root: Path, rel_path: str):
     return send_from_directory(full_path.parent, full_path.name)
 
 
+CANONICAL_USER_DATA_GLOB = "msn_*.json"
+
+
 def extract_user_id_from_msn(msn_value) -> str:
-    """Create a stable user_id string from the MSN field in user_data.json."""
+    """Create a stable user_id string from the MSN field in msn_<user_id>.json."""
     if isinstance(msn_value, list):
         parts = [str(item).strip() for item in msn_value if str(item).strip()]
         return "".join(parts)
@@ -97,8 +102,21 @@ def extract_user_id_from_msn(msn_value) -> str:
     return ""
 
 
+def _find_user_data_file(frontend_dir: Path) -> Path | None:
+    matches = sorted(frontend_dir.glob(CANONICAL_USER_DATA_GLOB))
+    if len(matches) == 1:
+        return matches[0]
+    # If there are zero or multiple matches, skip to avoid ambiguity
+    return None
+
+
 def _client_user_data_files() -> dict:
-    """Return mapping of client slug -> user_data.json Path for all clients."""
+    """
+    Return mapping of client slug -> canonical msn_<user_id>.json Path for all clients.
+
+    Each client frontend is expected to contain exactly one such file in its root.
+    """
+
     files = {}
     if not CLIENTS_ROOT.exists():
         return files
@@ -107,8 +125,9 @@ def _client_user_data_files() -> dict:
         if not client_dir.is_dir():
             continue
 
-        user_data_path = client_dir / "frontend" / "user_data.json"
-        if user_data_path.exists():
+        frontend_dir = client_dir / "frontend"
+        user_data_path = _find_user_data_file(frontend_dir)
+        if user_data_path:
             files[client_dir.name] = user_data_path
 
     return files
@@ -205,11 +224,18 @@ def get_default_page(settings: dict) -> str:
 app.register_blueprint(weather_bp)
 
 
-@app.route("/proxy/<path:client_slug>/user_data.json")
-def proxy_user_data(client_slug):
-    """Fetch remote user_data.json with consistent error handling."""
+@app.route("/proxy/<path:client_slug>/<path:data_filename>")
+def proxy_user_data(client_slug, data_filename):
+    """Fetch remote msn_<user_id>.json with consistent error handling."""
 
-    remote_url = f"https://{client_slug}/user_data.json"
+    if (
+        Path(data_filename).name != data_filename
+        or not data_filename.startswith("msn_")
+        or not data_filename.endswith(".json")
+    ):
+        abort(404)
+
+    remote_url = f"https://{client_slug}/{data_filename}"
 
     try:
         response = requests.get(remote_url, timeout=10)
@@ -226,7 +252,7 @@ def proxy_user_data(client_slug):
 
     if response.status_code == 404:
         return (
-            jsonify({"error": "not_found", "message": "user_data.json not found"}),
+            jsonify({"error": "not_found", "message": "user data file not found"}),
             404,
         )
 
@@ -257,7 +283,7 @@ def profiles(client_slug):
     """
     Redirect to our Mycite page but include ?external=<client_slug>.
     The front‑end will read this parameter and use it to load the
-    proxied user_data.json.
+    proxied msn_<user_id>.json file.
     """
     return redirect(url_for('mysite_view') + f'?external={client_slug}')
 
@@ -286,7 +312,7 @@ def directory_listing():
     Rebuild and return the directory of known user_ids -> client slugs.
 
     Designed for FruitfulNetworkDevelopment.com to operate as a Mycite hub by
-    re-reading stored user_data.json files whenever the directory is accessed.
+    re-reading stored msn_<user_id>.json files whenever the directory is accessed.
     """
 
     user_map = get_user_map(force_refresh=True)
@@ -296,7 +322,7 @@ def directory_listing():
 @app.route('/<user_id>')
 def user_profile(user_id):
     """
-    Allow profile lookup by user_id derived from the MSN field in user_data.json.
+    Allow profile lookup by user_id derived from the MSN field in msn_<user_id>.json.
 
     Example: /323577191019 -> redirect to /mysite?external=cuyahogaterravita.com
     """
@@ -379,7 +405,7 @@ def client_frontend_static(static_path: str):
       /frontend/style.css
       /frontend/app.js
       /frontend/script.js
-      /frontend/user_data.json
+      /frontend/msn_<user_id>.json
     """
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
@@ -397,7 +423,7 @@ def client_catch_all(filename: str):
       /style.css
       /app.js
       /script.js
-      /user_data.json
+      /msn_<user_id>.json
       /mycite.html
       /demo-design-1  -> demo-design-1.html
     (Note: /api/... is reserved for API endpoints.)

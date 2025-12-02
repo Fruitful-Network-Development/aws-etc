@@ -1,14 +1,16 @@
 // /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/script.js
 
 async function loadUserData() {
+  const USER_DATA_FILENAME = 'msn_32357767435.json';
+
   // Check for ?external=client-slug in the URL
   const params = new URLSearchParams(window.location.search);
-  let dataUrl = '/user_data.json';  // default local path
+  let dataUrl = `/${USER_DATA_FILENAME}`;  // default local path
 
   const externalSlug = params.get('external');
   if (externalSlug) {
     // If present, point to our proxy route; the slug may include dots
-    dataUrl = `/proxy/${externalSlug}/user_data.json`;
+    dataUrl = `/proxy/${externalSlug}/${USER_DATA_FILENAME}`;
   }
 
   // Fetch the chosen JSON URL

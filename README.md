@@ -22,7 +22,7 @@
       - ├── style.css
       - ├── app.js
       - ├── script.js
-      - ├── user_data.json
+      - ├── msn_<user_id>.json
       - ├── assets/...
       - └── webpage/
         - ├── demo/...
@@ -51,18 +51,18 @@ project-root/
 
 ## Mycite Profile Directory — Intended Operation
 
-The **Fruitful Network Development** site acts as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `/user_data.json`, which the directory loads and renders inside the Mycite layout.
+The **Fruitful Network Development** site acts as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `msn_<user_id>.json`, which the directory loads and renders inside the Mycite layout.
 
 ### How It Works
-1. Every Mycite-capable domain must publish `https://<client>/user_data.json` using the shared schema.
+1. Every Mycite-capable domain must publish `https://<client>/msn_<user_id>.json` using the shared schema.
 
 2. Remote profiles are visualized by visiting:
    **`/profiles/<client_slug>`** (for example `/profiles/cuyahogaterravita.com`).
-   The server redirects to **`/mysite?external=<client_slug>`**, and the front‑end fetches the canonical `https://<client_slug>/user_data.json` through `/proxy/<client_slug>/user_data.json`.
+   The server redirects to **`/mysite?external=<client_slug>`**, and the front‑end fetches the canonical `https://<client_slug>/msn_<user_id>.json` through `/proxy/<client_slug>/msn_<user_id>.json`.
 
 3. The proxy always performs a remote HTTPS fetch with structured JSON error responses (no local fallbacks or dev overrides).
 
-4. User-specific routes such as `/<user_id>` resolve against the server-side directory of stored user_data.json files. Accessing `/directory` forces a refresh of those files so updates on disk become available immediately.
+4. User-specific routes such as `/<user_id>` resolve against the server-side directory of stored `msn_<user_id>.json` files. Accessing `/directory` forces a refresh of those files so updates on disk become available immediately.
 
 5. The Mycite framework renders the received JSON as a full profile page across both the hub domain and external client domains.
 
@@ -274,7 +274,7 @@ server {
 
 ## Mycite Profile Framework
 
-The Mycite Profile Framework provides a unified data schema (user_data.json) and a standardized rendering layer defined at the repository root (index.html, style.css, app.js), which together establish a neutral, interoperable profile format.
+The Mycite Profile Framework provides a unified data schema (`msn_<user_id>.json`) and a standardized rendering layer defined at the repository root (index.html, style.css, app.js), which together establish a neutral, interoperable profile format.
 
 This format is deliberately designed so that:
 1. Any website can embed or access a standardized version of a user’s profile.
@@ -297,7 +297,7 @@ The Mycite approach solves this by:
 
 This allows:
 1. A single canonical profile source
-    - All information is stored structurally in user_data.json, independent of HTML layout.
+    - All information is stored structurally in `msn_<user_id>.json`, independent of HTML layout.
 2. Multiple render layers
     - Mycite Standard View → neutral, predictable, portable
     - Free-form Webpage View → expressive, themeable, personal
