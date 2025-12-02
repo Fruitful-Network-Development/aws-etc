@@ -128,7 +128,7 @@ echo "Full deploy complete."
 
 ### nginx.conf
 ```nginx
-# deploy/etc/nginx/nginx.conf
+  GNU nano 8.4                       nginx.conf                                 
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
@@ -153,7 +153,7 @@ http {
 
 ### fruitfulnetworkdevelopment.com.conf
 ```nginx
-# deploy/etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+  GNU nano 8.4                                                                  fruitfulnetworkdevelopment.com.conf                                                                           
 # Redirect HTTP → HTTPS
 server {
     listen 80;
@@ -200,24 +200,32 @@ server {
         proxy_redirect off;
     }
 }
+
 ```
 ### cuyahogaterravita.com.conf
 ```nginx
-# deploy/etc/nginx/sites-available/cuyahogaterravita.com.conf
+# /etc/nginx/sites-available/cuyahogaterravita.com.conf
+
+# ------------------------------------------------
 # HTTP → HTTPS
+# ------------------------------------------------
 server {
     listen 80;
     listen [::]:80;
     server_name cuyahogaterravita.com www.cuyahogaterravita.com;
 
+    # Let’s Encrypt HTTP-01 challenge
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
     }
 
+    # Redirect everything else to HTTPS
     return 301 https://$host$request_uri;
 }
 
-# HTTPS: proxy everything to Flask
+# ------------------------------------------------
+# HTTPS: serve static frontend, proxy /api to Flask
+# ------------------------------------------------
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -231,17 +239,34 @@ server {
     access_log /var/log/nginx/cuyahogaterravita.access.log;
     error_log  /var/log/nginx/cuyahogaterravita.error.log;
 
-    # If you end up serving some static files for this domain, you can set a root:
-    # root /srv/webapps/clients/cuyahogaterravita.com/frontend;
-    # index index.html;
+    # ---- STATIC ROOT ----
+    # This is where index.html lives
+    root /srv/webapps/clients/cuyahogaterravita.com/frontend/webpages;
+    index index.html;
 
-    # For Option B: send ALL traffic to the shared Flask backend
-    location / {
+    # ---- ASSETS ALIAS (Option A) ----
+    # Map URLs /frontend/assets/... to the real assets directory
+    # /srv/webapps/clients/cuyahogaterravita.com/frontend/assets/...
+    location /frontend/assets/ {
+        alias /srv/webapps/clients/cuyahogaterravita.com/frontend/assets/;
+    }
+
+    # ---- API PROXY ----
+    # Only /api/... is proxied to your shared Flask backend.
+    # (adjust the port if your Flask app is on a different one)
+    location /api/ {
         include proxy_params;
         proxy_pass http://127.0.0.1:8000;
         proxy_redirect off;
     }
+
+    # ---- DEFAULT STATIC HANDLER ----
+    # Everything else is served from the static root (webpages)
+    location / {
+        try_files $uri $uri/ =404;
+    }
 }
+
 ```
 
 ---
