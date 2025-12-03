@@ -4,5 +4,4 @@
   "mysite_page": "index.html",
   "fallback_index": "index.html",
   "webpage_dir": "webpages",
-  "backend_data_file": "backend_data.json"
 }
