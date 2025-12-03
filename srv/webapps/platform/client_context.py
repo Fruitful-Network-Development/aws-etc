@@ -1,4 +1,4 @@
-"""Client detection and path utilities for multi-tenant front-end serving."""
+"""Client detection and path utilities for multi-tenant front-end serving.
 from __future__ import annotations
 
 import os
@@ -26,12 +26,9 @@ KNOWN_CLIENTS = _discover_clients()
 
 
 def get_client_slug(request) -> str:
-    """
-    Determine which client to serve based on the Host header.
-
-    Falls back to DEFAULT_CLIENT_SLUG so local development under localhost:5000
-    still resolves to a valid client.
-    """
+    # Determine which client to serve based on the Host header.
+    # Falls back to DEFAULT_CLIENT_SLUG so local development under localhost:5000
+    # still resolves to a valid client.
 
     host = (request.headers.get("X-Forwarded-Host") or request.host or "").split(":")[0]
     if host in KNOWN_CLIENTS:
@@ -41,9 +38,7 @@ def get_client_slug(request) -> str:
 
 
 def get_client_paths(client_slug: str) -> Dict[str, Path]:
-    """
-    Return key filesystem locations for a client.
-    """
+    # Return key filesystem locations for a client.
 
     client_root = CLIENTS_ROOT / client_slug
     config_dir = client_root / "config"
@@ -54,3 +49,4 @@ def get_client_paths(client_slug: str) -> Dict[str, Path]:
         "config_dir": config_dir,
         "frontend_dir": frontend_dir,
     }
+"""
