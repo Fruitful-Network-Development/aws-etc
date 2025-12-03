@@ -261,11 +261,11 @@ server {
 
     # ---- DEFAULT STATIC HANDLER ----
     # Everything else is served from the static root (webpages)
+    # Use SPA fallback so front-end routes resolve correctly.
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ /index.html;
     }
 }
-
 ```
 
 ---
