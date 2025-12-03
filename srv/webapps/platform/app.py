@@ -89,7 +89,7 @@ def serve_client_file(frontend_root: Path, rel_path: str):
     return send_from_directory(full_path.parent, full_path.name)
 
 
-CANONICAL_USER_DATA_GLOB = "msn_*.json"
+CANONICAL_USER_DATA_GLOB = "msn_<user_id>.json"
 
 
 def extract_user_id_from_msn(msn_value) -> str:
