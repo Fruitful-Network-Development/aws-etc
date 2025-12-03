@@ -431,14 +431,15 @@ server {
     listen [::]:80;
     server_name cuyahogaterravita.com www.cuyahogaterravita.com;
 
-    # Let’s Encrypt HTTP-01 challenge
+    # Let’s Encrypt HTTP-01 challenge (must stay on HTTP)
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
     }
 
     # Redirect everything else to HTTPS
-    return 301 https://$host$request_uri;
-}
+    location / {
+        return 301 https://$host$request_uri;
+    }
 
 # ------------------------------------------------
 # HTTPS: serve static frontend, proxy /api to Flask
