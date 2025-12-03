@@ -378,7 +378,6 @@ server {
         proxy_redirect off;
     }
 
-    # For a purely static site use =404; for a SPA use /index.html.
     location / {
         try_files $uri $uri/ /index.html;
     }
@@ -419,18 +418,10 @@ server {
     access_log /var/log/nginx/fruitfulnetwork.access.log;
     error_log  /var/log/nginx/fruitfulnetwork.error.log;
 
-    # If you *ever* want to serve static directly, this root is handy,
-    # but in this design, most traffic just goes to Flask.
-    root /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend;
-    index index.html;
+    location /assets/ {
+        alias /srv/webapps/clients/fruitfulnetworkdevelopmen.com/frontend/assets/;
+    }
 
-    # (Optional) Serve really heavy static assets directly from NGINX
-    # location /assets/ {
-    #     alias /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/assets/;
-    #     alias /srv/webapps/clients/cuyahogaterravita.com/frontend/assets/;
-    # }
-
-    # Everything else → shared Flask backend
     location / {
         include proxy_params;
         proxy_pass http://127.0.0.1:8000;
@@ -500,9 +491,10 @@ server {
         proxy_redirect off;
     }
 
-    # ---- DEFAULT STATIC HANDLER ----
-    # Everything else is served from the static root (webpages)
-    # Use SPA fallback so front-end routes resolve correctly.
+    location /assets/ {
+        alias /srv/webapps/clients/cuyahogaterravita.com/frontend/assets/;
+    }
+
     location / {
         try_files $uri $uri/ /index.html;
     }
