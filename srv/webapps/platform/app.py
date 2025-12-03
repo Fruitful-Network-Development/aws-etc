@@ -27,14 +27,13 @@ def load_client_settings(client_slug: str, paths=None) -> dict:
       client_root/
         config/settings.json
         frontend/
-          mycite.html
-          index.html (optional)
-          webpage/home.html
+          index.html
           assets/...
 
     settings.json keys that matter here:
       - frontend_root: e.g. "frontend"
-      - backend_data_file (optional)
+      - default: default page to serve (e.g. "index.html")
+      - backend_data_file: filename under data/ for backend state
     """
     if paths is None:
         paths = get_client_paths(client_slug)
@@ -172,51 +171,6 @@ def get_user_map(force_refresh: bool = False) -> dict:
     return refresh_user_map(force_refresh=force_refresh)
 
 
-def get_default_page(settings: dict) -> str:
-    """
-    Decide which page to serve at "/" based on settings.json.
-
-    settings.json keys used:
-      - default_view_mode: "auto" | "mysite" | "webpage"
-      - mysite_page:      e.g. "mycite.html"
-      - webpage_home:     e.g. "webpage/home.html"
-      - fallback_index:   e.g. "index.html"
-    """
-    mode = settings.get("default_view_mode", "auto")
-    mysite_page = settings.get("mysite_page", "mycite.html")
-    webpage_home = settings.get("webpage_home", "webpage/home.html")
-    fallback_index = settings.get("fallback_index", "index.html")
-
-    frontend_root: Path = settings["_frontend_dir"]
-
-    mysite_full = frontend_root / mysite_page
-    home_full = frontend_root / webpage_home
-    fallback_full = frontend_root / fallback_index
-
-    # Explicit overrides
-    if mode == "mysite":
-        if not mysite_full.exists():
-            abort(404)
-        return mysite_page
-
-    if mode == "webpage":
-        if not home_full.exists():
-            abort(404)
-        return webpage_home
-
-    # "auto" mode:
-    # Prefer a traditional webpage home if it exists,
-    # then Mycite, then a simple index.html fallback.
-    if home_full.exists():
-        return webpage_home
-    if mysite_full.exists():
-        return mysite_page
-    if fallback_full.exists():
-        return fallback_index
-
-    abort(404)
-
-
 # -------------------------------------------------------------------
 # API routes
 # -------------------------------------------------------------------
@@ -300,7 +254,7 @@ def client_root():
     paths = get_client_paths(client_slug)
     settings = load_client_settings(client_slug, paths=paths)
 
-    rel_path = get_default_page(settings)
+    rel_path = settings.get("default", "index.html")
     return serve_client_file(settings["_frontend_dir"], rel_path)
 
 
