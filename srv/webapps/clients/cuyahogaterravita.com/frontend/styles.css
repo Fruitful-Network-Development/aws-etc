@@ -1,6 +1,17 @@
-/* Base reset */
+/* ======================================
+   Base Reset & Variables
+   ====================================== */
+
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #f6f5f1;        /* overall background */
+  --deep-green: #122019;     /* hero background / dark areas */
+  --mid-green: #1f2c23;      /* header text / dark UI */
+  --accent-green: #a6d48a;   /* CTA buttons & lines */
+  --soft-cream: #e7f1e7;     /* pale green/cream sections */
 }
 
 html,
@@ -11,8 +22,8 @@ body {
 
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #f6f5f1;
-  color: #1f2c23;
+  background: var(--page-bg);
+  color: var(--mid-green);
   line-height: 1.6;
 }
 
@@ -27,6 +38,10 @@ img {
   height: auto;
 }
 
+/* ======================================
+   Layout Helpers
+   ====================================== */
+
 .container {
   width: min(1200px, 100%);
   margin: 0 auto;
@@ -34,7 +49,7 @@ img {
 }
 
 .content-area {
-  background: #f6f5f1;
+  background: var(--page-bg);
 }
 
 .content-inner {
@@ -43,40 +58,52 @@ img {
   padding: 0 20px 80px;
 }
 
+/* Generic vertical section spacing */
 .section-block {
   padding: 56px 0;
 }
 
+/* Main content section directly under hero */
 .section-block.main {
   padding-top: 24px;
 }
 
+/* Different section background variants */
 .section-block.set-in {
-  background: #f6f5f1;
+  background: var(--page-bg);
 }
 
 .section-block.charcoal-set-in {
-  background: #1f2c23;
+  background: var(--mid-green);
   color: #f5f5f5;
 }
 
 .section-block.green-set-in {
-  background: #e7f1e7;
-  color: #1f2c23;
+  background: var(--soft-cream);
+  color: var(--mid-green);
 }
 
 .detail-link {
-  color: #a6d48a;
+  color: var(--accent-green);
   font-weight: 700;
 }
 
-/* Header */
+/* ======================================
+   Header
+   ====================================== */
+
 .page-header {
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 20;
+}
+
+/* Make the header much shorter than content sections */
+.page-header.section-block {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .header-main-row {
@@ -86,6 +113,16 @@ img {
   padding: 16px 0;
 }
 
+/* Special case: the big circular brand mark image in the header row */
+.header-main-row > img.header-logo {
+  height: 110px;   /* adjust to taste */
+  width: auto;
+  padding: 0;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+/* Icon-style buttons: menu, basket, small logo button on right */
 .header-icon,
 .basket-icon,
 .header-logo {
@@ -106,6 +143,7 @@ img {
   background: rgba(0, 0, 0, 0.04);
 }
 
+/* Logo inside the small right-hand button */
 .header-logo img {
   height: 46px;
   width: auto;
@@ -128,6 +166,7 @@ img {
   color: #607262;
 }
 
+/* Search bar in header */
 .header-search {
   display: flex;
   align-items: center;
@@ -144,7 +183,7 @@ img {
   outline: none;
   width: 100%;
   font-size: 0.95rem;
-  color: #1f2c23;
+  color: var(--mid-green);
 }
 
 .search-button {
@@ -152,7 +191,7 @@ img {
   align-items: center;
   gap: 8px;
   border: none;
-  background: #1f2c23;
+  background: var(--mid-green);
   color: #f5f5f5;
   padding: 8px 14px;
   border-radius: 999px;
@@ -172,14 +211,16 @@ img {
   font-size: 0.8rem;
 }
 
-/* Hero */
+/* ======================================
+   Hero (Top Banner)
+   ====================================== */
+
 .hero {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
   min-height: 540px;
-  background: #122019;
-  color: #f5f5f5;
+  background: var(--deep-green);
 }
 
 .hero-splash img {
@@ -193,7 +234,11 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(13, 32, 22, 0.78), rgba(46, 18, 19, 0.55));
+  background: linear-gradient(
+    120deg,
+    rgba(18, 32, 25, 0.84),
+    rgba(46, 24, 23, 0.58)
+  );
 }
 
 .hero-content.container {
@@ -222,7 +267,7 @@ img {
 .header-line-divide {
   width: 70px;
   height: 4px;
-  background: #a6d48a;
+  background: var(--accent-green);
   margin: 0 0 20px;
   border-radius: 6px;
 }
@@ -242,7 +287,7 @@ img {
 
 .hero-button {
   border: none;
-  background: #a6d48a;
+  background: var(--accent-green);
   color: #0e1a13;
   padding: 12px 22px;
   border-radius: 999px;
@@ -254,15 +299,18 @@ img {
 
 .hero-button[type="secondary"] {
   background: transparent;
-  border: 2px solid #a6d48a;
-  color: #a6d48a;
+  border: 2px solid var(--accent-green);
+  color: var(--accent-green);
 }
 
 .hero-button:hover {
   filter: brightness(0.95);
 }
 
-/* Hero footer tiles */
+/* ======================================
+   Hero Footer Tiles (Produce / Thanksgiving)
+   ====================================== */
+
 .hero-footer-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -270,9 +318,10 @@ img {
   margin-top: 28px;
 }
 
+/* Generic card container for all image tiles */
 .float-img {
   background: #ffffff;
-  color: #1f2c23;
+  color: var(--mid-green);
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
@@ -282,19 +331,29 @@ img {
   text-align: center;
 }
 
+/* Themed backgrounds based on section */
 .section-block.charcoal-set-in .float-img {
-  background: #243228;
+  background: var(--mid-green);
   color: #f5f5f5;
 }
 
 .section-block.green-set-in .float-img {
-  background: #ffffff;
+  background: var(--soft-cream);
 }
 
+/* Image tiles – consistent cropping across all cards */
 .float-img img {
   width: 100%;
   border-radius: 12px;
+
+  /* force consistent crop across all cards */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Wider banner feel for the long CSA tile */
+.long-set-in-float .float-img img {
+  aspect-ratio: 32 / 9;
 }
 
 .float-img h2,
@@ -318,7 +377,7 @@ img {
 .float-button {
   align-self: center;
   border: none;
-  background: #1f2c23;
+  background: var(--mid-green);
   color: #f5f5f5;
   padding: 10px 18px;
   border-radius: 10px;
@@ -330,8 +389,8 @@ img {
 
 .section-block.charcoal-set-in .hero-footer-button,
 .section-block.charcoal-set-in .float-button {
-  background: #a6d48a;
-  color: #122019;
+  background: var(--accent-green);
+  color: var(--deep-green);
 }
 
 .hero-footer-button:hover,
@@ -339,7 +398,10 @@ img {
   filter: brightness(0.95);
 }
 
-/* Feature details */
+/* ======================================
+   Feature Details (Text Blocks Under Hero Tiles)
+   ====================================== */
+
 .feature-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -365,7 +427,10 @@ img {
   margin: 0 0 12px;
 }
 
-/* Set-in blocks */
+/* ======================================
+   Set-in Blocks for Mid Page (CSA / Weekly / Recipes / Shop)
+   ====================================== */
+
 .long-set-in-float {
   display: grid;
   grid-template-columns: minmax(260px, 1fr);
@@ -392,7 +457,10 @@ img {
   box-shadow: none;
 }
 
-/* Weather */
+/* ======================================
+   Weather Widget
+   ====================================== */
+
 .weather-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -448,10 +516,10 @@ img {
 }
 
 .weather-left-top {
-  background: #f6f5f1;
+  background: var(--page-bg);
   border-radius: 16px;
   padding: 18px;
-  color: #1f2c23;
+  color: var(--mid-green);
 }
 
 .weather-hourly {
@@ -467,7 +535,7 @@ img {
   padding: 10px;
   text-align: center;
   font-weight: 600;
-  color: #1f2c23;
+  color: var(--mid-green);
 }
 
 .hour .icon {
@@ -476,7 +544,7 @@ img {
 }
 
 .weather-left-bottom {
-  background: #f6f5f1;
+  background: var(--page-bg);
   border-radius: 16px;
   padding: 16px;
 }
@@ -494,11 +562,14 @@ img {
   font-size: 0.95rem;
 }
 
-/* Footer */
+/* ======================================
+   Footer
+   ====================================== */
+
 .site-footer {
   background: #0f1d15;
   color: #f5f5f5;
-  background-image: url('/frontend/assets/web-footer-img.png');
+  background-image: url('/assets/web-footer-img.png');
   background-size: cover;
   background-position: center;
   margin-top: 40px;
@@ -543,7 +614,7 @@ img {
 .footer-newsletter h4 {
   font-size: 1rem;
   margin: 0 0 10px;
-  color: #a6d48a;
+  color: var(--accent-green);
   text-transform: uppercase;
 }
 
@@ -581,7 +652,7 @@ img {
 
 .footer-newsletter button {
   padding: 10px 14px;
-  background: #a6d48a;
+  background: var(--accent-green);
   border: none;
   color: #0e1a13;
   cursor: pointer;
@@ -599,7 +670,11 @@ img {
   color: #d8e1d8;
 }
 
-/* Responsive adjustments */
+/* ======================================
+   Responsive Adjustments
+   ====================================== */
+
+/* Large tablets / narrow desktop */
 @media (max-width: 1100px) {
   .header-search {
     flex: 1 1 220px;
@@ -610,6 +685,7 @@ img {
   }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
   .header-main-row {
     flex-wrap: wrap;
@@ -635,5 +711,42 @@ img {
 
   .content-inner {
     padding-bottom: 60px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  /* Make hero a bit shorter and edge-to-edge on phones */
+  .hero {
+    min-height: 420px;
+    border-radius: 0;
+  }
+
+  .hero-content.container {
+    padding: 48px 20px;
+  }
+
+  /* Force one column stacks for all card grids */
+  .hero-footer-section,
+  .short-set-in-float,
+  .long-set-in-float {
+    grid-template-columns: 1fr;
+  }
+
+  /* Weather hourly tiles stack instead of tiny columns */
+  .weather-hourly {
+    grid-template-columns: 1fr;
+  }
+
+  /* Slightly tighter vertical spacing on mobile content sections */
+  .section-block {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* Keep header short even after the mobile section override */
+  .page-header.section-block {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
