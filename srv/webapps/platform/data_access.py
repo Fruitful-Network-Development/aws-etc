@@ -1,4 +1,4 @@
-"""Simple helpers for reading and writing JSON data."""
+"""Simple helpers for reading and writing JSON data.
 from __future__ import annotations
 
 import json
@@ -15,3 +15,4 @@ def save_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+"""
