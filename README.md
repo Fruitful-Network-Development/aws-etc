@@ -380,7 +380,7 @@ server {
 
     # For a purely static site use =404; for a SPA use /index.html.
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ /index.html;
     }
 }
 
@@ -427,6 +427,7 @@ server {
     # (Optional) Serve really heavy static assets directly from NGINX
     # location /assets/ {
     #     alias /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/assets/;
+    #     alias /srv/webapps/clients/cuyahogaterravita.com/frontend/assets/;
     # }
 
     # Everything else → shared Flask backend
