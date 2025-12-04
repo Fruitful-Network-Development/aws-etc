@@ -2,52 +2,47 @@
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 import requests
 from flask import Flask, request, jsonify, send_from_directory, abort, redirect, url_for
+
+from data_access import (
+    get_client_paths,
+    get_client_slug,
+    load_client_manifest,
+    load_json,
+    resolve_backend_data_path,
+    save_json,
+)
 from modules.weather import weather_bp
 
 app = Flask(__name__)
 
 
 # -------------------------------------------------------------------
-# Helpers for client-specific frontend behavior
+# Helpers for client-specific frontend behavior backed by msn_<user>.json
 # -------------------------------------------------------------------
 
 def load_client_settings(client_slug: str, paths=None) -> dict:
+    """
+    Load the client manifest from msn_<user>.json and expose the core values
+    the Flask app needs: frontend root, default entry file, and backend data
+    whitelist.
+    """
+
     if paths is None:
         paths = get_client_paths(client_slug)
 
-    config_dir: Path = paths["config_dir"]
-    client_root: Path = paths["client_root"]
+    manifest = load_client_manifest(paths)
 
-    settings_path = config_dir / "settings.json"
-    if not settings_path.exists():
-        raise FileNotFoundError(
-            f"settings.json not found for client {client_slug}: {settings_path}"
-        )
-
-    with settings_path.open("r") as f:
-        settings = json.load(f)
-
-    # Where the frontend lives relative to client_root
-    frontend_dir = paths.get(
-        "frontend_dir",
-        client_root / settings.get("frontend_root", "frontend"),
-    )
+    frontend_dir = manifest["frontend_dir"]
     if not frontend_dir.exists():
         raise FileNotFoundError(
             f"Frontend dir not found for client {client_slug}: {frontend_dir}"
         )
 
-    # Attach handy derived paths onto the settings dict
-    settings["_client_root"] = client_root
-    settings["_config_dir"] = config_dir
-    settings["_frontend_dir"] = frontend_dir
-
-    return settings
+    return manifest
 
 
 def serve_client_file(frontend_root: Path, rel_path: str):
@@ -133,14 +128,50 @@ def proxy_user_data(client_slug, data_filename):
 def profiles(client_slug):
     return redirect(url_for('client_root') + f'?external={client_slug}')
 
+
+@app.route("/api/backend-data/<path:data_filename>", methods=["GET", "PUT"])
+def backend_data(data_filename: str):
+    """Read or write backend data declared in the client's msn_<user>.json."""
+
+    client_slug = get_client_slug(request)
+    paths = get_client_paths(client_slug)
+    settings = load_client_settings(client_slug, paths=paths)
+
+    try:
+        target_path = resolve_backend_data_path(paths, settings, data_filename)
+    except ValueError as exc:
+        return jsonify({"error": "invalid_backend_data", "message": str(exc)}), 400
+
+    if request.method == "GET":
+        if not target_path.exists():
+            abort(404)
+
+        return jsonify(load_json(target_path))
+
+    try:
+        payload = request.get_json(force=True)
+    except Exception:
+        return (
+            jsonify(
+                {
+                    "error": "invalid_json",
+                    "message": "Request body must be valid JSON",
+                }
+            ),
+            400,
+        )
+
+    save_json(target_path, payload)
+    return jsonify({"status": "ok"})
+
 @app.route("/")
 def client_root():
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
     settings = load_client_settings(client_slug, paths=paths)
 
-    rel_path = settings.get("default", "index.html")
-    return serve_client_file(settings["_frontend_dir"], rel_path)
+    rel_path = settings.get("default_entry", "index.html")
+    return serve_client_file(settings["frontend_dir"], rel_path)
 
 
 @app.route("/assets/<path:asset_path>")
@@ -154,7 +185,7 @@ def client_assets(asset_path: str):
     settings = load_client_settings(client_slug, paths=paths)
 
     rel_path = f"assets/{asset_path}"
-    return serve_client_file(settings["_frontend_dir"], rel_path)
+    return serve_client_file(settings["frontend_dir"], rel_path)
 
 
 @app.route("/frontend/<path:static_path>")
@@ -170,7 +201,7 @@ def client_frontend_static(static_path: str):
     paths = get_client_paths(client_slug)
     settings = load_client_settings(client_slug, paths=paths)
 
-    return serve_client_file(settings["_frontend_dir"], static_path)
+    return serve_client_file(settings["frontend_dir"], static_path)
 
 
 @app.route("/<path:filename>")
@@ -198,7 +229,7 @@ def client_catch_all(filename: str):
     if "." not in filename:
         filename = f"{filename}.html"
 
-    return serve_client_file(settings["_frontend_dir"], filename)
+    return serve_client_file(settings["frontend_dir"], filename)
 
 
 @app.route("/api/health")

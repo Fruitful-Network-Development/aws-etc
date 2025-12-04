@@ -1,21 +1,49 @@
 # /srv/webapps/platform/modules/weather.py
 
 """
-Weather module for Flask backend.
+Weather Blueprint exposing a simple Open-Meteo daily forecast API.
 
-This module provides a Flask Blueprint with endpoints for fetching daily weather
-forecast data from the Open-Meteo API. The endpoint is designed to be used by
-any client site in the multi-tenant platform.
+Endpoint contract
+-----------------
+GET /api/weather/daily
 
-REGISTRATION IN app.py:
------------------------
-The Blueprint is already registered in app.py:
+Query parameters:
+- ``lat`` (required, float): latitude in decimal degrees (-90..90)
+- ``lon`` (required, float): longitude in decimal degrees (-180..180)
+- ``days`` (optional, int): forecast days, clamped to 1–16 (default 7)
+- ``past_days`` (optional, int): include up to 92 previous days (default 0)
+
+JSON response (abridged):
+```
+{
+    "latitude": float,
+    "longitude": float,
+    "timezone": "America/New_York",
+    "unit_system": {"precipitation_sum": "mm", ...},
+    "daily": {
+        "time": ["2024-01-01", ...],
+        "temperature_max": [float, ...],
+        "temperature_min": [float, ...],
+        "temperature_mean": [float, ...],
+        "apparent_temperature_max": [float, ...],
+        "apparent_temperature_min": [float, ...],
+        "sunrise": ["2024-01-01T07:45", ...],
+        "sunset": ["2024-01-01T17:12", ...],
+        "precipitation_sum": [float, ...],
+        "windspeed_max": [float, ...],
+        "winddirection_dominant": [int, ...],
+        "uv_index_max": [float, ...]
+    },
+    "source": "open-meteo"
+}
+```
+Arrays in ``daily`` share the same index ordering. The first element covers the
+earliest day returned (today when ``past_days`` is 0).
+
+Registration example in app.py::
 
     from modules.weather import weather_bp
     app.register_blueprint(weather_bp)
-
-This registers the endpoint:
-- GET /api/weather/daily
 """
 
 from __future__ import annotations
@@ -50,57 +78,14 @@ DAILY_VARIABLES = [
 ]
 
 
-@weather_bp.route("/api/weather/daily")
+@weather_bp.route("/api/weather/daily", methods=["GET"])
 def get_daily_weather():
     """
-    Query Open-Meteo for daily forecast + (optional) recent past days.
-
-    This endpoint is multi-tenant compatible and works for any client site.
-    All data is determined by query parameters; no client-specific configuration is used.
-
-    Query parameters:
-        lat (required, float): Latitude in decimal degrees (-90 to 90)
-        lon (required, float): Longitude in decimal degrees (-180 to 180)
-        days (optional, int): Number of forecast days (1-16, default: 7)
-        past_days (optional, int): Number of past days to include (0-92, default: 0)
-
-    Returns:
-        JSON response with the following structure:
-        {
-            "latitude": float,
-            "longitude": float,
-            "timezone": str,  # e.g., "America/New_York"
-            "unit_system": {
-                "temperature_max": "°C",
-                "temperature_min": "°C",
-                "precipitation_sum": "mm",
-                "windspeed_max": "km/h",
-                ...
-            },
-            "daily": {
-                "time": [str, ...],  # ISO date strings, e.g., ["2024-01-01", "2024-01-02", ...]
-                "temperature_max": [float, ...],  # Max temperatures in °C
-                "temperature_min": [float, ...],  # Min temperatures in °C
-                "temperature_mean": [float, ...],  # Mean temperatures in °C
-                "apparent_temperature_max": [float, ...],  # Apparent max temperatures in °C
-                "apparent_temperature_min": [float, ...],  # Apparent min temperatures in °C
-                "sunrise": [str, ...],  # ISO datetime strings
-                "sunset": [str, ...],  # ISO datetime strings
-                "precipitation_sum": [float, ...],  # Precipitation in mm
-                "windspeed_max": [float, ...],  # Max wind speed in km/h
-                "winddirection_dominant": [int, ...],  # Wind direction in degrees (0-360)
-                "uv_index_max": [float, ...]  # Max UV index
-            },
-            "source": "open-meteo"
-        }
-
-        All arrays in "daily" have the same length and are aligned by index.
-        The first element (index 0) represents the first day (today if past_days=0,
-        or the earliest past day if past_days > 0).
+    Query Open-Meteo for daily forecast data (optionally including recent past days).
 
     Error responses:
-        400: Invalid or missing query parameters
-        502: Upstream weather API request failed
+        400: missing/invalid query parameters
+        502: upstream weather API failure
     """
     # Validate required parameters: lat and lon
     lat_param = request.args.get("lat")
