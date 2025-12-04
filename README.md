@@ -65,21 +65,28 @@ echo "=== Deployment of srv complete."
 #!/bin/bash
 set -euo pipefail
 
-# Resolve project root as directory above this script
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-SRC="$PROJECT_ROOT/srv/"
-DST="/srv/"
+SRC="$PROJECT_ROOT/etc/nginx/"
+DST="/etc/nginx/"
 
-echo "=== Deploying srv → $DST"
+echo "=== Deploying etc/nginx → $DST"
 echo "Source: $SRC"
 echo
 
-# WARNING: --delete removes files in /srv that are not in repo/srv
+# WARNING: --delete removes files under /etc/nginx that are not in repo/etc/nginx
 sudo rsync -az --delete "$SRC" "$DST"
 
 echo
-echo "=== Deployment of srv complete."
+echo "=== Testing nginx configuration..."
+sudo nginx -t
+
+echo
+echo "=== Reloading nginx..."
+sudo systemctl reload nginx
+
+echo
+echo "=== Deployment of etc/nginx complete."
 ```
 
 ### update_code.sh
