@@ -1,7 +1,10 @@
 {
   "MSS": {
-    "MSN": "32357767435",
-
+  "frontend_root": "frontend",
+  "default_entry": "index.html",
+  "backend_data": [
+    "backend_data.json"
+  ]
     "compendium": {
       "title": "Compendium",
       "profile": {
