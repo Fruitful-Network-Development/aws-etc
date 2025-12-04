@@ -1,0 +1,57 @@
+<!-- MAIN CONTENT AREA: 3 COLUMNS -->
+<section class="section-block main-columns" style="margin-top: 0.75rem; padding: 0.75rem 1rem;">
+
+  <div class="columns" style="display: flex;">
+
+    <!-- LEFT COLUMN: date -->
+    <article class="col col-left" style="width: calc((100vw / 22) * 4);">
+      <div class="meta-column" style="display: flex; justify-content: flex-start; align-items: flex-start;">
+        <span id="current-date" class="meta-date" style="font-size: 0.85rem;"></span>
+      </div>
+    </article>
+
+    <!-- MIDDLE COLUMN: index + name + divider + 2 inner columns -->
+    <article class="col col-middle" style="width: calc((100vw / 22) * 12);">
+
+      <!-- index + name -->
+      <div class="meta-bar" style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+        <button class="meta-index-btn" type="button" style="background: none; border: none; padding: 0; cursor: pointer;">
+          <img src="/assets/icons/index.png" alt="Index" style="height: 20px; width: auto;">
+        </button>
+        <span class="meta-name" data-slot="compendium.profile.name" style="font-size: 0.9rem;">Dylan Montgomery</span>
+      </div>
+
+      <!-- Divider inside middle column -->
+      <div class="meta-bar-divider" style="height: 1px; width: 100%; background-color: #898f96; margin-bottom: 1.2rem;"></div>
+
+      <!-- Inner 2-column content region (main + compendium) -->
+      <div class="middle-columns" style="display: flex; gap: 1.5rem;">
+
+        <!-- MAIN CONTENT COLUMN (Oeuvre + Anthology) -->
+        <article class="middle-main" style="flex: 5;">
+
+          <!-- Oeuvre placeholder -->
+          <div id="oeuvre-placeholder"></div>
+
+          <!-- Anthology placeholder -->
+          <div id="anthology-placeholder"></div>
+
+        </article>
+
+        <!-- SECOND INNER COLUMN: COMPENDIUM BOX -->
+        <aside class="middle-compendium" style="flex: 2;">
+
+          <!-- Compendium placeholder -->
+          <div id="compendium-placeholder"></div>
+
+        </aside>
+      </div>
+    </article>
+
+    <!-- RIGHT COLUMN: reserved / empty for now -->
+    <article class="col col-right" style="width: calc((100vw / 22) * 4);">
+      <!-- Empty column (placeholder for future content) -->
+    </article>
+
+  </div>
+</section>
