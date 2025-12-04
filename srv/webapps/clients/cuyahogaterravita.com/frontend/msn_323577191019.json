@@ -1,10 +1,13 @@
 {
   "MSS": {
   "frontend_root": "frontend",
-  "default": "index.html",
-  "backend_data": {
-    
-  }
+  "default_entry": "index.html",
+  "backend_data": [
+    "crop_rotation_groups.json",
+    "local_domain.json",
+    "product_type_crop.json",
+    "taxonomy_domain.json"
+  ]
     "compendium": {
       "title": "Compendium",
       "profile": {
