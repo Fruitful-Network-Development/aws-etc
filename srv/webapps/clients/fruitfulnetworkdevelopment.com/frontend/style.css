@@ -1,0 +1,166 @@
+/* /srv/webapps/clients/fruitfulnetworkdevelopment.com/frontend/style.css */
+/* Global styles only - component-specific styles are inline in component HTML files */
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE LAYOUT
+========================= */
+body {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: #101418;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Side margins (1/22 each) */
+.margin-left,
+.margin-right {
+  background-color: #202122;
+  width: calc(100vw / 22);
+}
+
+/* Center content strip (20/22) */
+.content-area {
+  background-color: #101418;
+  width: calc((100vw / 22) * 20);
+  min-height: 100vh;
+}
+
+/* Header is top-adjacent */
+.content-inner {
+  padding-top: 0;
+}
+
+/* Shared section wrapper so stacked sections don't touch each other */
+.section-block {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+/* First section flush to top */
+.page-header.section-block {
+  margin-top: 0;
+}
+
+/* Generic hidden utility */
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* lock scroll when overlay open */
+body.overlay-open {
+  overflow: hidden;
+}
+
+/* Search input placeholder color */
+.search-input::placeholder {
+  color: #898f96;
+}
+
+/* =========================
+   RESPONSIVE: TABLET & DOWN
+   (stack main columns, drop side bars)
+========================= */
+@media (max-width: 900px) {
+  body {
+    display: block; /* don't force the left/right margin columns */
+  }
+
+  .margin-left,
+  .margin-right {
+    display: none;  /* hide the side strips on smaller screens */
+  }
+
+  .content-area {
+    width: 100vw;   /* use full width on small devices */
+    min-height: auto;
+  }
+
+  .content-inner {
+    padding: 0.75rem 0.75rem 1.5rem;
+  }
+
+  /* Stack the three big columns (left, middle, right) vertically */
+  .columns {
+    flex-direction: column;
+  }
+
+  .col-left,
+  .col-middle,
+  .col-right {
+    width: 100%;
+  }
+
+  /* Inner middle columns (Oeuvre/Anthology vs Compendium) also stack */
+  .middle-columns {
+    flex-direction: column;
+  }
+
+  .middle-main,
+  .middle-compendium {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Anthology grid: go from 3 → 2 columns */
+  .anthology-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Responsive overlay */
+  .anthology-main {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr) !important;
+  }
+
+  .anth-arrow-prev {
+    left: 14px !important;
+  }
+
+  .anth-arrow-next {
+    right: 14px !important;
+  }
+}
+
+/* =========================
+   RESPONSIVE: PHONE
+   (narrow screens)
+========================= */
+@media (max-width: 600px) {
+  /* Header: stack logo + title/search vertically */
+  .header-main-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Meta bar spacing and text sizing */
+  .meta-bar {
+    gap: 0.4rem;
+  }
+
+  .meta-name {
+    font-size: 0.85rem;
+  }
+
+  /* Anthology grid: single column on very small screens */
+  .anthology-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Slightly tighter padding on sections */
+  .section-block {
+    padding: 0.6rem 0.7rem;
+  }
+}
