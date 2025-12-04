@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mycite-fnd</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -15,282 +15,30 @@
   <main class="content-area">
     <div class="content-inner">
 
-      <!-- HEADER (top-adjacent) -->
-      <header class="page-header section-block">
-        <div class="header-main-row">
-          <img src="/assets/menu.png" class="header-icon" alt="Menu">
+      <!-- HEADER PLACEHOLDER -->
+      <div id="header-placeholder"></div>
 
-          <img src="/assets/logo.png" class="header-logo" alt="Logo">
-
-          <div class="header-title-group">
-            <span class="header-title">Mycite Network</span>
-            <span class="header-subtitle">Fruitful Network Development</span>
-          </div>
-
-          <form class="header-search" onsubmit="return false;">
-            <input type="text" class="search-input" placeholder="Search">
-            <button type="submit" class="search-button">Search</button>
-          </form>
-        </div>
-      </header>
-
-      <!-- MAIN CONTENT AREA: 3 COLUMNS -->
-      <section class="section-block main-columns">
-
-        <div class="columns">
-
-          <!-- LEFT COLUMN: date -->
-          <article class="col col-left">
-            <div class="meta-column">
-              <span id="current-date" class="meta-date"></span>
-            </div>
-          </article>
-
-          <!-- MIDDLE COLUMN: index + name + divider + 2 inner columns -->
-          <article class="col col-middle">
-
-            <!-- index + name -->
-            <div class="meta-bar">
-              <button class="meta-index-btn" type="button">
-                <img src="/assets/index.png" alt="Index">
-              </button>
-              <span class="meta-name" data-slot="compendium.profile.name">Dylan Montgomery</span>
-            </div>
-
-            <!-- Divider inside middle column -->
-            <div class="meta-bar-divider"></div>
-
-            <!-- Inner 2-column content region (main + compendium) -->
-            <div class="middle-columns">
-
-              <!-- MAIN CONTENT COLUMN (Oeuvre + Anthology) -->
-              <article class="middle-main">
-
-                <!-- Oeuvre -->
-                <section class="oeuvre-section">
-                  <div class="oeuvre-title" data-slot="dossier.oeuvre.title">Oeuvre</div>
-                  <div class="oeuvre-textbox" data-slot="dossier.oeuvre.paragraphs">
-                    <p>Loading...</p>
-                  </div>
-                </section>
-
-                <!-- ANTHOLOGY SECTION -->
-                <section class="anthology-section">
-                  <div class="sub-divider"></div>
-                  <div class="anthology-title" data-slot="dossier.anthology.title">Anthology</div>
-
-                  <div class="anthology-grid" data-slot="dossier.anthology.blocks">
-                    <!-- JS will inject .anthology-box items here -->
-                  </div>
-                </section>
-
-              </article>
-
-              <!-- SECOND INNER COLUMN: COMPENDIUM BOX -->
-              <aside class="middle-compendium">
-                <div class="block-title" data-slot="compendium.title">Compendium</div>
-
-                <div class="block-rect">
-
-                  <!-- SECTION 0: TOP IMAGE GRID (now a comp-section) -->
-                  <section class="comp-section comp-section--grid compendium-top">
-                    <!-- LEFT 2/5: 3 stacked small images -->
-                    <div class="comp-left">
-                      <div class="comp-img comp-small">
-                        <img src="/assets/comp-1.png" alt="Compendium item 1">
-                      </div>
-                      <div class="comp-img comp-small">
-                        <img src="/assets/comp-2.png" alt="Compendium item 2">
-                      </div>
-                      <div class="comp-img comp-small">
-                        <img src="/assets/comp-3.png" alt="Compendium item 3">
-                      </div>
-                    </div>
-
-                    <!-- RIGHT 3/5: 2 larger images -->
-                    <div class="comp-right">
-                      <div class="comp-img comp-large">
-                        <img src="/assets/comp-4.png" alt="Compendium item 4">
-                      </div>
-                      <div class="comp-img comp-large">
-                        <img src="/assets/comp-5.png" alt="Compendium item 5">
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- SECTION 1: PROFILE CARD -->
-                  <section class="comp-section comp-profile">
-                    <div class="comp-profile-left">
-                      <div class="comp-img comp-small">
-                        <!-- avatar is user-specific -->
-                        <img data-slot="compendium.profile.avatar"
-                             src="/assets/profile-main.png"
-                             alt="Profile main">
-                      </div>
-                    </div>
-
-                    <div class="comp-profile-right">
-                      <div class="comp-profile-name" data-slot="compendium.profile.name">
-                        Dylan Montgomery
-                      </div>
-                      <div class="comp-profile-handle" data-slot="compendium.profile.handleLine">
-                        dylcmonty • he/him
-                      </div>
-
-                      <div class="comp-profile-bottom-row">
-                        <div class="comp-img comp-micro">
-                          <!-- micro icon can also be overridden but defaults to framework asset -->
-                          <img data-slot="compendium.profile.micro_icon"
-                               src="/assets/profile-micro.png"
-                               alt="Profile micro icon">
-                        </div>
-                        <div class="comp-profile-link"
-                             data-slot="compendium.profile.displayHandle">
-                          @Fruitful-Network-Development
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- SECTION 2: LINKS -->
-                  <section class="comp-section comp-links">
-                    <div class="comp-link-row">
-                      <div class="comp-img comp-micro">
-                        <img src="/assets/location-icon.png" alt="Location">
-                      </div>
-                      <span class="comp-link-text"
-                            data-slot="compendium.profile.location">
-                        Cuyahoga Valley
-                      </span>
-                    </div>
-
-                    <div class="comp-link-row">
-                      <div class="comp-img comp-micro">
-                        <img src="/assets/linkedin-icon.png" alt="LinkedIn">
-                      </div>
-                      <span class="comp-link-text"
-                            data-slot="compendium.profile.linkedin">
-                        in/dylan-montgomery-352813196
-                      </span>
-                    </div>
-                  </section>
-
-                  <!-- SECTION 3: ORGANIZATIONS -->
-                  <section class="comp-section comp-orgs">
-                    <div class="comp-orgs-title">Organizations</div>
-                    <ul class="comp-orgs-list" data-slot="compendium.organizations">
-                      <li>Loading...</li>
-                    </ul>
-                  </section>
-
-                </div>
-              </aside>
-            </div>
-          </article>
-
-          <!-- RIGHT COLUMN: reserved / empty for now -->
-          <article class="col col-right">
-            <!-- Empty column (placeholder for future content) -->
-          </article>
-
-        </div>
-      </section>
+      <!-- BODY PLACEHOLDER -->
+      <div id="body-placeholder"></div>
 
     </div>
   </main>
 
   <div class="margin-right"></div>
 
-  <!-- =========================
-       ANTHOLOGY OVERLAY WIDGET
-       (opens when an anthology tile is clicked)
-  ========================== -->
-  <div class="anthology-overlay is-hidden" id="anthology-overlay">
-    <div class="anthology-shell">
+  <!-- OVERLAY PLACEHOLDER -->
+  <div id="overlay-placeholder"></div>
 
-      <!-- URL / toolbar row -->
-      <header class="anthology-toolbar">
-        <div class="anthology-url-wrapper">
-          <div class="anthology-url-bar">
-            <div class="anthology-url-icon">
-              <!-- globe / site icon -->
-              <img src="/assets/overlay-globe.png" alt="Site icon">
-            </div>
-            <span class="anthology-url-text" id="anthology-overlay-url">
-              <!-- filled by JS with block.target -->
-              http://fruitfulnetworkdevelopment.com/
-            </span>
-          </div>
-
-          <!-- follow-link button (image only, behavior can be added later) -->
-          <button class="overlay-icon-btn" type="button">
-            <img src="/assets/overlay-follow-link.png" alt="Follow link">
-          </button>
-        </div>
-      </header>
-
-      <!-- Main body: left canvas + right meta card -->
-      <section class="anthology-main">
-        <!-- Left: large white canvas / thumbnail -->
-        <div class="anthology-canvas-wrapper">
-          <div class="anthology-canvas" id="anthology-overlay-canvas">
-            <!-- background or thumbnail image is controlled via JS/CSS -->
-          </div>
-        </div>
-
-        <!-- Right: meta/info panel -->
-        <aside class="anthology-meta">
-          <div class="anthology-meta-card">
-            <h2 class="anthology-meta-title" id="anthology-overlay-title">
-              Anthology item
-            </h2>
-
-            <p class="anthology-meta-description" id="anthology-overlay-description">
-              More information about this entry will go here as the data model evolves.
-            </p>
-
-            <dl class="anthology-meta-details">
-              <div>
-                <dt>Type</dt>
-                <dd id="anthology-overlay-kind">—</dd>
-              </div>
-              <div>
-                <dt>Target</dt>
-                <dd id="anthology-overlay-target-label">—</dd>
-              </div>
-            </dl>
-
-            <div class="anthology-meta-buttons">
-              <button class="meta-btn-pill" type="button">
-                <img src="/assets/overlay-view.png" alt="View">
-              </button>
-              <button class="meta-btn-pill" type="button">
-                <img src="/assets/overlay-actions.png" alt="Actions">
-              </button>
-            </div>
-          </div>
-
-          <!-- lower reserved region (empty for now, matches mock) -->
-          <div class="anthology-meta-lower"></div>
-        </aside>
-      </section>
-
-      <!-- Close + nav arrows -->
-      <button class="anthology-close" id="anthology-overlay-close" type="button">
-        <img src="/assets/overlay-close.png" alt="Close overlay">
-      </button>
-
-      <button class="anthology-arrow anth-arrow-prev" id="anthology-overlay-prev" type="button">
-        <img src="/assets/overlay-arrow-left.png" alt="Previous item">
-      </button>
-
-      <button class="anthology-arrow anth-arrow-next" id="anthology-overlay-next" type="button">
-        <img src="/assets/overlay-arrow-right.png" alt="Next item">
-      </button>
-    </div>
-  </div>
-
-  <script src="/app.js"></script>
-  <script src="/script.js"></script>
+  <!-- Core injection scripts -->
+  <script src="/html_injection.js"></script>
+  <script src="/data_injection.js"></script>
+  
+  <!-- Component scripts -->
+  <script src="/header/header.js"></script>
+  <script src="/body/body.js"></script>
+  <script src="/oeuvre/oeuvre.js"></script>
+  <script src="/anthology/anthology.js"></script>
+  <script src="/compendium/compendium.js"></script>
+  <script src="/overlay/overlay.js"></script>
 </body>
 </html>
