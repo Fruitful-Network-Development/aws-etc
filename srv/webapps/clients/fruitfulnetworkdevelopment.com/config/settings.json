@@ -1,5 +1,0 @@
-{
-  "frontend_root": "frontend",
-  "default": "index.html",
-  "backend_data_file": "backend_data.json"
-}
