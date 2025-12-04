@@ -2,9 +2,11 @@
   "MSS": {
   "frontend_root": "frontend",
   "default_entry": "index.html",
+  "backend_data": [],
   "backend_data": [
     "backend_data.json"
-  ]
+  ],
+  "FND": {
     "compendium": {
       "title": "Compendium",
       "profile": {
@@ -82,3 +84,4 @@
     }
   }
 }
+  
