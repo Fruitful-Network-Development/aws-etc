@@ -1,6 +1,6 @@
 # awsDev
 
-## Overview
+## OVERVIEW
 
 ### Server environment
 - AWS EC2 instance running Debian.
@@ -33,10 +33,11 @@
     - ├── nginx.conf
     - ├── mime.types
     - ├── sites-available/
-      - ├── fruitfulnetworkdevelopment.com.conf
-      - └── fruitfulnetwork.com.conf
-    - └── sites-enabled/
+      - ├── cuyahogaterravita.com.conf
       - └── fruitfulnetworkdevelopment.com.conf
+    - └── sites-enabled/
+      - ├── cuyahogaterravita.com.conf -> ../sites-available/cuyahogaterravita.com.conf
+      - └── fruitfulnetworkdevelopment.com.conf -> ../sites-available/fruitfulnetworkdevelopment.com.conf
 - ├── /srv/webapps
   - ├── platform/
     - ├── app.py
@@ -60,7 +61,7 @@
 
 ---
 
-## Two Layers of Standardization
+## TWO LAYERS OF STANDARDIZATION
 
 ## Server standardization (EC2 + Nginx + Flask world)
 - For every client under /srv/webapps/clients/<domain>/frontend/:
@@ -106,7 +107,52 @@ This is why it’s important that:
 
 ---
 
-## Matenance Scipts
+## IMPLEMENT MSN STANDARDIZATION
+Implement a unified multi-client architecture where each client website is identified only by an msn_<userId>.json file and a universal index.html that contains MSN metadata. Flask should handle all client sites uniformly, using the msn_<userId>.json naming convention to locate the correct config for each domain.
+
+### Key Requirements:
+#### 1. Each client directory contains exactly one config file named:
+   `msn_<userId>.json`
+
+#### 2. Each client contains a universal index.html that:
+   - Is generated from one template
+   - Embeds MSN metadata:
+       `<meta name="msn-id" content="<userId>">`
+       `<meta name="msn-config" content="msn_<userId>.json">`
+   - Unified JSON Configuration:
+       All client-specific settings that were previously in a separate `settings.json` should now be included directly in the `msn_<userId>.json file.`
+       The universal index.html should reference the `msn_<userId>.json` file for all configuration, making that JSON file the single source of truth.
+
+#### 3. Flask backend should:
+   - On startup, scan each client directory for `msn_<userId>.json`
+   - Extract `userId` from filename
+   - Build an in-memory lookup table:
+       domain → {user_id, frontend_path, msn_filename}
+   - Expose consistent API endpoints for returning the MSN JSON file based on `userId`
+   - Use the request Host header (or provided `userId`) to determine which client a request belongs to
+
+#### 4. Frontend JS (build.js):
+   - Reads `<meta name="msn-id">` or `window.MSN_CONFIG`
+   - Fetches the correct `msn_<userId>.json` from either same-origin or `/api/msn/<userId>.json`
+   - Dynamically renders the client site
+
+#### 5. Codex should generate:
+   - Flask discovery code
+   - Flask API routing code
+   - The template for universal index.html
+   - Functions for extracting userId from filename
+   - Error handling for missing or multiple MSN files
+
+#### Instructions for Codex:
+- Do NOT worry about Nginx configuration or filesystem hierarchy; infer from repository.
+- Implement scan, map, and API endpoints `inside app.py` or modules referenced by it.
+- Provide clean, modular code.
+- Assume `index.html` is generated from a template, but show the template.
+- Ensure dynamic rendering logic is compatible with a shared build.js.
+
+---
+
+## MATENANCE SCRIPTS
 
 ### deploy_srv.sh
 ```bash
@@ -194,7 +240,7 @@ echo "=== Full deploy (srv + nginx) complete."
 
 ---
 
-## Mycite Profile Framework
+## MYCITE PROFILE FRAMEOWKORK
 
 This format is deliberately designed so that:
 1. Any website can embed or access a standardized version of a user’s profile.
@@ -225,7 +271,7 @@ separation of content and representation, enabling multi-context identity displa
 
 ---
 
-## Further Envirorment Notes
+## FURTHER ENVIORMENT NOTES
 
 ### Root
 
@@ -260,33 +306,6 @@ drwxrwxr-x 3 admin admin 4096 Dec  3 21:35 etc
 drwxrwxr-x 2 admin admin 4096 Dec  4 02:33 scripts
 drwxrwxr-x 3 admin admin 4096 Dec  3 21:35 srv
 ```
-
-## Possible Ideas
-
-### Mycite Profile Directory — Idea of Operation
-The **Fruitful Network Development** site could act as a **central profile directory** that can display Mycite profiles from any client website. Each client site exposes a standardized `msn_<user_id>.json`, which the directory loads and renders inside the Mycite layout.
-- Every Mycite-capable domain must publish `https://<client>/msn_<user_id>.json` using the shared schema.
-- Then the Fruitful Network Development website reloads the same universal index.html with build.js, but using called profile JSON file.
-
-### Objectives and Design Principles
-
-- Separation of Content and Layout
-    - All content is stored structurally in JSON.
-    - The Mycite view and free-form site are merely renderers.
-- Interoperability and Portability
-    - Any host that understands the schema can generate a valid profile.
-    - This creates a “portable identity page” across contexts.
-- Extendability
-    - Add new sections to the JSON without breaking the Mycite viewer.
-- Neutral Standardization
-    The Mycite layout is intentionally simple and standardized:
-    - predictable typography
-    - consistent left/right column structure
-    - accessible and portable design
-- Creative Freedom
-    - The free-form website allows unrestricted design while still pulling accurate profile information.
-
----
 
 ## License
 
