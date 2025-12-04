@@ -6,6 +6,7 @@
 - ├── /ect 
   - └── nginx/
     - ├── nginx.conf
+    - ├── mime.types
     - ├── sites-available/
       - ├── fruitfulnetworkdevelopment.com.conf
       - └── fruitfulnetwork.com.conf
