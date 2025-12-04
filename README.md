@@ -57,7 +57,6 @@ sudo rsync -az --delete "$SRC" "$DST"
 
 echo
 echo "=== Deployment of srv complete."
-EOF
 ```
 
 ### deploy_nginx.sh
@@ -81,7 +80,6 @@ sudo rsync -az --delete "$SRC" "$DST"
 
 echo
 echo "=== Deployment of srv complete."
-EOF
 ```
 
 ### update_code.sh
@@ -96,7 +94,6 @@ cd "$PROJECT_ROOT"
 echo "=== Updating git repository in $PROJECT_ROOT ..."
 git pull --ff-only
 echo "=== Git update complete."
-EOF
 ```
 
 ### deploy_all.sh
@@ -114,7 +111,6 @@ cd "$PROJECT_ROOT"
 
 echo
 echo "=== Full deploy (srv + nginx) complete."
-EOF
 ```
 
 ---
