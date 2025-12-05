@@ -38,9 +38,3 @@ scripts/                 # Deployment helpers (update_code, deploy_srv, deploy_n
 ## Deployment
 - Use `scripts/update_code.sh` to pull new commits.
 - Use `scripts/deploy_srv.sh` and `scripts/deploy_nginx.sh` (or `deploy_all.sh`) to restart the Flask app and reload Nginx.
-
-## Additional documentation
-- Architecture and MSN standard details: `docs/architecture.md`
-- Deployment helper notes: `scripts/README.md`
-- Mycite profile framework rationale: `docs/mycite.md`
-- Ops snapshots (reference only): `docs/ops-notes.md`
