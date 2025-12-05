@@ -1,33 +1,28 @@
 {
   "MSS": {
-  "frontend_root": "frontend",
-  "default_entry": "index.html",
-  "backend_data": [
-    "backend_data.json"
-  ],
+    "frontend_root": "frontend",
+    "default_entry": "index.html",
+    "backend_data": [
+      "backend_data.json"
+    ],
     "compendium": {
       "title": "Compendium",
       "profile": {
         "name": "Dylan Montgomery",
         "username": "dylcmonty",
         "pronouns": "he/him",
-
         "handleLine": "dylcmonty • he/him",
-
         "avatar": "/assets/imgs/profile-main.png",
         "micro_icon": "/assets/imgs/profile-micro.png",
-
         "displayHandle": "@Fruitful-Network-Development",
         "location": "Cuyahoga Valley",
         "linkedin": "in/dylan-montgomery-352813196"
       },
-
       "organizations": [
         "Fruitful Network Development",
         "Major"
       ]
     },
-
     "dossier": {
       "oeuvre": {
         "title": "Oeuvre",
@@ -38,7 +33,6 @@
           "I like to think my most unique/particular work skill is being able to see the potential in change and being able to bring that potential to life. Accomplishing that is always a challenge because the path is always uncertain, but the key to success is finding joy in the process. If you can do that, anything is possible."
         ]
       },
-
       "anthology": {
         "title": "Anthology",
         "blocks": [

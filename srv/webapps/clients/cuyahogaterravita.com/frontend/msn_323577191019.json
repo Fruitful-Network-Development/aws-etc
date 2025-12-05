@@ -1,41 +1,36 @@
 {
   "MSS": {
-  "frontend_root": "frontend",
-  "default_entry": "index.html",
-  "backend_data": [
-    "crop_rotation_groups.json",
-    "local_domain.json",
-    "product_type_crop.json",
-    "taxonomy_domain.json"
-  ]
+    "frontend_root": "frontend",
+    "default_entry": "index.html",
+    "backend_data": [
+      "crop_rotation_groups.json",
+      "local_domain.json",
+      "product_type_crop.json",
+      "taxonomy_domain.json"
+    ],
     "compendium": {
       "title": "Compendium",
       "profile": {
         "name": "Mark Trapp",
         "username": "marktrapp",
         "pronouns": "he/him",
-
-        "handleLine": "marktrapp • he/him",
-
+        "handleLine": "marktrapp \u2022 he/him",
         "avatar": "assets/profile-main.png",
         "micro_icon": "assets/profile-micro.png",
-
         "displayHandle": "@Cuyahoga-Terra-Vita",
         "location": "Cuyahoga Valley",
         "instagram": "cuyahogaterravita"
       },
-
-        "organizations": [
+      "organizations": [
         "Cuyahoga Terra Vita",
         "CVNP Countryside Conservancy"
       ]
     },
-
     "dossier": {
       "oeuvre": {
         "title": "Oeuvre",
         "paragraphs": [
-          "I began my professional life as a mechanical engineer, but over time I found myself increasingly uneasy about the broader systems I was participating in, especially the industrial food and energy systems. Reading The Omnivore’s Dilemma by Michael Pollan was a turning point for me. It opened my eyes to the environmental and human costs of industrial agriculture and sparked a conviction that I needed to become part of a local solution. In 2010, I made the leap: I left North Carolina, moved to Northeast Ohio, and committed myself to learning how to farm in a way that aligned with my values.",
+          "I began my professional life as a mechanical engineer, but over time I found myself increasingly uneasy about the broader systems I was participating in, especially the industrial food and energy systems. Reading The Omnivore\u2019s Dilemma by Michael Pollan was a turning point for me. It opened my eyes to the environmental and human costs of industrial agriculture and sparked a conviction that I needed to become part of a local solution. In 2010, I made the leap: I left North Carolina, moved to Northeast Ohio, and committed myself to learning how to farm in a way that aligned with my values.",
           "In 2012, my wife, Emily, and I were selected to join the Countryside Initiative, a program that leases historic farmsteads within Cuyahoga Valley National Park to farmers pursuing sustainable agriculture. That opportunity became the foundation of Trapp Family Farm, our 30-acre operation in Peninsula, Ohio. While Emily works full-time as a registered nurse, I manage the day-to-day responsibilities of the farm, from livestock care to field work to direct sales. It is demanding work, often twelve-hour days in every kind of weather, but despite the physical challenge, nothing in my life has ever felt so right.",
           "A defining aspect of my farming philosophy is my commitment to low-impact, horse-powered agriculture. I have chosen not to use tractors for field work, relying instead on our draft horses, including Doc and Dan in the early days, to plow, cultivate, and haul. Horses, to me, offer a kind of partnership and longevity that machines cannot match; they age better than a tractor, and the quality of the work they do creates healthier soil. Across the farm, we focus on regenerative practices such as rotational grazing, moving our chickens, pigs, and cattle frequently to mimic natural ecosystems and build fertility. We avoid synthetic fertilizers, herbicides, and pesticides entirely. I believe deeply that good food is a form of medicine, and that tending the land responsibly is part of healing both our community and the planet.",
           "Life on the farm is very much a family endeavor. Emily and I are raising two daughters here, and the rhythms of the farm shape our days together. The work can be grueling, but it also offers an uncommon clarity of purpose. Each season reinforces why we chose this path.",
@@ -43,7 +38,6 @@
           "Today, as the owner and operator of Trapp Family Farm, I continue to work toward a model of agriculture that respects land, animals, and people. Every day is an opportunity to refine that mission and to contribute, in my own small way, to a healthier and more resilient food system."
         ]
       },
-
       "anthology": {
         "title": "Anthology",
         "blocks": [
