@@ -4,7 +4,7 @@
 #
 # Purpose:
 #   Audits NGINX configuration files to ensure alignment with the actual
-#   application deployment structure under /srv/webapps. This script identifies
+#   application deployment structure under /srv/webapps/platform. This script identifies
 #   configuration mismatches, security issues, and best practice violations.
 #
 # Usage:
@@ -40,7 +40,7 @@ NGINX_CONFIG_DIR="/etc/nginx"
 NGINX_SITES_AVAILABLE="$NGINX_CONFIG_DIR/sites-available"
 NGINX_SITES_ENABLED="$NGINX_CONFIG_DIR/sites-enabled"
 NGINX_MAIN_CONFIG="$NGINX_CONFIG_DIR/nginx.conf"
-WEBAPP_ROOT="/srv/webapps"
+WEBAPP_ROOT="/srv/webapps/platform"
 REPORT_HEADER="=== NGINX CONFIGURATION AUDIT ==="
 
 # Function to print section headers
