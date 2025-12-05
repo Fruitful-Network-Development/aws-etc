@@ -189,7 +189,7 @@ echo ""
 
 # Check for common Flask application files
 if [ -f "$WEBAPP_ROOT/app.py" ] || [ -f "$WEBAPP_ROOT/application.py" ] || [ -f "$WEBAPP_ROOT/wsgi.py" ]; then
-    print_info "Flask /srv/webappsapplication entry point found"
+    print_info "Flask application entry point found"
 else
     print_warning "No standard Flask entry point found (app.py, application.py, or wsgi.py)"
 fi
