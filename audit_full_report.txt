@@ -1,0 +1,239 @@
+
+============================================================
+[1mAUDIT EXECUTION SUMMARY[0m
+============================================================
+This comprehensive audit will check:
+  1. File permissions and ownership
+  2. NGINX configuration alignment
+  3. Systemd service configurations
+
+
+============================================================
+[1mRunning: File Permissions Audit[0m
+============================================================
+=== FILE PERMISSIONS AND OWNERSHIP AUDIT ===
+Audit Date: Fri Dec  5 20:31:46 UTC 2025
+Target Directory: /srv/webapps/platform
+
+
+==========================================
+Directory Ownership Analysis
+==========================================
+Checking ownership of /srv/webapps/platform and subdirectories...
+
+
+==========================================
+File Ownership and Permissions Analysis
+==========================================
+Scanning files in /srv/webapps/platform...
+
+
+==========================================
+Sensitive Files Check
+==========================================
+Checking for configuration files, secrets, and sensitive data...
+
+
+==========================================
+SetUID/SetGID Bit Check
+==========================================
+Checking for files with setuid or setgid bits set...
+
+
+==========================================
+Summary Statistics
+==========================================
+Collecting summary statistics...
+
+Total files: 8
+Total directories: 2
+Files owned by root: 0
+Directories owned by root: 0
+
+
+==========================================
+Application Structure Check
+==========================================
+Verifying expected Flask application structure...
+
+[0;32mINFO:[0m Flask application entry point found
+[1;33mWARNING:[0m No Python dependencies file found (requirements.txt or Pipfile)
+[1;33mWARNING:[0m No virtual environment directory found (venv, .venv, or env)
+
+=== AUDIT COMPLETE ===
+Review the findings above and address any security concerns manually.
+[0;32mINFO:[0m File Permissions Audit completed successfully
+
+============================================================
+[1mRunning: NGINX Configuration Audit[0m
+============================================================
+=== NGINX CONFIGURATION AUDIT ===
+Audit Date: Fri Dec  5 20:31:46 UTC 2025
+NGINX Config Directory: /etc/nginx
+Web Application Root: /srv/webapps/platform
+
+
+==========================================
+NGINX Installation Check
+==========================================
+[0;32mINFO:[0m NGINX configuration directory found: /etc/nginx
+
+==========================================
+NGINX Configuration Syntax Check
+==========================================
+[0;31mERROR:[0m NGINX configuration syntax errors detected:
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+==========================================
+Enabled Site Configurations
+==========================================
+[0;32mINFO:[0m Found 3 enabled site configuration(s)
+
+==========================================
+Server Block and Path Analysis
+==========================================
+[0;34mDETAIL:[0m Analyzing: /etc/nginx/sites-available/cuyahogaterravita.com.conf
+[0;32mINFO:[0m Found 2 server block(s) in /etc/nginx/sites-available/cuyahogaterravita.com.conf
+[0;32mINFO:[0m Found proxy_pass directive(s) in /etc/nginx/sites-available/cuyahogaterravita.com.conf (likely Gunicorn configuration)
+[0;34mDETAIL:[0m   Proxy target: http://127.0.0.1:8000
+[0;32mINFO:[0m Found static file location block(s) in /etc/nginx/sites-available/cuyahogaterravita.com.conf
+[0;34mDETAIL:[0m Analyzing: /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+[0;32mINFO:[0m Found 2 server block(s) in /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+[0;32mINFO:[0m Found proxy_pass directive(s) in /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf (likely Gunicorn configuration)
+[0;34mDETAIL:[0m   Proxy target: http://127.0.0.1:8000
+[0;32mINFO:[0m Found static file location block(s) in /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+[0;34mDETAIL:[0m Analyzing: /etc/nginx/nginx.conf
+/home/admin/awsDev/scripts/audit_nginx_config.sh: line 134: [: 0
+0: integer expression expected
+
+==========================================
+Security Configuration Checks
+==========================================
+[1;33mWARNING:[0m server_tokens directive not found in /etc/nginx/sites-available/cuyahogaterravita.com.conf (defaults to ON)
+[0;32mINFO:[0m HTTPS (port 443) listener found in /etc/nginx/sites-available/cuyahogaterravita.com.conf
+[0;32mINFO:[0m SSL certificate file exists: /etc/letsencrypt/live/cuyahogaterravita.com/fullchain.pem
+[1;33mWARNING:[0m server_tokens directive not found in /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf (defaults to ON)
+[0;32mINFO:[0m HTTPS (port 443) listener found in /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf
+[0;32mINFO:[0m SSL certificate file exists: /etc/letsencrypt/live/cuyahogaterravita.com/fullchain.pem
+[1;33mWARNING:[0m server_tokens directive not found in /etc/nginx/nginx.conf (defaults to ON)
+
+==========================================
+Gunicorn Integration Check
+==========================================
+[0;32mINFO:[0m Localhost port reference found: 8000
+[0;34mDETAIL:[0m Verify this matches Gunicorn configuration
+[0;32mINFO:[0m Localhost port reference found: 8000
+[0;34mDETAIL:[0m Verify this matches Gunicorn configuration
+
+==========================================
+Configuration File Permissions
+==========================================
+[1;33mWARNING:[0m Configuration file may be world-readable: /etc/nginx/sites-available/cuyahogaterravita.com.conf (perms: 664, owner: admin)
+[1;33mWARNING:[0m Configuration file may be world-readable: /etc/nginx/sites-available/fruitfulnetworkdevelopment.com.conf (perms: 664, owner: admin)
+[1;33mWARNING:[0m Configuration file may be world-readable: /etc/nginx/nginx.conf (perms: 664, owner: admin)
+
+==========================================
+Summary
+==========================================
+NGINX configuration audit complete.
+Review the findings above and ensure:
+  - All paths point to existing directories
+  - Gunicorn socket/port matches NGINX proxy configuration
+  - Security best practices are followed (HTTPS, server_tokens off, etc.)
+  - Logging is properly configured
+
+=== AUDIT COMPLETE ===
+[0;32mINFO:[0m NGINX Configuration Audit completed successfully
+
+============================================================
+[1mRunning: Systemd Services Audit[0m
+============================================================
+=== SYSTEMD SERVICES AUDIT ===
+Audit Date: Fri Dec  5 20:31:46 UTC 2025
+Systemd System Directory: /etc/systemd/system
+Web Application Root: /srv/webapps/platform
+
+
+==========================================
+Systemd Availability Check
+==========================================
+[0;32mINFO:[0m systemd is available
+
+==========================================
+Gunicorn Service Check
+==========================================
+[0;32mINFO:[0m Found Gunicorn service file: gunicorn-platform.service
+[1;33mWARNING:[0m   Could not determine enable status (may need sudo)
+[1;33mWARNING:[0m   Could not determine active status (may need sudo)
+[0;34mDETAIL:[0m Analyzing service file: /etc/systemd/system/gunicorn-platform.service
+[0;34mDETAIL:[0m   WorkingDirectory: /srv/webapps/platform
+[0;32mINFO:[0m   Working directory exists: /srv/webapps/platform
+[0;32mINFO:[0m   Working directory aligns with webapp root
+[0;34mDETAIL:[0m   ExecStart: /srv/webapps/platform/venv/bin/gunicorn \
+[0;32mINFO:[0m   ExecStart references webapp root
+[1;33mWARNING:[0m   No socket or bind configuration found in ExecStart
+[0;34mDETAIL:[0m   User: admin
+[0;32mINFO:[0m   Service user exists: admin
+[0;34mDETAIL:[0m   Group: www-data
+[0;34mDETAIL:[0m   Environment variables: 1
+
+==========================================
+NGINX Service Check
+==========================================
+[1;33mWARNING:[0m NGINX service unit file not found
+
+==========================================
+Other Application Services Check
+==========================================
+[0;32mINFO:[0m No other obvious application service files found
+
+==========================================
+Service Dependencies Check
+==========================================
+[0;34mDETAIL:[0m Dependencies for gunicorn-platform.service:
+[0;34mDETAIL:[0m   After=network.target
+[1;33mWARNING:[0m No NGINX dependency found in gunicorn-platform.service (Gunicorn should start after NGINX)
+
+==========================================
+Service File Permissions Check
+==========================================
+
+==========================================
+Summary
+==========================================
+Systemd services audit complete.
+Review the findings above and ensure:
+  - Gunicorn service is enabled and running
+  - NGINX service is enabled and running
+  - Service WorkingDirectory matches actual deployment location
+  - Service User is set (not running as root)
+  - Socket paths in service files match NGINX configuration
+  - Service dependencies are properly configured
+
+=== AUDIT COMPLETE ===
+[0;32mINFO:[0m Systemd Services Audit completed successfully
+
+============================================================
+[1mAUDIT SUMMARY[0m
+============================================================
+Audit End Time: Fri Dec  5 20:31:47 UTC 2025
+Total Duration: 1 second(s)
+
+[0;32mINFO:[0m All audits completed successfully
+
+============================================================
+[1mRECOMMENDATIONS[0m
+============================================================
+1. Review all WARNING and ERROR messages above
+2. Verify file ownership matches application user (not root)
+3. Ensure NGINX configuration paths match actual deployment
+4. Confirm Gunicorn socket/port matches NGINX proxy settings
+5. Verify systemd services are enabled and running
+6. Check that sensitive files have restrictive permissions (600 or 640)
+7. Ensure HTTPS is properly configured in NGINX
+8. Verify service dependencies are correctly set
+
+[0;32mINFO:[0m Full audit report saved to: audit_full_report.txt
+============================================================
+[1mAUDIT COMPLETE[0m
+============================================================
