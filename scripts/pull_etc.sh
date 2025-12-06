@@ -8,6 +8,6 @@ cd "$PROJECT_ROOT"
 git pull --ff-only
 
 # Grant execute permissions to the script:
-  # chmod +x update_etc.sh
+  # chmod +x pull_etc.sh
 # Add the script's directory to the system's PATH environment variable by adding the following line to your shell's configuration file:
   # export PATH=$PATH:/aws/aws/GH-aws/scripts
