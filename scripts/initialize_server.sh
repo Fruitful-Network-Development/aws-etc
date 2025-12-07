@@ -5,6 +5,13 @@
 # The user, worker_processes and logging directives in the supplied Nginx configuration mirror typical production settings. The site files from aws-etc/etc/nginx/sites-available proxy /api/ to the Gunicorn server on port 8000 and serve the static front‑end from /srv/webapps/clients/<domain>/frontend.
 # Certbot is configured to automatically modify the Nginx config and will create renewal timers; you can test renewal with certbot renew --dry-run.
 # If you add new modules or blueprints to the Flask application, update requirements.txt or install additional packages within the virtual environment.
+# Create varibles to run:
+# export FND_SECRET_KEY="paste-your-secret-here"
+# export FND_CONTACT_EMAIL="your-email@example.com"
+
+# Then run:
+# sudo -E bash deploy_platform.sh
+
 
 #---------------------------------------------------------------------
 #  Fruitful Network Development – clean server deployment script
