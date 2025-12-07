@@ -28,6 +28,16 @@
 
 set -euo pipefail
 
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+LOG_DIR="${LOG_DIR:-$PROJECT_ROOT/docs}"
+REPORT_FILE="${REPORT_FILE:-$LOG_DIR/audit_nginx_$(date +%Y%m%d_%H%M%S).log}"
+
+mkdir -p "$LOG_DIR"
+
+# Persist output to the audit log while still streaming to stdout for agents in
+# the deployed environment.
+exec > >(tee "$REPORT_FILE") 2>&1
+
 # Color codes for output (if terminal supports it)
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
@@ -35,13 +45,14 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Configuration
-NGINX_CONFIG_DIR="/etc/nginx"
+# Configuration (override with environment variables when needed)
+NGINX_CONFIG_DIR="${NGINX_CONFIG_DIR:-/etc/nginx}"
 NGINX_SITES_AVAILABLE="$NGINX_CONFIG_DIR/sites-available"
 NGINX_SITES_ENABLED="$NGINX_CONFIG_DIR/sites-enabled"
 NGINX_MAIN_CONFIG="$NGINX_CONFIG_DIR/nginx.conf"
-WEBAPP_ROOT="/srv/webapps/platform"
+WEBAPP_ROOT="${WEBAPP_ROOT:-/srv/webapps/platform}"
 REPORT_HEADER="=== NGINX CONFIGURATION AUDIT ==="
+SUDO_BIN="${SUDO_BIN:-$(command -v sudo || true)}"
 
 # Function to print section headers
 print_header() {
@@ -71,10 +82,19 @@ print_detail() {
     echo -e "${BLUE}DETAIL:${NC} $1"
 }
 
+run_with_sudo() {
+    if [ -n "$SUDO_BIN" ]; then
+        "$SUDO_BIN" "$@"
+    else
+        "$@"
+    fi
+}
+
 echo "$REPORT_HEADER"
 echo "Audit Date: $(date)"
 echo "NGINX Config Directory: $NGINX_CONFIG_DIR"
 echo "Web Application Root: $WEBAPP_ROOT"
+echo "Report File: $REPORT_FILE"
 echo ""
 
 # 1. Check if NGINX is installed and config directory exists
@@ -91,12 +111,14 @@ fi
 # 2. Test NGINX configuration syntax
 print_header "NGINX Configuration Syntax Check"
 
-if command -v nginx >/dev/null 2>&1; then
-    if sudo nginx -t 2>&1 | grep -q "syntax is ok"; then
+NGINX_BIN="${NGINX_BIN:-$(command -v nginx || true)}"
+
+if [ -n "$NGINX_BIN" ]; then
+    if run_with_sudo "$NGINX_BIN" -t 2>&1 | grep -q "syntax is ok"; then
         print_info "NGINX configuration syntax is valid"
     else
         print_error "NGINX configuration syntax errors detected:"
-        sudo nginx -t 2>&1 | grep -v "syntax is ok" || true
+        run_with_sudo "$NGINX_BIN" -t 2>&1 | grep -v "syntax is ok" || true
     fi
 else
     print_warning "nginx command not found in PATH (cannot test configuration syntax)"

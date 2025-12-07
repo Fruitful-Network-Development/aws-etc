@@ -29,6 +29,13 @@
 
 set -euo pipefail
 
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+LOG_DIR="${LOG_DIR:-$PROJECT_ROOT/docs}"
+REPORT_FILE="${REPORT_FILE:-$LOG_DIR/audit_services_$(date +%Y%m%d_%H%M%S).log}"
+
+mkdir -p "$LOG_DIR"
+exec > >(tee "$REPORT_FILE") 2>&1
+
 # Color codes for output (if terminal supports it)
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
@@ -37,10 +44,12 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-SYSTEMD_SYSTEM_DIR="/etc/systemd/system"
-SYSTEMD_USER_DIR="$HOME/.config/systemd/user"
-WEBAPP_ROOT="/srv/webapps/platform"
+SYSTEMD_SYSTEM_DIR="${SYSTEMD_SYSTEM_DIR:-/etc/systemd/system}"
+SYSTEMD_USER_DIR="${SYSTEMD_USER_DIR:-$HOME/.config/systemd/user}"
+WEBAPP_ROOT="${WEBAPP_ROOT:-/srv/webapps/platform}"
 REPORT_HEADER="=== SYSTEMD SERVICES AUDIT ==="
+SUDO_BIN="${SUDO_BIN:-$(command -v sudo || true)}"
+SYSTEMCTL_BIN="${SYSTEMCTL_BIN:-$(command -v systemctl || true)}"
 
 # Function to print section headers
 print_header() {
@@ -70,16 +79,25 @@ print_detail() {
     echo -e "${BLUE}DETAIL:${NC} $1"
 }
 
+run_with_sudo() {
+    if [ -n "$SUDO_BIN" ]; then
+        "$SUDO_BIN" "$@"
+    else
+        "$@"
+    fi
+}
+
 echo "$REPORT_HEADER"
 echo "Audit Date: $(date)"
 echo "Systemd System Directory: $SYSTEMD_SYSTEM_DIR"
 echo "Web Application Root: $WEBAPP_ROOT"
+echo "Report File: $REPORT_FILE"
 echo ""
 
 # 1. Check if systemd is available
 print_header "Systemd Availability Check"
 
-if ! command -v systemctl >/dev/null 2>&1; then
+if [ -z "$SYSTEMCTL_BIN" ]; then
     print_error "systemctl command not found. This script requires systemd."
     exit 1
 else
@@ -101,8 +119,8 @@ else
         print_info "Found Gunicorn service file: $service_name"
         
         # Check if service is enabled
-        if systemctl is-enabled "$service_name" >/dev/null 2>&1; then
-            enabled_status=$(systemctl is-enabled "$service_name")
+        if run_with_sudo "$SYSTEMCTL_BIN" is-enabled "$service_name" >/dev/null 2>&1; then
+            enabled_status=$(run_with_sudo "$SYSTEMCTL_BIN" is-enabled "$service_name")
             if [ "$enabled_status" = "enabled" ]; then
                 print_info "  Service is enabled"
             else
@@ -113,8 +131,8 @@ else
         fi
         
         # Check service status
-        if systemctl is-active "$service_name" >/dev/null 2>&1; then
-            active_status=$(systemctl is-active "$service_name")
+        if run_with_sudo "$SYSTEMCTL_BIN" is-active "$service_name" >/dev/null 2>&1; then
+            active_status=$(run_with_sudo "$SYSTEMCTL_BIN" is-active "$service_name")
             if [ "$active_status" = "active" ]; then
                 print_info "  Service is active (running)"
             else
@@ -212,22 +230,22 @@ fi
 # 3. Check NGINX service
 print_header "NGINX Service Check"
 
-if systemctl list-unit-files | grep -q "nginx.service"; then
+if run_with_sudo "$SYSTEMCTL_BIN" list-unit-files | grep -q "nginx.service"; then
     print_info "NGINX service unit file found"
-    
+
     # Check if NGINX is enabled
-    if systemctl is-enabled nginx >/dev/null 2>&1; then
-        nginx_enabled=$(systemctl is-enabled nginx)
+    if run_with_sudo "$SYSTEMCTL_BIN" is-enabled nginx >/dev/null 2>&1; then
+        nginx_enabled=$(run_with_sudo "$SYSTEMCTL_BIN" is-enabled nginx)
         if [ "$nginx_enabled" = "enabled" ]; then
             print_info "NGINX service is enabled"
         else
             print_warning "NGINX service is not enabled (status: $nginx_enabled)"
         fi
     fi
-    
+
     # Check if NGINX is active
-    if systemctl is-active nginx >/dev/null 2>&1; then
-        nginx_active=$(systemctl is-active nginx)
+    if run_with_sudo "$SYSTEMCTL_BIN" is-active nginx >/dev/null 2>&1; then
+        nginx_active=$(run_with_sudo "$SYSTEMCTL_BIN" is-active nginx)
         if [ "$nginx_active" = "active" ]; then
             print_info "NGINX service is active (running)"
         else

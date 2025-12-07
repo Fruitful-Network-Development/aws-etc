@@ -27,6 +27,13 @@
 
 set -euo pipefail
 
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+LOG_DIR="${LOG_DIR:-$PROJECT_ROOT/docs}"
+REPORT_FILE="${REPORT_FILE:-$LOG_DIR/audit_permissions_$(date +%Y%m%d_%H%M%S).log}"
+
+mkdir -p "$LOG_DIR"
+exec > >(tee "$REPORT_FILE") 2>&1
+
 # Color codes for output (if terminal supports it)
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
@@ -34,7 +41,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 # Configuration
-WEBAPP_ROOT="/srv/webapps/platform"
+WEBAPP_ROOT="${WEBAPP_ROOT:-/srv/webapps/platform}"
 REPORT_HEADER="=== FILE PERMISSIONS AND OWNERSHIP AUDIT ==="
 
 # Function to print section headers
@@ -69,6 +76,7 @@ fi
 echo "$REPORT_HEADER"
 echo "Audit Date: $(date)"
 echo "Target Directory: $WEBAPP_ROOT"
+echo "Report File: $REPORT_FILE"
 echo ""
 
 # 1. Check overall directory ownership

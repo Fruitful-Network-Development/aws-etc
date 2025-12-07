@@ -1,13 +1,24 @@
-# pull latest from GitHub
 #!/bin/bash
+# pull_fnd.sh
+#
+# Pull updates for the fruitfulnetworkdevelopment.com client repository.
+
 set -euo pipefail
 
-PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$PROJECT_ROOT"
+REPO_PATH="${REPO_PATH:-/srv/webapps/clients/fruitfulnetworkdevelopment.com}"
+REMOTE="${REMOTE:-origin}"
+BRANCH="${BRANCH:-main}"
 
-git pull --ff-only
+if [ ! -d "$REPO_PATH/.git" ]; then
+  echo "[pull_fnd] Git repository not found at $REPO_PATH" >&2
+  exit 1
+fi
 
-# Grant execute permissions to the script:
-  # chmod +x pull_fnd.sh
-# Add the script's directory to the system's PATH environment variable by adding the following line to your shell's configuration file:
-  # export PATH=$PATH:/aws/aws/GH-aws/scripts
+cd "$REPO_PATH"
+
+echo "[pull_fnd] Fetching $REMOTE/$BRANCH in $REPO_PATH"
+git fetch "$REMOTE" "$BRANCH"
+git checkout "$BRANCH"
+git pull --ff-only "$REMOTE" "$BRANCH"
+
+echo "[pull_fnd] Updated $BRANCH in $REPO_PATH"

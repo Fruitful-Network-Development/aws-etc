@@ -93,3 +93,7 @@ docs/...                 # Audit outputs, confiquration notes, and prompt pointe
 ### Error handling expectations
 - Startup should flag missing or multiple manifests per client directory.
 - API routes must validate query parameters and user ids and return clear 4xx errors for invalid input or 5xx/502 when upstream dependencies fail.
+
+## Operations scripts
+- Audit scripts now mirror their output into `docs/` with timestamped log files so agents can review findings without touching the deployed `/etc` tree.
+- `scripts/deploy_etc.sh` provides granular functions for syncing NGINX or systemd content from the GH-etc sandbox into the live `/etc` directory and for pushing updated audit outputs from `docs/` back to the repository.
