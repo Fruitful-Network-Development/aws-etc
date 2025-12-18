@@ -2,22 +2,25 @@
 # synch.sh
 #
 # Sync individual configuration files from the GH-etc repo clone into the
-# `/home/admin/etc` deployment tree, one file at a time.
+# live system `/etc` directory, one file at a time.
 #
 # Source tree (default):
 #   GH_ROOT=/home/admin/GH-etc
 # Dest tree (default):
-#   ETC_ROOT=/home/admin/etc
+#   ETC_ROOT=/etc
 #
 # Typical usage:
 #   ./synch.sh one etc/nginx/nginx.conf
 #   ./synch.sh nginx-core
 #   ./synch.sh nginx-site fruitfulnetworkdevelopment.com
 #
+# Note: This script uses sudo to write to /etc. It syncs configuration
+# templates from GH-etc to the live system paths.
+#
 set -euo pipefail
 
 GH_ROOT="${GH_ROOT:-/home/admin/GH-etc}"
-ETC_ROOT="${ETC_ROOT:-/home/admin/etc}"
+ETC_ROOT="${ETC_ROOT:-/etc}"
 
 log() {
   echo "[synch] $*"
@@ -59,8 +62,9 @@ sync_one() {
   fi
 
   log "Copying $src -> $dest"
-  mkdir -p "$(dirname "$dest")"
-  cp -v "$src" "$dest"
+  # Use sudo for /etc operations (standard user cannot write to /etc)
+  sudo mkdir -p "$(dirname "$dest")"
+  sudo cp -v "$src" "$dest"
 }
 
 sync_nginx_core() {
@@ -113,7 +117,7 @@ Commands:
 
 Environment variables:
   GH_ROOT   Source repo root (default: /home/admin/GH-etc)
-  ETC_ROOT  Destination tree (default: /home/admin/etc)
+  ETC_ROOT  Destination tree (default: /etc)
 EOF
 }
 
