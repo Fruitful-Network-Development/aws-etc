@@ -207,9 +207,20 @@ For details on how the manifests are used, see:
   syncing Nginx or systemd content from this sandbox into the live `/etc`
   directory and for pulling updated app/client code into `/srv/webapps`.
 
+Current key scripts:
+
+- `scripts/pull_etc.sh` — updates the local `GH-etc` clone from the
+  `Fruitful-Network-Development/aws-etc` GitHub repository (branch `main`).
+- `scripts/pull_app.sh` — updates the deployed Flask application clone under
+  `/home/admin/srv/webapps` from the `Fruitful-Network-Development/flask-app`
+  GitHub repository.
+- `scripts/synch.sh` — syncs individual configuration files from this repo into
+  `/home/admin/etc`, one file at a time (with helpers for common nginx files).
+- `scripts/audit.sh` — consolidated audit entrypoint providing subcommands for
+  nginx syntax, nginx configuration, file permissions, and systemd services.
+
 Agents should:
 
 - Propose and test changes in this repo.
 - Use the scripts to sync configuration to the server.
 - Avoid manual, ad-hoc edits in `/etc` and `/srv/webapps` whenever possible.
-

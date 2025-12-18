@@ -1,0 +1,176 @@
+<!-- =========================
+     SECTION 2 (3 stacked pills)
+     Injected into #slot-section-1-5
+     
+     Component Contract:
+     - Root element fills slot (100% width/height)
+     - Uses CSS Grid for internal layout
+     - References shared CSS variables from index.html
+     - No outer padding/background/height (handled by container)
+     ========================= -->
+
+<style>
+  /* Component-local scope - internal grid and typography only */
+  .s2{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: var(--section-vertical-pad) 0;
+    align-content: center;
+  }
+
+  /* Inner grid: stacked pills using shared gap token, fills available space */
+  .s2__inner{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--gap-md);
+    align-content: center;
+  }
+
+  /* Each "capsule" row - uses CSS Grid for internal layout, fills available space */
+  .s2__pill{
+    width: 100%;
+    height: 100%;
+    min-height: calc(var(--header-h) * 2.8);
+    background: var(--c6); /* uses shared color token */
+    border-radius: 999px;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  }
+
+  /* Left-icon layout: [icon | title | body] */
+  .s2__pill.left{
+    grid-template-columns:
+      calc(var(--header-h) * 3.0)
+      calc(var(--header-h) * 4.2)
+      1fr;
+  }
+
+  /* Right-icon layout: [body | title | icon] */
+  .s2__pill.right{
+    grid-template-columns:
+      1fr
+      calc(var(--header-h) * 4.2)
+      calc(var(--header-h) * 3.0);
+  }
+
+  /* Icon zone - uses CSS Grid for centering */
+  .s2__iconWrap{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: calc(var(--header-h) * 0.35);
+  }
+  .s2__icon{
+    height: calc(var(--header-h) * 2.2);
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+  }
+
+  /* Title zone */
+  .s2__title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; /* Open Sans Regular */
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c8); /* uses shared color token */
+    font-size: clamp(16px, calc(var(--header-h) * 0.52), 22px);
+    padding: 0 calc(var(--header-h) * 0.35);
+  }
+
+  /* Body text zone */
+  .s2__body{
+    color: rgba(255,255,255,0.88);
+    font-size: clamp(12px, calc(var(--header-h) * 0.35), 15px);
+    line-height: 1.55;
+    padding: calc(var(--header-h) * 0.55) calc(var(--header-h) * 1.1);
+  }
+  .s2__body p{
+    margin: 0;
+    max-width: 95ch;
+  }
+
+  /* Mirror text alignment for the middle pill like the mock */
+  .s2__pill.right .s2__body{
+    text-align: left;
+  }
+  .s2__pill.left .s2__body{
+    text-align: left;
+  }
+
+  /* Mobile: stack content vertically per pill */
+  @media (max-width: 860px){
+    .s2__inner{
+      grid-template-rows: repeat(3, auto);
+    }
+    .s2__pill.left,
+    .s2__pill.right{
+      border-radius: calc(var(--header-h) * 0.75);
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      padding: calc(var(--header-h) * 0.35) 0;
+      height: auto;
+    }
+    .s2__title{ padding-bottom: calc(var(--header-h) * 0.2); }
+    .s2__body{ padding: 0 calc(var(--header-h) * 0.9) calc(var(--header-h) * 0.7); text-align: left; }
+    .s2__icon{ height: calc(var(--header-h) * 2.0); }
+  }
+</style>
+
+<section class="s2">
+  <div class="s2__inner">
+
+    <!-- ROW 1: CONSULT (icon left) -->
+    <div class="s2__pill left">
+      <div class="s2__iconWrap">
+        <img class="s2__icon" src="assets/imgs/consult.png" alt="Consult">
+      </div>
+      <div class="s2__title">Consult</div>
+      <div class="s2__body">
+        <p>
+          We work with clients to understand the nuance of their business and develop applications.
+          Integrate what they have, and never pay for what they don’t.
+        </p>
+      </div>
+    </div>
+
+    <!-- ROW 2: DEMO (icon right) -->
+    <div class="s2__pill right">
+      <div class="s2__body">
+        <p>
+          FND uses this new Application Framework to be flexible and customizable to create visual
+          ontologies of a business and its operations and what a customer may want.
+        </p>
+      </div>
+      <div class="s2__title">Demo</div>
+      <div class="s2__iconWrap">
+        <img class="s2__icon" src="assets/imgs/demo.png" alt="Demo">
+      </div>
+    </div>
+
+    <!-- ROW 3: DEVELOPMENT & WORKFLOW (icon left) -->
+    <div class="s2__pill left">
+      <div class="s2__iconWrap">
+        <img class="s2__icon" src="assets/imgs/dev.png" alt="Development & Workflow">
+      </div>
+      <div class="s2__title">Development<br>&amp;<br>Workflow</div>
+      <div class="s2__body">
+        <p>
+          Pick and assemble only the features you need and never pay for unused modules.
+          We only get paid when you do better, using revenue increase share agreement contracts.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+

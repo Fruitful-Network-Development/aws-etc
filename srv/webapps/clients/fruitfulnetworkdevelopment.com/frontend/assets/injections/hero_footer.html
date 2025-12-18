@@ -1,0 +1,50 @@
+<!-- =========================
+     HERO FOOTER COMPONENT
+     Injected into #slot-section-1-2
+     
+     Component Contract:
+     - Root element fills slot (100% width/height)
+     - Uses CSS Grid for internal layout
+     - References shared CSS variables from index.html
+     - No outer padding/background/height (handled by container)
+     ========================= -->
+
+<style>
+  /* Component-local scope - internal grid and typography only */
+  .hero-footer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-footer__inner{
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-footer__tagline{
+    margin: 0;
+    font-size: clamp(12px, calc(var(--header-h) * 0.32), 16px);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(10, 32, 38, 0.85); /* close to var(--c4) softened */
+  }
+
+  /* optional: keep it single-line unless very narrow */
+  @media (max-width: 520px){
+    .hero-footer__tagline{
+      letter-spacing: 0.01em;
+      font-size: 12px;
+    }
+  }
+</style>
+
+<div class="hero-footer">
+  <div class="hero-footer__inner">
+    <p class="hero-footer__tagline">
+      Decentralized AgTech: Your Data, Your Network, Your Community
+    </p>
+  </div>
+</div>
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - FND</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --c1: #ffffff;
+      --c2: #e0e3de;
+      --c3: #2E5B9E;
+      --c4: #0a2026;
+      --c5: #101418;
+      --c6: #866392;
+      --c7: #95845F;
+      --c8: #95845F;
+      --c9: #6A8A7F;
+      --c10: #C1C1C2;
+      --header-h: 56px;
+      --hero-h: calc(var(--header-h) * 15);
+      --pad: calc(var(--header-h) / 6);
+      --slot-padding: calc(var(--header-h) * 1.0);
+      --maxw: 1400px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--c1);
+      color: #0b0f12;
+      overflow-x: hidden;
+    }
+    button{ border: 0; background: transparent; padding: 0; margin: 0; cursor: pointer; }
+
+    .page-header{
+      position: fixed; top: 0; left: 0; right: 0; height: var(--header-h); z-index: 1000;
+      display: flex; align-items: center;
+      background: rgba(16, 20, 24, 0.0);
+      backdrop-filter: blur(0px);
+      transition: background 180ms ease, backdrop-filter 180ms ease, box-shadow 180ms ease;
+    }
+    .page-header.scrolled{ background: rgba(16, 20, 24, 1.0); backdrop-filter: blur(6px); box-shadow: 0 2px 18px rgba(0,0,0,0.25); }
+
+    .header-inner{ width: 100%; margin: 0; padding: 0 var(--pad); display: flex; align-items: center; gap: var(--pad); }
+    .header-left{ display: flex; align-items: center; gap: var(--pad); min-width: 0px; }
+    .header-right{ margin-left: auto; display: flex; align-items: center; justify-content: flex-end; }
+    .header-icon, .header-logo{ height: calc(var(--header-h) - (var(--pad) * 2)); width: auto; display: block; opacity: 0.95; }
+    .header-logo{ max-height: calc(var(--header-h) - (var(--pad) * 2)); }
+
+    .header-nav{ display: flex; align-items: center; gap: calc(var(--pad) * 1.5); margin-left: auto; }
+    .nav-button{
+      background: transparent; border: none; color: var(--c2);
+      font-size: clamp(13px, calc(var(--header-h) * 0.4), 16px); font-weight: 500;
+      padding: calc(var(--pad) * 0.5) calc(var(--pad) * 0.8); cursor: pointer;
+      transition: color 180ms ease, opacity 180ms ease;
+    }
+    .nav-button:hover{ color: var(--c1); opacity: 1; }
+    .nav-button.active{ color: var(--c1); }
+
+    .search-icon-button{ background: transparent; border: none; padding: calc(var(--pad) * 0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.9; transition: opacity 180ms ease; }
+    .search-icon-button:hover{ opacity: 1; }
+    .search-icon{ height: calc(var(--header-h) * 0.45); width: calc(var(--header-h) * 0.45); color: rgba(255, 255, 255, 0.9); stroke: currentColor; }
+
+    main.content-area{ width: 100%; }
+    .section_container{ width: 100%; display: grid; grid-template-columns: 1fr; }
+    .section_block{ width: 100%; display: grid; place-items: stretch; }
+    .hero{ height: var(--hero-h); background: url("assets/imgs/hero.jpeg") center center / cover no-repeat; background-attachment: fixed; position: relative; display: grid; place-items: center; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+    .hero .slot{ position: relative; z-index: 2; place-items: center; }
+    .page-content{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: calc(var(--header-h) * 2) var(--slot-padding); background: var(--c1); min-height: calc(100vh - var(--header-h) - var(--hero-h)); }
+    .site-footer{ width: 100%; min-height: calc(var(--header-h) * 5.2); display: grid; grid-template-columns: 1fr; place-items: stretch; }
+    .site-footer .slot{ max-width: none; padding: 0; }
+    .slot{ height: 100%; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--slot-padding); display: grid; place-items: stretch; }
+
+    @media (max-width: 820px){
+      .header-nav{ gap: calc(var(--pad) * 1.0); }
+      .nav-button{ font-size: clamp(11px, calc(var(--header-h) * 0.35), 14px); padding: calc(var(--pad) * 0.4) calc(var(--pad) * 0.6); }
+      .search-icon{ height: calc(var(--header-h) * 0.4); width: calc(var(--header-h) * 0.4); }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header" id="pageHeader">
+    <div class="header-inner">
+      <div class="header-left">
+        <button type="button" onclick="open_sidebar_menu()"><img src="assets/imgs/menu.png" class="header-icon" alt="Menu" /></button>
+        <button type="button" onclick="return_home()"><img src="assets/imgs/logo.png" class="header-logo" alt="Logo" /></button>
+      </div>
+      <div class="header-right">
+        <div class="header-nav">
+          <button type="button" class="nav-button" data-page="home" onclick="navigate_to_page('home')">Home</button>
+          <button type="button" class="nav-button" data-page="research" onclick="navigate_to_page('research')">Research</button>
+          <button type="button" class="nav-button" data-page="webservices" onclick="navigate_to_page('webservices')">Webservices</button>
+          <button type="button" class="nav-button" data-page="demo" onclick="navigate_to_page('demo')">Demo</button>
+          <button type="button" class="nav-button" data-page="logistics" onclick="navigate_to_page('logistics')">Logistics</button>
+          <button type="button" class="search-icon-button" onclick="open_search()" aria-label="Search">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-area">
+    <div class="section_container">
+      <section class="section_block hero">
+        <div id="slot-hero" class="slot" data-component="section_1" data-hero-title="Our Platform"></div>
+      </section>
+    </div>
+    <div class="page-content"><!-- Page content goes here --></div>
+    <footer class="site-footer">
+      <div id="slot-footer" class="slot" data-component="footer"></div>
+    </footer>
+  </main>
+
+  <script>
+    function computeHeaderHeightPx() { const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0); const isMobile = vw < 820; const h = isMobile ? (vw / 12) : (vw / 34); return Math.max(44, Math.min(92, Math.round(h))); }
+    function applySizingVars() { const h = computeHeaderHeightPx(); document.documentElement.style.setProperty("--header-h", h + "px"); }
+    function syncHeaderScrollState() { const header = document.getElementById("pageHeader"); const y = window.scrollY || document.documentElement.scrollTop || 0; if (y > 10) header.classList.add("scrolled"); else header.classList.remove("scrolled"); }
+    function navigate_to_page(page) { if (page === 'home') { window.location.href = "/index.html"; } else { window.location.href = "/" + page + ".html"; } }
+    function setActiveNavButton() { const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index'; const pageName = currentPage === 'index' || currentPage === '' ? 'home' : currentPage; const navButtons = document.querySelectorAll('.nav-button'); navButtons.forEach(btn => { const btnPage = btn.getAttribute('data-page'); if (btnPage === pageName) { btn.classList.add('active'); } else { btn.classList.remove('active'); } }); }
+    function open_search() { console.log("open_search()"); }
+    function open_sidebar_menu() { console.log("open_sidebar_menu()"); }
+    function return_home() { window.location.href = "/"; }
+    function link_to_instagram(){ console.log("link_to_instagram()"); }
+    function link_to_x(){ console.log("link_to_x()"); }
+    function link_to_facebook(){ console.log("link_to_facebook()"); }
+    function initParallax() { const hero = document.querySelector('.hero'); if (!hero) return; const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches; if (prefersReducedMotion) return; window.addEventListener('scroll', () => { const scrolled = window.pageYOffset; const rate = scrolled * 0.5; hero.style.backgroundPosition = `center ${rate}px`; }, { passive: true }); }
+
+    applySizingVars(); syncHeaderScrollState(); setActiveNavButton(); // initParallax(); // Uncomment to enable JS-based parallax fallback
+    window.addEventListener("resize", applySizingVars);
+    window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
+  </script>
+  <script src="/inject.js"></script>
+</body>
+</html>
+

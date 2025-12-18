@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn service for Platform API
+After=network.target
+
+[Service]
+User=admin
+Group=www-data
+WorkingDirectory=/srv/webapps/platform
+Environment="PATH=/srv/webapps/platform/venv/bin"
+ExecStart=/srv/webapps/platform/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 app:app
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
