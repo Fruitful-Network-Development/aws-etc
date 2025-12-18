@@ -1,0 +1,51 @@
+<!-- =========================
+     HERO COMPONENT
+     Injected into #slot-section-1-1
+     
+     Component Contract:
+     - Root element fills slot (100% width/height)
+     - Uses CSS Grid for internal layout
+     - References shared CSS variables from index.html
+     - No outer padding/background/height (handled by container)
+     ========================= -->
+
+<style>
+  /* Component-local scope - internal grid and typography only */
+  .hero-component{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300; /* Open Sans Light */
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    /* Larger sizing to match desired display */
+    font-size: clamp(
+      calc(var(--header-h) * 2.5),
+      8vw,
+      calc(var(--header-h) * 4.5)
+    );
+
+    color: var(--c2); /* uses shared color token */
+  }
+
+  .hero-title span{
+    display: block;
+  }
+</style>
+
+<div class="hero-component">
+  <h1 class="hero-title" id="hero-title-placeholder">
+    <span>Fruitful</span>
+    <span>Network</span>
+    <span>Development</span>
+  </h1>
+</div>
+

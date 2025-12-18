@@ -1,0 +1,3903 @@
+{
+  "csa_hauls": [
+    {
+      "time_stamp": "2017_05_01",
+      "title": "csa_haul_2017_1",
+      "alias": "2017 CSA Week 1",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_1.jpg",
+      "product_ids": [
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "message": "string_1"
+    },
+    {
+      "time_stamp": "2017_05_08",
+      "title": "csa_haul_2017_2",
+      "alias": "2017 CSA Week 2",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_2.jpg",
+      "product_ids": [
+        "22",
+        "12",
+        "23",
+        "24",
+        "13",
+        "25",
+        "17",
+        "27",
+        "28",
+        "29",
+        "18"
+      ],
+      "message": "string_2"
+    },
+    {
+      "time_stamp": "2017_05_15",
+      "title": "csa_haul_2017_3",
+      "alias": "2017 CSA Week 3",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_3.jpg",
+      "product_ids": [
+        "30",
+        "12",
+        "31",
+        "5",
+        "31",
+        "32",
+        "33",
+        "16",
+        "34",
+        "10",
+        "13",
+        "18",
+        "24",
+        "17"
+      ],
+      "message": "string_3"
+    },
+    {
+      "time_stamp": "2017_05_22",
+      "title": "csa_haul_2017_4",
+      "alias": "2017 CSA Week 4",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_4.jpg",
+      "product_ids": [
+        "40",
+        "44",
+        "48",
+        "53",
+        "52",
+        "11",
+        "32",
+        "54"
+      ],
+      "message": "string_4"
+    },
+    {
+      "time_stamp": "2017_05_29",
+      "title": "csa_haul_2017_5",
+      "alias": "2017 CSA Week 5",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_5.jpg",
+      "product_ids": [
+        "5",
+        "62",
+        "34",
+        "44",
+        "44",
+        "51",
+        "43",
+        "17",
+        "13",
+        "50",
+        "20"
+      ],
+      "message": "string_5"
+    },
+    {
+      "time_stamp": "2017_06_05",
+      "title": "csa_haul_2017_6",
+      "alias": "2017 CSA Week 6",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_6.jpg",
+      "product_ids": [
+        "30",
+        "44",
+        "55",
+        "56",
+        "33",
+        "11",
+        "52",
+        "18",
+        "10",
+        "69",
+        "54",
+        "16"
+      ],
+      "message": "string_6"
+    },
+    {
+      "time_stamp": "2017_06_12",
+      "title": "csa_haul_2017_7",
+      "alias": "2017 CSA Week 7",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_7.jpg",
+      "product_ids": [
+        "5",
+        "75",
+        "63",
+        "53",
+        "56",
+        "74",
+        "64",
+        "67",
+        "18",
+        "28",
+        "44",
+        "34"
+      ],
+      "message": "string_7"
+    },
+    {
+      "time_stamp": "2017_06_19",
+      "title": "csa_haul_2017_8",
+      "alias": "2017 CSA Week 8",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_8.jpg",
+      "product_ids": [
+        "5",
+        "75",
+        "40",
+        "53",
+        "82",
+        "81",
+        "12",
+        "57",
+        "83",
+        "23",
+        "36"
+      ],
+      "message": "string_8"
+    },
+    {
+      "time_stamp": "2017_06_26",
+      "title": "csa_haul_2017_9",
+      "alias": "2017 CSA Week 9",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_9.jpg",
+      "product_ids": [
+        "5",
+        "44",
+        "56",
+        "64",
+        "74",
+        "55",
+        "84",
+        "68",
+        "24",
+        "69",
+        "18",
+        "17",
+        "10",
+        "13",
+        "85",
+        "20"
+      ],
+      "message": "string_9"
+    },
+    {
+      "time_stamp": "2017_07_03",
+      "title": "csa_haul_2017_10",
+      "alias": "2017 CSA Week 10",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_10.jpg",
+      "product_ids": [
+        "1",
+        "30",
+        "56",
+        "9",
+        "50",
+        "25",
+        "41",
+        "57",
+        "58",
+        "59"
+      ],
+      "message": "string_10"
+    },
+    {
+      "time_stamp": "2017_07_10",
+      "title": "csa_haul_2017_11",
+      "alias": "2017 CSA Week 11",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_11.jpg",
+      "product_ids": [
+        "51",
+        "63",
+        "44",
+        "56",
+        "60",
+        "64",
+        "16",
+        "21",
+        "28",
+        "61",
+        "66",
+        "15",
+        "53",
+        "1"
+      ],
+      "message": "string_11"
+    },
+    {
+      "time_stamp": "2017_07_17",
+      "title": "csa_haul_2017_12",
+      "alias": "2017 CSA Week 12",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_12.jpg",
+      "product_ids": [
+        "44",
+        "41",
+        "11",
+        "69",
+        "70",
+        "61",
+        "76",
+        "1",
+        "50",
+        "15",
+        "53"
+      ],
+      "message": "string_12"
+    },
+    {
+      "time_stamp": "2017_07_24",
+      "title": "csa_haul_2017_13",
+      "alias": "2017 CSA Week 13",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_13.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "80",
+        "65",
+        "72",
+        "86",
+        "35",
+        "50",
+        "10",
+        "87",
+        "64",
+        "53",
+        "20"
+      ],
+      "message": "string_13"
+    },
+    {
+      "time_stamp": "2017_07_31",
+      "title": "csa_haul_2017_14",
+      "alias": "2017 CSA Week 14",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_14.jpg",
+      "product_ids": [
+        "3",
+        "5",
+        "50",
+        "58",
+        "71",
+        "78",
+        "76",
+        "69",
+        "23",
+        "74",
+        "13",
+        "53"
+      ],
+      "message": "string_14"
+    },
+    {
+      "time_stamp": "2017_08_07",
+      "title": "csa_haul_2017_15",
+      "alias": "2017 CSA Week 15",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_15.jpg",
+      "product_ids": [
+        "6",
+        "8",
+        "76",
+        "58",
+        "73",
+        "78",
+        "79",
+        "64",
+        "41",
+        "13",
+        "18",
+        "51",
+        "50",
+        "15",
+        "61"
+      ],
+      "message": "string_15"
+    },
+    {
+      "time_stamp": "2017_08_14",
+      "title": "csa_haul_2017_16",
+      "alias": "2017 CSA Week 16",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_16.jpg",
+      "product_ids": [
+        "6",
+        "5",
+        "58",
+        "26",
+        "50",
+        "81",
+        "78",
+        "61",
+        "77",
+        "18",
+        "69",
+        "53",
+        "71",
+        "88"
+      ],
+      "message": "string_16"
+    },
+    {
+      "time_stamp": "2017_08_21",
+      "title": "csa_haul_2017_17",
+      "alias": "2017 CSA Week 17",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_17.jpg",
+      "product_ids": [
+        "89",
+        "3",
+        "6",
+        "68",
+        "24",
+        "58",
+        "78",
+        "61",
+        "76",
+        "11",
+        "51",
+        "59",
+        "79",
+        "64",
+        "72"
+      ],
+      "message": "string_17"
+    },
+    {
+      "time_stamp": "2017_08_28",
+      "title": "csa_haul_2017_18",
+      "alias": "2017 CSA Week 18",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_18.jpg",
+      "product_ids": [
+        "5",
+        "4",
+        "79",
+        "59",
+        "70",
+        "58",
+        "78",
+        "94",
+        "95",
+        "44",
+        "96",
+        "83",
+        "21"
+      ],
+      "message": "string_18"
+    },
+    {
+      "time_stamp": "2017_09_11",
+      "title": "csa_haul_2017_20",
+      "alias": "2017 CSA Week 20",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_20.jpg",
+      "product_ids": [
+        "78",
+        "77",
+        "99",
+        "70",
+        "100",
+        "41",
+        "101",
+        "44",
+        "53",
+        "64",
+        "102",
+        "1",
+        "82"
+      ],
+      "message": "string_19"
+    },
+    {
+      "time_stamp": "2017_09_18",
+      "title": "csa_haul_2017_21",
+      "alias": "2017 CSA Week 21",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_21.jpg",
+      "product_ids": [
+        "103",
+        "78",
+        "77",
+        "1",
+        "44",
+        "64",
+        "65",
+        "102",
+        "35",
+        "87",
+        "76",
+        "81",
+        "53",
+        "18",
+        "13"
+      ],
+      "message": "string_20"
+    },
+    {
+      "time_stamp": "2017_09_25",
+      "title": "csa_haul_2017_22",
+      "alias": "2017 CSA Week 22",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_22.jpg",
+      "product_ids": [
+        "104",
+        "74",
+        "102",
+        "66",
+        "18",
+        "13",
+        "85",
+        "10",
+        "28",
+        "56",
+        "106",
+        "77",
+        "51",
+        "44"
+      ],
+      "message": "string_21"
+    },
+    {
+      "time_stamp": "2017_10_02",
+      "title": "csa_haul_2017_23",
+      "alias": "2017 CSA Week 23",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_23.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "53",
+        "11",
+        "89",
+        "58",
+        "45",
+        "77",
+        "34",
+        "13",
+        "98",
+        "102",
+        "35"
+      ],
+      "message": "string_22"
+    },
+    {
+      "time_stamp": "2017_10_09",
+      "title": "csa_haul_2017_24",
+      "alias": "2017 CSA Week 24",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_24.jpg",
+      "product_ids": [
+        "92",
+        "93",
+        "79",
+        "1",
+        "100",
+        "78",
+        "77",
+        "65",
+        "105",
+        "57",
+        "53",
+        "17",
+        "85",
+        "106",
+        "45",
+        "41",
+        "91"
+      ],
+      "message": "string_23"
+    },
+    {
+      "time_stamp": "2017_10_16",
+      "title": "csa_haul_2017_25",
+      "alias": "2017 CSA Week 25",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_25.jpg",
+      "product_ids": [
+        "71",
+        "90",
+        "97",
+        "1",
+        "51",
+        "74",
+        "35",
+        "45",
+        "77",
+        "17",
+        "13",
+        "50",
+        "24",
+        "53",
+        "28"
+      ],
+      "message": "string_24"
+    },
+    {
+      "time_stamp": "2017_10_23",
+      "title": "csa_haul_2017_26",
+      "alias": "2017 CSA Week 26",
+      "picture": "assets/imgs/csa/2017/csa_haul_2017_26.jpg",
+      "product_ids": [
+        "35",
+        "74",
+        "4",
+        "1",
+        "72",
+        "105",
+        "44",
+        "53",
+        "102",
+        "24",
+        "13",
+        "28",
+        "17",
+        "100",
+        "78"
+      ],
+      "message": "string_25"
+    },
+    {
+      "time_stamp": "2018_05_07",
+      "title": "csa_haul_2018_1",
+      "alias": "2018 CSA Week 1",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_1.jpg",
+      "product_ids": [
+        "9",
+        "41",
+        "84",
+        "16",
+        "13",
+        "27",
+        "44"
+      ],
+      "message": "string_26"
+    },
+    {
+      "time_stamp": "2018_05_14",
+      "title": "csa_haul_2018_2",
+      "alias": "2018 CSA Week 2",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_2.jpg",
+      "product_ids": [
+        "42",
+        "11",
+        "59",
+        "107",
+        "14",
+        "44",
+        "13",
+        "18",
+        "24",
+        "102",
+        "54"
+      ],
+      "message": "string_27"
+    },
+    {
+      "time_stamp": "2018_05_21",
+      "title": "csa_haul_2018_3",
+      "alias": "2018 CSA Week 3",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_3.jpg",
+      "product_ids": [
+        "44",
+        "56",
+        "16",
+        "50",
+        "17",
+        "34",
+        "69",
+        "13",
+        "53"
+      ],
+      "message": "string_28"
+    },
+    {
+      "time_stamp": "2018_05_28",
+      "title": "csa_haul_2018_4",
+      "alias": "2018 CSA Week 4",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_4.jpg",
+      "product_ids": [
+        "44",
+        "48",
+        "96",
+        "84",
+        "56",
+        "51",
+        "54",
+        "25",
+        "68",
+        "9",
+        "10",
+        "20"
+      ],
+      "message": "string_29"
+    },
+    {
+      "time_stamp": "2018_06_04",
+      "title": "csa_haul_2018_5",
+      "alias": "2018 CSA Week 5",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_5.jpg",
+      "product_ids": [
+        "12",
+        "30",
+        "57",
+        "105",
+        "119",
+        "59",
+        "40",
+        "37",
+        "16",
+        "26",
+        "74"
+      ],
+      "message": "string_30"
+    },
+    {
+      "time_stamp": "2018_06_11",
+      "title": "csa_haul_2018_6",
+      "alias": "2018 CSA Week 6",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_6.jpg",
+      "product_ids": [
+        "102",
+        "56",
+        "92",
+        "57",
+        "30",
+        "44",
+        "51",
+        "98",
+        "50",
+        "53",
+        "54",
+        "59"
+      ],
+      "message": "string_31"
+    },
+    {
+      "time_stamp": "2018_06_18",
+      "title": "csa_haul_2018_7",
+      "alias": "2018 CSA Week 7",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_7.jpg",
+      "product_ids": [
+        "57",
+        "51",
+        "11",
+        "41",
+        "30",
+        "68",
+        "17",
+        "93",
+        "55",
+        "96",
+        "84"
+      ],
+      "message": "string_32"
+    },
+    {
+      "time_stamp": "2018_06_25",
+      "title": "csa_haul_2018_8",
+      "alias": "2018 CSA Week 8",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_8.jpg",
+      "product_ids": [
+        "57",
+        "53",
+        "42",
+        "56",
+        "74",
+        "1",
+        "8",
+        "61",
+        "78",
+        "13",
+        "16",
+        "69"
+      ],
+      "message": "string_33"
+    },
+    {
+      "time_stamp": "2018_07_02",
+      "title": "csa_haul_2018_9",
+      "alias": "2018 CSA Week 9",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_9.jpg",
+      "product_ids": [
+        "1",
+        "51",
+        "41",
+        "56",
+        "95",
+        "102",
+        "64",
+        "84",
+        "54",
+        "50",
+        "34"
+      ],
+      "message": "string_34"
+    },
+    {
+      "time_stamp": "2018_07_09",
+      "title": "csa_haul_2018_10",
+      "alias": "2018 CSA Week 10",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_10.jpg",
+      "product_ids": [
+        "3",
+        "6",
+        "8",
+        "78",
+        "98",
+        "11",
+        "53",
+        "44",
+        "74",
+        "104",
+        "54",
+        "16"
+      ],
+      "message": "string_35"
+    },
+    {
+      "time_stamp": "2018_07_16",
+      "title": "csa_haul_2018_11",
+      "alias": "2018 CSA Week 11",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_11.jpg",
+      "product_ids": [
+        "5",
+        "98",
+        "97",
+        "63",
+        "79",
+        "84",
+        "41",
+        "83",
+        "17",
+        "17",
+        "26",
+        "34",
+        "69"
+      ],
+      "message": "string_36"
+    },
+    {
+      "time_stamp": "2018_07_23",
+      "title": "csa_haul_2018_12",
+      "alias": "2018 CSA Week 12",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_12.jpg",
+      "product_ids": [
+        "3",
+        "6",
+        "63",
+        "78",
+        "11",
+        "53",
+        "64",
+        "74",
+        "83",
+        "66",
+        "68",
+        "61"
+      ],
+      "message": "string_37"
+    },
+    {
+      "time_stamp": "2018_07_30",
+      "title": "csa_haul_2018_13",
+      "alias": "2018 CSA Week 13",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_13.jpg",
+      "product_ids": [
+        "3",
+        "6",
+        "63",
+        "78",
+        "98",
+        "61",
+        "42",
+        "79",
+        "102",
+        "66",
+        "103",
+        "37",
+        "101",
+        "17",
+        "10",
+        "26"
+      ],
+      "message": "string_38"
+    },
+    {
+      "time_stamp": "2018_08_06",
+      "title": "csa_haul_2018_14",
+      "alias": "2018 CSA Week 14",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_14.jpg",
+      "product_ids": [
+        "4",
+        "72",
+        "55",
+        "8",
+        "64",
+        "97",
+        "51",
+        "53",
+        "57",
+        "50",
+        "69",
+        "13"
+      ],
+      "message": "string_39"
+    },
+    {
+      "time_stamp": "2018_08_13",
+      "title": "csa_haul_2018_15",
+      "alias": "2018 CSA Week 15",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_15.jpg",
+      "product_ids": [
+        "1",
+        "98",
+        "97",
+        "61",
+        "78",
+        "79",
+        "8",
+        "90",
+        "66",
+        "42",
+        "84",
+        "17",
+        "18",
+        "24"
+      ],
+      "message": "string_40"
+    },
+    {
+      "time_stamp": "2018_08_20",
+      "title": "csa_haul_2018_16",
+      "alias": "2018 CSA Week 16",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_16.jpg",
+      "product_ids": [
+        "6",
+        "71",
+        "98",
+        "106",
+        "61",
+        "66",
+        "53",
+        "11",
+        "9",
+        "50",
+        "26"
+      ],
+      "message": "string_41"
+    },
+    {
+      "time_stamp": "2018_08_27",
+      "title": "csa_haul_2018_17",
+      "alias": "2018 CSA Week 17",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_17.jpg",
+      "product_ids": [
+        "3",
+        "8",
+        "78",
+        "98",
+        "61",
+        "97",
+        "60",
+        "8",
+        "65",
+        "73",
+        "41",
+        "51",
+        "17",
+        "10"
+      ],
+      "message": "string_42"
+    },
+    {
+      "time_stamp": "2018_09_03",
+      "title": "csa_haul_2018_18",
+      "alias": "2018 CSA Week 18",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_18.jpg",
+      "product_ids": [
+        "5",
+        "104",
+        "79",
+        "78",
+        "98",
+        "65",
+        "60",
+        "86",
+        "42",
+        "50",
+        "69"
+      ],
+      "message": "string_43"
+    },
+    {
+      "time_stamp": "2018_09_10",
+      "title": "csa_haul_2018_19",
+      "alias": "2018 CSA Week 19",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_19.jpg",
+      "product_ids": [
+        "100",
+        "89",
+        "59",
+        "65",
+        "79",
+        "77",
+        "6",
+        "57",
+        "53",
+        "50",
+        "17",
+        "69"
+      ],
+      "message": "string_44"
+    },
+    {
+      "time_stamp": "2018_09_24",
+      "title": "csa_haul_2018_21",
+      "alias": "2018 CSA Week 21",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_21.jpg",
+      "product_ids": [
+        "53",
+        "11",
+        "71",
+        "14",
+        "78",
+        "5",
+        "63",
+        "59",
+        "17",
+        "10"
+      ],
+      "message": "string_45"
+    },
+    {
+      "time_stamp": "2018_10_01",
+      "title": "csa_haul_2018_22",
+      "alias": "2018 CSA Week 22",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_22.jpg",
+      "product_ids": [
+        "89",
+        "6",
+        "78",
+        "61",
+        "97",
+        "79",
+        "63",
+        "35",
+        "66",
+        "17",
+        "83"
+      ],
+      "message": "string_46"
+    },
+    {
+      "time_stamp": "2018_10_08",
+      "title": "csa_haul_2018_23",
+      "alias": "2018 CSA Week 23",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_23.jpg",
+      "product_ids": [
+        "79",
+        "72",
+        "78",
+        "44",
+        "97",
+        "8",
+        "65",
+        "50",
+        "17",
+        "53",
+        "42"
+      ],
+      "message": "string_47"
+    },
+    {
+      "time_stamp": "2018_10_15",
+      "title": "csa_haul_2018_24",
+      "alias": "2018 CSA Week 24",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_24.jpg",
+      "product_ids": [
+        "63",
+        "3",
+        "5",
+        "91",
+        "57",
+        "57",
+        "99",
+        "44",
+        "79",
+        "41",
+        "66",
+        "13",
+        "18",
+        "24"
+      ],
+      "message": "string_48"
+    },
+    {
+      "time_stamp": "2018_10_22",
+      "title": "csa_haul_2018_25",
+      "alias": "2018 CSA Week 25",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_25.jpg",
+      "product_ids": [
+        "71",
+        "93",
+        "35",
+        "66",
+        "10",
+        "6",
+        "44",
+        "117",
+        "53",
+        "42",
+        "110"
+      ],
+      "message": "string_49"
+    },
+    {
+      "time_stamp": "2018_10_29",
+      "title": "csa_haul_2018_26",
+      "alias": "2018 CSA Week 26",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_26.jpg",
+      "product_ids": [
+        "99",
+        "65",
+        "78",
+        "66",
+        "13",
+        "11",
+        "91",
+        "17",
+        "93"
+      ],
+      "message": "string_50"
+    },
+    {
+      "time_stamp": "2018_11_05",
+      "title": "csa_haul_2018_27",
+      "alias": "2018 CSA Week 27",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_27.jpg",
+      "product_ids": [
+        "1",
+        "110",
+        "97",
+        "66",
+        "40",
+        "53",
+        "72",
+        "120",
+        "57"
+      ],
+      "message": "string_51"
+    },
+    {
+      "time_stamp": "2018_11_12",
+      "title": "csa_haul_2018_28",
+      "alias": "2018 CSA Week 28",
+      "picture": "assets/imgs/csa/2018/csa_haul_2018_28.jpg",
+      "product_ids": [
+        "35",
+        "71",
+        "14",
+        "53",
+        "42",
+        "11",
+        "97",
+        "78",
+        "99",
+        "17"
+      ],
+      "message": "string_52"
+    },
+    {
+      "time_stamp": "2019_05_06",
+      "title": "csa_haul_2019_1",
+      "alias": "2019 CSA Week 1",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_1.jpg",
+      "product_ids": [
+        "9",
+        "42",
+        "38",
+        "16",
+        "14",
+        "54",
+        "44"
+      ],
+      "message": "string_53"
+    },
+    {
+      "time_stamp": "2019_05_13",
+      "title": "csa_haul_2019_2",
+      "alias": "2019 CSA Week 2",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_2.jpg",
+      "product_ids": [
+        "107",
+        "78",
+        "16",
+        "112",
+        "43",
+        "54",
+        "30",
+        "44"
+      ],
+      "message": "string_54"
+    },
+    {
+      "time_stamp": "2019_05_20",
+      "title": "csa_haul_2019_3",
+      "alias": "2019 CSA Week 3",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_3.jpg",
+      "product_ids": [
+        "74",
+        "44",
+        "30",
+        "16",
+        "51",
+        "39",
+        "35"
+      ],
+      "message": "string_55"
+    },
+    {
+      "time_stamp": "2019_05_27",
+      "title": "csa_haul_2019_4",
+      "alias": "2019 CSA Week 4",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_4.jpg",
+      "product_ids": [
+        "54",
+        "105",
+        "57",
+        "44",
+        "75",
+        "96",
+        "17",
+        "84",
+        "55"
+      ],
+      "message": "string_56"
+    },
+    {
+      "time_stamp": "2019_06_03",
+      "title": "csa_haul_2019_5",
+      "alias": "2019 CSA Week 5",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_5.jpg",
+      "product_ids": [
+        "74",
+        "105",
+        "57",
+        "44",
+        "59",
+        "30",
+        "43",
+        "51",
+        "34",
+        "54"
+      ],
+      "message": "string_57"
+    },
+    {
+      "time_stamp": "2019_06_10",
+      "title": "csa_haul_2019_6",
+      "alias": "2019 CSA Week 6",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_6.jpg",
+      "product_ids": [
+        "74",
+        "30",
+        "41",
+        "51",
+        "59",
+        "65",
+        "53",
+        "17",
+        "54"
+      ],
+      "message": "string_58"
+    },
+    {
+      "time_stamp": "2019_06_17",
+      "title": "csa_haul_2019_7",
+      "alias": "2019 CSA Week 7",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_7.jpg",
+      "product_ids": [
+        "74",
+        "44",
+        "64",
+        "42",
+        "59",
+        "3",
+        "57",
+        "50",
+        "54",
+        "34"
+      ],
+      "message": "string_59"
+    },
+    {
+      "time_stamp": "2019_06_24",
+      "title": "csa_haul_2019_8",
+      "alias": "2019 CSA Week 8",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_8.jpg",
+      "product_ids": [
+        "64",
+        "66",
+        "73",
+        "84",
+        "78",
+        "55",
+        "51",
+        "5",
+        "50"
+      ],
+      "message": "string_60"
+    },
+    {
+      "time_stamp": "2019_07_01",
+      "title": "csa_haul_2019_9",
+      "alias": "2019 CSA Week 9",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_9.jpg",
+      "product_ids": [
+        "41",
+        "84",
+        "104",
+        "1",
+        "53",
+        "14",
+        "108",
+        "74",
+        "16",
+        "78",
+        "77"
+      ],
+      "message": "string_61"
+    },
+    {
+      "time_stamp": "2019_07_08",
+      "title": "csa_haul_2019_10",
+      "alias": "2019 CSA Week 10",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_10.jpg",
+      "product_ids": [
+        "6",
+        "71",
+        "74",
+        "65",
+        "14",
+        "23",
+        "17",
+        "59",
+        "42",
+        "54",
+        "34"
+      ],
+      "message": "string_62"
+    },
+    {
+      "time_stamp": "2019_07_15",
+      "title": "csa_haul_2019_11",
+      "alias": "2019 CSA Week 11",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_11.jpg",
+      "product_ids": [
+        "5",
+        "79",
+        "88",
+        "74",
+        "51",
+        "58",
+        "84",
+        "53",
+        "50",
+        "54"
+      ],
+      "message": "string_63"
+    },
+    {
+      "time_stamp": "2019_07_22",
+      "title": "csa_haul_2019_12",
+      "alias": "2019 CSA Week 12",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_12.jpg",
+      "product_ids": [
+        "6",
+        "108",
+        "78",
+        "77",
+        "87",
+        "41",
+        "17",
+        "54",
+        "113",
+        "112",
+        "92"
+      ],
+      "message": "string_64"
+    },
+    {
+      "time_stamp": "2019_07_29",
+      "title": "csa_haul_2019_13",
+      "alias": "2019 CSA Week 13",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_13.jpg",
+      "product_ids": [
+        "4",
+        "108",
+        "61",
+        "87",
+        "84",
+        "53",
+        "50",
+        "6",
+        "51",
+        "82"
+      ],
+      "message": "string_64"
+    },
+    {
+      "time_stamp": "2019_08_05",
+      "title": "csa_haul_2019_14",
+      "alias": "2019 CSA Week 14",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_14.jpg",
+      "product_ids": [
+        "108",
+        "87",
+        "74",
+        "8",
+        "78",
+        "110",
+        "51",
+        "3",
+        "113",
+        "44",
+        "17"
+      ],
+      "message": "string_65"
+    },
+    {
+      "time_stamp": "2019_08_12",
+      "title": "csa_haul_2019_15",
+      "alias": "2019 CSA Week 15",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_15.jpg",
+      "product_ids": [
+        "53",
+        "5",
+        "87",
+        "78",
+        "61",
+        "79",
+        "8",
+        "50",
+        "16",
+        "23",
+        "66"
+      ],
+      "message": "string_66"
+    },
+    {
+      "time_stamp": "2019_08_19",
+      "title": "csa_haul_2019_16",
+      "alias": "2019 CSA Week 16",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_16.jpg",
+      "product_ids": [
+        "14",
+        "6",
+        "78",
+        "109",
+        "8",
+        "84",
+        "91",
+        "55",
+        "16",
+        "50"
+      ],
+      "message": "string_67"
+    },
+    {
+      "time_stamp": "2019_08_26",
+      "title": "csa_haul_2019_17",
+      "alias": "2019 CSA Week 17",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_17.jpg",
+      "product_ids": [
+        "4",
+        "5",
+        "74",
+        "71",
+        "114",
+        "53",
+        "8",
+        "41",
+        "50",
+        "54",
+        "17"
+      ],
+      "message": "string_68"
+    },
+    {
+      "time_stamp": "2019_09_02",
+      "title": "csa_haul_2019_18",
+      "alias": "2019 CSA Week 18",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_18.jpg",
+      "product_ids": [
+        "51",
+        "14",
+        "16",
+        "3",
+        "6",
+        "78",
+        "77",
+        "115",
+        "8",
+        "8"
+      ],
+      "message": "string_69"
+    },
+    {
+      "time_stamp": "2019_09_09",
+      "title": "csa_haul_2019_19",
+      "alias": "2019 CSA Week 19",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_19.jpg",
+      "product_ids": [
+        "6",
+        "66",
+        "16",
+        "76",
+        "78",
+        "77",
+        "53",
+        "50",
+        "84",
+        "55"
+      ],
+      "message": "string_70"
+    },
+    {
+      "time_stamp": "2019_09_16",
+      "title": "csa_haul_2019_20",
+      "alias": "2019 CSA Week 20",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_20.jpg",
+      "product_ids": [
+        "79",
+        "6",
+        "4",
+        "92",
+        "16",
+        "99",
+        "17",
+        "115",
+        "11",
+        "44"
+      ],
+      "message": "string_71"
+    },
+    {
+      "time_stamp": "2019_09_23",
+      "title": "csa_haul_2019_21",
+      "alias": "2019 CSA Week 21",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_21.jpg",
+      "product_ids": [
+        "53",
+        "3",
+        "76",
+        "14",
+        "78",
+        "51",
+        "44",
+        "16",
+        "77",
+        "54"
+      ],
+      "message": "string_72"
+    },
+    {
+      "time_stamp": "2019_09_30",
+      "title": "csa_haul_2019_22",
+      "alias": "2019 CSA Week 22",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_22.jpg",
+      "product_ids": [
+        "44",
+        "1",
+        "78",
+        "109",
+        "8",
+        "8",
+        "42",
+        "84",
+        "14",
+        "17"
+      ],
+      "message": "string_73"
+    },
+    {
+      "time_stamp": "2019_10_07",
+      "title": "csa_haul_2019_23",
+      "alias": "2019 CSA Week 23",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_23.jpg",
+      "product_ids": [
+        "79",
+        "1",
+        "5",
+        "78",
+        "44",
+        "51",
+        "74",
+        "57",
+        "16",
+        "23",
+        "53"
+      ],
+      "message": "string_74"
+    },
+    {
+      "time_stamp": "2019_10_14",
+      "title": "csa_haul_2019_24",
+      "alias": "2019 CSA Week 24",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_24.jpg",
+      "product_ids": [
+        "53",
+        "1",
+        "51",
+        "44",
+        "78",
+        "77",
+        "115",
+        "102",
+        "14",
+        "8"
+      ],
+      "message": "string_75"
+    },
+    {
+      "time_stamp": "2019_10_21",
+      "title": "csa_haul_2019_25",
+      "alias": "2019 CSA Week 25",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_25.jpg",
+      "product_ids": [
+        "1",
+        "53",
+        "14",
+        "102",
+        "74",
+        "48",
+        "78",
+        "9"
+      ],
+      "message": "string_76"
+    },
+    {
+      "time_stamp": "2019_10_28",
+      "title": "csa_haul_2019_26",
+      "alias": "2019 CSA Week 26",
+      "picture": "assets/imgs/csa/2019/csa_haul_2019_26.jpg",
+      "product_ids": [
+        "1",
+        "51",
+        "99",
+        "115",
+        "17",
+        "78",
+        "79"
+      ],
+      "message": "string_77"
+    },
+    {
+      "time_stamp": "2020_05_04",
+      "title": "csa_haul_2020_1",
+      "alias": "2020 CSA Week 1",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_1.jpg",
+      "product_ids": [
+        "1",
+        "44",
+        "11",
+        "111",
+        "116",
+        "107",
+        "16"
+      ],
+      "message": "string_78"
+    },
+    {
+      "time_stamp": "2020_05_11",
+      "title": "csa_haul_2020_2",
+      "alias": "2020 CSA Week 2",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_2.jpg",
+      "product_ids": [
+        "44",
+        "1",
+        "14",
+        "83",
+        "38",
+        "41",
+        "16",
+        "118"
+      ],
+      "message": "string_79"
+    },
+    {
+      "time_stamp": "2020_05_18",
+      "title": "csa_haul_2020_3",
+      "alias": "2020 CSA Week 3",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_3.jpg",
+      "product_ids": [
+        "44",
+        "44",
+        "78",
+        "66",
+        "83",
+        "118",
+        "16",
+        "48",
+        "34"
+      ],
+      "message": "string_80"
+    },
+    {
+      "time_stamp": "2020_05_25",
+      "title": "csa_haul_2020_4",
+      "alias": "2020 CSA Week 4",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_4.jpg",
+      "product_ids": [
+        "44",
+        "44",
+        "77",
+        "102",
+        "51",
+        "50",
+        "16",
+        "41"
+      ],
+      "message": "string_81"
+    },
+    {
+      "time_stamp": "2020_06_01",
+      "title": "csa_haul_2020_5",
+      "alias": "2020 CSA Week 5",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_5.jpg",
+      "product_ids": [
+        "44",
+        "45",
+        "74",
+        "57",
+        "41",
+        "50",
+        "83"
+      ],
+      "message": "string_82"
+    },
+    {
+      "time_stamp": "2020_06_08",
+      "title": "csa_haul_2020_6",
+      "alias": "2020 CSA Week 6",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_6.jpg",
+      "product_ids": [
+        "44",
+        "45",
+        "74",
+        "50",
+        "78",
+        "96",
+        "51",
+        "14"
+      ],
+      "message": "string_83"
+    },
+    {
+      "time_stamp": "2020_06_15",
+      "title": "csa_haul_2020_7",
+      "alias": "2020 CSA Week 7",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_7.jpg",
+      "product_ids": [
+        "1",
+        "96",
+        "63",
+        "102",
+        "peas",
+        "44",
+        "30",
+        "47",
+        "54",
+        "34"
+      ],
+      "message": "string_84"
+    },
+    {
+      "time_stamp": "2020_06_22",
+      "title": "csa_haul_2020_8",
+      "alias": "2020 CSA Week 8",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_8.jpg",
+      "product_ids": [
+        "78",
+        "96",
+        "51",
+        "57",
+        "14",
+        "44",
+        "30",
+        "45",
+        "50",
+        "74"
+      ],
+      "message": "string_85"
+    },
+    {
+      "time_stamp": "2020_06_29",
+      "title": "csa_haul_2020_9",
+      "alias": "2020 CSA Week 9",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_9.jpg",
+      "product_ids": [
+        "96",
+        "30",
+        "44",
+        "4",
+        "5",
+        "14",
+        "74",
+        "102",
+        "41"
+      ],
+      "message": "string_86"
+    },
+    {
+      "time_stamp": "2020_07_06",
+      "title": "csa_haul_2020_10",
+      "alias": "2020 CSA Week 10",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_10.jpg",
+      "product_ids": [
+        "96",
+        "1",
+        "66",
+        "57",
+        "51",
+        "50",
+        "78",
+        "44"
+      ],
+      "message": "string_87"
+    },
+    {
+      "time_stamp": "2020_07_13",
+      "title": "csa_haul_2020_11",
+      "alias": "2020 CSA Week 11",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_11.jpg",
+      "product_ids": [
+        "96",
+        "1",
+        "80",
+        "57",
+        "11",
+        "74",
+        "78",
+        "73"
+      ],
+      "message": "string_88"
+    },
+    {
+      "time_stamp": "2020_07_20",
+      "title": "csa_haul_2020_12",
+      "alias": "2020 CSA Week 12",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_12.jpg",
+      "product_ids": [
+        "51",
+        "102",
+        "92",
+        "16",
+        "50",
+        "96",
+        "buttercup_winter_squash",
+        "4",
+        "6",
+        "78",
+        "77"
+      ],
+      "message": "string_89"
+    },
+    {
+      "time_stamp": "2020_07_27",
+      "title": "csa_haul_2020_13",
+      "alias": "2020 CSA Week 13",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_13.jpg",
+      "product_ids": [
+        "53",
+        "41",
+        "14",
+        "102",
+        "16",
+        "96",
+        "104",
+        "1",
+        "78"
+      ],
+      "message": "string_90"
+    },
+    {
+      "time_stamp": "2020_08_03",
+      "title": "csa_haul_2020_14",
+      "alias": "2020 CSA Week 14",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_14.jpg",
+      "product_ids": [
+        "51",
+        "65",
+        "50",
+        "71",
+        "4",
+        "6",
+        "79",
+        "78",
+        "61"
+      ],
+      "message": "string_91"
+    },
+    {
+      "time_stamp": "2020_08_10",
+      "title": "csa_haul_2020_15",
+      "alias": "2020 CSA Week 15",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_15.jpg",
+      "product_ids": [
+        "41",
+        "14",
+        "102",
+        "50",
+        "91",
+        "78",
+        "1",
+        "8",
+        "77"
+      ],
+      "message": "string_92"
+    },
+    {
+      "time_stamp": "2020_08_17",
+      "title": "csa_haul_2020_16",
+      "alias": "2020 CSA Week 16",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_16.jpg",
+      "product_ids": [
+        "51",
+        "14",
+        "44",
+        "butterkin_squash",
+        "78",
+        "6",
+        "79",
+        "87",
+        "16",
+        "77"
+      ],
+      "message": "string_93"
+    },
+    {
+      "time_stamp": "2020_08_24",
+      "title": "csa_haul_2020_17",
+      "alias": "2020 CSA Week 17",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_17.jpg",
+      "product_ids": [
+        "74",
+        "50",
+        "44",
+        "1",
+        "92",
+        "102",
+        "108",
+        "41",
+        "53"
+      ],
+      "message": "string_94"
+    },
+    {
+      "time_stamp": "2020_08_31",
+      "title": "csa_haul_2020_18",
+      "alias": "2020 CSA Week 18",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_18.jpg",
+      "product_ids": [
+        "1",
+        "salad_greens",
+        "74",
+        "104",
+        "87",
+        "15",
+        "77"
+      ],
+      "message": "string_95"
+    },
+    {
+      "time_stamp": "2020_09_07",
+      "title": "csa_haul_2020_19",
+      "alias": "2020 CSA Week 19",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_19.jpg",
+      "product_ids": [
+        "51",
+        "14",
+        "44",
+        "118",
+        "50",
+        "78",
+        "79",
+        "77",
+        "beans"
+      ],
+      "message": "string_96"
+    },
+    {
+      "time_stamp": "2020_09_14",
+      "title": "csa_haul_2020_20",
+      "alias": "2020 CSA Week 20",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_20.jpg",
+      "product_ids": [
+        "53",
+        "65",
+        "102",
+        "30",
+        "16",
+        "73",
+        "78",
+        "8",
+        "1",
+        "87"
+      ],
+      "message": "string_97"
+    },
+    {
+      "time_stamp": "2020_09_21",
+      "title": "csa_haul_2020_21",
+      "alias": "2020 CSA Week 21",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_21.jpg",
+      "product_ids": [
+        "35",
+        "102",
+        "44",
+        "118",
+        "16",
+        "8",
+        "79",
+        "78",
+        "1",
+        "beans"
+      ],
+      "message": "string_98"
+    },
+    {
+      "time_stamp": "2020_09_28",
+      "title": "csa_haul_2020_22",
+      "alias": "2020 CSA Week 22",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_22.jpg",
+      "product_ids": [
+        "51",
+        "11",
+        "14",
+        "45",
+        "111",
+        "118",
+        "jalapenos_sante_fe",
+        "1",
+        "8",
+        "8"
+      ],
+      "message": "string_99"
+    },
+    {
+      "time_stamp": "2020_10_05",
+      "title": "csa_haul_2020_23",
+      "alias": "2020 CSA Week 23",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_23.jpg",
+      "product_ids": [
+        "57",
+        "53",
+        "83",
+        "44",
+        "23",
+        "16",
+        "104",
+        "78",
+        "8",
+        "1"
+      ],
+      "message": "string_100"
+    },
+    {
+      "time_stamp": "2020_10_12",
+      "title": "csa_haul_2020_24",
+      "alias": "2020 CSA Week 24",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_24.jpg",
+      "product_ids": [
+        "41",
+        "14",
+        "74",
+        "44",
+        "16",
+        "70",
+        "79",
+        "1",
+        "78",
+        "poblano_pepper"
+      ],
+      "message": "string_101"
+    },
+    {
+      "time_stamp": "2020_10_19",
+      "title": "csa_haul_2020_25",
+      "alias": "2020 CSA Week 25",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_25.jpg",
+      "product_ids": [
+        "53",
+        "14",
+        "102",
+        "44",
+        "118",
+        "71",
+        "8",
+        "78",
+        "77"
+      ],
+      "message": "string_102"
+    },
+    {
+      "time_stamp": "2020_10_26",
+      "title": "csa_haul_2020_26",
+      "alias": "2020 CSA Week 26",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_26.jpg",
+      "product_ids": [
+        "11",
+        "35",
+        "30",
+        "44",
+        "16",
+        "78",
+        "77",
+        "8",
+        "1"
+      ],
+      "message": "string_103"
+    },
+    {
+      "time_stamp": "2020_11_02",
+      "title": "csa_haul_2020_27",
+      "alias": "2020 CSA Week 27",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_27.jpg",
+      "product_ids": [
+        "64",
+        "14",
+        "48",
+        "1",
+        "4",
+        "79",
+        "78",
+        "44",
+        "118",
+        "102"
+      ],
+      "message": "string_104"
+    },
+    {
+      "time_stamp": "2020_11_09",
+      "title": "csa_haul_2020_28",
+      "alias": "2020 CSA Week 28",
+      "picture": "assets/imgs/csa/2020/csa_haul_2020_28.jpg",
+      "product_ids": [
+        "53",
+        "35",
+        "14",
+        "44",
+        "118",
+        "78",
+        "chili_pepper",
+        "4",
+        "1",
+        "8"
+      ],
+      "message": "string_105"
+    },
+    {
+      "time_stamp": "2021_05_03",
+      "title": "csa_haul_2021_1",
+      "alias": "2021 CSA Week 1",
+      "picture": "assets/imgs/csa/2021/csa_haul_2021_1.jpg",
+      "product_ids": [
+        "41",
+        "14",
+        "74",
+        "green_oakleaf",
+        "bibb",
+        "44",
+        "118"
+      ],
+      "message": "string_106"
+    },
+    {
+      "time_stamp": "2021_05_10",
+      "title": "csa_haul_2021_2",
+      "alias": "2021 CSA Week 2",
+      "picture": "assets/imgs/csa/2021/csa_haul_2021_2.jpg",
+      "product_ids": [
+        "35",
+        "14",
+        "92",
+        "102",
+        "44",
+        "44",
+        "115"
+      ],
+      "message": "string_107"
+    },
+    {
+      "time_stamp": "2022_05_02",
+      "title": "csa_haul_2022_1",
+      "alias": "2022 CSA Week 1",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_1.jpg",
+      "product_ids": [
+        "35",
+        "116",
+        "beets_greens",
+        "102",
+        "44",
+        "30",
+        "118",
+        "28"
+      ],
+      "message": "string_108"
+    },
+    {
+      "time_stamp": "2022_05_09",
+      "title": "csa_haul_2022_2",
+      "alias": "2022 CSA Week 2",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_2.jpg",
+      "product_ids": [
+        "cabbage_chinese",
+        "35",
+        "onions_red",
+        "beets_chioggia",
+        "44",
+        "12",
+        "118",
+        "28",
+        "17"
+      ],
+      "message": "string_109"
+    },
+    {
+      "time_stamp": "2022_05_16",
+      "title": "csa_haul_2022_3",
+      "alias": "2022 CSA Week 3",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_3.jpg",
+      "product_ids": [
+        "broccoli_head",
+        "onions_yellow",
+        "green_garlic",
+        "102",
+        "83",
+        "44",
+        "51",
+        "54"
+      ],
+      "message": "string_110"
+    },
+    {
+      "time_stamp": "2022_05_23",
+      "title": "csa_haul_2022_4",
+      "alias": "2022 CSA Week 4",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_4.jpg",
+      "product_ids": [
+        "chinese_cabbage_rapini",
+        "onions_yellow",
+        "102",
+        "44",
+        "44",
+        "28",
+        "strawberries",
+        "83"
+      ],
+      "message": "string_111"
+    },
+    {
+      "time_stamp": "2022_05_30",
+      "title": "csa_haul_2022_5",
+      "alias": "2022 CSA Week 5",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_5.jpg",
+      "product_ids": [
+        "41",
+        "garlic_scapes",
+        "102",
+        "74",
+        "17",
+        "54",
+        "28",
+        "strawberries"
+      ],
+      "message": "string_112"
+    },
+    {
+      "time_stamp": "2022_06_06",
+      "title": "csa_haul_2022_6",
+      "alias": "2022 CSA Week 6",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_6.jpg",
+      "product_ids": [
+        "84",
+        "garlic_green",
+        "onions_red_bunching",
+        "beets_purple",
+        "44",
+        "17",
+        "16",
+        "strawberries"
+      ],
+      "message": "string_113"
+    },
+    {
+      "time_stamp": "2022_06_13",
+      "title": "csa_haul_2022_7",
+      "alias": "2022 CSA Week 7",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_7.jpg",
+      "product_ids": [
+        "53",
+        "41",
+        "1",
+        "onions_red_bunching",
+        "garlic_scapes",
+        "83",
+        "102",
+        "30",
+        "54"
+      ],
+      "message": "string_114"
+    },
+    {
+      "time_stamp": "2022_06_20",
+      "title": "csa_haul_2022_8",
+      "alias": "2022 CSA Week 8",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_8.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "zucchini_summer_squash",
+        "onions_yellow",
+        "onions_red_bunching",
+        "44",
+        "45",
+        "beans"
+      ],
+      "message": "string_115"
+    },
+    {
+      "time_stamp": "2022_06_27",
+      "title": "csa_haul_2022_9",
+      "alias": "2022 CSA Week 9",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_9.jpg",
+      "product_ids": [
+        "57",
+        "1",
+        "zucchini_summer_squash",
+        "82",
+        "102",
+        "30",
+        "50",
+        "beans",
+        "peas"
+      ],
+      "message": "string_116"
+    },
+    {
+      "time_stamp": "2022_07_11",
+      "title": "csa_haul_2022_11",
+      "alias": "2022 CSA Week 11",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_11.jpg",
+      "product_ids": [
+        "51",
+        "1",
+        "59",
+        "82",
+        "83",
+        "118",
+        "30",
+        "17",
+        "beans",
+        "peas"
+      ],
+      "message": "string_117"
+    },
+    {
+      "time_stamp": "2022_07_18",
+      "title": "csa_haul_2022_12",
+      "alias": "2022 CSA Week 12",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_12.jpg",
+      "product_ids": [
+        "broccoli_sprouting",
+        "57",
+        "64",
+        "1",
+        "pepper_cubanelle",
+        "onions_white",
+        "55",
+        "83",
+        "17",
+        "60"
+      ],
+      "message": "string_118"
+    },
+    {
+      "time_stamp": "2022_07_25",
+      "title": "csa_haul_2022_13",
+      "alias": "2022 CSA Week 13",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_13.jpg",
+      "product_ids": [
+        "53",
+        "broccoli_sprouting",
+        "1",
+        "kabocha_squash",
+        "zucchini_summer_squash",
+        "onions_yellow_sweet",
+        "55",
+        "60"
+      ],
+      "message": "string_119"
+    },
+    {
+      "time_stamp": "2022_08_01",
+      "title": "csa_haul_2022_14",
+      "alias": "2022 CSA Week 14",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_14.jpg",
+      "product_ids": [
+        "41",
+        "112",
+        "1",
+        "104",
+        "65",
+        "55",
+        "28"
+      ],
+      "message": "string_120"
+    },
+    {
+      "time_stamp": "2022_08_08",
+      "title": "csa_haul_2022_15",
+      "alias": "2022 CSA Week 15",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_15.jpg",
+      "product_ids": [
+        "tomatoes_roma",
+        "4",
+        "8",
+        "78",
+        "delicata",
+        "102",
+        "44",
+        "16",
+        "17"
+      ],
+      "message": "string_121"
+    },
+    {
+      "time_stamp": "2022_08_15",
+      "title": "csa_haul_2022_16",
+      "alias": "2022 CSA Week 16",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_16.jpg",
+      "product_ids": [
+        "64",
+        "51",
+        "1",
+        "pepper_bell",
+        "butternut",
+        "63",
+        "onions_green",
+        "44",
+        "beans_green",
+        "34"
+      ],
+      "message": "string_122"
+    },
+    {
+      "time_stamp": "2022_08_29",
+      "title": "csa_haul_2022_18",
+      "alias": "2022 CSA Week 18",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_18.jpg",
+      "product_ids": [
+        "53",
+        "64",
+        "4",
+        "8",
+        "pepper_lunchbox",
+        "71",
+        "onions_white",
+        "44",
+        "17",
+        "10",
+        "76"
+      ],
+      "message": "string_123"
+    },
+    {
+      "time_stamp": "2022_09_05",
+      "title": "csa_haul_2022_19",
+      "alias": "2022 CSA Week 19",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_19.jpg",
+      "product_ids": [
+        "64",
+        "53",
+        "1",
+        "78",
+        "104",
+        "74",
+        "102",
+        "44",
+        "beans_green"
+      ],
+      "message": "string_124"
+    },
+    {
+      "time_stamp": "2022_09_12",
+      "title": "csa_haul_2022_20",
+      "alias": "2022 CSA Week 20",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_20.jpg",
+      "product_ids": [
+        "broccoli_sprouting",
+        "pepper_poblano",
+        "pepper_sweet",
+        "honeynut",
+        "beets_chioggia",
+        "beets_golden",
+        "44",
+        "28",
+        "beans_yellow_wax"
+      ],
+      "message": "string_125"
+    },
+    {
+      "time_stamp": "2022_09_19",
+      "title": "csa_haul_2022_21",
+      "alias": "2022 CSA Week 21",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_21.jpg",
+      "product_ids": [
+        "41",
+        "78",
+        "4",
+        "butterkin",
+        "onions_green",
+        "82",
+        "10",
+        "13",
+        "peas_beans"
+      ],
+      "message": "string_126"
+    },
+    {
+      "time_stamp": "2022_09_26",
+      "title": "csa_haul_2022_22",
+      "alias": "2022 CSA Week 22",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_22.jpg",
+      "product_ids": [
+        "64",
+        "53",
+        "8",
+        "1",
+        "78",
+        "onions_green",
+        "115",
+        "28",
+        "100"
+      ],
+      "message": "string_127"
+    },
+    {
+      "time_stamp": "2022_10_03",
+      "title": "csa_haul_2022_23",
+      "alias": "2022 CSA Week 23",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_23.jpg",
+      "product_ids": [
+        "broccoli_sprouting",
+        "1",
+        "4",
+        "peppers_lunchbox",
+        "35",
+        "74",
+        "44",
+        "12",
+        "17"
+      ],
+      "message": "string_128"
+    },
+    {
+      "time_stamp": "2022_10_10",
+      "title": "csa_haul_2022_24",
+      "alias": "2022 CSA Week 24",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_24.jpg",
+      "product_ids": [
+        "cabbage_chinese",
+        "1",
+        "8",
+        "onions_green",
+        "102",
+        "74",
+        "45",
+        "potatoes_red_skin"
+      ],
+      "message": "string_129"
+    },
+    {
+      "time_stamp": "2022_10_17",
+      "title": "csa_haul_2022_25",
+      "alias": "2022 CSA Week 25",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_25.jpg",
+      "product_ids": [
+        "53",
+        "57",
+        "1",
+        "78",
+        "102",
+        "44",
+        "28",
+        "17"
+      ],
+      "message": "string_130"
+    },
+    {
+      "time_stamp": "2022_10_24",
+      "title": "csa_haul_2022_26",
+      "alias": "2022 CSA Week 26",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_26.jpg",
+      "product_ids": [
+        "82",
+        "wine_vinegar",
+        "red_pepper_flakes",
+        "olive_oil",
+        "111",
+        "lamb_or_beef_roast",
+        "black_or_pinto_beans",
+        "66",
+        "20",
+        "stock",
+        "cooking_oil",
+        "2",
+        "chili_powder",
+        "cumin",
+        "13",
+        "cayenne_pepper",
+        "102",
+        "100",
+        "mayonnaise",
+        "2",
+        "white_vinegar",
+        "honey",
+        "sweet_pickle_relish"
+      ],
+      "message": "string_131"
+    },
+    {
+      "time_stamp": "2022_10_31",
+      "title": "csa_haul_2022_27",
+      "alias": "2022 CSA Week 27",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_27.jpg",
+      "product_ids": [
+        "cabbage_chinese",
+        "brussels_sprouts",
+        "51",
+        "pepper_sweet",
+        "1",
+        "onions_green",
+        "74"
+      ],
+      "message": "string_132"
+    },
+    {
+      "time_stamp": "2022_11_07",
+      "title": "csa_haul_2022_28",
+      "alias": "2022 CSA Week 28",
+      "picture": "assets/imgs/csa/2022/csa_haul_2022_28.jpg",
+      "product_ids": [
+        "53",
+        "broccoli_sprouting",
+        "57",
+        "1",
+        "pepper",
+        "35",
+        "102",
+        "44",
+        "28",
+        "17"
+      ],
+      "message": "string_133"
+    },
+    {
+      "time_stamp": "2023_05_01",
+      "title": "csa_haul_2023_1",
+      "alias": "2023 CSA Week 1",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_1.jpg",
+      "product_ids": [
+        "cabbage_rapini",
+        "35",
+        "onions_green",
+        "74",
+        "28",
+        "44"
+      ],
+      "message": "string_134"
+    },
+    {
+      "time_stamp": "2023_05_08",
+      "title": "csa_haul_2023_2",
+      "alias": "2023 CSA Week 2",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_2.jpg",
+      "product_ids": [
+        "onions_green",
+        "onions_white",
+        "onions_red",
+        "beets_chioggia",
+        "beet_greens",
+        "44",
+        "17"
+      ],
+      "message": "string_135"
+    },
+    {
+      "time_stamp": "2023_05_15",
+      "title": "csa_haul_2023_3",
+      "alias": "2023 CSA Week 3",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_3.jpg",
+      "product_ids": [
+        "35",
+        "onions_green",
+        "green_garlic",
+        "102",
+        "83",
+        "44",
+        "118",
+        "28"
+      ],
+      "message": "string_136"
+    },
+    {
+      "time_stamp": "2023_05_22",
+      "title": "csa_haul_2023_4",
+      "alias": "2023 CSA Week 4",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_4.jpg",
+      "product_ids": [
+        "cabbage_chinese",
+        "green_garlic",
+        "onions_red",
+        "74",
+        "83",
+        "30",
+        "strawberries",
+        "onions_green"
+      ],
+      "message": "string_137"
+    },
+    {
+      "time_stamp": "2023_05_29",
+      "title": "csa_haul_2023_5",
+      "alias": "2023 CSA Week 5",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_5.jpg",
+      "product_ids": [
+        "35",
+        "onions_red",
+        "102",
+        "83",
+        "44",
+        "strawberries"
+      ],
+      "message": "string_138"
+    },
+    {
+      "time_stamp": "2023_06_05",
+      "title": "csa_haul_2023_6",
+      "alias": "2023 CSA Week 6",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_6.jpg",
+      "product_ids": [
+        "41",
+        "onions_green",
+        "onions_red_bunching",
+        "102",
+        "bibb_head",
+        "118",
+        "28",
+        "strawberries"
+      ],
+      "message": "string_139"
+    },
+    {
+      "time_stamp": "2023_06_12",
+      "title": "csa_haul_2023_7",
+      "alias": "2023 CSA Week 7",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_7.jpg",
+      "product_ids": [
+        "cabbage_chinese",
+        "51",
+        "onions_red",
+        "garlic_scapes",
+        "56",
+        "30",
+        "45"
+      ],
+      "message": "string_140"
+    },
+    {
+      "time_stamp": "2023_06_19",
+      "title": "csa_haul_2023_8",
+      "alias": "2023 CSA Week 8",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_8.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "78",
+        "onions_red",
+        "garlic_scapes",
+        "56",
+        "44"
+      ],
+      "message": "string_141"
+    },
+    {
+      "time_stamp": "2023_06_26",
+      "title": "csa_haul_2023_9",
+      "alias": "2023 CSA Week 9",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_9.jpg",
+      "product_ids": [
+        "savoy_cabbage",
+        "1",
+        "98",
+        "82",
+        "14",
+        "56",
+        "green_oakleaf",
+        "red_bibb"
+      ],
+      "message": "string_142"
+    },
+    {
+      "time_stamp": "2023_07_03",
+      "title": "csa_haul_2023_10",
+      "alias": "2023 CSA Week 10",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_10.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "peppers_bell",
+        "onion_yellow",
+        "onion_red",
+        "83",
+        "28",
+        "17",
+        "peas_snow"
+      ],
+      "message": "string_143"
+    },
+    {
+      "time_stamp": "2023_07_10",
+      "title": "csa_haul_2023_11",
+      "alias": "2023 CSA Week 11",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_11.jpg",
+      "product_ids": [
+        "57",
+        "1",
+        "poblano_peppers",
+        "59",
+        "82",
+        "50",
+        "17",
+        "peas"
+      ],
+      "message": "string_144"
+    },
+    {
+      "time_stamp": "2023_07_17",
+      "title": "csa_haul_2023_12",
+      "alias": "2023 CSA Week 12",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_12.jpg",
+      "product_ids": [
+        "51",
+        "tomatoes_roma",
+        "pepper_cubanelle",
+        "104",
+        "65",
+        "50",
+        "87"
+      ],
+      "message": "string_145"
+    },
+    {
+      "time_stamp": "2023_07_24",
+      "title": "csa_haul_2023_13",
+      "alias": "2023 CSA Week 13",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_13.jpg",
+      "product_ids": [
+        "84",
+        "savoy_cabbage",
+        "1",
+        "98",
+        "zucchini_summer_squash",
+        "54",
+        "60",
+        "wax_and_green_beans"
+      ],
+      "message": "string_146"
+    },
+    {
+      "time_stamp": "2023_07_31",
+      "title": "csa_haul_2023_14",
+      "alias": "2023 CSA Week 14",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_14.jpg",
+      "product_ids": [
+        "57",
+        "3",
+        "78",
+        "63",
+        "82",
+        "yellow_onion",
+        "17",
+        "87"
+      ],
+      "message": "string_147"
+    },
+    {
+      "time_stamp": "2023_08_07",
+      "title": "csa_haul_2023_15",
+      "alias": "2023 CSA Week 15",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_15.jpg",
+      "product_ids": [
+        "3",
+        "4",
+        "78",
+        "63",
+        "58",
+        "55",
+        "50",
+        "54",
+        "87"
+      ],
+      "message": "string_148"
+    },
+    {
+      "time_stamp": "2023_08_14",
+      "title": "csa_haul_2023_16",
+      "alias": "2023 CSA Week 16",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_16.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "zucchini_summer_sqush",
+        "63",
+        "55",
+        "carrot",
+        "44",
+        "87"
+      ],
+      "message": "string_149"
+    },
+    {
+      "time_stamp": "2023_08_21",
+      "title": "csa_haul_2023_17",
+      "alias": "2023 CSA Week 17",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_17.jpg",
+      "product_ids": [
+        "84",
+        "1",
+        "78",
+        "58",
+        "74",
+        "17",
+        "60"
+      ],
+      "message": "string_150"
+    },
+    {
+      "time_stamp": "2023_08_28",
+      "title": "csa_haul_2023_18",
+      "alias": "2023 CSA Week 18",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_18.jpg",
+      "product_ids": [
+        "64",
+        "1",
+        "78",
+        "71",
+        "82",
+        "55",
+        "17",
+        "10",
+        "yellow_wax_beans"
+      ],
+      "message": "string_151"
+    },
+    {
+      "time_stamp": "2023_09_04",
+      "title": "csa_haul_2023_19",
+      "alias": "2023 CSA Week 19",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_19.jpg",
+      "product_ids": [
+        "4",
+        "1",
+        "poblano_peppers",
+        "73",
+        "74",
+        "102",
+        "44",
+        "romano_beans"
+      ],
+      "message": "string_152"
+    },
+    {
+      "time_stamp": "2023_09_11",
+      "title": "csa_haul_2023_20",
+      "alias": "2023 CSA Week 20",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_20.jpg",
+      "product_ids": [
+        "51",
+        "78",
+        "8",
+        "71",
+        "44",
+        "17",
+        "yellow_wax_beans"
+      ],
+      "message": "string_153"
+    },
+    {
+      "time_stamp": "2023_09_18",
+      "title": "csa_haul_2023_21",
+      "alias": "2023 CSA Week 21",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_21.jpg",
+      "product_ids": [
+        "purple_sprouting_broccoli",
+        "4",
+        "8",
+        "104",
+        "58",
+        "82",
+        "28",
+        "87"
+      ],
+      "message": "string_154"
+    },
+    {
+      "time_stamp": "2023_09_25",
+      "title": "csa_haul_2023_22",
+      "alias": "2023 CSA Week 22",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_22.jpg",
+      "product_ids": [
+        "51",
+        "1",
+        "78",
+        "butternut",
+        "82",
+        "74",
+        "44",
+        "45"
+      ],
+      "message": "string_155"
+    },
+    {
+      "time_stamp": "2023_10_02",
+      "title": "csa_haul_2023_23",
+      "alias": "2023 CSA Week 23",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_23.jpg",
+      "product_ids": [
+        "112",
+        "4",
+        "78",
+        "1",
+        "102",
+        "44",
+        "45",
+        "17"
+      ],
+      "message": "string_156"
+    },
+    {
+      "time_stamp": "2023_10_09",
+      "title": "csa_haul_2023_24",
+      "alias": "2023 CSA Week 24",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_24.jpg",
+      "product_ids": [
+        "84",
+        "78",
+        "8",
+        "71",
+        "102",
+        "44",
+        "sweet_potatoes"
+      ],
+      "message": "string_157"
+    },
+    {
+      "time_stamp": "2023_10_16",
+      "title": "csa_haul_2023_25",
+      "alias": "2023 CSA Week 25",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_25.jpg",
+      "product_ids": [
+        "broccoli_purple_sprouting",
+        "tomatoes_mixed",
+        "peppers_green_bell",
+        "74",
+        "44",
+        "potatoes_red_skin",
+        "82"
+      ],
+      "message": "string_158"
+    },
+    {
+      "time_stamp": "2023_10_23",
+      "title": "csa_haul_2023_26",
+      "alias": "2023 CSA Week 26",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_26.jpg",
+      "product_ids": [
+        "51",
+        "78",
+        "4",
+        "35",
+        "82",
+        "102",
+        "44",
+        "17"
+      ],
+      "message": "string_159"
+    },
+    {
+      "time_stamp": "2023_10_30",
+      "title": "csa_haul_2023_27",
+      "alias": "2023 CSA Week 27",
+      "picture": "assets/imgs/csa/2023/csa_haul_2023_27.jpg",
+      "product_ids": [
+        "64",
+        "78",
+        "1",
+        "71",
+        "82",
+        "74",
+        "45"
+      ],
+      "message": "string_160"
+    },
+    {
+      "time_stamp": "2024_05_06",
+      "title": "csa_haul_2024_1",
+      "alias": "2024 CSA Week 1",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_1.jpg",
+      "product_ids": [
+        "11",
+        "41",
+        "35",
+        "14",
+        "74",
+        "118"
+      ],
+      "message": "string_161"
+    },
+    {
+      "time_stamp": "2024_05_13",
+      "title": "csa_haul_2024_2",
+      "alias": "2024 CSA Week 2",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_2.jpg",
+      "product_ids": [
+        "kale_toscano",
+        "beets_purple_overwintered",
+        "28",
+        "65",
+        "17",
+        "118",
+        "35"
+      ],
+      "message": "string_162"
+    },
+    {
+      "time_stamp": "2024_05_20",
+      "title": "csa_haul_2024_3",
+      "alias": "2024 CSA Week 3",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_3.jpg",
+      "product_ids": [
+        "41",
+        "66",
+        "green_garlic",
+        "44",
+        "83",
+        "44",
+        "peas"
+      ],
+      "message": "string_163"
+    },
+    {
+      "time_stamp": "2024_05_27",
+      "title": "csa_haul_2024_4",
+      "alias": "2024 CSA Week 4",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_4.jpg",
+      "product_ids": [
+        "35",
+        "65",
+        "83",
+        "45",
+        "peas",
+        "strawberries"
+      ],
+      "message": "string_164"
+    },
+    {
+      "time_stamp": "2024_06_03",
+      "title": "csa_haul_2024_5",
+      "alias": "2024 CSA Week 5",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_5.jpg",
+      "product_ids": [
+        "65",
+        "83",
+        "74",
+        "44",
+        "strawberries",
+        "garlic_scapes"
+      ],
+      "message": "string_165"
+    },
+    {
+      "time_stamp": "2024_06_10",
+      "title": "csa_haul_2024_6",
+      "alias": "2024 CSA Week 6",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_6.jpg",
+      "product_ids": [
+        "64",
+        "58",
+        "garlic_scapes",
+        "83",
+        "74",
+        "44"
+      ],
+      "message": "string_166"
+    },
+    {
+      "time_stamp": "2024_06_17",
+      "title": "csa_haul_2024_7",
+      "alias": "2024 CSA Week 7",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_7.jpg",
+      "product_ids": [
+        "43",
+        "84",
+        "14",
+        "82",
+        "96",
+        "1",
+        "34"
+      ],
+      "message": "string_167"
+    },
+    {
+      "time_stamp": "2024_06_24",
+      "title": "csa_haul_2024_8",
+      "alias": "2024 CSA Week 8",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_8.jpg",
+      "product_ids": [
+        "57",
+        "84",
+        "64",
+        "1",
+        "carros",
+        "83",
+        "45"
+      ],
+      "message": "string_168"
+    },
+    {
+      "time_stamp": "2024_07_01",
+      "title": "csa_haul_2024_9",
+      "alias": "2024 CSA Week 9",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_9.jpg",
+      "product_ids": [
+        "53",
+        "1",
+        "73",
+        "59",
+        "82",
+        "102",
+        "44",
+        "28"
+      ],
+      "message": "string_169"
+    },
+    {
+      "time_stamp": "2024_07_08",
+      "title": "csa_haul_2024_10",
+      "alias": "2024 CSA Week 10",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_10.jpg",
+      "product_ids": [
+        "51",
+        "64",
+        "1",
+        "78",
+        "58",
+        "74",
+        "44"
+      ],
+      "message": "string_170"
+    },
+    {
+      "time_stamp": "2024_07_15",
+      "title": "csa_haul_2024_11",
+      "alias": "2024 CSA Week 11",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_11.jpg",
+      "product_ids": [
+        "57",
+        "41",
+        "1",
+        "78",
+        "59",
+        "82",
+        "56",
+        "28"
+      ],
+      "message": "string_171"
+    },
+    {
+      "time_stamp": "2024_07_22",
+      "title": "csa_haul_2024_12",
+      "alias": "2024 CSA Week 12",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_12.jpg",
+      "product_ids": [
+        "53",
+        "64",
+        "1",
+        "65",
+        "14",
+        "92",
+        "87"
+      ],
+      "message": "string_172"
+    },
+    {
+      "time_stamp": "2024_07_29",
+      "title": "csa_haul_2024_13",
+      "alias": "2024 CSA Week 13",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_13.jpg",
+      "product_ids": [
+        "broccoli_sprouts",
+        "1",
+        "78",
+        "kabocha_squash",
+        "zucchini_summer_squash",
+        "romano_beans",
+        "100"
+      ],
+      "message": "string_173"
+    },
+    {
+      "time_stamp": "2024_08_05",
+      "title": "csa_haul_2024_14",
+      "alias": "2024 CSA Week 14",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_14.jpg",
+      "product_ids": [
+        "57",
+        "41",
+        "4",
+        "78",
+        "82",
+        "108",
+        "wax_beans"
+      ],
+      "message": "string_174"
+    },
+    {
+      "time_stamp": "2024_08_12",
+      "title": "csa_haul_2024_15",
+      "alias": "2024 CSA Week 15",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_15.jpg",
+      "product_ids": [
+        "64",
+        "53",
+        "3",
+        "78",
+        "71",
+        "50",
+        "61"
+      ],
+      "message": "string_175"
+    },
+    {
+      "time_stamp": "2024_08_19",
+      "title": "csa_haul_2024_16",
+      "alias": "2024 CSA Week 16",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_16.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "8",
+        "78",
+        "honeynut_squash",
+        "zucchini_summer_squash",
+        "100",
+        "50"
+      ],
+      "message": "string_176"
+    },
+    {
+      "time_stamp": "2024_08_26",
+      "title": "csa_haul_2024_17",
+      "alias": "2024 CSA Week 17",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_17.jpg",
+      "product_ids": [
+        "4",
+        "kabocha_squash",
+        "zucchini_summersquash",
+        "100",
+        "16",
+        "beans",
+        "corn"
+      ],
+      "message": "string_177"
+    },
+    {
+      "time_stamp": "2024_09_02",
+      "title": "csa_haul_2024_18",
+      "alias": "2024 CSA Week 18",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_18.jpg",
+      "product_ids": [
+        "41",
+        "71",
+        "zucchini_summer_squash",
+        "74",
+        "13",
+        "10",
+        "17",
+        "18",
+        "50",
+        "romano_beans"
+      ],
+      "message": "string_178"
+    },
+    {
+      "time_stamp": "2024_09_09",
+      "title": "csa_haul_2024_19",
+      "alias": "2024 CSA Week 19",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_19.jpg",
+      "product_ids": [
+        "53",
+        "4",
+        "73",
+        "100",
+        "44",
+        "17",
+        "83"
+      ],
+      "message": "string_179"
+    },
+    {
+      "time_stamp": "2024_09_16",
+      "title": "csa_haul_2024_20",
+      "alias": "2024 CSA Week 20",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_20.jpg",
+      "product_ids": [
+        "78",
+        "1",
+        "butterkin_squash",
+        "zucchini_summer_squash",
+        "83",
+        "50",
+        "87"
+      ],
+      "message": "string_180"
+    },
+    {
+      "time_stamp": "2024_09_23",
+      "title": "csa_haul_2024_21",
+      "alias": "2024 CSA Week 21",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_21.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "4",
+        "78",
+        "44",
+        "13",
+        "18",
+        "87"
+      ],
+      "message": "string_181"
+    },
+    {
+      "time_stamp": "2024_09_30",
+      "title": "csa_haul_2024_22",
+      "alias": "2024 CSA Week 22",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_22.jpg",
+      "product_ids": [
+        "53",
+        "51",
+        "1",
+        "78",
+        "83",
+        "74",
+        "50",
+        "romano_beans",
+        "61"
+      ],
+      "message": "string_182"
+    },
+    {
+      "time_stamp": "2024_10_07",
+      "title": "csa_haul_2024_23",
+      "alias": "2024 CSA Week 23",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_23.jpg",
+      "product_ids": [
+        "51",
+        "4",
+        "78",
+        "1",
+        "honeynut_squash",
+        "102",
+        "17",
+        "28",
+        "50"
+      ],
+      "message": "string_183"
+    },
+    {
+      "time_stamp": "2024_10_14",
+      "title": "csa_haul_2024_24",
+      "alias": "2024 CSA Week 24",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_24.jpg",
+      "product_ids": [
+        "41",
+        "78",
+        "1",
+        "83",
+        "102",
+        "13"
+      ],
+      "message": "string_184"
+    },
+    {
+      "time_stamp": "2024_10_21",
+      "title": "csa_haul_2024_25",
+      "alias": "2024 CSA Week 25",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_25.jpg",
+      "product_ids": [
+        "53",
+        "51",
+        "1",
+        "78",
+        "74",
+        "83",
+        "50"
+      ],
+      "message": "string_185"
+    },
+    {
+      "time_stamp": "2024_10_28",
+      "title": "csa_haul_2024_26",
+      "alias": "2024 CSA Week 26",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_26.jpg",
+      "product_ids": [
+        "51",
+        "57",
+        "78",
+        "1",
+        "sweet_potatoes",
+        "118"
+      ],
+      "message": "string_186"
+    },
+    {
+      "time_stamp": "2024_11_04",
+      "title": "csa_haul_2024_27",
+      "alias": "2024 CSA Week 27",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_27.jpg",
+      "product_ids": [
+        "53",
+        "78",
+        "1",
+        "61",
+        "71",
+        "sweet_potatoes",
+        "44",
+        "83"
+      ],
+      "message": "string_187"
+    },
+    {
+      "time_stamp": "2024_11_11",
+      "title": "csa_haul_2024_28",
+      "alias": "2024 CSA Week 28",
+      "picture": "assets/imgs/csa/2024/csa_haul_2024_28.jpg",
+      "product_ids": [
+        "53",
+        "57",
+        "1",
+        "78",
+        "sweet_potatoes",
+        "118",
+        "17"
+      ],
+      "message": "string_188"
+    },
+    {
+      "time_stamp": "2025_05_05",
+      "title": "csa_haul_2025_1",
+      "alias": "2025 CSA Week 1",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_1.jpg",
+      "product_ids": [
+        "14",
+        "17",
+        "28",
+        "74",
+        "118"
+      ],
+      "message": "string_189"
+    },
+    {
+      "time_stamp": "2025_05_12",
+      "title": "csa_haul_2025_2",
+      "alias": "2025 CSA Week 2",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_2.jpg",
+      "product_ids": [
+        "35",
+        "green_garlic",
+        "83",
+        "118",
+        "44",
+        "13"
+      ],
+      "message": "string_190"
+    },
+    {
+      "time_stamp": "2025_05_19",
+      "title": "csa_haul_2025_3",
+      "alias": "2025 CSA Week 3",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_3.jpg",
+      "product_ids": [
+        "51",
+        "35",
+        "green_garlic",
+        "83",
+        "44",
+        "118",
+        "34"
+      ],
+      "message": "string_191"
+    },
+    {
+      "time_stamp": "2025_05_26",
+      "title": "csa_haul_2025_4",
+      "alias": "2025 CSA Week 4",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_4.jpg",
+      "product_ids": [
+        "78",
+        "green_garlic",
+        "icicle_radishes",
+        "92",
+        "44",
+        "28",
+        "strawberries"
+      ],
+      "message": "string_192"
+    },
+    {
+      "time_stamp": "2025_06_02",
+      "title": "csa_haul_2025_5",
+      "alias": "2025 CSA Week 5",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_5.jpg",
+      "product_ids": [
+        "1",
+        "14",
+        "green_garlic",
+        "74",
+        "102",
+        "44"
+      ],
+      "message": "string_193"
+    },
+    {
+      "time_stamp": "2025_06_09",
+      "title": "csa_haul_2025_6",
+      "alias": "2025 CSA Week 6",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_6.jpg",
+      "product_ids": [
+        "1",
+        "65",
+        "garlic_scapes",
+        "74",
+        "44",
+        "13"
+      ],
+      "message": "string_194"
+    },
+    {
+      "time_stamp": "2025_06_16",
+      "title": "csa_haul_2025_7",
+      "alias": "2025 CSA Week 7",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_7.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "63",
+        "82",
+        "102",
+        "56",
+        "16"
+      ],
+      "message": "string_195"
+    },
+    {
+      "time_stamp": "2025_06_23",
+      "title": "csa_haul_2025_8",
+      "alias": "2025 CSA Week 8",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_8.jpg",
+      "product_ids": [
+        "1",
+        "63",
+        "garlic_scapes",
+        "102",
+        "92",
+        "17",
+        "16"
+      ],
+      "message": "string_196"
+    },
+    {
+      "time_stamp": "2025_06_30",
+      "title": "csa_haul_2025_9",
+      "alias": "2025 CSA Week 9",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_9.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "8",
+        "59",
+        "82",
+        "44",
+        "28",
+        "16"
+      ],
+      "message": "string_197"
+    },
+    {
+      "time_stamp": "2025_07_07",
+      "title": "csa_haul_2025_10",
+      "alias": "2025 CSA Week 10",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_10.jpg",
+      "product_ids": [
+        "41",
+        "1",
+        "59",
+        "82",
+        "102",
+        "56",
+        "100"
+      ],
+      "message": "string_198"
+    },
+    {
+      "time_stamp": "2025_07_14",
+      "title": "csa_haul_2025_11",
+      "alias": "2025 CSA Week 11",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_11.jpg",
+      "product_ids": [
+        "4",
+        "98",
+        "59",
+        "92",
+        "100",
+        "102",
+        "wax_beans"
+      ],
+      "message": "string_199"
+    },
+    {
+      "time_stamp": "2025_07_21",
+      "title": "csa_haul_2025_12",
+      "alias": "2025 CSA Week 12",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_12.jpg",
+      "product_ids": [
+        "8",
+        "78",
+        "14",
+        "102",
+        "87",
+        "60"
+      ],
+      "message": "string_200"
+    },
+    {
+      "time_stamp": "2025_07_28",
+      "title": "csa_haul_2025_13",
+      "alias": "2025 CSA Week 13",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_13.jpg",
+      "product_ids": [
+        "4",
+        "78",
+        "green_onuions",
+        "102",
+        "13",
+        "wax_beans"
+      ],
+      "message": "string_201"
+    },
+    {
+      "time_stamp": "2025_08_04",
+      "title": "csa_haul_2025_14",
+      "alias": "2025 CSA Week 14",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_14.jpg",
+      "product_ids": [
+        "3",
+        "41",
+        "104",
+        "92",
+        "golden_potatoes"
+      ],
+      "message": "string_202"
+    },
+    {
+      "time_stamp": "2025_08_11",
+      "title": "csa_haul_2025_15",
+      "alias": "2025 CSA Week 15",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_15.jpg",
+      "product_ids": [
+        "7",
+        "8",
+        "poblano_peppers",
+        "73",
+        "zucchini_summer_squash",
+        "yellow_wax_beans"
+      ],
+      "message": "string_203"
+    },
+    {
+      "time_stamp": "2025_08_18",
+      "title": "csa_haul_2025_16",
+      "alias": "2025 CSA Week 16",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_16.jpg",
+      "product_ids": [
+        "51",
+        "4",
+        "7",
+        "98",
+        "71",
+        "100",
+        "60"
+      ],
+      "message": "string_204"
+    },
+    {
+      "time_stamp": "2025_08_25",
+      "title": "csa_haul_2025_17",
+      "alias": "2025 CSA Week 17",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_17.jpg",
+      "product_ids": [
+        "41",
+        "6",
+        "8",
+        "78",
+        "92",
+        "16",
+        "60",
+        "61"
+      ],
+      "message": "string_205"
+    },
+    {
+      "time_stamp": "2025_09_01",
+      "title": "csa_haul_2025_18",
+      "alias": "2025 CSA Week 18",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_18.jpg",
+      "product_ids": [
+        "4",
+        "8",
+        "92",
+        "59",
+        "100",
+        "44",
+        "yellow_wax_beans"
+      ],
+      "message": "string_206"
+    },
+    {
+      "time_stamp": "2025_09_08",
+      "title": "csa_haul_2025_19",
+      "alias": "2025 CSA Week 19",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_19.jpg",
+      "product_ids": [
+        "8",
+        "butterkin_squash",
+        "14",
+        "17",
+        "87",
+        "59"
+      ],
+      "message": "string_207"
+    },
+    {
+      "time_stamp": "2025_09_15",
+      "title": "csa_haul_2025_20",
+      "alias": "2025 CSA Week 20",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_20.jpg",
+      "product_ids": [
+        "44",
+        "71",
+        "74",
+        "16",
+        "green_wax_beans"
+      ],
+      "message": "string_208"
+    },
+    {
+      "time_stamp": "2025_09_22",
+      "title": "csa_haul_2025_21",
+      "alias": "2025 CSA Week 21",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_21.jpg",
+      "product_ids": [
+        "41",
+        "44",
+        "8",
+        "104",
+        "100",
+        "16"
+      ],
+      "message": "string_209"
+    },
+    {
+      "time_stamp": "2025_09_29",
+      "title": "csa_haul_2025_22",
+      "alias": "2025 CSA Week 22",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_22.jpg",
+      "product_ids": [
+        "4",
+        "poblano_peppers",
+        "7",
+        "73",
+        "14",
+        "83",
+        "18"
+      ],
+      "message": "string_210"
+    },
+    {
+      "time_stamp": "2025_10_06",
+      "title": "csa_haul_2025_23",
+      "alias": "2025 CSA Week 23",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_23.jpg",
+      "product_ids": [
+        "1",
+        "78",
+        "8",
+        "summer_sqush",
+        "74",
+        "102",
+        "17"
+      ],
+      "message": "string_211"
+    },
+    {
+      "time_stamp": "2025_10_13",
+      "title": "csa_haul_2025_24",
+      "alias": "2025 CSA Week 24",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_24.jpg",
+      "product_ids": [
+        "78",
+        "1",
+        "71",
+        "14",
+        "100"
+      ],
+      "message": "string_212"
+    },
+    {
+      "time_stamp": "2025_10_20",
+      "title": "csa_haul_2025_25",
+      "alias": "2025 CSA Week 25",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_25.jpg",
+      "product_ids": [
+        "1",
+        "71",
+        "78",
+        "14",
+        "83",
+        "17"
+      ],
+      "message": "string_213"
+    },
+    {
+      "time_stamp": "2025_11_03",
+      "title": "csa_haul_2025_27",
+      "alias": "2025 CSA Week 27",
+      "picture": "assets/imgs/csa/2025/csa_haul_2025_27.jpg",
+      "product_ids": [
+        "78",
+        "4",
+        "sweet_potatoes",
+        "83",
+        "74"
+      ],
+      "message": "string_214"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+<!-- =========================
+     SECTION 1 (3-column cards)
+     Injected into #slot-section-1-3
+     
+     REFERENCE COMPONENT PATTERN:
+     Root wrapper (.s1) → Inner grid (.s1__grid) → Cards/content
+     All driven by CSS Grid and shared variables.
+     No knowledge of outer section height or screen width.
+     ========================= -->
+
+<style>
+  /* Component-local scope - internal grid and typography only */
+  /* Root wrapper: fills slot, uses CSS Grid to fill vertical space */
+  .s1{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: var(--section-vertical-pad) 0;
+    align-content: center;
+  }
+
+  /* Inner grid: 3-column card layout using shared gap token, fills available space */
+  .s1__grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap-lg);
+    align-items: stretch;
+    align-content: center;
+  }
+
+  /* Card top section - uses CSS Grid for centering */
+  .s1__cardTop{
+    width: 100%;
+    aspect-ratio: 1.55 / 1;
+    background: var(--c7); /* uses shared color token */
+    border-radius: calc(var(--header-h) * 0.45);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  }
+
+  .s1__icon{
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.18));
+  }
+
+  .s1__title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; /* Open Sans Regular */
+    margin: calc(var(--header-h) * 0.65) 0 calc(var(--header-h) * 0.35);
+    text-align: center;
+    font-size: clamp(16px, calc(var(--header-h) * 0.55), 22px);
+    color: var(--c3); /* uses shared color token */
+  }
+
+  .s1__text{
+    margin: 0 auto;
+    max-width: 34ch;
+    text-align: center;
+    font-size: clamp(12px, calc(var(--header-h) * 0.33), 15px);
+    line-height: 1.65;
+    color: rgba(10, 32, 38, 0.82); /* softened var(--c4) */
+  }
+
+  .s1__text p{
+    margin: 0 0 calc(var(--header-h) * 0.55);
+  }
+  .s1__text p:last-child{
+    margin-bottom: 0;
+  }
+
+  /* Article cards use grid to fill vertical space */
+  .s1__grid article{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: var(--gap-sm);
+    align-content: start;
+  }
+
+  /* Responsive: stack to 1 column - component handles its own breakpoint */
+  @media (max-width: 900px){
+    .s1__grid{ grid-template-columns: 1fr; }
+    .s1__text{ max-width: 52ch; }
+  }
+</style>
+
+<section class="s1">
+  <div class="s1__grid">
+
+      <!-- COLUMN 1 -->
+      <article>
+        <div class="s1__cardTop">
+          <img class="s1__icon" src="assets/imgs/us-ag.png" alt="For Agriculture">
+        </div>
+        <h3 class="s1__title">For Agriculture</h3>
+        <div class="s1__text">
+          <!-- Replace these paragraphs with your final copy -->
+          <p>
+            Do to a lack of use of small farmers, the US agricultural-industry looses out on approximately $70B/yr. This loss is just from what small farms could be producing, at lower waste, directly fed to local economies, and more sustainable.
+          </p>
+          <p>
+            Each year the US spends $1.1 trillion on food, but the hidden costs of poor diets, environmental damage and biodiversity loss add another $2.2 trillion, meaning the real cost of food is roughly twice what consumers pay.
+          </p>
+          <p>
+            Our goal is to develop the technology that anyone can employ for free, that flips the market incentive that currently incentivizes practices that degrade soil and ecosystems rather than rewarding sustainability.
+          </p>
+        </div>
+      </article>
+
+      <!-- COLUMN 2 -->
+      <article>
+        <div class="s1__cardTop">
+          <img class="s1__icon" src="assets/imgs/farmer.png" alt="For Producers">
+        </div>
+        <h3 class="s1__title">For Producers</h3>
+        <div class="s1__text">
+          <p>
+            Our objective is enable the use of our small farms at the same financial and logistical convince as centralized-conglomerate farming.
+          </p>
+          <p>
+            Small farms make up 90% of the US farm land and simultaneously operate 10% less efficiency/per acre than industrial farms with respect to perishable crops, despite less waste. This is the result of farmers not being able to plan to grow what they can't sell. 
+          </p>
+          <p>
+            The demand, the people, and the product are all here; it\’s the coordination that\’s broken.
+          </p>
+        </div>
+      </article>
+
+      <!-- COLUMN 3 -->
+      <article>
+        <div class="s1__cardTop">
+          <img class="s1__icon" src="assets/imgs/consumers.png" alt="For Consumers">
+        </div>
+        <h3 class="s1__title">For Consumers</h3>
+        <div class="s1__text">
+          <p>
+            We want to help a nation of people that feel ashamed of there ability to support themselves and to control what they eat. Local economies were a tragic casualty amidst enumerable benefits of globalism, by giving rise to centralized corporations to employ serve, and sustain.
+          </p>
+          <p>
+            We ate building the tools to transition, again, but back to a world where individuals aren't isolated; product and services aren't poor and inhuman; and people can afford to care because their lives and efforts can be devoted to the people around them.
+          </p>
+        </div>
+      </article>
+
+    </div>
+</section>
+

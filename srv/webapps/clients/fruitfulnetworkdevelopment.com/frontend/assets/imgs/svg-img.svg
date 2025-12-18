@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240">
+  <!-- 
+    Geometry specifications:
+    - Red circle: radius 38 units, centered at (0, 0)
+    - Green ring: inner radius 54, outer radius 76, centered at (0, 0)
+    - Blue ring: inner radius 88, outer radius 106, centered at (0, 0)
+    - Green ring opening: upper end at 68°, 63 units; lower end at 13°, 63 units
+    - Blue ring opening: upper end at 119°, 97 units; lower end at 157°, 79 units
+    - Yellow circle: radius 10, center at 40°, 63 units
+    - Purple circle: radius 10, center at 138°, 79 units
+    
+    Coordinate conversion: angles in standard math (0° = right, 90° = up, counterclockwise)
+    SVG: x = r * cos(θ), y = -r * sin(θ)
+  -->
+  
+  <!-- Central Red Circle -->
+  <circle cx="0" cy="0" r="38" fill="#A03130"/>
+  
+  <!-- Green Ring - Opening from 13° to 68° (305° arc clockwise) -->
+  <!-- Inner radius: 54, Outer radius: 76, thickness: 22 units -->
+  <!-- Endpoint centers both at 63 units (between 54 and 76) -->
+  <!-- Using stroke with rounded caps - arc at 63 units radius with stroke-width 22 -->
+  <!-- Arc from 13° to 68° going clockwise (large arc, 305°), so large-arc-flag=1 -->
+  <path d="M 61.385 -14.172
+           A 63 63 0 1 1 23.600 -58.413" 
+        fill="none"
+        stroke="#2C6955"
+        stroke-width="22"
+        stroke-linecap="round"/>
+  
+  <!-- Blue Ring - Opening from 157° to 119° (counterclockwise) -->
+  <!-- Inner radius: 88, Outer radius: 106, thickness: 18 units -->
+  <!-- Centerline at 97 units (average of 88 and 106) -->
+  <!-- Endpoint centers: upper at 119° and 97 units (matches centerline), lower at 157° and 79 units -->
+  <!-- Arc from 157° to 119° going counterclockwise (short arc, 38°), so large-arc-flag=0 -->
+  <!-- Using centerline arc - rounded caps will be centered at stroke endpoints -->
+  <path d="M -89.289 -37.901
+           A 97 97 0 0 0 -47.027 -84.838"
+        fill="none"
+        stroke="#364B6E"
+        stroke-width="18"
+        stroke-linecap="round"/>
+  
+  <!-- Yellow Circle - center at 40°, 63 units -->
+  <circle cx="48.261" cy="-40.496" r="10" fill="#D9A03A"/>
+  
+  <!-- Purple Circle - center at 138°, 79 units -->
+  <circle cx="-58.708" cy="-52.861" r="10" fill="#5D436C"/>
+</svg>
