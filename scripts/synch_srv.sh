@@ -55,7 +55,13 @@ RSYNC_EXCLUDES=(
   --exclude='*.pyd'
   --exclude='.DS_Store'
   --exclude='*.log'
+  --exclude='.env'
+  --exclude='*.sqlite3'
+  --exclude='instance'
+  --exclude='uploads'
+  --exclude='data'
 )
+
 
 # Sync platform directory
 sync_platform() {
