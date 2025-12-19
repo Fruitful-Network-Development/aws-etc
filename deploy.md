@@ -1,6 +1,6 @@
-# Debian EC2 Rebuild Guide (aws-etc)
+# Debian EC2 Rebuild Guide (aws-box)
 
-> **Scope:** Manual, step-by-step rebuild instructions for a new Debian EC2 instance using the **single** repository `Fruitful-Network-Development/aws-etc`. This guide does **not** use `deploy_platform.sh`.
+> **Scope:** Manual, step-by-step rebuild instructions for a new Debian EC2 instance using the **single** repository `Fruitful-Network-Development/aws-box`. This guide does **not** use `deploy_platform.sh`.
 
 ## 1) Provision the EC2 instance
 1. Launch a **Debian** EC2 instance.
@@ -24,7 +24,7 @@ sudo apt-get install -y git rsync nginx python3 python3-venv python3-pip certbot
 ```bash
 cd /home/admin
 
-git clone git@github.com:Fruitful-Network-Development/aws-etc.git GH-etc
+git clone git@github.com:Fruitful-Network-Development/aws-box.git GH-etc
 cd /home/admin/GH-etc
 ```
 
@@ -131,4 +131,4 @@ git pull
 
 ---
 
-**Reminder:** Only `aws-etc` is used. Do not deploy from any other repositories or scripts such as `deploy_platform.sh`.
+**Reminder:** Only `aws-box` is used. Do not deploy from any other repositories or scripts such as `deploy_platform.sh`.
