@@ -1,45 +1,39 @@
 #!/usr/bin/env bash
-# deploy_nginx.sh
+# deploy_systemd.sh
 #
-# Deploy nginx configuration from the aws-box repo clone into /etc/nginx.
-# This is the ONLY supported way to update live nginx config.
-#
-# Properties:
-# - Uses rsync to deploy whole nginx tree (no partial one-file drift)
-# - Runs nginx -t before reload
-# - Optionally removes default site (prevents catch-all serving wrong content)
+# Deploy systemd unit files from aws-box into /etc/systemd/system,
+# then daemon-reload and restart affected services.
 #
 set -euo pipefail
 
 REPO_ROOT="${REPO_ROOT:-/home/admin/aws-box}"
-SRC="${REPO_ROOT}/etc/nginx"
-DEST="/etc/nginx"
+SRC="${REPO_ROOT}/etc/systemd/system"
+DEST="/etc/systemd/system"
 
-log(){ echo "[deploy_nginx] $*"; }
+log(){ echo "[deploy_systemd] $*"; }
 
 if [ ! -d "$SRC" ]; then
-  echo "[deploy_nginx] ERROR: source not found: $SRC" >&2
+  echo "[deploy_systemd] ERROR: source not found: $SRC" >&2
   exit 1
 fi
 
-log "Deploying nginx from $SRC -> $DEST"
-
-# Deploy nginx tree
+log "Deploying systemd units from $SRC -> $DEST"
 sudo rsync -a --delete \
   --exclude='*.bak' \
   --exclude='*.swp' \
   "$SRC/" "$DEST/"
 
-# Ensure default site is not enabled (prevents wrong-site issues)
-if [ -L /etc/nginx/sites-enabled/default ] || [ -f /etc/nginx/sites-enabled/default ]; then
-  log "Removing /etc/nginx/sites-enabled/default"
-  sudo rm -f /etc/nginx/sites-enabled/default
-fi
+log "Reloading systemd daemon"
+sudo systemctl daemon-reload
 
-log "Validating nginx config"
-sudo nginx -t
-
-log "Reloading nginx"
-sudo systemctl reload nginx
+# Restart platform service if present
+for svc in platform.service; do
+  if systemctl list-unit-files --type=service --no-legend | awk '{print $1}' | grep -Fxq "$svc"; then
+    log "Restarting $svc"
+    sudo systemctl restart "$svc"
+  else
+    log "$svc not found in unit-files, skipping"
+  fi
+done
 
 log "Done."
