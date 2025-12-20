@@ -37,6 +37,8 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
+The program will prompted  for a "file in which to save the key."
+      Pressed Enter (leaving it blank), defaulting it to: /home/admin/.ssh/id_ed25519
 Copy the printed public key into GitHub:
       GitHub → Settings → SSH and GPG keys → New SSH key
 
