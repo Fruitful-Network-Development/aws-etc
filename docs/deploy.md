@@ -92,30 +92,25 @@ export FND_CONTACT_EMAIL="your-email@fruitfulnetworkdevelopment.com"
 sudo mkdir -p /srv/webapps
 ```
 The repository already contains the **skeleton** in:
-- `/home/admin/GH-etc/srv/webapps/`
+- `/home/admin/aws-box/srv/webapps/`
 
-Do **not** add runtime artifacts (e.g., `.git`, `venv`, `__pycache__`) inside GH-etc.
+Do **not** add runtime artifacts (e.g., `.git`, `venv`, `__pycache__`) inside aws-box.
 
-### 6) Sync configuration templates to /etc (updated synch.sh)
-> Use the **updated** `scripts/synch.sh` which targets `/etc` and uses `sudo`.
+### 6) Deploy configuration to /etc
+> Use the deployment scripts which target `/etc` and use `sudo`.
 ```bash
-cd /home/admin/GH-etc
+cd /home/admin/aws-box
 
-# Example: sync core nginx configuration
-./scripts/synch.sh nginx-core
+# Deploy nginx configuration
+./scripts/deploy_nginx.sh
 
-# Example: sync specific site config
-./scripts/synch.sh nginx-site fruitfulnetworkdevelopment.com
-```
-
-If you update systemd templates, sync them similarly:
-```bash
-./scripts/synch.sh one etc/systemd/system/platform.service
+# Deploy systemd unit files
+./scripts/deploy_systemd.sh
 ```
 
 ### 7) Sync the app skeleton to /srv/webapps
 ```bash
-cd /home/admin/GH-etc
+cd /home/admin/aws-box
 
 # Sync everything (platform + clients)
 ./scripts/synch_srv.sh
@@ -175,9 +170,9 @@ The script:
 2. Creates:
    - `/srv/webapps/platform`
    - `/srv/webapps/clients/<domain>/frontend`
-   - `/home/admin/GH-etc`
-3. Clones or updates all four repositories
-4. Deploys system configuration from `GH-etc`
+   - `/home/admin/aws-box`
+3. Clones or updates the aws-box repository
+4. Deploys system configuration from `aws-box`
 5. Sets up Python virtualenv + installs dependencies
 6. Creates systemd service `platform.service`
 7. Tests + reloads Nginx
@@ -198,9 +193,11 @@ https://cuyahogaterravita.com
 To apply changes made in GitHub:
 
 ```bash
-cd /home/admin/GH-etc
+cd /home/admin/aws-box
 git pull
-sudo -E bash deploy_platform.sh
+./scripts/deploy_nginx.sh
+./scripts/deploy_systemd.sh
+./scripts/synch_srv.sh
 ```
 
 This keeps the server synchronized with the configuration repo.
