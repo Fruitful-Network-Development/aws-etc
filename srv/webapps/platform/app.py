@@ -235,6 +235,27 @@ app.register_blueprint(weather_bp)
 # -------------------------------------------------------------------
 
 
+# -------------------------------------------------------------------
+# Static File Serving Routes (Fallback Only - Currently Unused)
+# -------------------------------------------------------------------
+# NOTE: These routes are FALLBACK-ONLY and are currently UNUSED in production.
+#
+# Current architecture:
+# - NGINX serves all static files directly using 'root' and 'try_files' directives
+# - Only /api/* requests are proxied to Gunicorn/Flask
+# - These Flask routes would only be hit if NGINX configuration changed to proxy
+#   non-API requests to Gunicorn
+#
+# These routes are kept for:
+# 1. Development/testing scenarios where Flask dev server is used
+# 2. Potential future architecture changes where Flask handles routing
+# 3. Fallback if NGINX misconfiguration causes static files to miss
+#
+# DO NOT add proxy_pass for root location in NGINX unless you intend for Flask
+# to handle static file serving (which is less efficient than NGINX direct serving).
+# -------------------------------------------------------------------
+
+
 @app.route("/proxy/<path:client_slug>/<path:data_filename>")
 def proxy_user_data(client_slug, data_filename):
     """Fetch remote msn_<user_id>.json with consistent error handling."""
@@ -330,6 +351,8 @@ def backend_data(data_filename: str):
     return jsonify({"status": "ok"})
 
 
+# Fallback route: Serves default entry file (index.html) for client
+# Currently unused - NGINX handles this via root/index directives
 @app.route("/")
 def client_root():
     client_slug = get_client_slug(request)
@@ -340,11 +363,15 @@ def client_root():
     return serve_client_file(settings["frontend_dir"], rel_path)
 
 
+# Fallback route: Serves assets from frontend/assets/
+# Currently unused - NGINX serves static files directly
 @app.route("/assets/<path:asset_path>")
 def client_assets(asset_path: str):
     """
     Serve client-specific assets (images, fonts, etc.) under frontend/assets/.
       /assets/imgs/logo.jpeg -> frontend/assets/imgs/logo.jpeg
+    
+    NOTE: This route is currently unused. NGINX serves static assets directly.
     """
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
@@ -354,6 +381,8 @@ def client_assets(asset_path: str):
     return serve_client_file(settings["frontend_dir"], rel_path)
 
 
+# Fallback route: Serves files under /frontend/ path
+# Currently unused - NGINX serves static files directly
 @app.route("/frontend/<path:static_path>")
 def client_frontend_static(static_path: str):
     """
@@ -362,6 +391,8 @@ def client_frontend_static(static_path: str):
       /frontend/app.js
       /frontend/script.js
       /frontend/msn_<user_id>.json
+    
+    NOTE: This route is currently unused. NGINX serves static files directly.
     """
     client_slug = get_client_slug(request)
     paths = get_client_paths(client_slug)
@@ -370,6 +401,8 @@ def client_frontend_static(static_path: str):
     return serve_client_file(settings["frontend_dir"], static_path)
 
 
+# Fallback route: Catch-all for frontend files
+# Currently unused - NGINX serves static files directly
 @app.route("/<path:filename>")
 def client_catch_all(filename: str):
     """
@@ -383,6 +416,9 @@ def client_catch_all(filename: str):
       /mycite.html
       /demo-design-1  -> demo-design-1.html
     (Note: /api/... is reserved for API endpoints.)
+    
+    NOTE: This route is currently unused. NGINX serves static files directly
+    using root and try_files directives. Only /api/* requests reach Flask.
     """
     if filename.startswith("api/"):
         abort(404)
