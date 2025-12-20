@@ -1,12 +1,12 @@
 #!/bin/bash
 # synch_srv.sh
 #
-# Sync the skeleton structure from GH-etc/srv/webapps/ to the live system
+# Sync the skeleton structure from aws-box/srv/webapps/ to the live system
 # /srv/webapps/ directory. This script safely updates source code while
 # preserving runtime state (venv, .git, __pycache__).
 #
 # Source tree (default):
-#   GH_ROOT=/home/admin/GH-etc/srv/webapps
+#   REPO_ROOT=/home/admin/aws-box/srv/webapps
 # Dest tree (default):
 #   SRV_ROOT=/srv/webapps
 #
@@ -18,9 +18,9 @@
 #
 set -euo pipefail
 
-GH_ROOT="${GH_ROOT:-/home/admin/GH-etc}"
+REPO_ROOT="${REPO_ROOT:-/home/admin/aws-box}"
 SRV_ROOT="${SRV_ROOT:-/srv/webapps}"
-SRV_SRC="${GH_ROOT}/srv/webapps"
+SRV_SRC="${REPO_ROOT}/srv/webapps"
 
 RESTART_SERVICES="${RESTART_SERVICES:-yes}"
 SYNC_TARGET="${1:-all}"
@@ -125,7 +125,7 @@ print_help() {
   cat <<EOF
 Usage: $0 [TARGET] [OPTIONS]
 
-Syncs skeleton structure from GH-etc/srv/webapps/ to /srv/webapps/
+Syncs skeleton structure from aws-box/srv/webapps/ to /srv/webapps/
 
 TARGET (optional):
   all       Sync everything (default)
@@ -136,7 +136,7 @@ OPTIONS:
   --no-restart  Skip service restart after sync
 
 Environment variables:
-  GH_ROOT         Source repo root (default: /home/admin/GH-etc)
+  REPO_ROOT       Source repo root (default: /home/admin/aws-box)
   SRV_ROOT        Destination tree (default: /srv/webapps)
   RESTART_SERVICES  Restart services after sync (default: yes)
 

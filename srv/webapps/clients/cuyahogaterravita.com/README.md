@@ -93,13 +93,13 @@ Otherwise the backend will reject access to that file.
 Do NOT:
 	•	write backend Python code here
 	•	add Flask blueprints, modules, or app initialization
-	•	modify server configs (those belong in aws-etc)
+	•	modify server configs (those belong in aws-box)
 
 ## Deployment Workflow
 
-Frontend updates are deployed to the live server using a pull script:
+Frontend updates are deployed to the live server using the sync script:
 ```code
-~/GH-etc/scripts/pull_ctv.sh
+/home/admin/aws-box/scripts/synch_srv.sh clients
 ```
 This script performs a fast-forward-only pull inside:
 ```code

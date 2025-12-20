@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # deploy_systemd.sh
 #
-# Deploy systemd unit files from GH-etc into /etc/systemd/system,
+# Deploy systemd unit files from aws-box into /etc/systemd/system,
 # then daemon-reload and restart affected services.
 #
 set -euo pipefail
 
-GH_ROOT="${GH_ROOT:-/home/admin/GH-etc}"
-SRC="${GH_ROOT}/etc/systemd/system"
+REPO_ROOT="${REPO_ROOT:-/home/admin/aws-box}"
+SRC="${REPO_ROOT}/etc/systemd/system"
 DEST="/etc/systemd/system"
 
 log(){ echo "[deploy_systemd] $*"; }

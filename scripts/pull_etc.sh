@@ -1,12 +1,12 @@
 #!/bin/bash
 # pull_etc.sh
 #
-# `Fruitful-Network-Development/aws-etc` GitHub repository on `main`.
-# This script is intended to be the standard way to keep
+# Pull updates from the `Fruitful-Network-Development/aws-box` GitHub repository on `main`.
+# This script is intended to be the standard way to keep the local aws-box clone updated.
 #
 # It assumes that the local clone at REPO_PATH is already configured
 # with a remote (typically `origin`) pointing at:
-#   https://github.com/Fruitful-Network-Development/aws-etc.git
+#   https://github.com/Fruitful-Network-Development/aws-box.git
 # Per-host overrides can be done via environment variables.
 #
 set -euo pipefail
@@ -22,9 +22,9 @@ fi
 
 cd "$REPO_PATH"
 
-echo "[pull_etc] Updating $REPO_PATH from $REMOTE/$BRANCH (aws-etc)..."
+echo "[pull_etc] Updating $REPO_PATH from $REMOTE/$BRANCH (aws-box)..."
 git fetch "$REMOTE" "$BRANCH"
 git checkout "$BRANCH"
 git pull --ff-only "$REMOTE" "$BRANCH"
 
-echo "[pull_etc] Updated $BRANCH in $REPO_PATH from $REMOTE (aws-etc)"
+echo "[pull_etc] Updated $BRANCH in $REPO_PATH from $REMOTE (aws-box)"

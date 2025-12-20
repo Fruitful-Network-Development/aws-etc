@@ -209,13 +209,11 @@ For details on how the manifests are used, see:
 
 Current key scripts:
 
-- `scripts/pull_etc.sh` — updates the local `GH-etc` clone from the
-  `Fruitful-Network-Development/aws-etc` GitHub repository (branch `main`).
-- `scripts/pull_app.sh` — updates the deployed Flask application clone under
-  `/home/admin/srv/webapps` from the `Fruitful-Network-Development/flask-app`
-  GitHub repository.
-- `scripts/synch.sh` — syncs individual configuration files from this repo into
-  `/home/admin/etc`, one file at a time (with helpers for common nginx files).
+- `scripts/pull_etc.sh` — updates the local `aws-box` clone from the
+  `Fruitful-Network-Development/aws-box` GitHub repository (branch `main`).
+- `scripts/deploy_nginx.sh` — deploys nginx configuration from this repo to `/etc/nginx`.
+- `scripts/deploy_systemd.sh` — deploys systemd unit files from this repo to `/etc/systemd/system`.
+- `scripts/synch_srv.sh` — syncs application code from this repo to `/srv/webapps`.
 - `scripts/audit.sh` — consolidated audit entrypoint providing subcommands for
   nginx syntax, nginx configuration, file permissions, and systemd services.
 

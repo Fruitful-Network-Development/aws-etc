@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # deploy_nginx.sh
 #
-# Deploy nginx configuration from the GH-etc repo clone into /etc/nginx.
+# Deploy nginx configuration from the aws-box repo clone into /etc/nginx.
 # This is the ONLY supported way to update live nginx config.
 #
 # Properties:
@@ -11,8 +11,8 @@
 #
 set -euo pipefail
 
-GH_ROOT="${GH_ROOT:-/home/admin/GH-etc}"
-SRC="${GH_ROOT}/etc/nginx"
+REPO_ROOT="${REPO_ROOT:-/home/admin/aws-box}"
+SRC="${REPO_ROOT}/etc/nginx"
 DEST="/etc/nginx"
 
 log(){ echo "[deploy_nginx] $*"; }

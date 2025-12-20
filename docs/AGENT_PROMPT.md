@@ -1,7 +1,7 @@
 # AGENT OPERATING INSTRUCTIONS
 
 Purpose: These guidelines ensure agents do not break the server or overwrite live files.  
-All changes must be made through the `aws-etc` (GH‑etc) repository and proposed via MCP pull requests.
+All changes must be made through the `aws-box` repository and proposed via MCP pull requests.
 
 ---
 
@@ -10,7 +10,7 @@ All changes must be made through the `aws-etc` (GH‑etc) repository and propose
 ### Configuration sandbox
 All system and Nginx config files live in:
 ```
-/home/admin/GH-etc
+/home/admin/aws-box
 ```
 This is the only directory that represents system configuration.  
 You may read and modify files *in this directory only*, and only via GitHub pull requests.
@@ -34,7 +34,7 @@ You may read them but **never modify them directly**.
 ### Audit outputs
 Audit scripts write text files to:
 ```
-/home/admin/GH-etc/docs/audit/
+/home/admin/aws-box/docs/audit/
 ```
 You may read these logs to understand server state.  
 Never modify log contents.
@@ -46,12 +46,12 @@ Never modify log contents.
 ### Propose new scripts
 If you need the server to perform an action, write a new script within:
 ```
-aws-etc/scripts/
+aws-box/scripts/
 ```
 and submit a pull request using the MCP tool.
 
 ### Update existing scripts via PR
-If an audit or deployment script must be changed, modify it inside `aws-etc/scripts`  
+If an audit or deployment script must be changed, modify it inside `aws-box/scripts`  
 and submit a pull request.  
 Never edit live server files.
 
@@ -65,7 +65,7 @@ Do NOT modify:
 - files in `/etc/systemd/system`
 - any live service configuration
 
-These are always synced from `GH-etc` during deployment.
+These are always synced from `aws-box` during deployment.
 
 ### No system administration commands
 Agents must NOT:
@@ -88,7 +88,7 @@ Agents should:
 
 ## 3. Architecture Rules (Critical)
 
-1. **`GH-etc` is the only writable config repo.**  
+1. **`aws-box` is the only writable config repo.**  
 2. **`/etc` and `/srv` are always read-only when accessed by agents.**  
 3. **All changes must be versioned and reviewed through GitHub.**  
 4. **Nothing modifies the server directly except approved scripts.**
@@ -101,7 +101,7 @@ When a new EC2 instance is launched:
 
 1. A human sets environment variables  
 2. A human runs the deployment script  
-3. The server is rebuilt from GitHub and `GH-etc`  
+3. The server is rebuilt from GitHub and `aws-box`  
 4. Agents do *not* configure the server directly
 
 ---
