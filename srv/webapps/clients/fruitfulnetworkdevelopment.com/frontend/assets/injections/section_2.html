@@ -47,8 +47,8 @@
   /* Left-icon layout: [icon | title | body] */
   .s2__pill.left{
     grid-template-columns:
-      calc(var(--header-h) * 3.0)
-      calc(var(--header-h) * 4.2)
+      minmax(64px, 96px)
+      minmax(160px, 280px)
       1fr;
   }
 
@@ -56,8 +56,8 @@
   .s2__pill.right{
     grid-template-columns:
       1fr
-      calc(var(--header-h) * 4.2)
-      calc(var(--header-h) * 3.0);
+      minmax(160px, 280px)
+      minmax(64px, 96px);
   }
 
   /* Icon zone - uses CSS Grid for centering */
@@ -173,4 +173,3 @@
 
   </div>
 </section>
-
