@@ -217,10 +217,9 @@
 /* Inner grid: stacked pills using shared gap token, fills available space */
 .s2__inner{
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: minmax(min-content, max-content);
   gap: var(--gap-md);
   align-content: center;
 }
@@ -228,7 +227,6 @@
 /* Each "capsule" row - uses CSS Grid for internal layout, fills available space */
 .s2__pill{
   width: 100%;
-  height: 100%;
   min-height: calc(var(--header-h) * 2.8);
   background: var(--c6); /* uses shared color token */
   border-radius: 999px;
@@ -402,10 +400,9 @@
 
 /* ---------- Left stack cards - uses CSS Grid, fills available height ---------- */
 .s3__stack{
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: minmax(min-content, max-content);
   gap: var(--gap-md); /* uses shared gap token */
   align-content: stretch;
 }
@@ -442,7 +439,6 @@
 /* ---------- Big rectangle ---------- */
 .s3__panelWrap{
   position: relative; /* anchors overlays */
-  height: 100%;
   display: grid;
   align-items: stretch;
 }
@@ -456,7 +452,6 @@
   grid-template-columns: 0.95fr 1.05fr;
   gap: var(--gap-md); /* uses shared gap token */
   padding: calc(var(--header-h) * 0.85);
-  height: 100%;
   min-height: calc(var(--header-h) * 7.4);
 }
 
