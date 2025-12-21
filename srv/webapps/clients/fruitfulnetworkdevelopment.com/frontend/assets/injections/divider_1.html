@@ -9,59 +9,6 @@
      - No outer padding/background/height (handled by container)
      ========================= -->
 
-<style>
-  /* Component-local scope - internal grid and typography only */
-  .divider{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
-  }
-
-  .divider__inner{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--gap-xl); /* uses shared gap token */
-    align-items: center;
-  }
-
-  .divider__label{
-    white-space: nowrap;
-    font-weight: 600;
-    font-size: clamp(14px, calc(var(--header-h) * 0.45), 18px);
-    color: var(--c2);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .divider__text{
-    font-size: clamp(13px, calc(var(--header-h) * 0.4), 16px);
-    line-height: 1.6;
-    color: rgba(255,255,255,0.95);
-    max-width: 95ch;
-  }
-
-  /* Optional subtle vertical accent line like the mock’s spacing hint */
-  .divider__inner::before{
-    content: "";
-    grid-column: 1 / -1;
-    position: absolute;
-    left: 0;
-  }
-
-  /* Mobile: stack */
-  @media (max-width: 760px){
-    .divider__inner{
-      grid-template-columns: 1fr;
-      gap: var(--gap-sm); /* uses shared gap token */
-    }
-    .divider__label{
-      text-align: left;
-    }
-  }
-</style>
-
 <section class="divider">
   <div class="divider__inner">
     <div class="divider__label">Did you know?</div>
@@ -72,4 +19,3 @@
     </div>
   </div>
 </section>
-

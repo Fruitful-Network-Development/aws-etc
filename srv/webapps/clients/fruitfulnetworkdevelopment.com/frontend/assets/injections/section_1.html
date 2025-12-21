@@ -8,89 +8,6 @@
      No knowledge of outer section height or screen width.
      ========================= -->
 
-<style>
-  /* Component-local scope - internal grid and typography only */
-  /* Root wrapper: fills slot, uses CSS Grid to fill vertical space */
-  .s1{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 1fr;
-    padding: var(--section-vertical-pad) 0;
-    align-content: center;
-  }
-
-  /* Inner grid: 3-column card layout using shared gap token, fills available space */
-  .s1__grid{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--gap-lg);
-    align-items: stretch;
-    align-content: center;
-  }
-
-  /* Card top section - uses CSS Grid for centering */
-  .s1__cardTop{
-    width: 100%;
-    aspect-ratio: 1.55 / 1;
-    background: var(--c7); /* uses shared color token */
-    border-radius: calc(var(--header-h) * 0.45);
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-  }
-
-  .s1__icon{
-    width: 78%;
-    height: 78%;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.18));
-  }
-
-  .s1__title{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; /* Open Sans Regular */
-    margin: calc(var(--header-h) * 0.65) 0 calc(var(--header-h) * 0.35);
-    text-align: center;
-    font-size: clamp(16px, calc(var(--header-h) * 0.55), 22px);
-    color: var(--c3); /* uses shared color token */
-  }
-
-  .s1__text{
-    margin: 0 auto;
-    max-width: 34ch;
-    text-align: center;
-    font-size: clamp(12px, calc(var(--header-h) * 0.33), 15px);
-    line-height: 1.65;
-    color: rgba(10, 32, 38, 0.82); /* softened var(--c4) */
-  }
-
-  .s1__text p{
-    margin: 0 0 calc(var(--header-h) * 0.55);
-  }
-  .s1__text p:last-child{
-    margin-bottom: 0;
-  }
-
-  /* Article cards use grid to fill vertical space */
-  .s1__grid article{
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    gap: var(--gap-sm);
-    align-content: start;
-  }
-
-  /* Responsive: stack to 1 column - component handles its own breakpoint */
-  @media (max-width: 900px){
-    .s1__grid{ grid-template-columns: 1fr; }
-    .s1__text{ max-width: 52ch; }
-  }
-</style>
-
 <section class="s1">
   <div class="s1__grid">
 
@@ -151,4 +68,3 @@
 
     </div>
 </section>
-
