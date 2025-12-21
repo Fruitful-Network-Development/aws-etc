@@ -219,7 +219,8 @@
 
     /* Hero image section */
     .hero{
-      height: var(--hero-h);
+      min-height: var(--hero-h);
+      height: auto;
       background: url("assets/imgs/hero.jpeg") center center / cover no-repeat;
       background-attachment: fixed; /* Parallax effect */
       position: relative;
@@ -248,7 +249,8 @@
 
     /* Hero footer section */
     .hero_footer{
-      height: var(--hero-footer-h);
+      min-height: var(--hero-footer-h);
+      height: auto;
       background: var(--c2);
       display: grid;
       place-items: center;
@@ -262,14 +264,16 @@
     /* Content sections */
     .content_section{
       background: var(--c1);
-      height: var(--section-h);
+      min-height: var(--section-h);
+      height: auto;
       display: grid;
       place-items: stretch;
     }
 
     /* Divider bars */
     .divider_bar{
-      height: var(--divider-h);
+      min-height: var(--divider-h);
+      height: auto;
       background: var(--c3);
       display: grid;
       place-items: center;
@@ -302,7 +306,8 @@
        Components should start with a root element that fills the slot.
        ========================= */
     .slot{
-      height: 100%;
+      min-height: 100%;
+      height: auto;
       width: 100%;
       max-width: var(--maxw);
       margin: 0 auto;
@@ -314,7 +319,8 @@
     /* Utility classes for component inner wrappers */
     .slot-inner-grid{
       width: 100%;
-      height: 100%;
+      min-height: 100%;
+      height: auto;
       display: grid;
       gap: var(--section-grid-gap);
       align-items: start;
@@ -322,7 +328,8 @@
 
     .slot-inner-center{
       width: 100%;
-      height: 100%;
+      min-height: 100%;
+      height: auto;
       display: grid;
       place-items: center;
     }
@@ -566,4 +573,3 @@
   <script src="/inject.js"></script>
 </body>
 </html>
-
