@@ -21,6 +21,7 @@
    ========================= */
 
 (() => {
+  const VERSION = "v1";
   const INJECTION_BASE = "assets/injections/";
 
   const COMPONENT_MAP = {
@@ -50,8 +51,8 @@
   async function fetchText(url) {
     if (cache.has(url)) return cache.get(url);
 
-    const bust = `v=${Date.now()}`;
-    const res = await fetch(`${url}?${bust}`, { cache: "no-store" });
+    const bust = `v=${VERSION}`;
+    const res = await fetch(`${url}?${bust}`, { cache: "force-cache" });
 
     if (!res.ok) throw new Error(`Failed to load ${url} (${res.status} ${res.statusText})`);
 
@@ -83,16 +84,36 @@
     }
   }
 
+  function renderFallback(container, { componentKey, reason }) {
+    const label = componentKey ? `"${componentKey}"` : "missing data-component";
+    const detail = reason ? ` (${reason})` : "";
+    container.innerHTML =
+      `<div style="padding:12px;color:#6b7280;font:13px/1.4 system-ui;">
+         Injected component unavailable for ${label}${detail}.
+       </div>`;
+  }
+
+  async function preloadComponents() {
+    const uniqueFiles = Array.from(new Set(Object.values(COMPONENT_MAP)));
+    await Promise.allSettled(
+      uniqueFiles.map((file) => fetchText(`${INJECTION_BASE}${file}`))
+    );
+  }
+
   async function injectAll() {
-    const slots = qsAll(".slot[data-component]");
+    const slots = qsAll(".slot");
 
     for (const slot of slots) {
       const key = slot.getAttribute("data-component")?.trim();
-      if (!key) continue;
+      if (!key) {
+        renderFallback(slot, { reason: "no data-component attribute" });
+        continue;
+      }
 
       const file = COMPONENT_MAP[key];
       if (!file) {
         console.warn(`[inject] No mapping for data-component="${key}"`);
+        renderFallback(slot, { componentKey: key, reason: "no mapping found" });
         continue;
       }
 
@@ -101,15 +122,14 @@
         injectHTML(slot, html);
       } catch (err) {
         console.error(`[inject] ${err.message}`);
-        slot.innerHTML =
-          `<div style="padding:12px;color:#b00020;font:14px/1.4 system-ui;">
-             Failed to load <b>${file}</b> for <code>${key}</code>.
-           </div>`;
+        renderFallback(slot, { componentKey: key, reason: "fetch failed" });
       }
     }
   }
 
-  document.addEventListener("DOMContentLoaded", injectAll);
+  document.addEventListener("DOMContentLoaded", async () => {
+    await preloadComponents();
+    await injectAll();
+  });
   window.__injectRefresh = injectAll;
 })();
-
