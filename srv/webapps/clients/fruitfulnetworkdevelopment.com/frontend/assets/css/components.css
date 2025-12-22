@@ -530,6 +530,166 @@
 }
 
 /* =========================
+   SECTION 5 (Agency multi-year timeline)
+   ========================= */
+/* Component-local scope - internal grid and typography only */
+.s5{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: var(--section-vertical-pad) 0;
+  align-content: center;
+}
+
+/* Top month labels row */
+.s5__months{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0;
+  font-size: clamp(11px, calc(var(--header-h) * 0.28), 13px);
+  color: rgba(10,32,38,0.7);
+  margin-bottom: calc(var(--header-h) * 0.4);
+}
+
+.s5__months span{
+  text-align: center;
+}
+
+/* Main grid: years + agency rows */
+.s5__grid{
+  display: grid;
+  grid-auto-rows: auto;
+  row-gap: calc(var(--header-h) * 0.8);
+}
+
+.s5__yearBlock{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: calc(var(--header-h) * 0.4);
+  align-items: flex-start;
+}
+
+.s5__yearLabel{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, calc(var(--header-h) * 0.45), 18px);
+  text-align: center;
+  min-width: 4ch;
+}
+
+.s5__rows{
+  width: 100%;
+  display: grid;
+  row-gap: calc(var(--header-h) * 0.55);
+}
+
+.s5__row{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: calc(var(--header-h) * 0.45);
+  align-items: center;
+}
+
+.s5__agency{
+  font-size: clamp(11px, calc(var(--header-h) * 0.3), 13px);
+  color: rgba(10,32,38,0.9);
+}
+
+/* Timeline bar track (12-month grid) */
+.s5__track{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+}
+
+.s5__bar{
+  height: calc(var(--header-h) * 0.55);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(11px, calc(var(--header-h) * 0.3), 13px);
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Position helpers: span N months starting at month index (1-12) */
+.s5__bar[data-start="1"]{ grid-column-start: 1; }
+.s5__bar[data-start="2"]{ grid-column-start: 2; }
+.s5__bar[data-start="3"]{ grid-column-start: 3; }
+.s5__bar[data-start="4"]{ grid-column-start: 4; }
+.s5__bar[data-start="5"]{ grid-column-start: 5; }
+.s5__bar[data-start="6"]{ grid-column-start: 6; }
+.s5__bar[data-start="7"]{ grid-column-start: 7; }
+.s5__bar[data-start="8"]{ grid-column-start: 8; }
+.s5__bar[data-start="9"]{ grid-column-start: 9; }
+.s5__bar[data-start="10"]{ grid-column-start: 10; }
+.s5__bar[data-start="11"]{ grid-column-start: 11; }
+.s5__bar[data-start="12"]{ grid-column-start: 12; }
+
+.s5__bar[data-span="1"]{ grid-column-end: span 1; }
+.s5__bar[data-span="2"]{ grid-column-end: span 2; }
+.s5__bar[data-span="3"]{ grid-column-end: span 3; }
+.s5__bar[data-span="4"]{ grid-column-end: span 4; }
+.s5__bar[data-span="5"]{ grid-column-end: span 5; }
+.s5__bar[data-span="6"]{ grid-column-end: span 6; }
+.s5__bar[data-span="7"]{ grid-column-end: span 7; }
+.s5__bar[data-span="8"]{ grid-column-end: span 8; }
+.s5__bar[data-span="9"]{ grid-column-end: span 9; }
+.s5__bar[data-span="10"]{ grid-column-end: span 10; }
+.s5__bar[data-span="11"]{ grid-column-end: span 11; }
+.s5__bar[data-span="12"]{ grid-column-end: span 12; }
+
+/* Color variants approximating the gradients in the mock */
+.s5__bar--blue{
+  background: linear-gradient(90deg, #6f8f3d, #16639c);
+}
+
+.s5__bar--green{
+  background: linear-gradient(90deg, #6f8f3d, #167f9c);
+}
+
+.s5__bar--gold{
+  background: linear-gradient(90deg, #8c9b3d, #d9b96a);
+}
+
+.s5__bar--phase1{
+  background: linear-gradient(90deg, #8d9737, #e1c47a);
+}
+
+.s5__bar--phase2{
+  background: linear-gradient(90deg, #b4462d, #6a86a9, #b28bc9);
+}
+
+/* Responsive: stack year blocks and allow bars to wrap */
+@media (max-width: 1024px){
+  .s5{
+    grid-template-rows: auto 1fr;
+  }
+
+  .s5__months{
+    font-size: clamp(10px, calc(var(--header-h) * 0.26), 12px);
+  }
+
+  .s5__yearBlock{
+    grid-template-columns: 1fr;
+    row-gap: calc(var(--header-h) * 0.35);
+  }
+
+  .s5__yearLabel{
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px){
+  .s5__track{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* =========================
    FOOTER COMPONENT
    ========================= */
 /* Scoped footer styles to avoid collisions with other injections */
