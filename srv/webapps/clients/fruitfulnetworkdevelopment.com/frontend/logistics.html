@@ -27,6 +27,12 @@
       --pad: calc(var(--header-h) / 6);
       --slot-padding: calc(var(--header-h) * 1.0);
       --maxw: 1400px;
+      --section-vertical-pad: calc(var(--header-h) * 1.15);
+      --gap-xs: calc(var(--header-h) * 0.35);
+      --gap-sm: calc(var(--header-h) * 0.55);
+      --gap-md: calc(var(--header-h) * 0.75);
+      --gap-lg: calc(var(--header-h) * 1.0);
+      --gap-xl: calc(var(--header-h) * 1.4);
     }
 
     *{ box-sizing: border-box; }
@@ -146,6 +152,6 @@
     window.addEventListener("resize", applySizingVars);
     window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
   </script>
-  <script src="/inject.js"></script>
+  <script src="inject.js"></script>
 </body>
 </html>
