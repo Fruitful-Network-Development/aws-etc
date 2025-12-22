@@ -90,7 +90,15 @@
       place-items: stretch;
     }
 
-    .site-footer{ width: 100%; min-height: calc(var(--header-h) * 5.2); display: grid; grid-template-columns: 1fr; place-items: stretch; }
+    .site-footer{ 
+      width: 100%; 
+      min-height: calc(var(--header-h) * 5.2); 
+      height: auto;
+      display: grid; 
+      grid-template-columns: 1fr; 
+      place-items: stretch; 
+      position: relative;
+    }
     .site-footer .slot{ max-width: none; padding: 0; }
     .slot{ 
       min-height: 100%; 
