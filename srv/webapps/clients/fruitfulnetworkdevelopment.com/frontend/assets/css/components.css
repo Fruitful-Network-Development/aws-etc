@@ -649,3 +649,172 @@
     padding-top: 0;
   }
 }
+
+/* =========================
+   PAYMENT PROCESSING TABLE COMPONENT
+   ========================= */
+
+.tbl-payments{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  padding: var(--section-vertical-pad) 0;
+}
+
+.tbl-payments__inner{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--slot-padding);
+  overflow-x: auto;
+}
+
+.tbl-payments__table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Head cells */
+.tbl-payments thead .tbl-th{
+  background-color: #f8f9fa;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 6px;
+  border: 1px solid #dee2e6;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  font-size: clamp(11px, calc(var(--header-h) * 0.33), 13px);
+  vertical-align: middle;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tbl-payments thead .tbl-th:hover{
+  background-color: #e9ecef;
+}
+
+/* Sort indicators */
+.tbl-payments thead .sortable::after{
+  content: " ⇅";
+  font-size: 0.75em;
+  color: #6c757d;
+  margin-left: 4px;
+}
+
+.tbl-payments thead .sortable.sort-asc::after{
+  content: " ▲";
+  color: #000;
+}
+
+.tbl-payments thead .sortable.sort-desc::after{
+  content: " ▼";
+  color: #000;
+}
+
+.tbl-payments thead .sortable.sort-active{
+  background-color: #dee2e6;
+}
+
+/* Body cells */
+.tbl-payments tbody td{
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #dee2e6;
+  font-size: clamp(11px, calc(var(--header-h) * 0.31), 13px);
+  vertical-align: middle;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tbl-payments tbody tr:hover{
+  background-color: #f8f9fa;
+}
+
+/* =========================
+   POS TABLE COMPONENT
+   ========================= */
+
+.tbl-pos{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  padding: var(--section-vertical-pad) 0;
+}
+
+.tbl-pos__inner{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--slot-padding);
+  overflow-x: auto;
+}
+
+.tbl-pos__table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tbl-pos thead .tbl-th{
+  background-color: #f8f9fa;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 6px;
+  border: 1px solid #dee2e6;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  font-size: clamp(11px, calc(var(--header-h) * 0.33), 13px);
+  vertical-align: middle;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tbl-pos thead .tbl-th:hover{
+  background-color: #e9ecef;
+}
+
+.tbl-pos thead .sortable::after{
+  content: " ⇅";
+  font-size: 0.75em;
+  color: #6c757d;
+  margin-left: 4px;
+}
+
+.tbl-pos thead .sortable.sort-asc::after{
+  content: " ▲";
+  color: #000;
+}
+
+.tbl-pos thead .sortable.sort-desc::after{
+  content: " ▼";
+  color: #000;
+}
+
+.tbl-pos thead .sortable.sort-active{
+  background-color: #dee2e6;
+}
+
+.tbl-pos tbody td{
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #dee2e6;
+  font-size: clamp(11px, calc(var(--header-h) * 0.31), 13px);
+  vertical-align: middle;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tbl-pos tbody tr:hover{
+  background-color: #f8f9fa;
+}
+
+/* Small-screen behavior: rely on horizontal scroll in the inner wrapper */
