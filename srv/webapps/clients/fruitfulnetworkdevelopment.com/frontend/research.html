@@ -237,14 +237,19 @@
       position: relative;
       z-index: 2; /* Ensure content is above overlay */
       place-items: center;
+      height: 100%;
     }
 
     .content_section{
       background: var(--c1);
       min-height: var(--section-h);
-      height: auto;
+      height: var(--section-h);
       display: grid;
       place-items: stretch;
+    }
+
+    .content_section .slot{
+      height: 100%;
     }
 
     /* Footer container - full width */
