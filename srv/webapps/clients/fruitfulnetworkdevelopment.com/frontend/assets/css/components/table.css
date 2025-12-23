@@ -90,9 +90,117 @@
   word-wrap: break-word;
 }
 
+/* Provider column images */
+.table tbody td img {
+  max-width: 80px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
 .table tbody tr:hover {
   background-color: #f8f9fa;
 }
 
-/* Small-screen behavior: rely on horizontal scroll in the inner wrapper */
+/* =========================
+   MOBILE RESPONSIVE: CARD LAYOUT
+   ========================= */
+@media (max-width: 768px) {
+  /* Hide table headers on mobile */
+  .table thead {
+    display: none;
+  }
 
+  /* Convert table to block layout */
+  .table__table,
+  .table__table tbody,
+  .table__table tr,
+  .table__table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Each row becomes a card */
+  .table__table tbody tr {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Remove borders from cells in card mode */
+  .table__table tbody td {
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  /* Last cell in each row - no bottom border */
+  .table__table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  /* Add label before each cell value using data attributes or pseudo-elements */
+  .table__table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 4px;
+    font-size: clamp(10px, calc(var(--header-h) * 0.28), 12px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Provider column - center the image */
+  .table__table tbody td:first-child {
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 8px;
+  }
+
+  .table__table tbody td:first-child::before {
+    display: none; /* Hide label for provider column */
+  }
+
+  .table__table tbody td:first-child img {
+    max-width: 100px;
+    max-height: 50px;
+  }
+
+  /* Center text for certain columns that should remain centered */
+  .table__table tbody td:nth-child(3),
+  .table__table tbody td:nth-child(4),
+  .table__table tbody td:nth-child(5) {
+    text-align: center;
+  }
+
+  /* Adjust cell font size for mobile */
+  .table__table tbody td {
+    font-size: clamp(12px, calc(var(--header-h) * 0.35), 14px);
+  }
+}
+
+/* For very small screens, adjust padding */
+@media (max-width: 480px) {
+  .table__inner {
+    padding: 0 calc(var(--slot-padding) * 0.5);
+  }
+
+  .table__table tbody tr {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .table__table tbody td {
+    padding: 6px 0;
+    font-size: clamp(11px, calc(var(--header-h) * 0.32), 13px);
+  }
+}
