@@ -8,314 +8,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/components.css">
-
-  <style>
-    /* =========================
-       Design tokens / palette
-       ========================= */
-    :root{
-      /* ===== COLOR TOKENS =====
-         Used by containers (sections/dividers/footer) and components
-         Components should reference these, not define their own colors */
-      --c1: #ffffff;  /* Primary white background */
-      --c2: #e0e3de;  /* Light gray (hero footer, divider text) */
-      --c3: #2E5B9E;  /* Teal (dividers, accents) */
-      --c4: #0a2026;  /* Dark teal (text, accents) */
-      --c5: #101418;  /* Near-black (hero text, dark backgrounds) */
-      --c6: #866392;  /* Dark gray (section 2 pills, search) */
-      --c7: #95845F;  /* Green (section 1 cards) */
-      --c8: #95845F;  /* Beige/cream (section 2/3 titles, section 3 cards) */
-      --c9: #6A8A7F;  /* Beige/cream (section 3 panels - same as c8) */
-      --c10: #C1C1C2;  /* Beige/cream (section 3 panels - same as c8) */
-
-
-      /* ===== SIZING TOKENS =====
-         Set by JS (responsive) */
-      --header-h: 56px;
-
-      /* Container heights - defined at container level */
-      --hero-h: calc(var(--header-h) * 15);
-      --hero-footer-h: calc(var(--header-h) * 2.5);
-      --section-h: calc(var(--header-h) * 15);
-      --divider-h: calc(var(--header-h) * 1.8);
-
-      /* ===== SPACING TOKENS =====
-         For containers: section padding, slot padding
-         For components: internal gaps, card spacing */
-      --pad: calc(var(--header-h) / 6);                    /* Base padding unit */
-      --section-horizontal-pad: calc(var(--header-h) * 1.0); /* Horizontal padding for sections */
-      --section-vertical-pad: calc(var(--header-h) * 1.15);  /* Vertical padding for sections */
-      --slot-padding: calc(var(--header-h) * 1.0);         /* Padding for .slot elements */
-
-      /* Grid gaps - for component internal layouts */
-      --gap-xs: calc(var(--header-h) * 0.35);   /* Small gaps (icons, tight spacing) */
-      --gap-sm: calc(var(--header-h) * 0.55);    /* Small-medium gaps */
-      --gap-md: calc(var(--header-h) * 0.75);    /* Medium gaps (card spacing) */
-      --gap-lg: calc(var(--header-h) * 1.0);     /* Large gaps (section grid columns) */
-      --gap-xl: calc(var(--header-h) * 1.4);     /* Extra large gaps (dividers) */
-
-      /* ===== LAYOUT TOKENS =====
-         For containers: max-width, grid definitions */
-      --maxw: 1400px;                                    /* Maximum content width */
-      --section-grid-gap: var(--gap-lg);                 /* Default gap for section grids */
-    }
-
-    /* =========================
-       Base / reset
-       ========================= */
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
-    body{
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--c1);
-      color: #0b0f12;
-      overflow-x: hidden;
-    }
-    button, input{ font: inherit; }
-    button{
-      border: 0;
-      background: transparent;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-    }
-
-    /* =========================
-       Header (fixed, transparent -> opaque on scroll)
-       ========================= */
-    .page-header{
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--header-h);
-      z-index: 1000;
-
-      display: flex;
-      align-items: center;
-
-      background: rgba(16, 20, 24, 0.0);
-      backdrop-filter: blur(0px);
-      transition: background 180ms ease, backdrop-filter 180ms ease, box-shadow 180ms ease;
-    }
-    .page-header.scrolled{
-      background: rgba(16, 20, 24, 1.0); /* Fully opaque when scrolled */
-      backdrop-filter: blur(6px);
-      box-shadow: 0 2px 18px rgba(0,0,0,0.25);
-    }
-
-    .header-inner{
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding: 0 var(--pad);
-      display: flex;
-      align-items: center;
-      gap: var(--pad);
-    }
-
-    .header-left{
-      display: flex;
-      align-items: center;
-      gap: var(--pad);
-      min-width: 0px;
-    }
-
-    .header-right{
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .header-icon,
-    .header-logo{
-      height: calc(var(--header-h) - (var(--pad) * 2));
-      width: auto;
-      display: block;
-      opacity: 0.95;
-    }
-    .header-logo{
-      height: calc(var(--header-h) - (var(--pad) * 2));
-      max-height: calc(var(--header-h) - (var(--pad) * 2));
-    }
-
-    /* =========================
-       Navigation buttons and search icon
-       ========================= */
-    .header-nav{
-      display: flex;
-      align-items: center;
-      gap: calc(var(--pad) * 1.5);
-      margin-left: auto;
-    }
-
-    .nav-button{
-      background: transparent;
-      border: none;
-      color: var(--c2); /* Greyed white for inactive */
-      font-size: clamp(13px, calc(var(--header-h) * 0.4), 16px);
-      font-weight: 500;
-      padding: calc(var(--pad) * 0.5) calc(var(--pad) * 0.8);
-      cursor: pointer;
-      transition: color 180ms ease, opacity 180ms ease;
-    }
-    .nav-button:hover{
-      color: var(--c1); /* Lighter white on hover */
-      opacity: 1;
-    }
-    .nav-button.active{
-      color: var(--c1); /* Lighter white for active page */
-    }
-
-    .search-icon-button{
-      background: transparent;
-      border: none;
-      padding: calc(var(--pad) * 0.5);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.9;
-      transition: opacity 180ms ease;
-    }
-    .search-icon-button:hover{
-      opacity: 1;
-    }
-
-    .search-icon{
-      height: calc(var(--header-h) * 0.45);
-      width: calc(var(--header-h) * 0.45);
-      color: rgba(255, 255, 255, 0.9);
-      stroke: currentColor;
-    }
-
-    /* =========================
-       Main layout / sections
-       ========================= */
-    main.content-area{
-      width: 100%;
-    }
-
-    .section_container{
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    .section_block{
-      width: 100%;
-      display: grid;
-      place-items: stretch;
-    }
-
-    .hero{
-      min-height: var(--hero-h);
-      height: auto;
-      background: url("assets/imgs/hero.jpeg") center center / cover no-repeat;
-      background-attachment: fixed; /* Parallax effect */
-      position: relative;
-      display: grid;
-      place-items: center;
-    }
-
-    /* Grey overlay for hero section */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
-      z-index: 1;
-    }
-
-    .hero .slot{
-      position: relative;
-      z-index: 2; /* Ensure content is above overlay */
-      place-items: center;
-      height: 100%;
-    }
-
-    .content_section{
-      background: var(--c1);
-      min-height: var(--section-h);
-      height: auto;
-      display: grid;
-      place-items: stretch;
-    }
-
-    /* Footer container - full width */
-    .site-footer{
-      width: 100%;
-      min-height: calc(var(--header-h) * 5.2);
-      display: grid;
-      grid-template-columns: 1fr;
-      place-items: stretch;
-    }
-
-    .site-footer .slot{
-      max-width: none;
-      padding: 0;
-    }
-
-    .slot{
-      min-height: 100%;
-      height: auto;
-      width: 100%;
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 var(--slot-padding);
-      display: grid;
-      place-items: stretch;
-    }
-
-    /* =========================
-       Responsive tweaks
-       ========================= */
-    @media (max-width: 820px){
-      .header-left{ min-width: 0; }
-      .header-nav{
-        gap: calc(var(--pad) * 1.0);
-      }
-      .nav-button{
-        font-size: clamp(11px, calc(var(--header-h) * 0.35), 14px);
-        padding: calc(var(--pad) * 0.4) calc(var(--pad) * 0.6);
-      }
-      .search-icon{
-        height: calc(var(--header-h) * 0.4);
-        width: calc(var(--header-h) * 0.4);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
   <!-- HEADER -->
-  <header class="page-header" id="pageHeader">
-    <div class="header-inner">
-      <div class="header-left">
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__left">
         <button type="button" onclick="open_sidebar_menu()">
-          <img src="assets/imgs/menu.png" class="header-icon" alt="Menu" />
+          <img src="assets/imgs/menu.png" class="header__icon" alt="Menu" />
         </button>
 
         <button type="button" onclick="return_home()">
-          <img src="assets/imgs/logo.png" class="header-logo" alt="Logo" />
+          <img src="assets/imgs/logo.png" class="header__logo" alt="Logo" />
         </button>
       </div>
 
-      <div class="header-right">
-        <div class="header-nav">
-          <button type="button" class="nav-button" data-page="home" onclick="navigate_to_page('home')">Home</button>
-          <button type="button" class="nav-button" data-page="research" onclick="navigate_to_page('research')">Research</button>
-          <button type="button" class="nav-button" data-page="webservices" onclick="navigate_to_page('webservices')">Webservices</button>
-          <button type="button" class="nav-button" data-page="demo" onclick="navigate_to_page('demo')">Demo</button>
-          <button type="button" class="nav-button" data-page="logistics" onclick="navigate_to_page('logistics')">Logistics</button>
-          <button type="button" class="search-icon-button" onclick="open_search()" aria-label="Search">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="header__right">
+        <div class="header__nav">
+          <button type="button" class="header__nav-button" data-page="home" onclick="navigate_to_page('home')">Home</button>
+          <button type="button" class="header__nav-button" data-page="research" onclick="navigate_to_page('research')">Research</button>
+          <button type="button" class="header__nav-button" data-page="webservices" onclick="navigate_to_page('webservices')">Webservices</button>
+          <button type="button" class="header__nav-button" data-page="demo" onclick="navigate_to_page('demo')">Demo</button>
+          <button type="button" class="header__nav-button" data-page="logistics" onclick="navigate_to_page('logistics')">Logistics</button>
+          <button type="button" class="header__search-button" onclick="open_search()" aria-label="Search">
+            <svg class="header__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.35-4.35"></path>
             </svg>
@@ -326,108 +43,269 @@
   </header>
 
   <!-- MAIN CONTENT AREA -->
-  <main class="content-area">
-    <div class="section_container">
+  <main class="o-container">
+    <div class="o-container__inner">
+
       <!-- HERO SECTION -->
-      <section class="section_block hero">
-        <div id="slot-hero" class="slot" data-component="section_1" data-hero-title="Our Research"></div>
-      </section>
-      <!-- SECTION 4 -->
-      <section class="section_block content_section">
-        <div id="slot-section-4" class="slot" data-component="roadmap_section"></div>
+      <section class="o-section o-section--hero">
+        <div class="o-wrapper">
+          <div class="hero">
+            <h1 class="hero__title">
+              <span>Our</span>
+              <span>Research</span>
+            </h1>
+          </div>
+        </div>
       </section>
 
-      <!-- SECTION 5 -->
-      <section class="section_block content_section">
-        <div id="slot-section-5" class="slot" data-component="timeline_section"></div>
+      <!-- SECTION 4 (Timeline) -->
+      <section class="o-section o-section--content">
+        <div class="o-wrapper">
+          <section class="timeline">
+            <div class="timeline__inner">
+              <div class="timeline__rail">
+
+                <!-- SAM.gov -->
+                <article class="timeline__item">
+                  <div class="timeline__dot-wrap" aria-hidden="true">
+                    <div class="timeline__dot timeline__dot--sam"></div>
+                  </div>
+                  <h3 class="timeline__title">SAM.gov</h3>
+                  <div class="timeline__meta">60+ Days</div>
+                  <p class="timeline__body">
+                    Registration is required first. Approval takes 3-6 weeks. All entities on the grant,
+                    including subawardees, must have an active, valid UEI and CAGE Code.
+                  </p>
+                </article>
+
+                <!-- SBIR.gov - Company Registry -->
+                <article class="timeline__item">
+                  <div class="timeline__dot-wrap" aria-hidden="true">
+                    <div class="timeline__dot timeline__dot--sbir-a"></div>
+                  </div>
+                  <h3 class="timeline__title">SBIR.gov</h3>
+                  <div class="timeline__meta">40+ Days</div>
+                  <p class="timeline__body">
+                    A System for Award Management (SAM) ID is required before proposal submission. SHA manages
+                    a Company Registry to track SBIR/STTR ownership and affiliation; approval is usually
+                    same-day.
+                  </p>
+                </article>
+
+                <!-- SBIR.gov - Grants.gov account -->
+                <article class="timeline__item">
+                  <div class="timeline__dot-wrap" aria-hidden="true">
+                    <div class="timeline__dot timeline__dot--sbir-b"></div>
+                  </div>
+                  <h3 class="timeline__title">SBIR.gov</h3>
+                  <div class="timeline__meta">35+ Days</div>
+                  <p class="timeline__body">
+                    Since 2021, two-step security verification is mandatory for all grants.gov users. Have a
+                    valid state-issued ID ready; approval is typically same-day.
+                  </p>
+                </article>
+
+                <!-- Research.gov -->
+                <article class="timeline__item">
+                  <div class="timeline__dot-wrap" aria-hidden="true">
+                    <div class="timeline__dot timeline__dot--research"></div>
+                  </div>
+                  <h3 class="timeline__title">SBIR.gov</h3>
+                  <div class="timeline__meta">30+ Days</div>
+                  <p class="timeline__body">
+                    A Research.gov account is necessary to submit your proposal. Create an Administrator
+                    account for your organization, then add roles for the PI. Approval is typically same-day.
+                  </p>
+                </article>
+
+                <!-- All Accounts Active (final state) -->
+                <article class="timeline__item timeline__item--final">
+                  <div class="timeline__dot-wrap" aria-hidden="true">
+                    <div class="timeline__dot timeline__dot--final"></div>
+                  </div>
+                  <h3 class="timeline__title">All<br>Accounts<br>Active</h3>
+                  <p class="timeline__body">
+                    All accounts must be active 20 days before the deadline. All accounts should be approved
+                    and ready for grant application upload and submission at least 10 days prior to the due
+                    date.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+          </section>
+        </div>
       </section>
+
+      <!-- SECTION 5 (Timeline Multi-Year) -->
+      <section class="o-section o-section--content">
+        <div class="o-wrapper">
+          <section class="timeline-multi-year">
+            <!-- Months (shared across years) -->
+            <div class="timeline-multi-year__months">
+              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+              <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+              <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+            </div>
+
+            <div class="timeline-multi-year__grid">
+
+              <!-- 2026 -->
+              <div class="timeline-multi-year__year-block">
+                <div class="timeline-multi-year__year-label">2026</div>
+                <div class="timeline-multi-year__rows">
+
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">NSF</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--blue" data-start="1" data-span="4"></div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">USDA</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--green" data-start="5" data-span="3">
+                        Open Period
+                      </div>
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--phase1" data-start="10" data-span="3">
+                        Phase I
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">NIH</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--blue" data-start="3" data-span="4"></div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">HHS</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--blue" data-start="3" data-span="3"></div>
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--green" data-start="6" data-span="4"></div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">EPA</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--blue" data-start="3" data-span="4"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- 2027 -->
+              <div class="timeline-multi-year__year-block">
+                <div class="timeline-multi-year__year-label">2027</div>
+                <div class="timeline-multi-year__rows">
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">USDA</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--phase1" data-start="1" data-span="6">
+                        Phase I
+                      </div>
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--phase2" data-start="7" data-span="6">
+                        Phase II
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2029 (Phase II long bar) -->
+              <div class="timeline-multi-year__year-block">
+                <div class="timeline-multi-year__year-label">2029</div>
+                <div class="timeline-multi-year__rows">
+                  <div class="timeline-multi-year__row">
+                    <div class="timeline-multi-year__agency">USDA</div>
+                    <div class="timeline-multi-year__track">
+                      <div class="timeline-multi-year__bar timeline-multi-year__bar--phase2" data-start="1" data-span="12">
+                        Phase II
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </section>
+
     </div>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
-      <div id="slot-footer" class="slot" data-component="footer"></div>
+    <footer class="o-section o-section--footer">
+      <div class="o-wrapper">
+        <footer class="footer">
+          <div class="footer__image-wrap">
+
+            <div class="footer__overlay">
+              <div class="footer__overlay-inner">
+
+                <div class="footer__icons">
+                  <button type="button" onclick="link_to_instagram()" aria-label="Instagram">
+                    <img src="assets/imgs/logo-instagram.png" class="footer__icon" alt="">
+                  </button>
+                  <button type="button" onclick="link_to_x()" aria-label="X">
+                    <img src="assets/imgs/logo-x.png" class="footer__icon" alt="">
+                  </button>
+                  <button type="button" onclick="link_to_facebook()" aria-label="Facebook">
+                    <img src="assets/imgs/logo-facebook.png" class="footer__icon" alt="">
+                  </button>
+                </div>
+
+                <div class="footer__info-grid">
+                  <div class="footer__col">
+                    <div class="footer__col-title">Contact:</div>
+                    <div class="footer__col-body">
+                      <div>Dylan Montgomery - Founder of FND</div>
+                      <div><a href="mailto:dcm103@uakron.edu">dcm103@uakron.edu</a></div>
+                      <div>330.554.0940</div>
+                    </div>
+                  </div>
+
+                  <div class="footer__col">
+                    <div class="footer__col-title">The Mycite Framework</div>
+                    <div class="footer__col-body">
+                      <div>Copyright 2025 Dylan Montgomery</div>
+                      <div>Licensed under the Apache License, Version 2.0</div>
+                      <div>You may obtain a copy of the License at:</div>
+                      <div>
+                        <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">
+                          http://www.apache.org/licenses/LICENSE-2.0
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="footer__col">
+                    <div class="footer__col-title">Explore Mycite Framework</div>
+                    <div class="footer__col-body">
+                      <div>By visiting our GitHub Repository:</div>
+                      <div>
+                        <a href="https://github.com/dylcmonty/Mycite" target="_blank" rel="noopener">
+                          github.com/dylcmonty/Mycite
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </footer>
+      </div>
     </footer>
   </main>
 
-  <script>
-    function computeHeaderHeightPx() {
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      const isMobile = vw < 820;
-      const h = isMobile ? (vw / 12) : (vw / 34);
-      return Math.max(44, Math.min(92, Math.round(h)));
-    }
-
-    function applySizingVars() {
-      const h = computeHeaderHeightPx();
-      document.documentElement.style.setProperty("--header-h", h + "px");
-    }
-
-    function syncHeaderScrollState() {
-      const header = document.getElementById("pageHeader");
-      const y = window.scrollY || document.documentElement.scrollTop || 0;
-      if (y > 10) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
-    }
-
-    function navigate_to_page(page) {
-      if (page === 'home') {
-        window.location.href = "/index.html";
-      } else {
-        window.location.href = "/" + page + ".html";
-      }
-    }
-
-    function setActiveNavButton() {
-      const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-      const pageName = currentPage === 'index' || currentPage === '' ? 'home' : currentPage;
-      const navButtons = document.querySelectorAll('.nav-button');
-      navButtons.forEach(btn => {
-        const btnPage = btn.getAttribute('data-page');
-        if (btnPage === pageName) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
-
-    function open_search() {
-      console.log("open_search()");
-    }
-
-    function open_sidebar_menu() {
-      console.log("open_sidebar_menu()");
-    }
-
-    function return_home() {
-      window.location.href = "/";
-    }
-
-    function link_to_instagram(){ console.log("link_to_instagram()"); }
-    function link_to_x(){ console.log("link_to_x()"); }
-    function link_to_facebook(){ console.log("link_to_facebook()"); }
-
-    /* Parallax effect fallback (JavaScript-based) */
-    function initParallax() {
-      const hero = document.querySelector('.hero');
-      if (!hero) return;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) return;
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
-        hero.style.backgroundPosition = `center ${rate}px`;
-      }, { passive: true });
-    }
-
-    applySizingVars();
-    syncHeaderScrollState();
-    setActiveNavButton();
-    // initParallax(); // Uncomment to enable JS-based parallax fallback
-
-    window.addEventListener("resize", applySizingVars);
-    window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
-  </script>
-  <script src="/inject.js"></script>
+  <script src="assets/js/enhancements.js"></script>
 </body>
 </html>
