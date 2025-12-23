@@ -3,6 +3,22 @@
    Base element styles (button, input, img, headings, etc.)
    ========================= */
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
 button,
 input {
   font: inherit;
