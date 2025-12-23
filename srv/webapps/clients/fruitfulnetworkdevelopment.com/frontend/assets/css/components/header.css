@@ -7,6 +7,8 @@
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  max-width: 100%;
   height: var(--header-h);
   z-index: 1000;
 
@@ -26,7 +28,8 @@
 
 .header__inner {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 0 var(--pad);
   display: flex;
