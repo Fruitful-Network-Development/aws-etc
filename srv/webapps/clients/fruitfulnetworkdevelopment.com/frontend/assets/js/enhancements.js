@@ -103,6 +103,31 @@
   }
 
   /* =========================
+     Mobile Table Labels Enhancement
+     Adds data-label attributes to table cells for mobile card layout
+     ========================= */
+  function addMobileTableLabels() {
+    document.querySelectorAll('.table__table').forEach(table => {
+      const headers = table.querySelectorAll('thead .table__header');
+      const rows = table.querySelectorAll('tbody tr');
+      
+      if (headers.length === 0) return;
+      
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        cells.forEach((cell, index) => {
+          if (headers[index]) {
+            const label = headers[index].textContent.trim();
+            // Remove sort indicator symbols if present
+            const cleanLabel = label.replace(/[\s⇅▲▼]+$/, '').trim();
+            cell.setAttribute('data-label', cleanLabel);
+          }
+        });
+      });
+    });
+  }
+
+  /* =========================
      Responsive Header Height
      ========================= */
   function computeHeaderHeightPx() {
@@ -204,13 +229,14 @@
     // }, { passive: true });
   }
 
- /* =========================
+  /* =========================
      Initialize All Enhancements
      ========================= */
   function init() {
     syncHeaderScrollState();
     setActiveNavButton();
     initTableSorting();
+    addMobileTableLabels();
     // initParallax(); // Uncomment to enable JS-based parallax fallback
 
     window.addEventListener("resize", applySizingVars);
@@ -218,9 +244,6 @@
   }
 
   // Apply sizing immediately to prevent flash of incorrect sizing
-  applySizingVars();
-
-  // Initialize when DOM is ready
   applySizingVars();
 
   // Initialize when DOM is ready
