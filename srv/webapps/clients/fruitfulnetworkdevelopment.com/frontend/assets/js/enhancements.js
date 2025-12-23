@@ -204,7 +204,7 @@
     // }, { passive: true });
   }
 
-  /* =========================
+ /* =========================
      Initialize All Enhancements
      ========================= */
   function init() {
@@ -216,8 +216,11 @@
     window.addEventListener("resize", applySizingVars);
     window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
   }
-  
-   // Apply sizing immediately to prevent flash of incorrect sizing
+
+  // Apply sizing immediately to prevent flash of incorrect sizing
+  applySizingVars();
+
+  // Initialize when DOM is ready
   applySizingVars();
 
   // Initialize when DOM is ready
