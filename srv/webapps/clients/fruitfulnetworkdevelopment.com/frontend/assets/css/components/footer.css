@@ -4,8 +4,9 @@
 
 .footer {
   width: 100%;
-  min-height: 100%;
-  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  min-height: calc(var(--header-h) * 5.2);  height: auto;
   display: grid;
   place-items: stretch;
 }
@@ -14,6 +15,8 @@
 .footer__image-wrap {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 100%;
   height: auto;
   background: url("../imgs/footer.png") center bottom / cover no-repeat;
@@ -58,6 +61,8 @@
 /* Full width layout using CSS Grid */
 .footer__overlay-inner {
   width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
   padding: 0 var(--slot-padding); /* Use shared padding token for horizontal spacing */
 
   display: grid;
