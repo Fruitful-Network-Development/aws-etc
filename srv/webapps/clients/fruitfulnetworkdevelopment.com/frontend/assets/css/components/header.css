@@ -120,8 +120,9 @@
   .header__left {
     min-width: 0;
   }
+  /* Hide navigation buttons on mobile - use sidebar menu instead */
   .header__nav {
-    gap: calc(var(--pad) * 1.0);
+    display: none;
   }
   .header__nav-button {
     font-size: clamp(11px, calc(var(--header-h) * 0.35), 14px);
@@ -133,3 +134,9 @@
   }
 }
 
+/* Hide menu button on desktop - show navigation buttons instead */
+@media (min-width: 821px) {
+  .header__left button:first-child {
+    display: none;
+  }
+}
