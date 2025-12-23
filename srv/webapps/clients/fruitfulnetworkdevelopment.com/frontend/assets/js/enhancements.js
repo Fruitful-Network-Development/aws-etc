@@ -208,7 +208,6 @@
      Initialize All Enhancements
      ========================= */
   function init() {
-    applySizingVars();
     syncHeaderScrollState();
     setActiveNavButton();
     initTableSorting();
@@ -217,6 +216,9 @@
     window.addEventListener("resize", applySizingVars);
     window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
   }
+  
+   // Apply sizing immediately to prevent flash of incorrect sizing
+  applySizingVars();
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
