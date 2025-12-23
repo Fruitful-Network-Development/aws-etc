@@ -49,3 +49,8 @@
   --section-grid-gap: var(--gap-lg);                 /* Default gap for section grids */
 }
 
+@media (max-width: 820px) {
+  :root {
+    --hero-h: calc(var(--header-h) * 12);
+  }
+}

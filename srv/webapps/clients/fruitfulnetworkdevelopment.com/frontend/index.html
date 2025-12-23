@@ -11,6 +11,25 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+  <div class="sidebar" aria-hidden="true">
+    <div class="sidebar__backdrop" data-sidebar-close></div>
+    <aside class="sidebar__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="sidebar__header">
+        <span class="sidebar__title">Menu</span>
+        <button type="button" class="sidebar__close" data-sidebar-close aria-label="Close menu">
+          &times;
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <button type="button" class="sidebar__link" data-page="home" onclick="navigate_to_page('home')">Home</button>
+        <button type="button" class="sidebar__link" data-page="research" onclick="navigate_to_page('research')">Research</button>
+        <button type="button" class="sidebar__link" data-page="webservices" onclick="navigate_to_page('webservices')">Webservices</button>
+        <button type="button" class="sidebar__link" data-page="demo" onclick="navigate_to_page('demo')">Demo</button>
+        <button type="button" class="sidebar__link" data-page="logistics" onclick="navigate_to_page('logistics')">Logistics</button>
+      </nav>
+    </aside>
+  </div>
+
   <!-- HEADER -->
   <header class="header">
     <div class="header__inner">

@@ -194,9 +194,23 @@
     console.log("open_search()");
   };
 
+  function setSidebarState(isOpen) {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+    sidebar.classList.toggle('is-active', isOpen);
+    sidebar.setAttribute('aria-hidden', (!isOpen).toString());
+    document.body.classList.toggle('is-sidebar-open', isOpen);
+  }
+
+  function toggleSidebarMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+    const isOpen = sidebar.classList.contains('is-active');
+    setSidebarState(!isOpen);
+  }
+
   window.open_sidebar_menu = function() {
-    // Placeholder: implement sidebar menu
-    console.log("open_sidebar_menu()");
+    toggleSidebarMenu();
   };
 
   window.link_to_instagram = function() {
@@ -230,6 +244,28 @@
   }
 
   /* =========================
+     Sidebar Menu
+     ========================= */
+  function initSidebarMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+
+    sidebar.querySelectorAll('[data-sidebar-close]').forEach((trigger) => {
+      trigger.addEventListener('click', () => setSidebarState(false));
+    });
+
+    sidebar.querySelectorAll('.sidebar__link').forEach((link) => {
+      link.addEventListener('click', () => setSidebarState(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && sidebar.classList.contains('is-active')) {
+        setSidebarState(false);
+      }
+    });
+  }
+
+  /* =========================
      Initialize All Enhancements
      ========================= */
   function init() {
@@ -237,6 +273,7 @@
     setActiveNavButton();
     initTableSorting();
     addMobileTableLabels();
+    initSidebarMenu();
     // initParallax(); // Uncomment to enable JS-based parallax fallback
 
     window.addEventListener("resize", applySizingVars);
