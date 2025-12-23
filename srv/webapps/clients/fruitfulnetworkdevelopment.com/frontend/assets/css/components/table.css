@@ -5,6 +5,8 @@
 .table {
   height: 100%;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   display: grid;
   align-content: center;
   padding: var(--section-vertical-pad) 0;
@@ -13,6 +15,7 @@
 .table__inner {
   width: 100%;
   max-width: 1200px;
+  min-width: 0;
   margin: 0 auto;
   padding: 0 var(--slot-padding);
   overflow-x: auto;
