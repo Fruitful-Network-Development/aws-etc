@@ -42,11 +42,29 @@
 .o-section--hero {
   min-height: var(--hero-h);
   height: auto;
-  background: url("assets/imgs/hero.jpeg") center center / cover no-repeat;
+  background-image: url("../imgs/hero.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
   display: grid;
   place-items: center;
+}
+
+/* Fix background-attachment on mobile to prevent zoom issues */
+@media (max-width: 820px) {
+  .o-section--hero {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+/* Prevent zoom issues on touch devices */
+@media (pointer: coarse) {
+  .o-section--hero {
+    background-attachment: scroll;
+  }
 }
 
 .o-section--hero::before {
@@ -132,4 +150,3 @@
     grid-template-columns: 1fr;
   }
 }
-
