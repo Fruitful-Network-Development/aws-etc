@@ -35,18 +35,13 @@
     padding: 1rem;
   }
 
-  .hero__text p{
+.hero__text p{
     border-style: solid;
     border-color: var(--silverback);
     border-width: 1px;
     padding: 1rem;
     font-style: italic;
   }
-
-:root {
-    --card-padding: 1.25rem;
-    --card-gap: 0.75rem;
-}
 
 /* ======================================
     TARGET - SECTION
@@ -134,117 +129,67 @@
     PROCESS - SECTION
 ====================================== */
 
-section.section-process {
+.section-process {
+    width: 100%;
+}
+
+.section-process .section-shell {
+    padding: 1.25rem 1rem;
+}
+
+.process-grid {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
     width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.process__grid {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.process__box {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    align-items: center;
-    border: 1px solid var(--silverback);
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow: hidden;
-    gap: var(--card-gap);
-    padding: var(--card-gap);
 }
 
 .process-card {
-    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0;
     width: 100%;
 }
 
-.process__graphic {
+.process-card__media {
+    flex: 0 0 280px;
+    max-width: 320px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    height: 100%;
-    aspect-ratio: 1;
-    width: 100%;
-    max-width: 320px;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
-.process__text {
+.process-card__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex: 1;
-    align-self: stretch;
-    min-width: 0;
-    max-width: 100%;
-    box-sizing: border-box;
-    gap: var(--card-gap);
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
 }
 
-.process__text h3 {
-    color: var(--nero);
-    padding: var(--card-padding);
-    flex: 1;
-    text-align: center;
-    margin: 0;
-    font-weight: 700;
-    box-sizing: border-box;
+.process-card .card__header {
+    width: 100%;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.process__text p {
-    color: var(--nero);
-    flex: 1;
-    text-align: center;
-    margin: 0;
-    padding: var(--card-padding);
-    box-sizing: border-box;
+.process-card .card__body {
+    width: 100%;
     line-height: 1.45;
 }
 
-/* Mobile responsive - process boxes stack and adjust layout */
 @media (max-width: 768px) {
-    section.section-process {
-        padding: 0.5rem;
+    .section-process .section-shell {
+        padding: 1rem;
     }
-    
-    .process__grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .process__box,
-    .process-card {
-        grid-template-columns: 1fr;
-        width: 100%;
-    }
-    
-    .process__graphic {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 1;
-        align-self: center;
-    }
-    
-    .process__text {
-        width: 100%;
-        max-width: 100%;
+
+    .process-card__media {
+        flex: 0 0 auto;
+        max-width: 220px;
     }
 }
 
@@ -275,23 +220,7 @@ section.section-personnel h2 {
 .personnel__content {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;/* ======================================
-    ASIDE - SECTION
-====================================== */
-
-.section-aside {
-    padding: 0.5rem;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--silverback);
-    margin: 0;
-    background-color: var(--offwhite);
- }
- 
- .aside__text {
-    font-style: italic;
-    text-align: center;
- }
+    align-items: flex-start;
     gap: 1rem;
     min-width: 0;
     max-width: 100%;

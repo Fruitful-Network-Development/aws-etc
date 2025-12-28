@@ -162,6 +162,45 @@ img {
    gap: 0.35rem;
 }
 
+.section-shell {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 1.5rem;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.card {
+   border: 1px solid var(--silverback);
+   background: var(--offwhite);
+}
+
+.card__header {
+   text-align: center;
+   padding: 0.75rem;
+   font-weight: 700;
+   margin: 0;
+}
+
+.card__body {
+   padding: 1.25rem;
+   margin: 0;
+}
+
+.media-square {
+   aspect-ratio: 1;
+   object-fit: contain;
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+@media (max-width: 768px) {
+   .stack-sm {
+      flex-direction: column;
+   }
+}
+
 /* ======================================
    PAGE COMPONENTS
   ====================================== */
