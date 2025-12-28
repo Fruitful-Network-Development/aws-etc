@@ -43,6 +43,11 @@
     font-style: italic;
   }
 
+:root {
+    --card-padding: 1.25rem;
+    --card-gap: 0.75rem;
+}
+
 /* ======================================
     TARGET - SECTION
 ====================================== */
@@ -151,10 +156,12 @@ section.section-process {
     display: grid;
     grid-template-columns: 320px 1fr;
     align-items: center;
-    border-color: var(--silverback);
+    border: 1px solid var(--silverback);
     box-sizing: border-box;
     max-width: 100%;
     overflow: hidden;
+    gap: var(--card-gap);
+    padding: var(--card-gap);
 }
 
 .process-card {
@@ -163,9 +170,6 @@ section.section-process {
 }
 
 .process__graphic {
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--silverback);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,32 +192,29 @@ section.section-process {
     min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
-    gap: 0;
+    gap: var(--card-gap);
 }
 
 .process__text h3 {
     color: var(--nero);
-    border-style: solid;
-    border-color: var(--silverback);
-    border-width: 1px;
-    padding: 1rem;
+    padding: var(--card-padding);
     flex: 1;
     text-align: center;
     margin: 0;
     font-weight: 700;
     box-sizing: border-box;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .process__text p {
     color: var(--nero);
-    border-style: solid;
-    border-color: var(--silverback);
-    border-width: 1px;
     flex: 1;
     text-align: center;
     margin: 0;
-    padding: 1rem;
+    padding: var(--card-padding);
     box-sizing: border-box;
+    line-height: 1.45;
 }
 
 /* Mobile responsive - process boxes stack and adjust layout */
