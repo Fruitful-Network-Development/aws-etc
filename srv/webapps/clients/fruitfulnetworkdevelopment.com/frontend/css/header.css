@@ -1,0 +1,40 @@
+/* ======================================
+   HEADER
+  ====================================== */
+
+header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   height: 3rem;
+}
+
+.header__left {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.header__nav-link {
+   color: var(--offwhite);
+}
+
+.header__nav-link--active {
+   font-weight: 600;
+}
+
+.header__button {
+   height: 1.5rem;
+   width: 1.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+} 
