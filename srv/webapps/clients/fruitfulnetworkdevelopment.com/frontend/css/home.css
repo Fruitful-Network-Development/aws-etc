@@ -131,41 +131,35 @@
 
 section.section-process {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 100%;
     padding: 1rem;
-    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.process__grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .process__box {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    align-items: center;
     border-color: var(--silverback);
     box-sizing: border-box;
     max-width: 100%;
     overflow: hidden;
 }
 
-.process_first {
-    justify-content: flex-start;
+.process-card {
+    grid-column: 1 / -1;
     width: 100%;
-    max-width: 100%;
-    align-self: stretch;
-}
-
-.process_middle {
-    justify-content: flex-end;
-    width: 80%;
-    max-width: 100%;
-    align-self: flex-end;
-}
-
-.process_last {
-    justify-content: flex-end;
-    width: 60%;
-    max-width: 100%;
-    align-self: flex-end;
 }
 
 .process__graphic {
@@ -176,20 +170,19 @@ section.section-process {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    align-self: stretch;
     height: 100%;
     aspect-ratio: 1;
-    max-width: min(100%, 300px);
+    width: 100%;
+    max-width: 320px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-
 .process__text {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     align-self: stretch;
     min-width: 0;
@@ -203,10 +196,11 @@ section.section-process {
     border-style: solid;
     border-color: var(--silverback);
     border-width: 1px;
-    padding: 0.5rem;
+    padding: 1rem;
     flex: 1;
-    text-align: left;
+    text-align: center;
     margin: 0;
+    font-weight: 700;
     box-sizing: border-box;
 }
 
@@ -215,10 +209,10 @@ section.section-process {
     border-style: solid;
     border-color: var(--silverback);
     border-width: 1px;
-    padding: 0.5rem;
     flex: 1;
     text-align: center;
     margin: 0;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
@@ -226,23 +220,17 @@ section.section-process {
 @media (max-width: 768px) {
     section.section-process {
         padding: 0.5rem;
+    }
+    
+    .process__grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
     
-    .process__box {
-        flex-direction: column;
+    .process__box,
+    .process-card {
+        grid-template-columns: 1fr;
         width: 100%;
-        max-width: 100%;
-        align-items: stretch;
-    }
-    
-    .process_first,
-    .process_middle,
-    .process_last {
-        width: 100%;
-        max-width: 100%;
-        align-self: stretch;
-        justify-content: flex-start;
     }
     
     .process__graphic {
