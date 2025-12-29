@@ -1,0 +1,40 @@
+/* ======================================
+   RESEARCH PAGE
+  ====================================== */
+
+.research-hero {
+   text-align: center;
+}
+
+.topics-grid .info-card h3 {
+   color: var(--green);
+}
+
+.roadmap-steps {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+   gap: 1rem;
+}
+
+.step-card h3 {
+   color: var(--blue);
+}
+
+.timeline-block {
+   border: 1px solid var(--silverback);
+   background-color: var(--white);
+   padding: 0.75rem;
+   font-family: "Courier New", Courier, monospace;
+   overflow-x: auto;
+}
+
+.timeline-block pre {
+   margin: 0;
+   white-space: pre;
+}
+
+.research-sections {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: 1rem;
+}

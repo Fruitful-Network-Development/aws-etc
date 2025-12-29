@@ -1,0 +1,495 @@
+/* ======================================
+    HEADER - SECTION
+====================================== */
+    /* SEE HEADER.CSS*/
+
+/* ======================================
+    HERO - SECTION
+====================================== */
+.section-hero{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero__logo{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .hero__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__text h1{
+    border-style: solid;
+    border-color: var(--silverback);
+    border-width: 1px;
+    padding: 1rem;
+  }
+
+.hero__text p{
+    border-style: solid;
+    border-color: var(--silverback);
+    border-width: 1px;
+    padding: 1rem;
+    font-style: italic;
+  }
+
+/* ======================================
+    TARGET - SECTION
+====================================== */
+
+.section-target{
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--target-gap);
+    padding: var(--target-padding);
+    max-width: var(--target-max-width);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.target__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    max-width: var(--target-card-max-width);
+    min-width: 0;
+}
+
+/* Mobile responsive - cards stack vertically */
+@media (max-width: 768px) {
+    .section-target{
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 95%;
+    }
+    
+    .target__card{
+        max-width: 100%;
+        flex: none;
+    }
+}
+
+.target__graphic{
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--camo);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.target__card h2{
+    color: var(--blue-sour);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.target__message{
+    border-style: solid;
+    border-color: var(--silverback);
+    border-width: 1px;
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+/* ======================================
+    ASIDE - SECTION
+====================================== */
+
+.section-aside {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--silverback);
+    margin: 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    box-sizing: border-box;
+ }
+ 
+ .aside__text {
+    font-style: italic;
+    text-align: center;
+ }
+
+/* ======================================
+    PROCESS - SECTION
+====================================== */
+
+.section-process {
+    width: 100%;
+}
+
+.section-process .section-shell {
+    padding: 1.25rem 1rem;
+}
+
+.process-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.process-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0;
+    width: 100%;
+}
+
+.process-card__media {
+    flex: 0 0 250px;
+    max-width: 250;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--purple);
+    background-color: var(--terracottaroof);
+    margin: 1rem;
+}
+
+.process-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.process-card .card__header {
+    width: 100%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.process-card .card__body {
+    width: 100%;
+    line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+    .section-process .section-shell {
+        padding: 1rem;
+    }
+
+    .process-card__media {
+        flex: 0 0 auto;
+        max-width: 220px;
+    }
+}
+
+/* ======================================
+    PERSONNEL - SECTION
+====================================== */
+.section-personnel {
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  
+  .section-personnel__inner {
+    width: min(100%, 1100px);
+    margin-inline: auto;
+  
+    --gap: clamp(0.75rem, 2vw, 1.5rem);
+    --edge: clamp(0.75rem, 2vw, 1.25rem);
+  
+    display: grid;
+    gap: var(--gap);
+  
+    /* Top row + body row */
+    grid-template-rows: auto 1fr;
+  
+    /* Left biography wider than right profile */
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  
+    grid-template-areas:
+      "top top"
+      "bio profile";
+  }
+
+  .personnel__top.box {
+    background: transparent;
+  }
+
+  .personnel__top h2 {
+    color: var(--blue-sour);
+    text-align: center;
+  }
+
+  .personnel__top { grid-area: top; }
+  .personnel_biography { grid-area: bio; }
+  .profile { grid-area: profile; }
+
+  .personnel__top {
+    display: flex;
+    align-items: center;      /* vertical centering */
+    justify-content: center;  /* horizontal centering */
+  }
+  
+  /* Your existing box borders */
+  .box {
+    border: 1px solid var(--silverback);
+    padding: var(--edge);
+  }
+  .personnel_biography {
+    display: grid;
+    gap: var(--gap);
+  
+    /* Title, quote, message (message grows) */
+    grid-template-rows: auto auto 1fr;
+  }
+  
+  /* Title row: icon block + name */
+  .biography__title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .biography__title-icon {
+    width: 24px;            /* controls the red square */
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--silverback);
+    padding: 0.25rem;
+
+  }
+  
+  .biography__title-icon img {
+    display: block;
+    
+  }
+  
+  .biography__title-name {
+    margin: 0;
+    color: var(--nero);
+  }
+
+  .biography__quote p {
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .biography__quote p,
+  .biography__message p {
+    margin: 0;
+    color: var(--nero);
+  }
+  
+  .biography__message p {
+    text-indent: 30px;
+  }
+  
+  .biography__message {
+    /* helps the big left box feel “dominant” like your sketch */
+    min-height: clamp(260px, 40vh, 520px);
+  }
+  .profile {
+    display: grid;
+    grid-template-rows: 1fr auto; /* image takes remaining height, footer fits content */
+    gap: 0;
+    padding: 0;
+  
+    /* If you want the whole right column to feel as tall as the left side */
+    min-height: clamp(420px, 60vh, 720px);
+  }
+  
+  /* Top image area (your red block) */
+  .profile__image {
+    overflow: hidden; /* crop image cleanly */
+  }
+  
+  .profile__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills the red box */
+    display: block;
+  }
+  
+  /* Footer list area */
+  .profile__footer {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.75rem; /* override box padding if you want it tighter */
+  }
+  
+  /* One row = icon + text, repeated */
+  .profile__tag {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+  
+    border: 1px solid var(--silverback); /* gives the “mini-box rows” feel */
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Icon block inside each row (your red small squares) */
+  .profile__tag-icon {
+    width: 44px;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    padding: 0.25rem;
+  }
+  
+  .profile__tag-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .profile__tag p {
+    margin: 0;
+  }
+
+  @media (max-width: 780px) {
+    .section-personnel__inner {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+      "top"
+      "bio"
+      "profile";
+    }
+  
+    .profile {
+      min-height: auto;
+    }
+  
+    .profile__image {
+      min-height: 240px; /* prevents the image area from collapsing */
+    }
+  }
+
+  @media (max-width: 820px) {
+    .section-personnel__inner {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "top"
+        "bio"
+        "profile";
+    }
+  
+    .profile {
+      min-height: 520px; /* keeps image meaningful on mobile */
+    }
+  }  
+
+
+/* ======================================
+    TECHNOLOGY - SECTION
+====================================== */
+
+.section-technology {
+    padding: 1rem;
+  }
+  
+  .section-technology__inner {
+    width: min(100%, 900px);
+    margin-inline: auto;
+  
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 0; /* boxes touch */
+  }
+  
+  .technology__box {
+    border: 1px solid var(--silverback);
+    padding: 0.75rem 1rem;
+  }
+  
+  .technology__box p {
+    margin: 0;
+  }
+  
+  .technology__top {
+    width: fit-content;
+    justify-self: start;
+    align-self: end;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    white-space: nowrap;
+  
+    border-bottom: 0; /* collapse seam with middle */
+  }
+  
+  .technology__middle {
+    width: 100%;
+    justify-self: stretch;
+  }
+  
+  .technology__bottom {
+    width: fit-content;
+    justify-self: end;
+    align-self: start;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    white-space: nowrap;
+  
+    border-top: 0; /* collapse seam with middle */
+  }
+  
+  /* Ensure row contents behave correctly */
+  .technology__top > p,
+  .technology__bottom > p {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis; /* safe on narrow screens */
+  }
+  
+  /* Button must not behave like a block */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }  
+
+  .button__top {
+    background-color: var(--yellow);
+    border: 1px solid var(--riverpanned);
+    color: var(--nero);
+    padding: 0.25rem 0.25rem;
+  }
+
+  .button__bottom {
+    background-color: var(--blue);
+    border: 1px solid var(--incremental);
+    color: var(--offwhite);
+    padding: 0.25rem 0.25rem;
+  }
+
+/* ======================================
+    FOOTER - SECTION
+====================================== */
+    /* SEE FOOTER.CSS */
