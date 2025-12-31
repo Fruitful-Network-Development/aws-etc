@@ -50,6 +50,48 @@ This should be a symlink in Git, pointing to:
 ```
 Commit both.
 
+## Confirm DNS points to this instance (must match)
+Run on the server:
+```bash
+dig +short cuyahogavalleycountrysideconservancy.org
+dig +short www.cuyahogavalleycountrysideconservancy.org
+curl -s https://checkip.amazonaws.com
+```
+The dig results must match the IP from checkip.
+
+## Ensure port 80 is reachable
+Let’s Encrypt HTTP-01 requires inbound port 80.
+        Security Group must allow 0.0.0.0/0 → TCP 80
+        Nginx must be listening on 80
+Quick check:
+```bash
+sudo ss -lntp | grep -E ':(80|443)\b'
+```
+
+## Run certbot to add the new names
+Because you already have an existing cert, the cleanest approach is usually to expand it (certbot will prompt/handle this).
+Run:
+```txt
+sudo certbot --nginx \
+  -d fruitfulnetworkdevelopment.com -d www.fruitfulnetworkdevelopment.com \
+  -d cuyahogaterravita.com -d www.cuyahogaterravita.com \
+  -d cuyahogavalleycountrysideconservancy.org -d www.cuyahogavalleycountrysideconservancy.org
+```
+This tells certbot exactly which SANs you want on the renewed certificate.
+
+### Reload and verify
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+```
+Then re-check certificate SANs:
+```bash
+echo | openssl s_client -connect cuyahogavalleycountrysideconservancy.org:443 \
+  -servername cuyahogavalleycountrysideconservancy.org 2>/dev/null \
+  | openssl x509 -noout -ext subjectAltName
+```
+You should now see DNS:cuyahogavalleycountrysideconservancy.org in the output.
+
 ## DNS: point the domain at your server (outside Git)
 Create A records:
 ```txt
@@ -57,6 +99,7 @@ newclient.com        → <Elastic IP>
 www.newclient.com    → <Elastic IP>
 ```
 Wait for propagation.
+
 
 ## Deploy using only your standard commands (ON SERVER)
 ```bash
