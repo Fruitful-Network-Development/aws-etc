@@ -13,10 +13,6 @@ etc/nginx/sites-available/newclient.com.conf
 ```
 Minimal standard config:
 ```txt
-etc/nginx/sites-available/newclient.com.conf
-```
-Also add the symlink file (IN REPO):
-```txt
 server {
     listen 80;
     server_name newclient.com www.newclient.com;
@@ -43,6 +39,10 @@ server {
     ssl_certificate /etc/letsencrypt/live/newclient.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/newclient.com/privkey.pem;
 }
+```
+Also add the symlink file (IN REPO):
+```txt
+etc/nginx/sites-enabled/newclient.com.conf
 ```
 This should be a symlink in Git, pointing to:
 ```txt
