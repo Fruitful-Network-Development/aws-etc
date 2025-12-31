@@ -17,6 +17,7 @@ from data_access import (
     save_json,
 )
 from modules.weather import weather_bp
+from modules.donation_receipts import donation_receipts_bp
 
 # -------------------------------------------------------------------
 # Configuration and Environment Setup
@@ -220,6 +221,7 @@ def serve_client_file(frontend_root: Path, rel_path: str):
 
 
 app.register_blueprint(weather_bp)
+app.register_blueprint(donation_receipts_bp)
 
 # Example of how to register additional blueprints (commented out until needed):
 # from modules.paypal_gateway import paypal_bp
