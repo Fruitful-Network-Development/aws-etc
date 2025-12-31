@@ -203,11 +203,19 @@ Only if your commit includes changes under srv/:
 sudo rsync -a --delete /home/admin/aws-box/srv/ /srv/
 sudo chown -R admin:admin /srv/webapps
 ```
+To Check what files would be updated before deploying run:
+```bash
+sudo rsync -av --delete --dry-run /home/admin/aws-box/srv/ /srv/
+```
 
 ### Deploy `/etc` payload (nginx, systemd, etc.)
 Only if your commit includes changes under `etc/`:
 ```bash
 sudo rsync -a --delete /home/admin/aws-box/etc/ /etc/
+```
+To Check what files would be updated before deploying run:
+```bash
+sudo rsync -av --delete --dry-run /home/admin/aws-box/etc/ /etc/
 ```
 
 ### Apply service changes safely
