@@ -3,11 +3,13 @@
   ====================================== */
 
 header {
+   background-color: var(--nero);
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
    height: 3rem;
+   padding: 0.25rem 1rem;
 }
 
 .header__left {
@@ -33,8 +35,56 @@ header {
 .header__button {
    height: 1.5rem;
    width: 1.5rem;
+   flex-shrink: 0;
+   /* img-container utility handles centering */
+} 
+
+subheader {
+   background-color: var(--nero-light);
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   height: 2rem;
+   padding: 0.25rem;
+}
+
+.subheader__right {
    display: flex;
    align-items: center;
-   justify-content: center;
-   flex-shrink: 0;
-} 
+   gap: 1rem;
+   margin-right: 1rem;
+}
+
+.subheader__nav-link {
+   color: var(--offwhite);
+}
+
+.subheader__nav-link--active {
+   font-weight: 600;
+   text-decoration: underline;
+   text-decoration-color: var(--offwhite);
+}
+
+/* Responsive header - reduce nav text size when viewport is small */
+@media (max-width: 768px) {
+   .header__nav-link {
+      font-size: 0.85rem;
+   }
+   
+   .header__left,
+   .header__right {
+      gap: 0.5rem;
+   }
+}
+
+@media (max-width: 600px) {
+   .header__nav-link {
+      font-size: 0.75rem;
+   }
+   
+   .header__left,
+   .header__right {
+      gap: 0.35rem;
+   }
+}

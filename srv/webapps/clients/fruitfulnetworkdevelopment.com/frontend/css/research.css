@@ -2,10 +2,6 @@
    RESEARCH PAGE
   ====================================== */
 
-.research-hero {
-   text-align: center;
-}
-
 .topics-grid .info-card h3 {
    color: var(--green);
 }
@@ -14,6 +10,7 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
    gap: 1rem;
+   /* Similar to .card-grid but with 260px min */
 }
 
 .step-card h3 {
@@ -34,6 +31,7 @@
 }
 
 .research-sections {
+   /* Uses same pattern as .card-grid */
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
    gap: 1rem;

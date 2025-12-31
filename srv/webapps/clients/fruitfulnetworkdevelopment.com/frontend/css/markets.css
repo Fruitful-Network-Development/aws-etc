@@ -2,14 +2,11 @@
    MARKETS PAGE
   ====================================== */
 
-.markets-hero {
-   text-align: center;
-}
-
 .markets-grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
    gap: 1rem;
+   /* Similar to .roadmap-steps */
 }
 
 .markets-grid .info-card h3 {

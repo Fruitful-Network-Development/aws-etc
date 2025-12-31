@@ -25,11 +25,8 @@ footer {
 .footer__button {
    height: 1.5rem;
    width: 1.5rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
    flex-shrink: 0;
-   gap: 0.25rem;
+   /* img-container utility handles centering */
 }
 
 .footer__right {

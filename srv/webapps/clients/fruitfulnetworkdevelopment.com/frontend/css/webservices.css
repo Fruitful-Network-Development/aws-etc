@@ -2,10 +2,6 @@
    WEBSERVICES PAGE
   ====================================== */
 
-.services-hero {
-   text-align: center;
-}
-
 .services-grid .info-card h3 {
    color: var(--blue-sour);
 }
@@ -24,8 +20,38 @@
 
 .table-footnote {
    margin: 0;
-   text-align: right;
    font-size: 0.9rem;
+   /* text-align: right via .text-right utility */
+}
+
+/* Sortable table styles */
+.data-table th[role="button"] {
+   position: relative;
+   user-select: none;
+   transition: background-color 0.2s ease;
+}
+
+.data-table th[role="button"]:hover {
+   background-color: var(--silverback);
+}
+
+.data-table th[role="button"]:focus {
+   outline: 2px solid var(--blue-sour);
+   outline-offset: -2px;
+}
+
+.data-table th.sort-asc::after {
+   content: ' ▲';
+   font-size: 0.8em;
+   color: var(--blue-sour);
+   margin-left: 0.25rem;
+}
+
+.data-table th.sort-desc::after {
+   content: ' ▼';
+   font-size: 0.8em;
+   color: var(--blue-sour);
+   margin-left: 0.25rem;
 }
 
 @media (max-width: 768px) {
