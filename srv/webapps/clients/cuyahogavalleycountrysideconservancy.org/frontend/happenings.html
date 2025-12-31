@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happenings | Cuyahoga Valley Countryside Conservancy</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .happenings-hero {
+      background: linear-gradient(135deg, rgba(31, 111, 67, 0.1), rgba(47, 98, 54, 0.05));
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .happenings-hero h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .happenings-hero p {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .events-section {
+      padding: 80px 24px;
+    }
+
+    .events-section h2 {
+      font-size: 36px;
+      margin-bottom: 48px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: var(--bg-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--muted);
+    }
+
+    .event-card-content {
+      padding: 24px;
+    }
+
+    .event-date {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--muted);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .event-card-content h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .event-card-content p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .event-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-light);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .event-location img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .news-section {
+      padding: 80px 24px;
+      background: var(--bg);
+    }
+
+    .news-section h2 {
+      font-size: 36px;
+      margin-bottom: 48px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .news-card {
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .news-date {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .news-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .news-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/imgs/img.logo.countryside.png" alt="Cuyahoga Valley Countryside Conservancy">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="happenings.html">Happenings</a></li>
+        <li><a href="profiles/trapp_family_farm.html">Farm Profiles</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="happenings-hero">
+    <div class="container">
+      <h1>Happenings</h1>
+      <p>Stay up to date with events, news, and activities happening across the Cuyahoga Valley Countryside Conservancy and our partner farms.</p>
+    </div>
+  </section>
+
+  <section class="events-section">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.trapp-family-farm.png" alt="Fieldside Supper Series">
+          <div class="event-card-content">
+            <span class="event-date">July 12, 2024 • Sunset</span>
+            <h3>Fieldside Supper Series</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Trapp Family Farm</span>
+            </div>
+            <p>Join us for an evening of farm-fresh dining under the stars. This special dinner features seasonal ingredients from local farms, prepared by guest chefs. Limited seating available.</p>
+            <a href="#" class="btn btn-primary">RSVP Now</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.oxbow-orchard.png" alt="Berry Bramble Festival">
+          <div class="event-card-content">
+            <span class="event-date">August 5-6, 2024 • Weekend</span>
+            <h3>Berry Bramble Festival</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Oxbow Orchard</span>
+            </div>
+            <p>Celebrate the peak of berry season with live music, farm tours, berry picking, and delicious treats. Fun for the whole family!</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.greenfield-berry-farm.png" alt="Hands-on Soil School">
+          <div class="event-card-content">
+            <span class="event-date">September 9, 2024 • Workshop</span>
+            <h3>Hands-on Soil School</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Greenfield Berry Farm</span>
+            </div>
+            <p>Learn about soil health, composting, and regenerative farming practices in this hands-on workshop. Perfect for home gardeners and aspiring farmers.</p>
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.sarahs-vineyard.png" alt="Harvest Celebration">
+          <div class="event-card-content">
+            <span class="event-date">October 15, 2024 • All Day</span>
+            <h3>Harvest Celebration</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Sarah's Vineyard</span>
+            </div>
+            <p>Join us for our annual harvest celebration featuring local food, wine tastings, farm tours, and activities for all ages.</p>
+            <a href="#" class="btn btn-primary">Get Tickets</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.spice-acres.png" alt="Farmers Market Opening">
+          <div class="event-card-content">
+            <span class="event-date">May 4, 2024 • Opening Day</span>
+            <h3>Countryside Farmers Market Opening</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Countryside Farmers Market</span>
+            </div>
+            <p>Kick off the season with our opening day celebration. Meet local farmers, enjoy live music, and shop for the freshest produce.</p>
+            <a href="#" class="btn btn-primary">Visit Market</a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="assets/imgs/img.scene.purple-brown-farmstead.png" alt="Conservation Workshop">
+          <div class="event-card-content">
+            <span class="event-date">November 2, 2024 • Workshop</span>
+            <h3>Land Conservation Workshop</h3>
+            <div class="event-location">
+              <img src="assets/icons/icon.location.16171E.png" alt="Location">
+              <span>Purple Brown Farmstead</span>
+            </div>
+            <p>Learn about conservation easements and how to protect your farmland for future generations. Free workshop for landowners.</p>
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-section">
+    <div class="container">
+      <h2>Latest News</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-date">March 15, 2024</div>
+          <h3>New Conservation Easement Protects 50 Acres</h3>
+          <p>We're thrilled to announce a new conservation easement that will protect 50 acres of prime farmland in the Cuyahoga Valley. This partnership with a local family farm ensures the land will remain in agricultural use for generations to come.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">February 28, 2024</div>
+          <h3>Farmers Market Season Returns</h3>
+          <p>The Countryside Farmers Market is gearing up for another successful season. Starting in May, you'll find fresh produce, local artisans, and community connections every Saturday morning.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">January 10, 2024</div>
+          <h3>Grant Award Supports Farmer Education</h3>
+          <p>We've received a grant to expand our farmer education programs, providing workshops on sustainable practices, business management, and marketing strategies for local producers.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="assets/imgs/img.logo.countryside.png" alt="Cuyahoga Valley Countryside Conservancy" class="footer-logo">
+          <p>Preserving farmland and supporting local agriculture in the Cuyahoga Valley.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="happenings.html">Happenings</a></li>
+            <li><a href="profiles/trapp_family_farm.html">Farm Profiles</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: info@cuyahogavalleycountrysideconservancy.org</p>
+          <p>Phone: (330) 555-0100</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Cuyahoga Valley Countryside Conservancy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
