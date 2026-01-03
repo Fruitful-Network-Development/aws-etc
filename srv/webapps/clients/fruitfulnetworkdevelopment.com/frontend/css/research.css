@@ -328,3 +328,172 @@ article:nth-of-type(5) .roadmap_colorBlock:first-child { background: var(--red);
     align-self: flex-end !important; /* Force all cards to the right */
   }
 }
+/* ======================================
+   TIMELINE - SECTION
+  ====================================== */
+.section-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Top Row: Key --- */
+.timeline-key {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.5); /* Optional subtle backing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.key-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.pill {
+    width: 40px;
+    height: 20px;
+    border-radius: 20px; /* Pill shape */
+    display: inline-block;
+}
+
+.pill.open-period { background-color: var(--green); }
+.pill.phase-i     { background-color: var(--yellow); }
+.pill.phase-ii    { background-color: var(--red); }
+
+
+/* --- Bottom Row: Year Polygons --- */
+.timeline-years {
+    display: flex;
+    flex-wrap: wrap; /* Wraps on smaller screens */
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.year-unit {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* --- The Polygon Geometry --- */
+.polygon-ring {
+    position: relative;
+    width: var(--ring-size);
+    height: var(--ring-size);
+    border-radius: 50%; /* Just for debugging bounding box */
+}
+
+/* The Year Label in the center */
+.center-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 1px solid #aaa;
+    padding: 5px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    z-index: 10;
+    background-color: rgba(255,255,255,0.4);
+}
+
+/* The Segment Slices */
+.segment {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Geometry Logic:
+       We create a trapezoid shape.
+       Width is roughly calculated based on circumference of a 12-sided polygon.
+       Height determines the thickness of the ring.
+    */
+    width: 64px; 
+    height: 45px; 
+    
+    /* Transform Origin pushes the segment out from center to form ring */
+    transform-origin: center 120px; /* 120px is half of --ring-size */
+    
+    /* Create the trapezoid shape for the polygon look */
+    clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5px;
+    
+    /* Text styling inside segment */
+    font-size: 0.45rem;
+    color: rgba(0,0,0,0.6);
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+/* Segment Colors */
+.segment.grey { background-color: var(--grey); color: #888; }
+.segment.open { background-color: var(--green); }
+.segment.p1   { background-color: var(--yellow); }
+.segment.p2   { background-color: var(--red); }
+
+
+/* --- Segment Rotations (12 segments = 30deg increments) --- */
+/* We start at -15deg offset so Jan is at roughly 7 o'clock or match image orientation */
+/* Based on image, Jan is at bottom-left roughly (approx 210 deg). 
+   Let's just do standard clock first: 12 at top.
+   The image has Jan at index 7 (roughly 7 o'clock). 
+   Let's rotate them purely by index * 30deg. 
+*/
+
+.segment:nth-child(2)  { transform: translate(-50%, -100%) rotate(210deg); } /* JAN */
+.segment:nth-child(3)  { transform: translate(-50%, -100%) rotate(240deg); } /* FEB */
+.segment:nth-child(4)  { transform: translate(-50%, -100%) rotate(270deg); } /* MAR */
+.segment:nth-child(5)  { transform: translate(-50%, -100%) rotate(300deg); } /* APR */
+.segment:nth-child(6)  { transform: translate(-50%, -100%) rotate(330deg); } /* MAY */
+.segment:nth-child(7)  { transform: translate(-50%, -100%) rotate(0deg); }   /* JUN */
+.segment:nth-child(8)  { transform: translate(-50%, -100%) rotate(30deg); }  /* JUL */
+.segment:nth-child(9)  { transform: translate(-50%, -100%) rotate(60deg); }  /* AUG */
+.segment:nth-child(10) { transform: translate(-50%, -100%) rotate(90deg); }  /* SEP */
+.segment:nth-child(11) { transform: translate(-50%, -100%) rotate(120deg); } /* OCT */
+.segment:nth-child(12) { transform: translate(-50%, -100%) rotate(150deg); } /* NOV */
+.segment:nth-child(13) { transform: translate(-50%, -100%) rotate(180deg); } /* DEC */
+
+/* Note: The nth-child index starts at 2 because the .center-label is child 1 
+*/
+
+
+/* --- Responsive Adjustments --- */
+
+/* Mobile / Narrow View (Default flex-wrap behavior handles this, but we can force it) */
+@media (max-width: 1100px) {
+    .timeline-years {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Adjust labels for clarity */
+.month {
+    transform: rotate(180deg); /* Flips text so it faces inward/outward correctly if needed */
+    background: rgba(255,255,255,0.7);
+    padding: 1px 3px;
+    border-radius: 2px;
+    font-size: 8px;
+    margin-top: 2px;
+}
