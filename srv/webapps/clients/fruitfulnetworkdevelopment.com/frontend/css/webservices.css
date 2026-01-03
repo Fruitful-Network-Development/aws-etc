@@ -2,6 +2,89 @@
    WEBSERVICES PAGE
   ====================================== */
 
+/* Service Cards Section */
+.section-service_cards {
+   border: 1px solid var(--silverback);
+   padding: 1.25rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   background: var(--offwhite);
+}
+
+.service_cards-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+   gap: 1rem;
+}
+
+.service_info_card {
+   position: relative;
+   border: 1px solid var(--silverback);
+   background: var(--white);
+   padding: 1rem 1rem 3.25rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service_info_card:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.service_info_card h3 {
+   margin: 0;
+   color: var(--blue-sour);
+}
+
+.service_info_card p,
+.service_info_card ul {
+   margin: 0;
+}
+
+.service_info_card__footer {
+   position: absolute;
+   left: 1rem;
+   right: 1rem;
+   bottom: 1rem;
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+}
+
+.service_info_card__icons {
+   display: flex;
+   align-items: center;
+   gap: 0.35rem;
+   margin-left: auto;
+}
+
+.service_info_card__icon {
+   width: 30px;
+   height: 30px;
+   border: 1px solid var(--silverback);
+   border-radius: 0.5rem;
+   padding: 0.35rem;
+   background: var(--offwhite);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.service_info_card .button {
+   border: 1px solid var(--incremental);
+   background: var(--blue);
+   color: var(--offwhite);
+   padding: 0.35rem 0.65rem;
+   font-size: 0.9rem;
+}
+
+.service_info_card .button:hover {
+   text-decoration: none;
+   filter: brightness(1.05);
+}
+
 /* Hero Section Styling */
 .services-hero {
    border: 1px solid var(--silverback);
