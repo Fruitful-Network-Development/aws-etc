@@ -7,8 +7,22 @@
 @import "css/markets.css";
 @import "css/header.css";
 @import "css/footer.css";
-@import "css/page-hero.css";
-@import "css/overview.css";
+
+/* ======================================
+   RESET & BASE STYLES
+  ====================================== */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: "Lato", sans-serif;
+   background-color: var(--mosswash);
+   color: var(--nero);
+}
 
 /* ======================================
    CSS VARIABLES
@@ -49,22 +63,6 @@
    --target-padding: 1rem;
    --target-max-width: 90%;
    --target-card-max-width: 33.333%;
-}
-
-/* ======================================
-   RESET & BASE STYLES
-  ====================================== */
-*,
-*::before,
-*::after {
-   box-sizing: border-box;
-}
-
-body {
-   margin: 0;
-   font-family: "Lato", sans-serif;
-   background-color: var(--mosswash);
-   color: var(--nero);
 }
 
 /* ======================================
@@ -243,6 +241,23 @@ img {
    align-items: center;
    gap: 0.5rem;
    text-align: center;
+   border: 1px solid var(--silverback);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   padding: 2rem 2.5rem;
+   margin: 0 auto;
+   max-width: 800px;
+   width: 100%;
+}
+
+.page-hero > p:first-of-type {
+   color: var(--blue-sour);
+   font-size: 0.9rem;
+   font-weight: 400;
+   letter-spacing: 0.05em;
+   margin: 0 0 0.75rem 0;
+   text-transform: uppercase;
+   padding: 0;
+   border: none;
 }
 
 .page-hero h1 {
@@ -250,6 +265,12 @@ img {
    padding: 1rem 1.5rem;
    text-align: center;
    color: var(--nero);
+   font-size: 2.5rem;
+   font-weight: 400;
+   margin: 0 0 0.75rem 0;
+   padding: 0;
+   border: none;
+   text-transform: none;
 }
 
 .page-hero__tagline {
@@ -258,6 +279,12 @@ img {
    border: 1px solid var(--silverback);
    font-style: italic;
    text-align: center;
+   color: var(--nero);
+   font-size: 0.75rem;
+   font-style: italic;
+   margin: 0;
+   padding: 0;
+   border: none;
 }
 
 .content-section {
@@ -286,37 +313,67 @@ img {
 }
 
 /* ======================================
-   CARD COMPONENTS
+   OVERVIEW COMPONENTS
   ====================================== */
-.card-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-   gap: 1rem;
+
+.section-overview {
+  font-family: 'Georgia', serif; /* Body font is a serif style */
+  color: #555; /* Muted dark grey text */
+  line-height: 1.4;
+  max-width: 900px;
+  padding: 20px;
 }
 
-/* Grid utility - base grid pattern */
-.grid-auto-fit {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-   gap: 1rem;
+.section-overview h2 {
+  font-family: 'Arial', sans-serif;
+  color: #2a7298; /* The blueish tint from the image */
+  font-size: 1.2rem;
+  border-bottom: 1px solid #2a7298; /* The long line after the title */
+  display: flex;
+  align-items: center;
 }
 
-.info-card {
-   border: 1px solid var(--silverback);
-   padding: 1rem;
-   display: flex;
-   flex-direction: column;
-   gap: 0.5rem;
+.section-overview h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
-.info-card h3 {
-   margin: 0;
-   color: var(--nero);
+/* Introductory Italic Paragraph */
+.intro-text {
+  font-style: italic;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
 }
 
-.info-card p {
-   margin: 0;
-   color: var(--nero);
+/* Custom Dashed List */
+.dash-list {
+  list-style-type: none;
+  padding-left: 40px;
+}
+
+.dash-list li::before {
+  content: "-";
+  position: absolute;
+  margin-left: -20px;
+}
+
+/* Numbered List Styling */
+.numbered-list {
+  padding-left: 20px;
+}
+
+.numbered-list li {
+  margin-bottom: 10px;
+}
+
+.no-indent {
+    padding-left: 20px;
+    margin-top: 5px;
 }
 
 /* ======================================
