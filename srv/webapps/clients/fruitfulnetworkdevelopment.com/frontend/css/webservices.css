@@ -5,26 +5,21 @@
 /* Service Cards Section */
 .section-service_cards {
    border: 1px solid var(--silverback);
-   padding: 1.25rem;
+   padding: calc(var(--space-md) + var(--space-2xs));
    display: flex;
    flex-direction: column;
-   gap: 1rem;
+   gap: var(--space-md);
 }
 
 .service_cards-grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-   gap: 1rem;
+   gap: var(--space-md);
 }
 
 .service_info_card {
    position: relative;
-   border: 1px solid var(--silverback);
-   padding: 1rem 1rem 3.25rem;
-   display: flex;
-   flex-direction: column;
-   gap: 0.75rem;
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+   padding: var(--space-md) var(--space-md) calc(var(--space-xl) + var(--space-md));
    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -45,12 +40,12 @@
 
 .service_info_card__footer {
    position: absolute;
-   left: 1rem;
-   right: 1rem;
-   bottom: 1rem;
+   left: var(--space-md);
+   right: var(--space-md);
+   bottom: var(--space-md);
    display: flex;
    align-items: center;
-   gap: 0.75rem;
+   gap: var(--space-sm);
 }
 
 .service_info_card__icons {
@@ -68,59 +63,6 @@
    padding: 0.35rem;
    background: var(--offwhite);
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.service_info_card .button {
-   border: 1px solid var(--incremental);
-   background: var(--blue);
-   color: var(--offwhite);
-   padding: 0.35rem 0.65rem;
-   font-size: 0.9rem;
-}
-
-.service_info_card .button:hover {
-   text-decoration: none;
-   filter: brightness(1.05);
-}
-
-/* Hero Section Styling */
-.services-hero {
-   border: 1px solid var(--silverback);
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   padding: 2rem 2.5rem;
-   margin: 0 auto;
-   max-width: 800px;
-   width: 100%;
-}
-
-.services-hero > p:first-of-type {
-   color: var(--blue-sour);
-   font-size: 0.9rem;
-   font-weight: 400;
-   letter-spacing: 0.05em;
-   margin: 0 0 0.75rem 0;
-   text-transform: uppercase;
-   padding: 0;
-   border: none;
-}
-
-.services-hero h1 {
-   color: var(--nero);
-   font-size: 2.5rem;
-   font-weight: 400;
-   margin: 0 0 0.75rem 0;
-   padding: 0;
-   border: none;
-   text-transform: none;
-}
-
-.services-hero .page-hero__tagline {
-   color: var(--nero);
-   font-size: 0.75rem;
-   font-style: italic;
-   margin: 0;
-   padding: 0;
-   border: none;
 }
 
 .services-grid .info-card h3 {

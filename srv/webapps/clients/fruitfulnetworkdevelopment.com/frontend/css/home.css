@@ -6,27 +6,29 @@
 /* ======================================
     HERO - SECTION
 ====================================== */
-.section-hero{
+.hero--home {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: var(--space-md);
   }
   
   .hero__logo{
     width: 25%;
-    padding: 1rem;
+    padding: var(--space-md);
   }
 
 
   .hero__text h1{
     border: 1px solid var(--silverback);
-    padding: 1rem;
+    padding: var(--space-md);
   }
 
 .hero__text p{
     border: 1px solid var(--silverback);
-    padding: 1rem;
+    padding: var(--space-md);
     font-style: italic;
   }
 
@@ -35,6 +37,7 @@
 ====================================== */
 
 .section-target{
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
@@ -73,7 +76,7 @@
     aspect-ratio: 1;
     background-color: var(--camo);
     border-radius: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
     /* img-container utility handles centering */
 }
 
@@ -81,13 +84,13 @@
 .target__card h2{
     color: var(--blue-sour);
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
     /* text-align: center via .text-center utility */
 }
 
 .target__message{
     border: 1px solid var(--silverback);
-    padding: 1rem;
+    padding: var(--space-md);
     flex: 1;
     /* text-align: center via .text-center utility */
 }
@@ -118,20 +121,20 @@
 }
 
 .section-process .section-shell {
-    padding: 1.25rem 1rem;
+    padding: calc(var(--space-md) + var(--space-2xs)) var(--space-md);
 }
 
 .process-grid {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-md);
     width: 100%;
 }
 
 .process-card {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: calc(var(--space-md) + var(--space-2xs));
     padding: 0;
     width: 100%;
 }
@@ -139,11 +142,11 @@
 .process-card__media {
     flex: 0 0 250px;
     max-width: 250px;
-    padding: 2rem;
+    padding: var(--space-xl);
     border-radius: 50%;
     border: 1px solid var(--purple);
     background-color: var(--terracottaroof);
-    margin: 1rem;
+    margin: var(--space-md);
     /* img-container utility handles centering */
 }
 
@@ -358,7 +361,7 @@
 ====================================== */
 
 .section-technology {
-    padding: 1rem;
+    padding: var(--space-md);
   }
   
   .section-technology__inner {
@@ -372,7 +375,7 @@
   
   .technology__box {
     border: 1px solid var(--silverback);
-    padding: 0.75rem 1rem;
+    padding: var(--space-sm) var(--space-md);
   }
   
   .technology__box p {
@@ -387,7 +390,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: var(--space-sm);
     white-space: nowrap;
   
     border-bottom: 0; /* collapse seam with middle */
@@ -406,7 +409,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: var(--space-sm);
     white-space: nowrap;
   
     border-top: 0; /* collapse seam with middle */
@@ -420,28 +423,6 @@
     text-overflow: ellipsis; /* safe on narrow screens */
   }
   
-  /* Button must not behave like a block */
-  .button {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    flex: 0 0 auto;
-  }  
-
-  .button__top {
-    background-color: var(--yellow);
-    border: 1px solid var(--riverpanned);
-    color: var(--nero);
-    padding: 0.25rem 0.25rem;
-  }
-
-  .button__bottom {
-    background-color: var(--blue);
-    border: 1px solid var(--incremental);
-    color: var(--offwhite);
-    padding: 0.25rem 0.25rem;
-  }
-
 /* ======================================
     FOOTER - SECTION
 ====================================== */
