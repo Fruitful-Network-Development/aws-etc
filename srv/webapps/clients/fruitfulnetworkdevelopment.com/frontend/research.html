@@ -17,7 +17,7 @@
   ====================================== -->
     <div class="header__left">
       <div class="header__button img-container"><img src="assets/icons/icon.menu.C9C9C9.png" alt="Menu"/></div>
-      <div class="header__button img-container"><img src="assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></div>
+      <div><a href="home.html" class="header__button img-container"><img src="assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></a></div>
     </div>
     <div class="header__right">
       <a href="index.html"><p class="header__nav-link">Home</p></a>
@@ -150,7 +150,7 @@
         </table>
       </div>
     </section>
-
+    
     <!-- DIVIDER LINE -->
     <hr class="divider" />
     
@@ -158,97 +158,99 @@
         ROADMAP - SECTION
     ====================================== -->
     <section class="section-roadmap">
-      <div class="node" style="background: var(--blue);"></div>
-      
-      <article class="roadmap__card box">
-        <div class="roadmap_colorBlock box">
-          <h3>Create a Legal Entity</h3>
+      <div class="roadmap-grid">
+        <!-- Topmost marker to anchor the timeline before the first milestones -->
+        <div class="timeline-node top-node"></div>
+        <!-- Row 1: first two milestone cards and their corresponding nodes -->
+        <article class="roadmap__card" id="milestone-1">
+          <div class="roadmap_colorBlock"><h3>Create a Legal Entity</h3></div>
+          <div class="roadmap_colorBlock">
+            <p><a href="https://www.ohiosos.gov/businesses/">ohiosos.gov/businesses</a></p>
+            <p>2–3 Business Days</p>
+            <ul>
+              <li>Unique legal name</li>
+              <li>Real Business address (Not a PO Box)</li>
+              <li>Type: Regular LLC</li>
+              <li>Management: Sole Proprietorship</li>
+            </ul>
+          </div>
+        </article>
+        <div class="timeline-nodes row1">
+          <span class="node blue-node"></span>
+          <span class="node purple-node"></span>
         </div>
-        <div class="roadmap_colorBlock box">
-          <p><a href="https://www.ohiosos.gov/businesses/">ohiosos.gov/businesses</a></p>
-          <p>2-3 Business Days</p>
-          <li>Unique legal name</li>
-          <li>Real Business address (Not a PO Box)</li>
-          <li>Type: Regular LLC ~ </li>
-          <li>Management: Sole Proprietorship</li>
+        <article class="roadmap__card" id="milestone-2">
+          <div class="roadmap_colorBlock"><h3>Get an EIN (Employer Identification Number)</h3></div>
+          <div class="roadmap_colorBlock">
+            <p><a href="https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number">irs.gov</a></p>
+            <p>1 Business Day</p>
+            <ul>
+              <li>Log in or create an individual Login.gov Account</li>
+              <li>Purpose: “Compliance with IRS withholding,” “Banking,” or “Starting a new business.”</li>
+              <li>Type registration: Limited Liability Company</li>
+              <li>Business location: State Decided</li>
+              <li>Number of members: 1</li>
+              <li>Responsible party: Natural Person</li>
+            </ul>
+          </div>
+        </article>
+        <!-- Row 2: second two milestone cards and their corresponding nodes -->
+        <article class="roadmap__card" id="milestone-3">
+          <div class="roadmap_colorBlock"><h3>Open a Business Bank Account</h3></div>
+          <div class="roadmap_colorBlock">
+            <p>6–8 Business Days</p>
+            <ul>
+              <li>Log in or create an individual Login.gov Account</li>
+              <li><strong>What you need to open the account:</strong></li>
+              <li>Form 610 – Articles of Organization for a Domestic LLC</li>
+              <li>Notice CP 575 G – Employer Identification Number (EIN)</li>
+              <li>Legal Natural Person ID</li>
+            </ul>
+          </div>
+        </article>
+        <div class="timeline-nodes row2">
+          <span class="node green-node"></span>
+          <span class="node yellow-node"></span>
         </div>
-      </article>
-      
-      <div class="node" style="background: var(--purple);"></div>
-      
-      <article class="roadmap__card box">
-        <div class="roadmap_colorBlock box">
-          <h3>Get an EIN (Employer Identification Number)</h3>
+        <article class="roadmap__card" id="milestone-4">
+          <div class="roadmap_colorBlock"><h3>Validate Entity Identity &amp; Register</h3></div>
+          <div class="roadmap_colorBlock">
+            <p><a href="https://sam.gov/">sam.gov</a></p>
+            <p>14–28 Business Days</p>
+            <p>Must submit forms that validate:</p>
+            <ul>
+              <li>Legal Business Name &amp; State of Incorporation</li>
+              <li>Legal Business Name &amp; Start Year</li>
+              <li>Legal Business Name &amp; Address</li>
+            </ul>
+            <p>Register for All Awards (not Financial Assistance Only)</p>
+          </div>
+        </article>
+        <!-- Row 3: final milestone spanning both columns -->
+        <article class="roadmap__card" id="milestone-5">
+          <div class="roadmap_colorBlock"><h3>Qualify to Browse &amp; Submit Grant Proposals</h3></div>
+          <div class="roadmap_colorBlock">
+            <p><a href="https://sam.gov/">sam.gov</a></p>
+            <p>1 Business Day</p>
+            <p>Create a natural person account and then add the validated &amp; registered entity</p>
+            <p>Assign the natural person account as the authorized organizational representative (AOR)</p>
+            <p>(Optionally proceed with the creation of DSBS (Dynamic Small Business Search) profile.)</p>
+          </div>
+        </article>
+        <div class="timeline-nodes row3">
+          <span class="node red-node"></span>
         </div>
-        <div class="roadmap_colorBlock box">
-          <p><a href="https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number">irs.gov</a></p>
-          <p>1 Business Day</p>
-          <li>Log in or create an individual Login.gov Account</li>
-          <li>Purpose: “Compliance with IRS withholding,” “Banking,” or “Starting a new business.”</li>
-          <li>Type registration: Limited Liability Company</li>
-          <li>Business location: State Decided</li>
-          <li>Number of members: 1</li>
-          <li>Responsible party: Natural Person</li>
-        </div>
-      </article>
-      
-      <div class="node" style="background: var(--green);"></div>
-      
-      <article class="roadmap__card box">
-        <div class="roadmap_colorBlock box">
-          <h3>Open a Business Bank Account</h3>
-        </div>
-        <div class="roadmap_colorBlock box">
-          <p>6-8 Business Day</p>
-          <li>Log in or create an individual Login.gov Account</li>
-          <p>What you need to open the account:</p>
-          <li>Form 610 – Articles of Organization for a Domestic LLC</li>
-          <li>Notice CP 575 G – Employer Identification Number (EIN)</li>
-          <li>Legal Natural Person ID</li>
-        </div>
-      </article>
-      
-      <div class="node" style="background: var(--yellow);"></div>
-      
-      <article class="roadmap__card box">
-        <div class="roadmap_colorBlock box">
-          <h3>Validate Entity Identity & Register</h3>
-        </div>
-        <div class="roadmap_colorBlock box">
-          <p><a href="https://sam.gov/">sam.gov</a></p>
-          <p>14-28 Business Day</p>
-          <p>Must submit forms that validate:</p>
-          <li>Legal Business Name & State of Incorporation</li>
-          <li>Legal Business Name & Start Year</li>
-          <li>Legal Business Name & Address</li>
-          <p>Register for All Awards (not Financial Assistance Only)</p>
-        </div>
-      </article>
-      
-      <div class="node" style="background: var(--red);"></div>
-      
-      <article class="roadmap__card box">
-        <div class="roadmap_colorBlock box">
-          <h3>Qualify to Browse & Submit Grant Proposals</h3>
-        </div>
-        <div class="roadmap_colorBlock box">
-          <p><a href="https://sam.gov/">sam.gov</a></p>
-          <p>1 Business Day</p>
-          <p>Create a natural person acount and then add the validated & regitered entity</p>
-          <p>Assign the natural person acount as the authorized organizational representative (AOR)</p>
-          <p>(Optionally proceed with the creation of DSBS (Dynamic Small Business Search) profile.)</p>
-        </div>
-      </article>
+      </div>
     </section>
 
     <!-- DIVIDER LINE -->
     <hr class="divider" />
-
+    
     <!-- ======================================
         PROPOSAL_DISCUSSION - SECTION
     ====================================== -->
     <section class="section-overview">
-      <h2>§ Proposal Discussion: 8.6 ~ Rural and Community Development</h2>
+      <h2>§ Proposal Discussion: 8.6 ~ Rural and Community Development</h2>
       <ul class="dash-list">
         <li>National Program Leader: Carlos Ortiz, PhD</li>
       </ul>
@@ -256,125 +258,132 @@
       <h3>Topic Goal: Improve the quality of life in rural America through commercialization of technologies that address economic and social challenges.</h3>
       <ul class="dash-list">
         <li>The applicant business must be listed as a for-profit business concern that is U.S.-based</li>
-        <li>Explicitly discuss the specific rural problem or opportunity that will be examined and how the proposed science-based technology will successfully address the problem or opportunity.</li>
-        <li>Include an objective to assess the impacts of the proposed project on protecting or enhancing the environment, on climate mitigation or adaptation, or the socio-economic development of rural areas. </li>
-        <li>Can focused on any area that has the potential to provide significant benefit to rural Americans.</li>
-        <li>USDA seeks a balanced portfolio that appropriately mixes high risk, high reward innovations with new applications of existing technologies.</li>
+        <li>Explicitly discuss the specific rural problem or opportunity that will be examined and how the proposed science‑based technology will successfully address the problem or opportunity.</li>
+        <li>Include an objective to assess the impacts of the proposed project on protecting or enhancing the environment, on climate mitigation or adaptation, or the socio‑economic development of rural areas.</li>
+        <li>Can focus on any area that has the potential to provide significant benefit to rural Americans.</li>
+        <li>USDA seeks a balanced portfolio that appropriately mixes high‑risk, high‑reward innovations with new applications of existing technologies.</li>
       </ul>
-      <p>Community Well-being: Emphasize the project's contribution to the well-being of rural communities and institutions. Dissemination: Explain how results will be disseminated and directly benefit the small farm community. Abstract Hint: Emphasis on issues specific to small/mid-size farms.</p>
-
-      <h3>Project Abstract & Narrative Requirements</h3>
+      <p>Community Well‑being: Emphasize the project's contribution to the well‑being of rural communities and institutions. Dissemination: Explain how results will be disseminated and directly benefit the small farm community. Abstract Hint: Emphasis on issues specific to small/mid‑size farms.</p>
+    
+      <h3>Project Abstract &amp; Narrative Requirements</h3>
       <ul class="dash-list">
-        <li>Problem/Opportunity (Abstract & Narrative): Define the need and quantify the impact the technology solves.</li>
-        <li>Phase I Objectives: Summarize technical feasibility goals for eight months (clear, testable).</li>
+        <li>Problem/Opportunity (Abstract &amp; Narrative): Define the need and quantify the impact the technology solves.</li>
+        <li>Phase I Objectives: Summarize technical feasibility goals for eight months (clear, testable).</li>
         <li>Innovation: Explain novelty vs. existing solutions.</li>
-        <li>Scope of Effort/Work Plan: Outline Phase I activities, tasks, methods, timelines, experimental design, and statistical analysis.</li>
-        <li>Anticipated Results & Commercial Impact: State expected outcomes (e.g., prototype) and potential market/community benefits (avoid proprietary details).</li>
-        <li>Program Priorities: State connection to USDA SBIR/STTR priorities (e.g., climate-smart agriculture).</li>
-        <li>Background & Rationale: Summarize existing tech, market needs, and why current solutions fail.</li>
-        <li>Relationship to Research & Phase II: Describe how Phase I builds the foundation for Phase II benefits.</li>
-        <li>Related Research & Competition: Discuss prior work, competing technologies, and uniqueness.</li>
-        <li>Market Opportunity & Commercialization: Estimate addressable market, identify customers, go-to-market strategy, and discuss barriers.</li>
-        <li>Resources & Team: Describe facilities, equipment, personnel, and subcontracts.</li>
+        <li>Scope of Effort/Work Plan: Outline Phase I activities, tasks, methods, timelines, experimental design, and statistical analysis.</li>
+        <li>Anticipated Results &amp; Commercial Impact: State expected outcomes (e.g., prototype) and potential market/community benefits (avoid proprietary details).</li>
+        <li>Program Priorities: State connection to USDA SBIR/STTR priorities (e.g., climate‑smart agriculture).</li>
+        <li>Background &amp; Rationale: Summarize existing tech, market needs, and why current solutions fail.</li>
+        <li>Relationship to Research &amp; Phase II: Describe how Phase I builds the foundation for Phase II benefits.</li>
+        <li>Related Research &amp; Competition: Discuss prior work, competing technologies, and uniqueness.</li>
+        <li>Market Opportunity &amp; Commercialization: Estimate addressable market, identify customers, go‑to‑market strategy, and discuss barriers.</li>
+        <li>Resources &amp; Team: Describe facilities, equipment, personnel, and subcontracts.</li>
       </ul>
     </section>
+
+    <!-- DIVIDER LINE -->
+    <hr class="divider" />
 
     <!-- ======================================
         TIMELINE - SECTION
     ====================================== -->
     <section class="section-timeline">
-        
-        <div class="timeline-key">
-            <div class="key-item">
-                <span class="pill open-period"></span>
-                <span class="label">OPEN PERIOD</span>
-            </div>
-            <div class="key-item">
-                <span class="pill phase-i"></span>
-                <span class="label">PHASE I</span>
-            </div>
-            <div class="key-item">
-                <span class="pill phase-ii"></span>
-                <span class="label">PHASE II</span>
-            </div>
+      <!-- Key / Legend for the timeline colours -->
+      <div class="timeline-key">
+        <div class="key-item">
+          <span class="pill open-period"></span>
+          <span class="label">OPEN PERIOD</span>
         </div>
-    
-        <div class="timeline-years">
-            
-            <div class="year-unit">
-                <div class="polygon-ring">
-                    <div class="center-label">2026</div>
-                    <div class="segment grey"><span class="month">JAN</span></div>
-                    <div class="segment grey"><span class="month">FEB</span></div>
-                    <div class="segment grey"><span class="month">MAR</span></div>
-                    <div class="segment grey"><span class="month">APR</span></div>
-                    <div class="segment open"><span class="month">MAY</span></div>
-                    <div class="segment open"><span class="month">JUN</span></div>
-                    <div class="segment open"><span class="month">JUL</span></div>
-                    <div class="segment grey"><span class="month">AUG</span></div>
-                    <div class="segment grey"><span class="month">SEP</span></div>
-                    <div class="segment grey"><span class="month">OCT</span></div>
-                    <div class="segment p1"><span class="month">NOV</span></div>
-                    <div class="segment p1"><span class="month">DEC</span></div>
-                </div>
-            </div>
-    
-            <div class="year-unit">
-                <div class="polygon-ring">
-                    <div class="center-label">2027</div>
-                    <div class="segment p1"><span class="month">JAN</span></div>
-                    <div class="segment p1"><span class="month">FEB</span></div>
-                    <div class="segment p1"><span class="month">MAR</span></div>
-                    <div class="segment p1"><span class="month">APR</span></div>
-                    <div class="segment p2"><span class="month">MAY</span></div>
-                    <div class="segment p2"><span class="month">JUN</span></div>
-                    <div class="segment p2"><span class="month">JUL</span></div>
-                    <div class="segment p2"><span class="month">AUG</span></div>
-                    <div class="segment p2"><span class="month">SEP</span></div>
-                    <div class="segment p2"><span class="month">OCT</span></div>
-                    <div class="segment p2"><span class="month">NOV</span></div>
-                    <div class="segment p1"><span class="month">DEC</span></div>
-                </div>
-            </div>
-    
-            <div class="year-unit">
-                <div class="polygon-ring">
-                    <div class="center-label">2028</div>
-                    <div class="segment p2"><span class="month">JAN</span></div>
-                    <div class="segment p2"><span class="month">FEB</span></div>
-                    <div class="segment p2"><span class="month">MAR</span></div>
-                    <div class="segment p2"><span class="month">APR</span></div>
-                    <div class="segment p2"><span class="month">MAY</span></div>
-                    <div class="segment p2"><span class="month">JUN</span></div>
-                    <div class="segment p2"><span class="month">JUL</span></div>
-                    <div class="segment p2"><span class="month">AUG</span></div>
-                    <div class="segment p2"><span class="month">SEP</span></div>
-                    <div class="segment p2"><span class="month">OCT</span></div>
-                    <div class="segment p2"><span class="month">NOV</span></div>
-                    <div class="segment p2"><span class="month">DEC</span></div>
-                </div>
-            </div>
-    
-            <div class="year-unit">
-                <div class="polygon-ring">
-                    <div class="center-label">2029</div>
-                    <div class="segment p2"><span class="month">JAN</span></div>
-                    <div class="segment p2"><span class="month">FEB</span></div>
-                    <div class="segment p2"><span class="month">MAR</span></div>
-                    <div class="segment p2"><span class="month">APR</span></div>
-                    <div class="segment p2"><span class="month">MAY</span></div>
-                    <div class="segment p2"><span class="month">JUN</span></div>
-                    <div class="segment grey"><span class="month">JUL</span></div>
-                    <div class="segment grey"><span class="month">AUG</span></div>
-                    <div class="segment grey"><span class="month">SEP</span></div>
-                    <div class="segment grey"><span class="month">OCT</span></div>
-                    <div class="segment grey"><span class="month">NOV</span></div>
-                    <div class="segment p2"><span class="month">DEC</span></div>
-                </div>
-            </div>
-    
+        <div class="key-item">
+          <span class="pill phase-i"></span>
+          <span class="label">PHASE I</span>
         </div>
+        <div class="key-item">
+          <span class="pill phase-ii"></span>
+          <span class="label">PHASE II</span>
+        </div>
+      </div>
+      <!-- Year polygons.  Each ring is constructed from segments styled in
+           research.css.  -->
+      <div class="timeline-years">
+        <!-- 2026 ring -->
+        <div class="year-unit year-2026">
+          <div class="polygon-ring">
+            <div class="center-label">2026</div>
+            <div class="segment"><span class="month">JAN</span></div>
+            <div class="segment"><span class="month">FEB</span></div>
+            <div class="segment"><span class="month">MAR</span></div>
+            <div class="segment"><span class="month">APR</span></div>
+            <div class="segment"><span class="month">MAY</span></div>
+            <div class="segment"><span class="month">JUN</span></div>
+            <div class="segment"><span class="month">JUL</span></div>
+            <div class="segment"><span class="month">AUG</span></div>
+            <div class="segment"><span class="month">SEP</span></div>
+            <div class="segment"><span class="month">OCT</span></div>
+            <div class="segment"><span class="month">NOV</span></div>
+            <div class="segment"><span class="month">DEC</span></div>
+          </div>
+        </div>
+        <!-- 2027 ring -->
+        <div class="year-unit year-2027">
+          <div class="polygon-ring">
+            <div class="center-label">2027</div>
+            <div class="segment"><span class="month">JAN</span></div>
+            <div class="segment"><span class="month">FEB</span></div>
+            <div class="segment"><span class="month">MAR</span></div>
+            <div class="segment"><span class="month">APR</span></div>
+            <div class="segment"><span class="month">MAY</span></div>
+            <div class="segment"><span class="month">JUN</span></div>
+            <div class="segment"><span class="month">JUL</span></div>
+            <div class="segment"><span class="month">AUG</span></div>
+            <div class="segment"><span class="month">SEP</span></div>
+            <div class="segment"><span class="month">OCT</span></div>
+            <div class="segment"><span class="month">NOV</span></div>
+            <div class="segment"><span class="month">DEC</span></div>
+          </div>
+        </div>
+        <!-- 2028 ring -->
+        <div class="year-unit year-2028">
+          <div class="polygon-ring">
+            <div class="center-label">2028</div>
+            <div class="segment"><span class="month">JAN</span></div>
+            <div class="segment"><span class="month">FEB</span></div>
+            <div class="segment"><span class="month">MAR</span></div>
+            <div class="segment"><span class="month">APR</span></div>
+            <div class="segment"><span class="month">MAY</span></div>
+            <div class="segment"><span class="month">JUN</span></div>
+            <div class="segment"><span class="month">JUL</span></div>
+            <div class="segment"><span class="month">AUG</span></div>
+            <div class="segment"><span class="month">SEP</span></div>
+            <div class="segment"><span class="month">OCT</span></div>
+            <div class="segment"><span class="month">NOV</span></div>
+            <div class="segment"><span class="month">DEC</span></div>
+          </div>
+        </div>
+        <!-- 2029 ring -->
+        <div class="year-unit year-2029">
+          <div class="polygon-ring">
+            <div class="center-label">2029</div>
+            <div class="segment"><span class="month">JAN</span></div>
+            <div class="segment"><span class="month">FEB</span></div>
+            <div class="segment"><span class="month">MAR</span></div>
+            <div class="segment"><span class="month">APR</span></div>
+            <div class="segment"><span class="month">MAY</span></div>
+            <div class="segment"><span class="month">JUN</span></div>
+            <div class="segment"><span class="month">JUL</span></div>
+            <div class="segment"><span class="month">AUG</span></div>
+            <div class="segment"><span class="month">SEP</span></div>
+            <div class="segment"><span class="month">OCT</span></div>
+            <div class="segment"><span class="month">NOV</span></div>
+            <div class="segment"><span class="month">DEC</span></div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- DIVIDER LINE -->
+    <hr class="divider" />
+
   </main>
 
   <!-- ======================================
