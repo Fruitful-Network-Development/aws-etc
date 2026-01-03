@@ -4,8 +4,6 @@
 @import "css/home.css";
 @import "css/webservices.css";
 @import "css/research.css";
-@import "css/markets.css";
-
 /* ======================================
    RESET & BASE STYLES
   ====================================== */
@@ -600,16 +598,14 @@ footer {
   ====================================== */
 
 .section-overview {
-  font-family: 'Georgia', serif; /* Body font is a serif style */
   color: #555; /* Muted dark grey text */
   line-height: 1.4;
-   max-width: 900px;
-   padding: var(--space-lg);
-   margin: 0 auto;
+  max-width: 900px;
+  padding: var(--space-lg);
+  margin: 0 auto;
 }
 
 .section-overview h2 {
-  font-family: 'Arial', sans-serif;
   color: #2a7298; /* The blueish tint from the image */
   font-size: 1.2rem;
   border-bottom: 1px solid #2a7298; /* The long line after the title */
@@ -618,7 +614,6 @@ footer {
 }
 
 .section-overview h3 {
-  font-family: 'Arial', sans-serif;
   font-weight: bold;
   font-size: 1rem;
   margin-top: 20px;
