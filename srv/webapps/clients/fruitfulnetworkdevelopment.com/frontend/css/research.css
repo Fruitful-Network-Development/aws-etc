@@ -227,5 +227,108 @@
  }
 
 /* ======================================
-   CALENDAR - SECTION
+   ROADMAP - SECTION
+  ====================================== */
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--bg-cream);
+}
+
+/* The Vertical Roadmap Line */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--line-color);
+  transform: translateX(-50%);
+}
+
+/* Individual Nodes (Dots) */
+.node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  margin: 10px 0;
+  border: 2px solid white;
+}
+
+/* The Cards */
+.roadmap__card {
+  width: 45%; /* Keeps cards from hitting the center line */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border: 1px solid var(--line-color);
+  background: white;
+  z-index: 1;
+}
+
+/* Desktop Zig-Zag Logic */
+/* Odd articles (1st, 3rd, 5th) go to the RIGHT */
+article:nth-of-type(odd) {
+  align-self: flex-end;
+}
+
+/* Even articles (2nd, 4th) go to the LEFT */
+article:nth-of-type(even) {
+  align-self: flex-start;
+}
+
+/* Styling the color blocks inside cards */
+.roadmap_colorBlock:first-child {
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+/* Match colors to the specific steps */
+article:nth-of-type(1) .roadmap_colorBlock:first-child { background: var(--blue); }
+article:nth-of-type(2) .roadmap_colorBlock:first-child { background: var(--purple); }
+article:nth-of-type(3) .roadmap_colorBlock:first-child { background: var(--green); }
+article:nth-of-type(4) .roadmap_colorBlock:first-child { background: var(--yellow); }
+article:nth-of-type(5) .roadmap_colorBlock:first-child { background: var(--red); }
+
+.roadmap_colorBlock:last-child {
+  padding: 15px;
+  background: white;
+  font-size: 0.9rem;
+}
+
+/* Clean up the list items */
+.roadmap_colorBlock li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  section::before {
+    left: 30px; /* Move line to left */
+  }
+
+  .node {
+    align-self: flex-start;
+    margin-left: 20px; /* Align with line */
+  }
+
+  .roadmap__card {
+    width: calc(100% - 60px); /* Fill width minus line space */
+    align-self: flex-end !important; /* Force all cards to the right */
+  }
+}
+
+/* ======================================
+   PROPOSAL_DISCUSSION - SECTION
   ====================================== */
