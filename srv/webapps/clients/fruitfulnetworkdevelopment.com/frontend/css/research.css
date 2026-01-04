@@ -619,3 +619,117 @@
   color: #6b7a90;
   margin-bottom: 1rem;
 }
+
+/* ======================================
+   PROPOSAL - SUBPAGE
+  ====================================== */
+/*
+  Container defines the two-column cornell note layout. Adjust the
+  `grid-template-columns` ratio to widen or shrink the left sidebar.
+*/
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+}
+.sidebar {
+  background-color: #f4f0dc;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #3c3c3c;
+  font-size: 0.9rem;
+}
+.sidebar h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.main-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.main-content header {
+  margin-bottom: 1.5rem;
+}
+.main-content header h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.main-content header p.byline {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #757575;
+}
+.main-content section {
+  margin-bottom: 1.5rem;
+}
+.main-content section > h2 {
+  font-size: 1.25rem;
+  color: #2a4a4a;
+  margin-bottom: 0.5rem;
+}
+.main-content section > h3 {
+  font-size: 1rem;
+  color: #4c5c5c;
+  margin-bottom: 0.4rem;
+}
+
+/*
+  Dotted box for notes or emphasis. Use `min-height` to set the space
+  reserved by default; adjust as needed.
+*/
+.dotted-box {
+  border: 2px dashed #71a5a8;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background-color: #fdfdfb;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5b5b6;
+}
+
+/*
+  Section break style – a simple horizontal rule with plenty of spacing.
+*/
+.section-break {
+  margin: 2rem 0;
+  border-top: 1px solid #dcdcdc;
+}
+
+/*
+  Bottom narrative area uses a two-column grid. Adjust the column ratio
+  similarly to the main container.
+*/
+.narrative-container {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+}
+.narrative-sidebar {
+  background-color: #f4f0dc;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.narrative-sidebar h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+.narrative-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
