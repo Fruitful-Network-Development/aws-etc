@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header>
@@ -16,14 +16,14 @@
       HEADER - SECTION
   ====================================== -->
     <div class="header__left">
-      <div class="header__button img-container"><img src="assets/icons/icon.menu.C9C9C9.png" alt="Menu"/></div>
-      <div><a href="home.html" class="header__button img-container"><img src="assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></a></div>
+      <div class="header__button img-container"><img src="../assets/icons/icon.menu.C9C9C9.png" alt="Menu"/></div>
+      <div><a href="../home.html" class="header__button img-container"><img src="../assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></a></div>
     </div>
     <div class="header__right">
-      <a href="index.html"><p class="header__nav-link">Home</p></a>
-      <a href="webservices.html"><p class="header__nav-link">Webservices</p></a>
-      <a href="research.html"><p class="header__nav-link header__nav-link--active">Research</p></a>
-      <div class="header__button img-container"><img src="assets/icons/icon.search.C9C9C9.png" alt="Search"/></div>
+      <a href="../index.html"><p class="header__nav-link">Home</p></a>
+      <a href="../webservices.html"><p class="header__nav-link">Webservices</p></a>
+      <a href="../research.html"><p class="header__nav-link header__nav-link--active">Research</p></a>
+      <div class="header__button img-container"><img src="../assets/icons/icon.search.C9C9C9.png" alt="Search"/></div>
     </div>
   </header>
   <!-- ======================================
@@ -31,11 +31,11 @@
   ====================================== -->
   <subheader>
     <div class="subheader__right">
-      <a href="subpages/proposal.html"><p class="subheader__nav-link">PROPOSAL</p></a>
-      <a href="subpages/markets.html"><p class="subheader__nav-link">MARKET AGRICULTURE</p></a>
+      <a href="./proposal.html"><p class="subheader__nav-link">PROPOSAL</p></a>
+      <a href="./markets.html"><p class="subheader__nav-link subheader__nav-link--active">MARKET AGRICULTURE</p></a>
     </div>
   </subheader>
-  <main>
+  <main class="market-page">
     <!-- ======================================
         PAGE_HERO - SECTION
     The contents of this page are an atempt to represent the information about this understanding of agriculture economics 
@@ -48,92 +48,92 @@
     <section class="hero hero--panel">
       <p class="hero__eyebrow">FRUITFUL NETWORK DEVELOPMENT</p>
       <h1>Agricultural Microstructure</h1>
-      <p class="hero__tagline">Harnessing the insights of market microstructure to build a transparent, sustainable agricultural network that empowers small-scale producers, reduces waste, and unites local economies.</p>
+      <p class="hero__tagline">Harnessing market microstructure insights to make agricultural exchanges transparent, sustainable, and resilient for small producers.</p>
     </section>
 
-    <!-- DIVIDER LINE -->
-    <hr class="divider" />
-
-    <!-- ======================================
-        OVERVIEW - SECTION
-    ====================================== -->
-    <section id="overview">
-      <h2>Why a Microstructure Approach to Agriculture?</h2>
-      <p>
-        Modern financial markets succeed because they make informationtransparent and continuously match supply and demand. Our Mycelial Exchange Model applies these same principles to agriculture, transforming fragmented, opaque supply chains into a real-time, semantic network of farms, markets, and consumers. By replacing centralized control with a shared language of data, we enable autonomous nodes (farms, cooperatives, and buyers) to coordinate efficiently without sacrificing independence.
-      </p>
-      <p>
-        The Mycite framework is the technological backbone of this transformation. Rather than creating yet another platform that locks farmers into a single system, Mycite provides a flexible semantic scaffold for interoperability, auditability, and local governance.
-      </p>
+    <section class="market-section" id="overview">
+      <div class="market-section__header">
+        <p class="market-section__eyebrow">Context</p>
+        <h2>Why a Microstructure Approach to Agriculture?</h2>
+        <p class="market-section__lede">
+          Modern financial markets succeed because they make information transparent and continuously match supply and demand. Our Mycelial Exchange Model applies these same principles to agriculture, transforming fragmented, opaque supply chains into a real-time, semantic network of farms, markets, and consumers.
+        </p>
+      </div>
+      <div class="market-text-grid">
+        <p>
+          By replacing centralized control with a shared language of data, we enable autonomous nodes—farms, cooperatives, and buyers—to coordinate efficiently without sacrificing independence. Every actor keeps their sovereignty while participating in a marketplace that rewards transparency and collaboration.
+        </p>
+        <p>
+          The Mycite framework is the technological backbone of this transformation. Rather than creating yet another platform that locks farmers into a single system, Mycite provides a flexible semantic scaffold for interoperability, auditability, and local governance.
+        </p>
+      </div>
     </section>
-    <section id="mission">
-      <h2>Our Mission for Phase&nbsp;I</h2>
-      <p>
-        Our company is pursuing a Phase&nbsp;I USDA SBIR research program to prototype and validate the Mycite framework in the field. We aim to prove that our semantic data fabric and matching engine can reduce agricultural waste, improve the financial resilience of small farms, and deliver fresh, sustainably grown food to local consumers.
-      </p>
-      <div class="feature-list">
-        <div class="feature-item">
+
+    <section class="market-section" id="mission">
+      <div class="market-section__header">
+        <p class="market-section__eyebrow">Phase I Objectives</p>
+        <h2>Our Mission for Phase&nbsp;I</h2>
+        <p class="market-section__lede">
+          We are pursuing a USDA SBIR Phase&nbsp;I research program to prototype and validate the Mycite framework in the field—proving that semantic data fabric and a matching engine can reduce waste, improve resilience, and strengthen local food systems.
+        </p>
+      </div>
+      <div class="market-feature-grid">
+        <div class="market-feature-card">
           <h3>Semantic Data Fabric</h3>
-          <!-- Replace with an icon or simple illustration representing data -->
-          <div class="placeholder">Icon / image placeholder</div>
+          <div class="market-placeholder">Icon / image placeholder</div>
           <p>
-            We build a unified vocabulary of entities (crops, farms, orders) and attributes (organic, location, quantity) using the Mycelium Schema Standardization. Farmers keep their own systems; Mycite automatically maps and reconciles differences so that everyone speaks the same semantic language.
+            We build a unified vocabulary of entities (crops, farms, orders) and attributes (organic, location, quantity) using the Mycelium Schema Standardization. Farmers keep their own systems; Mycite reconciles differences so everyone speaks the same semantic language.
           </p>
         </div>
-        <div class="feature-item">
+        <div class="market-feature-card">
           <h3>Autonomous Coordination</h3>
-          <div class="placeholder">Icon / image placeholder</div>
+          <div class="market-placeholder">Icon / image placeholder</div>
           <p>
             Farms and cooperatives retain full control over their data and operations. They publish availability and subscribe to local demand signals; smart matching engines suggest exchanges based on geography, perishability, and sustainability attributes.
           </p>
         </div>
-        <div class="feature-item">
+        <div class="market-feature-card">
           <h3>Economic Resilience</h3>
-          <div class="placeholder">Icon / image placeholder</div>
+          <div class="market-placeholder">Icon / image placeholder</div>
           <p>
-            By pricing transport, perishability, and certifications into transactions, our system encourages buying local and rewards regenerative practices. This reduces waste, strengthens communities, and stabilizes income for small producers.
+            By pricing transport, perishability, and certifications into transactions, the system encourages buying local and rewards regenerative practices—reducing waste, strengthening communities, and stabilizing income for small producers.
           </p>
         </div>
       </div>
     </section>
-    <section id="framework">
-      <h2>How the Mycite Framework Works</h2>
-      <p>
-        The Mycite network consists of several interoperable layers:
-      </p>
-      <ul>
-        <li>
-          <strong>Identity &amp; Access:</strong> decentralized identifiers and scoped API tokens protect sovereignty while allowing secure sharing.
-        </li>
-        <li>
-          <strong>Schema &amp; Grammar:</strong> the MSS vocabulary establishes a shared grammar for all data, enabling each node to describe its own structures and understand others'.
-        </li>
-        <li>
-          <strong>Mapping &amp; Diff:</strong> reversible mappings and semantic diffs reconcile differences across schemas without converting all data to one format.
-        </li>
-        <li>
-          <strong>Event Feeds:</strong> append-only feeds deliver updates (inventory, orders, logistic routes) to subscribers in near real time.
-        </li>
-        <li>
-          <strong>Policies &amp; Provenance:</strong> machine-readable policies define sharing rules and certifications; built-in provenance traces ensure verifiability without centralized consensus.
-        </li>
-      </ul>
-      <!-- Suggestion: include a flowchart or infographic here to visualize how layers interact -->
-      <div class="placeholder">Flowchart / infographic placeholder</div>
+
+    <section class="market-section" id="framework">
+      <div class="market-section__header">
+        <p class="market-section__eyebrow">Architecture</p>
+        <h2>How the Mycite Framework Works</h2>
+      </div>
+      <div class="market-text-grid">
+        <ul class="market-list">
+          <li><strong>Identity &amp; Access:</strong> decentralized identifiers and scoped API tokens protect sovereignty while allowing secure sharing.</li>
+          <li><strong>Schema &amp; Grammar:</strong> the MSS vocabulary establishes a shared grammar for all data, enabling each node to describe its own structures and understand others'.</li>
+          <li><strong>Mapping &amp; Diff:</strong> reversible mappings and semantic diffs reconcile differences across schemas without converting all data to one format.</li>
+          <li><strong>Event Feeds:</strong> append-only feeds deliver updates (inventory, orders, logistic routes) to subscribers in near real time.</li>
+          <li><strong>Policies &amp; Provenance:</strong> machine-readable policies define sharing rules and certifications; built-in provenance traces ensure verifiability without centralized consensus.</li>
+        </ul>
+        <div class="market-placeholder market-placeholder--wide">Flowchart / infographic placeholder</div>
+      </div>
     </section>
-    <section id="call-to-action">
-      <h2>Join Our Agricultural Revolution</h2>
-      <p>
-        We invite farmers, cooperatives, researchers, and potential partners to participate in our Phase&nbsp;I pilot. If you are interested in improving coordination in your local food system or want to learn more about our semantic technology, please get in touch.
-      </p>
-      <p>
-        <!-- Provide instructions for contact or next steps; you might include a contact form or email link in a production version. -->
-        For inquiries, reach out at <a href="mailto:info@mycite.example">
-          info@mycite.example
-        </a> or subscribe to updates.
-      </p>
-      <!-- Suggestion: placeholder for an embedded contact form or signup component -->
-      <div class="placeholder">Contact form / sign-up placeholder</div>
+
+    <section class="market-section" id="call-to-action">
+      <div class="market-section__header">
+        <p class="market-section__eyebrow">Engagement</p>
+        <h2>Join Our Agricultural Revolution</h2>
+        <p class="market-section__lede">
+          Farmers, cooperatives, researchers, and partners are invited to participate in our Phase&nbsp;I pilot. If you want to improve coordination in your local food system or learn more about our semantic technology, please get in touch.
+        </p>
+      </div>
+      <div class="market-cta">
+        <div class="market-cta__actions">
+          <a class="btn btn--primary" href="mailto:info@mycite.example">Email</a>
+          <a class="btn btn--secondary" href="#">Subscribe to updates</a>
+        </div>
+        <div class="market-placeholder market-placeholder--wide">Contact form / sign-up placeholder</div>
+      </div>
     </section>
   </main>
 
@@ -142,9 +142,9 @@
   ====================================== -->
   <footer>
     <div class="footer__left">
-      <div><a href="https://www.instagram.com/dylcmonty/" class="footer__button img-container"><img src="assets/logos/logo.instagram.16171E.png"/></a></div>
-      <div><a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="footer__button img-container"><img src="assets/logos/logo.linkedin.16171E.png"/></a></div>
-      <div><a href="github.com/Fruitful-Network-Development" class="footer__button img-container"><img src="assets/logos/logo.github.16171E.png"/></a></div>
+      <div><a href="https://www.instagram.com/dylcmonty/" class="footer__button img-container"><img src="../assets/logos/logo.instagram.16171E.png"/></a></div>
+      <div><a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="footer__button img-container"><img src="../assets/logos/logo.linkedin.16171E.png"/></a></div>
+      <div><a href="github.com/Fruitful-Network-Development" class="footer__button img-container"><img src="../assets/logos/logo.github.16171E.png"/></a></div>
     </div>
     
     <!-- FOOTER RIGHT -->

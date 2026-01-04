@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header>
@@ -16,14 +16,14 @@
       HEADER - SECTION
   ====================================== -->
     <div class="header__left">
-      <div class="header__button img-container"><img src="assets/icons/icon.menu.C9C9C9.png" alt="Menu"/></div>
-      <div><a href="home.html" class="header__button img-container"><img src="assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></a></div>
+      <div class="header__button img-container"><img src="../assets/icons/icon.menu.C9C9C9.png" alt="Menu"/></div>
+      <div><a href="../home.html" class="header__button img-container"><img src="../assets/logos/logo.fnd.C9C9C9.png" alt="FND"/></a></div>
     </div>
     <div class="header__right">
-      <a href="index.html"><p class="header__nav-link">Home</p></a>
-      <a href="webservices.html"><p class="header__nav-link">Webservices</p></a>
-      <a href="research.html"><p class="header__nav-link header__nav-link--active">Research</p></a>
-      <div class="header__button img-container"><img src="assets/icons/icon.search.C9C9C9.png" alt="Search"/></div>
+      <a href="../index.html"><p class="header__nav-link">Home</p></a>
+      <a href="../webservices.html"><p class="header__nav-link">Webservices</p></a>
+      <a href="../research.html"><p class="header__nav-link header__nav-link--active">Research</p></a>
+      <div class="header__button img-container"><img src="../assets/icons/icon.search.C9C9C9.png" alt="Search"/></div>
     </div>
   </header>
   <!-- ======================================
@@ -31,39 +31,43 @@
   ====================================== -->
   <subheader>
     <div class="subheader__right">
-      <a href="subpages/proposal.html"><p class="subheader__nav-link">PROPOSAL</p></a>
-      <a href="subpages/markets.html"><p class="subheader__nav-link">MARKET AGRICULTURE</p></a>
+      <a href="./proposal.html"><p class="subheader__nav-link subheader__nav-link--active">PROPOSAL</p></a>
+      <a href="./markets.html"><p class="subheader__nav-link">MARKET AGRICULTURE</p></a>
     </div>
   </subheader>
-  <main>
+  <main class="proposal-page">
     <section class="hero hero--panel">
       <p class="hero__eyebrow">FRUITFUL NETWORK DEVELOPMENT</p>
-      <h1>HERE</h1>
-      <p class="hero__tagline">HERE</p>
+      <h1>Proposal Summary</h1>
+      <p class="hero__tagline">Cornell note layout for the USDA SBIR Phase&nbsp;I research proposal.</p>
     </section>
-    <div class="container">
-      <aside class="sidebar">
-        <h3>USDA SRI Allowance</h3>
-        <!-- Left column bullet prompts; replace or remove as needed -->
-        <ul>
-          <li><strong>1.</strong> What opportunities or preparations contribute toward improved agronomy?</li>
-          <li><strong>2.</strong> Clearly demonstrate the difference our approach brings to rural communities in times of change.</li>
-          <li><strong>3.</strong> Describe how your business will adapt to local constraints if weather patterns change.</li>
-          <li><strong>4.</strong> What is the scope of the effort? Outline key tasks within your Phase I / prototype development.</li>
-          <li><strong>5.</strong> What metrics do you expect to improve? Identify measurable outcomes like reduced waste or increased yield.</li>
+
+    <section class="proposal-layout">
+      <aside class="proposal-sidebar">
+        <h3>USDA SBIR Allowance</h3>
+        <ul class="proposal-prompt-list">
+          <li>USDA (NIFA) invites the Project Summary/Abstract to be 250 words.</li>
+          <li>What problem(s) are your concept trying to solve or minimize?</li>
+          <li>What is the scope of the effort? Outline the key activities you’ll perform in Phase I/prototype development.</li>
+          <li>What metrics do you anticipate and why? Identify measurable outcomes like reduced waste or increased yield.</li>
+          <li>State expected commercial use, working backwards to evidence/data needed for success; validation/mitigation plans.</li>
         </ul>
-        <p style="font-size:0.8rem; margin-top:1rem;"> This margin is meant for note-taking prompts, quick references, or questions that guide the reader.</p>
+        <p class="proposal-sidebar__note">The abstract is published publicly, so actively proven key measures against the SBIR program are essential.</p>
       </aside>
-      <article class="main-content">
-        <header>
-          <h1>Information Technology Social Systems: The Mycite Project Mission &amp; a Disambiguous Universal Language of Information</h1>
-          <p class="byline">Authored by: Dylan Montgomery</p>
+
+      <article class="proposal-document">
+        <header class="proposal-header">
+          <p class="proposal-eyebrow">Information Technology Social Systems</p>
+          <h1 class="proposal-title">The Mycite Project Mission &amp; A Disambiguous Universal Language of Information</h1>
+          <p class="proposal-byline">Authored by: Dylan Montgomery</p>
         </header>
-        <section>
+
+        <section class="proposal-section">
           <h2>Abstract</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         </section>
-        <section>
+
+        <section class="proposal-section">
           <h2>1. Header</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <h3>1.1 Subheader</h3>
@@ -72,8 +76,11 @@
           <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
         </section>
       </article>
-      <div class="section-break box"><div class="dotted-box">Notes or summary can be placed here. </div></div>
-    </div>
+    </section>
+
+    <section class="proposal-dotted-box proposal-notes">
+      Notes or summary can be placed here.
+    </section>
   </main>
 
   <!-- ======================================
@@ -81,9 +88,9 @@
   ====================================== -->
   <footer>
     <div class="footer__left">
-      <div><a href="https://www.instagram.com/dylcmonty/" class="footer__button img-container"><img src="assets/logos/logo.instagram.16171E.png"/></a></div>
-      <div><a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="footer__button img-container"><img src="assets/logos/logo.linkedin.16171E.png"/></a></div>
-      <div><a href="github.com/Fruitful-Network-Development" class="footer__button img-container"><img src="assets/logos/logo.github.16171E.png"/></a></div>
+      <div><a href="https://www.instagram.com/dylcmonty/" class="footer__button img-container"><img src="../assets/logos/logo.instagram.16171E.png"/></a></div>
+      <div><a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="footer__button img-container"><img src="../assets/logos/logo.linkedin.16171E.png"/></a></div>
+      <div><a href="github.com/Fruitful-Network-Development" class="footer__button img-container"><img src="../assets/logos/logo.github.16171E.png"/></a></div>
     </div>
     
     <!-- FOOTER RIGHT -->
