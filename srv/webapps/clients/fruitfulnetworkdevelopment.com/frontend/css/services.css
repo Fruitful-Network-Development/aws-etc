@@ -1,8 +1,4 @@
 .section-service_cards {
-   border: 1px solid var(--silverback);
-   padding: calc(var(--space-md) + var(--space-2xs));
-   display: flex;
-   flex-direction: column;
    gap: var(--space-md);
 }
 
@@ -25,7 +21,6 @@
 
 .service_info_card h3 {
    margin: 0;
-   color: var(--blue-sour);
 }
 
 .service_info_card p,
@@ -59,10 +54,6 @@
    padding: 0.35rem;
    background: var(--offwhite);
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.services-grid .info-card h3 {
-   color: var(--blue-sour);
 }
 
 .services-grid ul {

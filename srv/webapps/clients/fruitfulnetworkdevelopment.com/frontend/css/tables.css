@@ -1,7 +1,7 @@
 .table-footnote {
    margin: 0;
    font-size: 0.9rem;
-   /* text-align: right via .text-right utility */
+   /* text-align: right via .align-r utility */
 }
 
 /* Sortable table styles */
@@ -42,6 +42,7 @@
 
 /*add .box to HTML*/
 .table-card {
+   border: 1px solid var(--silverback);
    padding: 0.5rem;
 }
 
@@ -60,6 +61,7 @@
 /*add .align-l to HTML*/
 .data-table th,
 .data-table td {
+   border: 1px solid var(--silverback);
    padding: 0.5rem;
 }
 

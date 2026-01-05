@@ -1,7 +1,6 @@
 /* ======================================
    IMPORTS
   ====================================== */
-@import "css/home.css";
 @import "css/header.css";
 @import "css/hero.css";
 @import "css/target.css";
@@ -97,10 +96,7 @@
 }
 
 body {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0 auto;
-  
+  margin: 0;
   font-family: var(--G-font);
   background-color: var(--G-bkg-clr);
   color: var(--G-txt-color);
@@ -115,7 +111,51 @@ section {
   align-items: center;
   justify-content: center;
   
-  background-color: transparent;
+   background-color: transparent;
+}
+
+main {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) calc(var(--space-xl) + var(--space-sm));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  background-color: var(--G-bkg-clr);
+  box-sizing: border-box;
+}
+
+/* ======================================
+   LAYOUT HELPERS
+  ====================================== */
+.section-block {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.stack-v {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.stack-sm {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ======================================
@@ -136,6 +176,7 @@ section {
 .divider {
    border: none;
    border-top: 1px solid var(--G-acnt-suttle);
+   margin: var(--space-2xs) 0;
 }
 
 .box {
@@ -151,21 +192,26 @@ img {
    display: block;
 }
 
-/*img-container*/
-.imgbox {
-   box-sizing: border-box;
-   height: 100%;
-   object-fit: contain;
-   display: block;
+/* Image container utilities */
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/*footer__button*/
-/*header__button*/
-.imgbtn {
-  box-sizing: border-box;
-  height: 100%;
+.img-container--cover img {
+  object-fit: cover;
+}
+
+.img-container--contain img {
   object-fit: contain;
-  display: block;
+}
+
+.imgbtn,
+.header__button,
+.footer__button {
+  box-sizing: border-box;
   height: 1.5rem;
   width: 1.5rem;
   flex-shrink: 0;
@@ -210,29 +256,205 @@ h4 {
   font-size: 0.75rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  border: 1px solid var(--G-acnt-suttle);
+}
+
+.border-top {
+  border-top: 1px solid var(--G-acnt-suttle);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--G-acnt-suttle);
+}
+
+.section-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 1px solid var(--silverback);
+  background: var(--offwhite);
+  border-radius: var(--space-2xs);
+}
+
+.card__header {
+  text-align: center;
+  padding: var(--space-sm);
+  font-weight: 700;
+  margin: 0;
+}
+
+.card__body {
+  padding: calc(var(--space-md) + var(--space-2xs));
+  margin: 0;
+}
+
+.card--shadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.panel,
+.content-section,
+.section-service_cards {
+  border: 1px solid var(--silverback);
+  padding: calc(var(--space-md) + var(--space-2xs));
+  display: flex;
+  flex-direction: column;
+}
+
+.content-section {
+  gap: var(--space-sm);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-style: italic;
+  color: var(--G-acnt-muted);
+}
+
+.stacked-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+}
+
+.list-spacing {
+  padding-left: var(--space-md);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.section-overview {
+  font-family: "Georgia", serif;
+  color: var(--G-acnt-muted);
+  line-height: 1.4;
+  max-width: 900px;
+  padding: var(--space-lg);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-overview h2 {
+  font-family: "Arial", sans-serif;
+  color: var(--blue-sour);
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--blue-sour);
+  display: flex;
+  align-items: center;
+}
+
+.section-overview h3 {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: var(--nero);
+}
+
+.intro-text {
+  font-style: italic;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.dash-list {
+  list-style-type: none;
+  padding-left: 40px;
+}
+
+.dash-list li::before {
+  content: "-";
+  position: absolute;
+  margin-left: -20px;
+}
+
+.numbered-list {
+  padding-left: 20px;
+}
+
+.numbered-list li {
+  margin-bottom: 10px;
+}
+
+.no-indent {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
 .align-l {
-   text-align: left;
+  text-align: left;
 }
 
 .align-r {
-   text-align: right;
+  text-align: right;
 }
 
 .btn {
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   text-decoration: none;
-   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--space-2xs);
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .btn:hover {
-   text-decoration: none;
-   filter: brightness(1.05);
+  text-decoration: none;
+  filter: brightness(1.05);
 }
 
-/*header__nav-link*/
-/* subheader__nav-link*/
+.btn--primary {
+  background-color: var(--blue);
+  border-color: var(--incremental);
+  color: var(--offwhite);
+}
+
+.btn--secondary {
+  background-color: var(--yellow);
+  border-color: var(--riverpanned);
+  color: var(--nero);
+}
+
+/* NAV LINKS */
 .btn_nav {
   box-sizing: border-box;
   white-space: nowrap;
@@ -243,11 +465,11 @@ h4 {
   font-weight: 600;
   padding: 0.25rem 0.25rem;
   
-  color: var(--G-link-clr);
+  color: inherit;
 }
 
-/* subheader__nav-link--active*/
-.btn_nav:hover {
+.btn_nav:hover,
+.btn_nav--active {
   font-weight: 600;
   text-decoration: underline;
 }
@@ -275,4 +497,10 @@ h4 {
 .btn_link:hover {
   background-color: var(--G-acnt-linkboxhvr);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .stack-sm {
+    flex-direction: column;
+  }
 }

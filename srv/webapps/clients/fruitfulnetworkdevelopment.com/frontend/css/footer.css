@@ -60,7 +60,8 @@ footer {
 
 .footer__connect-button {
    border: 1px solid var(--G-acnt-contrast); /*override*/
-   border-radius: 50%;
+   border-radius: 0.25rem;
+   padding: 0.25rem 0.25rem;
 }
 
 /* ======================================
@@ -73,4 +74,36 @@ footer {
 }
 /* DESKTOP STYLES */
 @media (min-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer__left {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer__right {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer__block {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
