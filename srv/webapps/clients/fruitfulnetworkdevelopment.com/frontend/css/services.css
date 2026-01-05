@@ -1,8 +1,3 @@
-/* ======================================
-   WEBSERVICES PAGE
-  ====================================== */
-
-/* Service Cards Section */
 .section-service_cards {
    border: 1px solid var(--silverback);
    padding: calc(var(--space-md) + var(--space-2xs));
@@ -82,44 +77,14 @@
    letter-spacing: 0.02em;
 }
 
-.table-footnote {
-   margin: 0;
-   font-size: 0.9rem;
-   /* text-align: right via .text-right utility */
-}
+/* ======================================
+   RESPONSIVE MEDIA (if any)
+  ====================================== */
 
-/* Sortable table styles */
-.data-table th[role="button"] {
-   position: relative;
-   user-select: none;
-   transition: background-color 0.2s ease;
+/* BASE STYLES (Mobile ~ >= 0px) */
+/* TABLET STYLES (Don't use unless special use) */
+@media (min-width: 768px) {
 }
-
-.data-table th[role="button"]:hover {
-   background-color: var(--silverback);
-}
-
-.data-table th[role="button"]:focus {
-   outline: 2px solid var(--blue-sour);
-   outline-offset: -2px;
-}
-
-.data-table th.sort-asc::after {
-   content: ' ▲';
-   font-size: 0.8em;
-   color: var(--blue-sour);
-   margin-left: 0.25rem;
-}
-
-.data-table th.sort-desc::after {
-   content: ' ▼';
-   font-size: 0.8em;
-   color: var(--blue-sour);
-   margin-left: 0.25rem;
-}
-
-@media (max-width: 768px) {
-   .data-table {
-      min-width: 100%;
-   }
+/* DESKTOP STYLES */
+@media (min-width: 1024) {
 }
