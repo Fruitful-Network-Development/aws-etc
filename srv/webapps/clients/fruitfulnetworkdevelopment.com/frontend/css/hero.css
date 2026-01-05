@@ -7,6 +7,10 @@ section .hero {
    width: 100%;
 }
 
+/* ======================================
+   HERO SECTION FOR NONE index.html
+  ====================================== */
+
 /*hero--panel*/
 section .page-hero {
    flex-direction: column;
@@ -38,4 +42,16 @@ section .page-hero .hero__tagline {
    margin: 0;
    padding: 0;
    color: var(--G-txt-color); /*override*/
+}
+
+/* ======================================
+   RESPONSIVE MEDIA (if any)
+  ====================================== */
+
+/* BASE STYLES (Mobile ~ >= 0px) */
+/* TABLET STYLES (Don't use unless special use) */
+@media (min-width: 768px) {
+}
+/* DESKTOP STYLES */
+@media (min-width: 1024) {
 }
