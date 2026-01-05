@@ -30,6 +30,10 @@ header .img {
    gap: 1rem;
 }
 
+/* ======================================
+   SUBHEADER SECTION
+  ====================================== */
+
 subheader {
   background-color: var(--G-bkg-clr_subheader);
   display: flex;
