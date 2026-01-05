@@ -1,0 +1,59 @@
+header {
+  box-sizing: border-box;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  height: 2.5rem;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  color: var(--G-acnt-contrast);
+  background-color: var(--G-bkg-clr_header);
+}
+
+header .img {
+  filter: invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(110%);
+}
+
+.header__left {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+subheader {
+  background-color: var(--G-bkg-clr_subheader);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0.25rem 1rem;
+}
+
+.subheader__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ======================================
+   RESPONSIVE MEDIA (if any)
+  ====================================== */
+
+/* BASE STYLES (Mobile ~ >= 0px) */
+/* TABLET STYLES (Don't use unless special use) */
+@media (min-width: 768px) {
+}
+/* DESKTOP STYLES */
+@media (min-width: 1024) {
+}
