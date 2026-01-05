@@ -1,0 +1,76 @@
+footer {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  background-color: transparent;
+}
+
+.footer__left {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 1rem;
+}
+
+.footer__right {
+   display: flex;
+   flex-direction: row;
+   align-items: stretch;
+   flex-wrap: wrap;
+   flex: 1 0 30%;
+   gap: 1rem;
+}
+
+.footer__block {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   border: 1px solid var(--incremental);
+   padding: 1rem;
+   flex: 1 1 0;
+   min-width: 200px;
+   min-height: 0;
+   box-sizing: border-box;
+   max-width: 100%;
+}
+
+.footer__block.contact {
+   justify-content: center;
+   align-items: center;
+   background-color: var(--G-txt-color);
+   border-radius: 1rem;
+   color: var(--G-acnt-contrast);  /*override*/
+
+} 
+
+.footer__block.contact p {
+   color: var(--G-acnt-contrast); /*override*/
+}
+.footer__block.contact h4 {
+   color: var(--G-acnt-contrast); /*override*/
+}
+
+.footer__connect-button {
+   border: 1px solid var(--G-acnt-contrast); /*override*/
+   border-radius: 50%;
+}
+
+/* ======================================
+   RESPONSIVE MEDIA (if any)
+  ====================================== */
+
+/* BASE STYLES (Mobile ~ >= 0px) */
+/* TABLET STYLES (Don't use unless special use) */
+@media (min-width: 768px) {
+}
+/* DESKTOP STYLES */
+@media (min-width: 1024) {
+}
