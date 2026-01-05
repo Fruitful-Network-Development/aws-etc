@@ -67,6 +67,18 @@
   --royale: #490072;
   --lilac: #7b4b8c;
   --portage: #8f86d8;
+
+  /* SIZING TOKENS */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --target-gap: 2rem;
+  --target-padding: var(--space-md);
+  --target-max-width: 90%;
+  --target-card-max-width: 33.333%;
   
   /* COLOR STYLES */
   --G-txt-color: var(--nero);
