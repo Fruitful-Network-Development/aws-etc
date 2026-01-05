@@ -1,0 +1,445 @@
+/* ======================================
+   IMPORTS
+  ====================================== */
+@import "css/home.css";
+@import "css/webservices.css";
+@import "css/research.css";
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* ======================================
+   GLOBAL TOLKEN STYLES
+  ====================================== */
+:root {
+  /* GLOBAL VALUES */
+  /* COLOR TOKENS */
+  --nero: #252525;
+  --nero-light: #464646;
+  --silverback: #afafaa;
+  --mosswash: #f3f2e5;
+  --offwhite: #f0eedc;
+  --pattens: #cfe2f3;
+  --mutedpattens: #e4f5ff;
+  --gray: #717171;
+  
+  --blue-sour: #1e6c93;
+  
+  --camel: #8f6448;
+  --walnut: #644332;
+  --appleseed: #a67c52;
+  
+  --red: #a32023;
+  --terracottaroof: #a34547;
+  --Kuwazome: #532728;
+  
+  --yellow: #d89c1f;
+  --leather: #c8a255;
+  --riverpanned: #ac7e1e;
+  
+  --green: #115f45;
+  --verdant: #364640;
+  --camo: #7c8f4b;
+  --unakite: #71a34b;
+  
+  --blue: #1d3a65;
+  --incremental: #113056;
+  --kakitsubata: #3d67a5;
+  
+  --purple: #3f1f4a;
+  --royale: #490072;
+  --lilac: #7b4b8c;
+  --portage: #8f86d8;
+  
+  /* COLOR STYLES */
+  --G-txt-color: var(--nero);
+  --G-bkg-clr: var(--mosswash);
+  --G-bkg-clr_header: var(--nero);
+  --G-bkg-clr_subheader: var(--nerolight);
+  --G-link-clr: var(--blue);
+  --G-acnt-suttle: var(--silverback);
+  --G-acnt-linkbox: var(--pattens);
+  --G-acnt-linkboxhvr: var(--mutedpattens);
+  --G-acnt-muted: var(--gray);
+  --G-acnt-contrast: var(--offwhite);
+  
+  /* GLOBAL VARIABLES */
+  --G-font: "Lato", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%%;
+  margin: 0 auto;
+  
+  font-family: var(--G-font);
+  background-color: var(--G-bkg-clr);
+  color: var(--G-txt-clr);
+  text-align: center;
+}
+
+header {
+  box-sizing: border-box;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  height: 2.5rem;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  color: var(--G-acnt-contrast);
+  background-color: var(--G-bkg-clr_header);
+}
+
+header .img {
+  filter: invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(110%);
+}
+
+.header__left {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+subheader {
+  background-color: var(--G-bkg-clr_subheader);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0.25rem 1rem;
+}
+
+.subheader__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+section {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: transparent;
+}
+
+footer {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  background-color: transparent;
+}
+
+.footer__left {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 1rem;
+}
+
+.footer__right {
+   display: flex;
+   flex-direction: row;
+   align-items: stretch;
+   flex-wrap: wrap;
+   flex: 1 0 30%;
+   gap: 1rem;
+}
+
+.footer__block {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   border: 1px solid var(--incremental);
+   padding: 1rem;
+   flex: 1 1 0;
+   min-width: 200px;
+   min-height: 0;
+   box-sizing: border-box;
+   max-width: 100%;
+}
+
+.footer__block.contact {
+   justify-content: center;
+   align-items: center;
+   background-color: var(--G-txt-color);
+   border-radius: 1rem;
+   color: var(--G-acnt-contrast);  /*override*/
+
+} 
+
+.footer__block.contact p {
+   color: var(--G-acnt-contrast); /*override*/
+}
+.footer__block.contact h4 {
+   color: var(--G-acnt-contrast); /*override*/
+}
+
+.footer__connect-button {
+   border: 1px solid var(--G-acnt-contrast); /*override*/
+   border-radius: 50%;
+}
+
+/* ======================================
+   RESPONSIVE MEDIA
+  ====================================== */
+
+/* BASE STYLES (Mobile ~ >= 0px) */
+/* TABLET STYLES (Don't use unless special use) */
+@media (min-width: 768px) {
+}
+/* DESKTOP STYLES */
+@media (min-width: 1024) {
+}
+
+/* ======================================
+   UTILITY CLASSES
+  ====================================== */
+.divider {
+   border: none;
+   border-top: 1px solid var(--G-acnt-suttle);
+}
+
+.box {
+  border: 1px solid var(--G-acnt-suttle);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   display: block;
+}
+
+/*img-container*/
+.imgbox {
+   box-sizing: border-box;
+   height: 100%;
+   object-fit: contain;
+   display: block;
+}
+
+/*footer__button*/
+/*header__button*/
+.imgbtn {
+  box-sizing: border-box;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+
+a {
+   color: var(--G-link-clr);
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+h2 {
+  font-weight: bold;
+  color: var(--blue-sour);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  font-size: 1rem;
+  color: var(--blue-sour);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/*footer__block*/
+h4 {
+  color: var(--blue-sour);
+  justify-self: center;
+  font-weight: bold;
+}
+
+/*section-subtitle*/
+.muted {
+  color: var(--G-acnt-muted);
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.align-l {
+   text-align: left;
+}
+
+.align-r {
+   text-align: right;
+}
+
+.btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   font-weight: 600;
+}
+
+.btn:hover {
+   text-decoration: none;
+   filter: brightness(1.05);
+}
+
+/*header__nav-link*/
+/* subheader__nav-link*/
+.btn_nav {
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.25rem;
+  
+  color: var(--G-link-clr);
+}
+
+/* subheader__nav-link--active*/
+.btn_nav:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.btn_link {
+  height: 3rem;
+  min-width: calc(3rem * 2.5);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 2.5rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  border-radius: 50%;
+  background-color: var(--G-acnt-linkbox);
+
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--G-txt-color);
+}
+
+.btn_link:hover {
+  background-color: var(--G-acnt-linkboxhvr);
+  cursor: pointer;
+}
+
+/* ======================================
+   SECTION SPECIFICS
+  ====================================== */
+section .hero {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.5rem;
+   text-align: center;
+   width: 100%;
+}
+
+/*hero--panel*/
+section .page-hero {
+   flex-direction: column;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   padding: 2rem calc(2rem + 0.5rem);
+   margin: 0 auto;
+   max-width: 800px;
+}
+
+section .page-hero .hero__eyebrow {
+   color: var(--blue-sour);
+   font-size: 0.9rem;
+   font-weight: 400;
+   letter-spacing: 0.05em;
+   margin: 0 0 0.75rem 0;
+   text-transform: uppercase;
+}
+
+section .page-hero .hero h1 {
+   margin: 0;
+   padding: 0;
+   font-size: 2.5rem;
+   font-weight: 400;
+   text-transform: none;
+}
+
+/*add .muted to HTML*/
+section .page-hero .hero__tagline {
+   margin: 0;
+   padding: 0;
+   color: var(--G-txt-color); /*override*/
+}
+
+/* ======================================
+   TABLE COMPONENTS
+  ====================================== */
+/*add .box to HTML*/
+.table-card {
+   padding: 0.5rem;
+}
+
+.table-scroll {
+   overflow-x: auto;
+   width: 100%;
+}
+
+.data-table {
+   border-collapse: collapse;
+   width: 100%;
+   min-width: 600px;
+}
+
+/*add .box to HTML*/
+/*add .align-l to HTML*/
+.data-table th,
+.data-table td {
+   padding: 0.5rem;
+}
+
+.data-table img {
+   max-width: 80px;
+   max-height: 80px;
+   width: auto;
+   height: auto;
+   margin: 0 auto;
+   /* Override for table cells - maintain aspect ratio */
+}
