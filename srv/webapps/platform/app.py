@@ -24,6 +24,25 @@ from modules.donation_receipts import donation_receipts_bp
 # -------------------------------------------------------------------
 
 
+# -------------------------------------------------------------------
+# Base directories for locating client sites and data:contentReference[oaicite:5]{index=5}
+PLATFORM_ROOT = Path(__file__).resolve().parent
+
+# NEW: directory for global shared data
+PLATFORM_DATA_DIR = PLATFORM_ROOT / "data"
+
+def load_platform_json(filename: str) -> Any:
+    """
+    Load a JSON file from the platform-level data directory.
+    Raises FileNotFoundError if the file is missing.
+    """
+    path = (PLATFORM_DATA_DIR / filename).resolve()
+    if not path.is_file():
+        raise FileNotFoundError(f"{filename} not found in {PLATFORM_DATA_DIR}")
+    return load_json(path)
+# -------------------------------------------------------------------
+
+
 def validate_env(required: list[str] = None, optional: dict[str, str] = None) -> dict[str, str]:
     """
     Validate environment variables and return a config dict.
