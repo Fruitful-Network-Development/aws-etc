@@ -1,0 +1,31 @@
+/*add .box to HTML*/
+.table-card {
+   padding: 0.5rem;
+}
+
+.table-scroll {
+   overflow-x: auto;
+   width: 100%;
+}
+
+.data-table {
+   border-collapse: collapse;
+   width: 100%;
+   min-width: 600px;
+}
+
+/*add .box to HTML*/
+/*add .align-l to HTML*/
+.data-table th,
+.data-table td {
+   padding: 0.5rem;
+}
+
+.data-table img {
+   max-width: 80px;
+   max-height: 80px;
+   width: auto;
+   height: auto;
+   margin: 0 auto;
+   /* Override for table cells - maintain aspect ratio */
+}
