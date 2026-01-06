@@ -445,11 +445,23 @@ main section:nth-of-type(even) {
   margin: 10px 0;
 }
 
-.site-footer .social img {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
+.site-footer .social img,
+.site-footer .social .social-icon {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.5);
+  filter: grayscale(1) brightness(0.85);
+  transition: filter 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.site-footer .social a:hover .social-icon,
+.site-footer .social a:focus-visible .social-icon {
+  filter: grayscale(0) brightness(1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -18px rgba(0, 0, 0, 0.6);
 }
 
 .footer-note {
