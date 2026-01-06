@@ -1,39 +1,82 @@
-<!-- ======================================
-  Connect Page (body content)
-  Replace {{ image_path }} with your images folder
-====================================== -->
-<section id="connect" class="connect">
-  <h2>Contact Us</h2>
-  <p>
-    Our farm is located at 2485 Major Road, Peninsula, OH 44264:contentReference[oaicite:8]{index=8}.
-    Give us a call at (330) 657‑2924:contentReference[oaicite:9]{index=9} or send us a message using the form below.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenfield Berry Farm – Connect</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="{{ image_path }}/logo.png" alt="Greenfield Berry Farm logo" class="logo" />
+      <span class="site-name">Greenfield Berry Farm</span>
+    </div>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="csa.html">CSA</a></li>
+        <li><a href="happenings.html">Happenings</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <form class="contact-form" action="#" method="post">
-    <label>
-      <span>Name</span>
-      <input type="text" name="name" autocomplete="name" />
-    </label>
-    <label>
-      <span>Email</span>
-      <input type="email" name="email" autocomplete="email" />
-    </label>
-    <label>
-      <span>Message</span>
-      <textarea name="message" rows="5"></textarea>
-    </label>
-    <button type="submit">Send Message</button>
-  </form>
+  <main class="container section-shell">
+    <!-- ======================================
+      Connect Page (body content)
+      Replace {{ image_path }} with your images folder
+    ====================================== -->
+    <section id="connect" class="connect">
+      <h2>Contact Us</h2>
+      <p>
+        Our farm is located at 2485 Major Road, Peninsula, OH 44264:contentReference[oaicite:8]{index=8}.
+        Give us a call at (330) 657‑2924:contentReference[oaicite:9]{index=9} or send us a message using the form below.
+      </p>
 
-  <div class="contact-info">
-    <p>
-      We’re part of the Countryside Initiative program in Cuyahoga Valley National Park:contentReference[oaicite:10]{index=10}.
-      Come visit us and explore the park’s trails, waterfalls and scenic landscapes.
-    </p>
-    <ul class="social">
-      <li><a href="https://www.facebook.com" target="_blank"><img src="{{ image_path }}/icon-facebook.png" alt="Facebook" /></a></li>
-      <li><a href="https://www.instagram.com" target="_blank"><img src="{{ image_path }}/icon-instagram.png" alt="Instagram" /></a></li>
-      <li><a href="https://www.yelp.com/biz/greenfield-berry-farm-peninsula" target="_blank"><img src="{{ image_path }}/icon-yelp.png" alt="Yelp" /></a></li>
-    </ul>
-  </div>
-</section>
+      <form class="contact-form" action="#" method="post">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" />
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" autocomplete="tel" />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button type="submit" class="button">Send Message</button>
+      </form>
+
+      <div class="contact-details">
+        <p><strong>Visit Us:</strong> 2485 Major Road, Peninsula, Ohio 44264</p>
+        <p><strong>Call:</strong> (330) 657‑2924</p>
+        <p><strong>Email:</strong> <a href="mailto:info@greenfieldberryfarm.com">info@greenfieldberryfarm.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>Address: 2485 Major Road, Peninsula, OH 44264</p>
+      <p>Phone: (330) 657‑2924</p>
+      <p>Follow us on social media:</p>
+      <ul class="social">
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-facebook.png" alt="Facebook" /></a></li>
+        <li><a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-instagram.png" alt="Instagram" /></a></li>
+        <li><a href="https://www.yelp.com/biz/greenfield-berry-farm-peninsula" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-yelp.png" alt="Yelp" /></a></li>
+      </ul>
+    </div>
+    <div class="footer-note">
+      <p>&copy; 2026 Greenfield Berry Farm. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

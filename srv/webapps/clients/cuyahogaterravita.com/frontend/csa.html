@@ -1,192 +1,288 @@
-<!-- ================================
-  CSA Signup (body content only)
-  Source: Greenfield Berry Farm CSA 2024 PDF
-  Replace {{ image_path }} with your images folder
-================================= -->
-<section id="CSA_signup" class="csa-signup">
-  <header class="csa-signup__header">
-    <p class="csa-signup__eyebrow">Greenfield Berry Farm</p>
-    <h2 class="csa-signup__title">CSA Signup</h2>
-    <p class="csa-signup__subtitle">
-      Community Supported Agriculture (CSA) share information and shareholder agreement form.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenfield Berry Farm – CSA Signup</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="{{ image_path }}/logo.png" alt="Greenfield Berry Farm logo" class="logo" />
+      <span class="site-name">Greenfield Berry Farm</span>
+    </div>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="csa.html">CSA</a></li>
+        <li><a href="happenings.html">Happenings</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- What is a CSA? -->
-  <section class="csa-info" aria-labelledby="csa-what-is-title">
-    <h3 id="csa-what-is-title">What is a CSA?</h3>
-    <p>
-      Community Supported Agriculture (CSA) programs unite farmers and families around fresh local food.
-      Farmers grow a variety of vegetables in a natural, sustainable way and pick them at the peak of
-      flavor and nutrition. The community supports their local farmers by purchasing shares of the harvest
-      and picking them up each week during the growing season. Together the farmers and CSA members share
-      in the rewards and risks of farming.
-    </p>
-  </section>
+  <main class="container section-shell">
+    <!-- ================================
+      CSA Signup (body content only)
+      Source: Greenfield Berry Farm CSA 2024 PDF
+      Replace {{ image_path }} with your images folder
+    ================================ -->
+    <section id="CSA_signup" class="csa-signup">
+      <header class="csa-signup__header">
+        <p class="csa-signup__eyebrow">Greenfield Berry Farm</p>
+        <h2 class="csa-signup__title">CSA Signup</h2>
+        <p class="csa-signup__subtitle">
+          Community Supported Agriculture (CSA) share information and shareholder agreement form.
+        </p>
+      </header>
 
-  <!-- Unique about this CSA -->
-  <section class="csa-unique" aria-labelledby="csa-unique-title">
-    <h3 id="csa-unique-title">What is unique about this CSA?</h3>
-    <p>
-      Located in the beautiful Cuyahoga Valley National Park, the Greenfield Berry Farm aims to provide
-      fresh, local, and naturally grown produce to our CSA members. Unlike a traditional single-farm CSA,
-      we can provide consistent quality, quantity, and a wider variety of produce by working with other
-      local farmers who share our passion for small-scale farming.
-    </p>
-    <p>
-      Most of the produce will be from our farm, but we can get items from other local farms when we have
-      a slow week or when they have something special that we don’t.
-    </p>
-    <p class="csa-unique__perk">
-      <strong>Summer CSA members</strong> also receive a <strong>$20 voucher</strong> for pick-your-own berries.
-    </p>
-  </section>
+      <!-- What is a CSA? -->
+      <section class="csa-info" aria-labelledby="csa-what-is-title">
+        <h3 id="csa-what-is-title">What is a CSA?</h3>
+        <p>
+          Community Supported Agriculture (CSA) programs unite farmers and families around fresh local food.
+          Farmers grow a variety of vegetables in a natural, sustainable way and pick them at the peak of
+          flavor and nutrition. The community supports their local farmers by purchasing shares of the harvest
+          and picking them up each week during the growing season. Together the farmers and CSA members share
+          in the rewards and risks of farming.
+        </p>
+      </section>
 
-  <!-- Share types + schedule -->
-  <section class="csa-shares" aria-labelledby="csa-shares-title">
-    <h3 id="csa-shares-title">What types of shares are available?</h3>
-    <div class="csa-shares__list">
-      <article class="csa-share csa-share--spring">
-        <h4 class="csa-share__title">Spring share</h4>
-        <p class="csa-share__meta">4 weeks; Friday pickup</p>
-        <ul class="csa-share__dates">
-          <li><time datetime="2024-05-17">5/17</time></li>
-          <li><time datetime="2024-05-24">5/24</time></li>
-          <li><time datetime="2024-05-31">5/31</time></li>
-          <li><time datetime="2024-06-07">6/7</time></li>
-        </ul>
-      </article>
+      <!-- Unique about this CSA -->
+      <section class="csa-unique" aria-labelledby="csa-unique-title">
+        <h3 id="csa-unique-title">What is unique about this CSA?</h3>
+        <p>
+          Located in the beautiful Cuyahoga Valley National Park, the Greenfield Berry Farm aims to provide
+          fresh, local, and naturally grown produce to our CSA members. Unlike a traditional single-farm CSA,
+          we can provide consistent quality, quantity, and a wider variety of produce by working with other
+          local farmers who share our passion for small-scale farming.
+        </p>
+        <p>
+          Most of the produce will be from our farm, but we can get items from other local farms when we have
+          a slow week or when they have something special that we don’t.
+        </p>
+        <p class="csa-unique__perk">
+          Even if something unexpected happens to our crops, our members will still get a share from the other
+          farms that we work with.
+        </p>
+      </section>
 
-      <article class="csa-share csa-share--summer">
-        <h4 class="csa-share__title">Summer share</h4>
-        <p class="csa-share__meta">14 weeks; Friday pickup</p>
-        <p class="csa-share__note">Please note: there’s a two-week break in July and a one-week break in September.</p>
-        <ul class="csa-share__dates">
-          <li><time datetime="2024-06-14">6/14</time></li>
-          <li><time datetime="2024-06-21">6/21</time></li>
-          <li><time datetime="2024-06-28">6/28</time></li>
-          <li><time datetime="2024-07-05">7/5</time></li>
-          <li><time datetime="2024-07-26">7/26</time></li>
-          <li><time datetime="2024-08-02">8/2</time></li>
-          <li><time datetime="2024-08-09">8/9</time></li>
-          <li><time datetime="2024-08-16">8/16</time></li>
-          <li><time datetime="2024-08-23">8/23</time></li>
-          <li><time datetime="2024-08-30">8/30</time></li>
-          <li><time datetime="2024-09-13">9/13</time></li>
-          <li><time datetime="2024-09-20">9/20</time></li>
-          <li><time datetime="2024-09-27">9/27</time></li>
-          <li><time datetime="2024-10-04">10/4</time></li>
-        </ul>
-      </article>
+      <!-- What is the cost? -->
+      <section class="csa-shares" aria-labelledby="csa-shares-title">
+        <h3 id="csa-shares-title">What is the cost and what is included?</h3>
+        <p>
+          We offer 3 share sizes: HALF, FULL, and FAMILY. All memberships include berries (when in season) and
+          a weekly newsletter with storage, prep, and cooking ideas along with seasonal recipes and updates from
+          the farm.
+        </p>
+        <div class="csa-shares__grid">
+          <div class="csa-card">
+            <h4>Half Share</h4>
+            <ul>
+              <li>Pick up at the farm <strong>every other week</strong></li>
+              <li><strong>18</strong> pickups from January to November</li>
+              <li><strong>$30</strong> per pickup</li>
+            </ul>
+          </div>
 
-      <article class="csa-share csa-share--fall">
-        <h4 class="csa-share__title">Fall share</h4>
-        <p class="csa-share__meta">4 weeks; Friday pickup</p>
-        <ul class="csa-share__dates">
-          <li><time datetime="2024-10-11">10/11</time></li>
-          <li><time datetime="2024-10-18">10/18</time></li>
-          <li><time datetime="2024-10-25">10/25</time></li>
-          <li><time datetime="2024-11-01">11/1</time></li>
-        </ul>
-      </article>
-    </div>
-    <p class="csa-shares__disclaimer">
-      <em>Note: These dates reflect the likely schedule but could change based on growing conditions.</em>
-    </p>
-  </section>
+          <div class="csa-card">
+            <h4>Full Share</h4>
+            <ul>
+              <li>Pick up at the farm <strong>weekly</strong></li>
+              <li><strong>36</strong> pickups from January to November</li>
+              <li><strong>$23</strong> per pickup</li>
+            </ul>
+          </div>
 
-  <!-- Shareholder agreement form -->
-  <section class="csa-form" aria-labelledby="csa-form-title">
-    <h3 id="csa-form-title">Shareholder Information / Agreement Form</h3>
-    <div class="csa-form__terms" role="note" aria-label="CSA Terms">
-      <p>I understand and agree to the terms of the Greenfield Berry Farm CSA and am making a commitment to the 2024 growing season.</p>
-      <p>I recognize that there is no guarantee on the amount of produce in a week's share.</p>
-      <p>I understand that I am responsible for cleaning and proper handling after pickup.</p>
-      <p>
-        I understand and agree to pick up my share on the specified day and during scheduled hours.
-        (If you are unable to pick up your share, we can hold it for one day. Otherwise, please make arrangements
-        to have a friend or neighbor pick it up for you.)
-      </p>
-      <p>
-        Finally, I understand that farming comes with many risks, such as drought, floods, insect damage, etc.
-        I am willing to share in both the risks and rewards along with the farmers and other CSA members.
-      </p>
-    </div>
+          <div class="csa-card">
+            <h4>Family Share</h4>
+            <ul>
+              <li>Pick up at the farm <strong>weekly</strong></li>
+              <li><strong>36</strong> pickups from January to November</li>
+              <li><strong>$42</strong> per pickup</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <form class="csa-form__fields" action="#" method="post">
-      <fieldset class="csa-form__contact">
-        <legend>Contact Information</legend>
-        <label class="csa-field">
-          <span class="csa-field__label">Name</span>
-          <input class="csa-field__input" type="text" name="name" autocomplete="name" />
-        </label>
-        <label class="csa-field">
-          <span class="csa-field__label">Phone</span>
-          <input class="csa-field__input" type="tel" name="phone" autocomplete="tel" />
-        </label>
-        <label class="csa-field">
-          <span class="csa-field__label">Email</span>
-          <input class="csa-field__input" type="email" name="email" autocomplete="email" />
-        </label>
-      </fieldset>
+      <!-- Membership -->
+      <section class="csa-membership" aria-labelledby="csa-membership-title">
+        <h3 id="csa-membership-title">What does my membership cover?</h3>
+        <p>
+          In addition to your weekly share of produce, your membership also covers: credit card fees; packaging;
+          maintenance; and fuel costs to pick up items from our partner farmers when needed.
+        </p>
+        <p class="csa-membership__note">
+          <strong>Share Sizes Vary With the Season</strong><br />
+          The quantity of produce in each share will vary with the seasons and weather conditions. The largest
+          shares will be in summer when most produce is in season and the smallest in winter.
+        </p>
+      </section>
 
-      <fieldset class="csa-form__shares">
-        <legend>Please check all that apply</legend>
-        <label class="csa-check">
-          <input type="checkbox" name="share_spring" value="spring_4_weeks_150" />
-          <span>Spring share (4 weeks) — $150</span>
-        </label>
-        <label class="csa-check">
-          <input type="checkbox" name="share_summer_returning" value="summer_14_weeks_returning_475" />
-          <span>Summer share (14 weeks for returning members) — $475</span>
-        </label>
-        <label class="csa-check">
-          <input type="checkbox" name="share_summer_new" value="summer_14_weeks_new_500" />
-          <span>Summer share (14 weeks for new members) — $500</span>
-        </label>
-        <label class="csa-check">
-          <input type="checkbox" name="share_fall" value="fall_4_weeks_150" />
-          <span>Fall share (4 weeks) — $150</span>
-        </label>
-      </fieldset>
-
-      <div class="csa-form__payment">
-        <label class="csa-field csa-field--total">
-          <span class="csa-field__label">Total ($)</span>
-          <input class="csa-field__input" type="number" name="total" min="0" step="0.01" />
-        </label>
-        <label class="csa-field csa-field--signature">
-          <span class="csa-field__label">Signature (type full name)</span>
-          <input class="csa-field__input" type="text" name="signature" autocomplete="name" />
-        </label>
-        <label class="csa-field csa-field--date">
-          <span class="csa-field__label">Date</span>
-          <input class="csa-field__input" type="date" name="signature_date" />
-        </label>
-      </div>
-
-      <div class="csa-form__deposit">
-        <p><strong>Please send a $100 deposit to secure your CSA share.</strong></p>
+      <!-- Vacation policy -->
+      <section class="csa-policies" aria-labelledby="csa-policies-title">
+        <h3 id="csa-policies-title">Vacation Policy</h3>
+        <p>
+          We have instituted a vacation policy for your convenience. Each family will be allowed <strong>3</strong> vacations
+          per year. Families may choose to do one of the following <em>before 10am</em> on pickup day:
+        </p>
         <ul>
-          <li>Full payment due by <strong>May 1</strong> for spring shares</li>
-          <li>Full payment due by <strong>June 1</strong> for summer shares</li>
-          <li>Full payment due by <strong>October 1</strong> for fall shares</li>
+          <li>
+            <strong>Donate</strong>: Request the share be packed and donated to a local foodbank and they will get the benefit of
+            fresh locally grown food. Some of our partner farmers also donate to their communities, so your box may
+            include items from them as well.
+          </li>
+          <li>
+            <strong>Give</strong>: Request that the share be packed and given to a friend that you send to pick up your box.
+          </li>
+          <li>
+            <strong>Double</strong>: Request that your next share be doubled up. Families with weekly shares will get 2x the boxes at the next
+            pick up day. Families with bi-weekly shares may choose to get 2 boxes at their next scheduled pickup OR ask for a box the
+            following week.
+          </li>
         </ul>
-      </div>
+        <p class="csa-policies__note">
+          These options <strong>must be requested before 10am on the day of pickup</strong>. Otherwise the share cannot be packed or
+          stored and we cannot offer a refund.
+        </p>
+      </section>
 
-      <div class="csa-form__return">
-        <p><strong>Please sign and return to:</strong></p>
-        <address>
-          Greenfield Berry Farm<br />
-          2485 Major Road<br />
-          Peninsula, Ohio 44264
-        </address>
-      </div>
+      <!-- Shareholder form -->
+      <section class="csa-form" aria-labelledby="csa-form-title">
+        <h3 id="csa-form-title">Greenfield Berry Farm CSA Shareholder Agreement Form</h3>
+        <p>
+          We have chosen to eat locally and participate in this CSA as we try to live together in a more sustainable world. Our
+          main goal is to grow healthy foods for each other. If the weather cooperates, there will be extra foods that will allow us
+          to grow our farms and businesses. We all understand that weather and other emergencies can affect the foods grown, and we
+          will share those risks as a community supporting agriculture.
+        </p>
+        <p>
+          <strong>Primary shareholder should complete the form below:</strong>
+        </p>
 
-      <div class="csa-form__actions">
-        <button type="submit" class="csa-button">Submit (placeholder)</button>
-      </div>
-    </form>
-  </section>
-</section>
+        <form class="csa-form__grid" action="#" method="post">
+          <div class="form-card">
+            <label for="primary-name">Primary Shareholder Name</label>
+            <input id="primary-name" type="text" name="primary_name" autocomplete="name" />
+          </div>
 
+          <div class="form-card">
+            <label for="primary-email">Email</label>
+            <input id="primary-email" type="email" name="primary_email" autocomplete="email" />
+          </div>
+
+          <div class="form-card">
+            <label for="primary-phone">Phone</label>
+            <input id="primary-phone" type="tel" name="primary_phone" autocomplete="tel" />
+          </div>
+
+          <div class="form-card">
+            <label for="primary-address">Address</label>
+            <input id="primary-address" type="text" name="primary_address" autocomplete="street-address" />
+          </div>
+
+          <div class="form-card">
+            <label for="primary-city">City</label>
+            <input id="primary-city" type="text" name="primary_city" autocomplete="address-level2" />
+          </div>
+
+          <div class="form-card">
+            <label for="primary-state">State</label>
+            <input id="primary-state" type="text" name="primary_state" autocomplete="address-level1" />
+          </div>
+
+          <div class="form-card">
+            <label for="primary-zip">ZIP Code</label>
+            <input id="primary-zip" type="text" name="primary_zip" autocomplete="postal-code" />
+          </div>
+
+          <div class="form-card">
+            <label for="share-size">Share Size</label>
+            <select id="share-size" name="share_size">
+              <option value="">Please select</option>
+              <option value="half">Half Share</option>
+              <option value="full">Full Share</option>
+              <option value="family">Family Share</option>
+            </select>
+          </div>
+
+          <div class="form-card">
+            <label for="pickup-day">Preferred Pick-up Day</label>
+            <input id="pickup-day" type="text" name="pickup_day" />
+          </div>
+
+          <div class="form-card">
+            <label for="payment-plan">Payment Plan</label>
+            <select id="payment-plan" name="payment_plan">
+              <option value="">Please select</option>
+              <option value="full-summer">Full Payment - Summer</option>
+              <option value="installments-summer">Installment Plan - Summer</option>
+              <option value="full-fall">Full Payment - Fall</option>
+            </select>
+          </div>
+
+          <div class="form-card">
+            <label for="secondary-name">Secondary Shareholder Name</label>
+            <input id="secondary-name" type="text" name="secondary_name" />
+          </div>
+
+          <div class="form-card">
+            <label for="secondary-email">Secondary Email</label>
+            <input id="secondary-email" type="email" name="secondary_email" />
+          </div>
+
+          <div class="form-card">
+            <label for="secondary-phone">Secondary Phone</label>
+            <input id="secondary-phone" type="tel" name="secondary_phone" />
+          </div>
+
+          <div class="form-card">
+            <label for="secondary-notes">Secondary Notes</label>
+            <textarea id="secondary-notes" name="secondary_notes" rows="3"></textarea>
+          </div>
+
+          <div class="form-card">
+            <h4>Installment Due Dates (Summer CSA)</h4>
+            <ul>
+              <li>Full payment due by <strong>April 1</strong> for summer shares</li>
+              <li>If paying in installments: first payment due at signup, second payment due by <strong>June 1</strong></li>
+              <li>Full payment due by <strong>October 1</strong> for fall shares</li>
+            </ul>
+          </div>
+
+          <div class="csa-form__return">
+            <p><strong>Please sign and return to:</strong></p>
+            <address>
+              Greenfield Berry Farm<br />
+              2485 Major Road<br />
+              Peninsula, Ohio 44264
+            </address>
+          </div>
+
+          <div class="csa-form__actions">
+            <button type="submit" class="csa-button">Submit (placeholder)</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>Address: 2485 Major Road, Peninsula, OH 44264</p>
+      <p>Phone: (330) 657‑2924</p>
+      <p>Follow us on social media:</p>
+      <ul class="social">
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-facebook.png" alt="Facebook" /></a></li>
+        <li><a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-instagram.png" alt="Instagram" /></a></li>
+        <li><a href="https://www.yelp.com/biz/greenfield-berry-farm-peninsula" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-yelp.png" alt="Yelp" /></a></li>
+      </ul>
+    </div>
+    <div class="footer-note">
+      <p>&copy; 2026 Greenfield Berry Farm. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

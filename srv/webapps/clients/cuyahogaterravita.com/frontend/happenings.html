@@ -1,74 +1,118 @@
- <!-- ======================================
-  Happenings / News Cards (body content)
-  Replace {{ image_path }} with your images folder
-====================================== -->
-<section id="news_cards" class="news-cards-section">
-  <div class="container">
-    <h2>In the News &amp; Resources</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <a href="https://www.onlyinyourstate.com/nature/ohio/buckets-of-berries-cle" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-onlyinyourstate.jpg" alt="Buckets of berries in Cleveland" />
-          <div class="card-content">
-            <h3>OnlyInYourState: Buckets of Berries</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="https://farmlandaccess.org/greenfieldberryfarm/" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-farmlandaccess.jpg" alt="Farmland Access - Greenfield Berry Farm" />
-          <div class="card-content">
-            <h3>Farmland Access Legal Toolkit</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="http://lifelynstyle.com/2011/07/03/u-pick-tourgreenfield-berry-farm-peninsula-ohio/" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-lifelynstyle.jpg" alt="U-Pick Tour at Greenfield Berry Farm" />
-          <div class="card-content">
-            <h3>LifeLynStyle: U‑Pick Tour</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="https://www.localharvest.org/greenfield-berry-farm-M22048" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-localharvest.jpg" alt="LocalHarvest listing for Greenfield Berry Farm" />
-          <div class="card-content">
-            <h3>LocalHarvest: Farm Profile</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="https://www.thisiscleveland.com/user-submitted-locations/greenfield-berry-farm" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-thisiscleveland.jpg" alt="Destination Cleveland feature" />
-          <div class="card-content">
-            <h3>Destination Cleveland</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="https://www.nps.gov/cuva/learn/farms.htm" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-nps.jpg" alt="NPS – Cuyahoga Valley Farms" />
-          <div class="card-content">
-            <h3>NPS: Cuyahoga Valley Farms</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="https://wanderlog.com/place/details/1654717/the-greenfield-berry-farm" target="_blank" rel="noopener">
-          <img src="{{ image_path }}/news-wanderlog.jpg" alt="Wanderlog travel guide" />
-          <div class="card-content">
-            <h3>Wanderlog: Travel Guide</h3>
-          </div>
-        </a>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenfield Berry Farm – Happenings</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="{{ image_path }}/logo.png" alt="Greenfield Berry Farm logo" class="logo" />
+      <span class="site-name">Greenfield Berry Farm</span>
     </div>
-  </div>
-</section>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="csa.html">CSA</a></li>
+        <li><a href="happenings.html">Happenings</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="section-shell">
+    <!-- ======================================
+      Happenings / News Cards (body content)
+      Replace {{ image_path }} with your images folder
+    ====================================== -->
+    <section id="news_cards" class="news-cards-section">
+      <div class="container">
+        <h2>In the News &amp; Resources</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <a href="https://www.onlyinyourstate.com/nature/ohio/buckets-of-berries-cle" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-onlyinyourstate.jpg" alt="Buckets of berries in Cleveland" />
+              <div class="card-content">
+                <h3>OnlyInYourState: Buckets of Berries</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="https://farmlandaccess.org/greenfieldberryfarm/" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-farmlandaccess.jpg" alt="Farmland Access - Greenfield Berry Farm" />
+              <div class="card-content">
+                <h3>Farmland Access Legal Toolkit</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="http://lifelynstyle.com/2011/07/03/u-pick-tourgreenfield-berry-farm-peninsula-ohio/" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-lifelynstyle.jpg" alt="U-Pick Tour at Greenfield Berry Farm" />
+              <div class="card-content">
+                <h3>LifeLynStyle: U‑Pick Tour</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="https://www.localharvest.org/greenfield-berry-farm-M22048" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-localharvest.jpg" alt="LocalHarvest listing for Greenfield Berry Farm" />
+              <div class="card-content">
+                <h3>LocalHarvest: Farm Profile</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="https://www.thisiscleveland.com/user-submitted-locations/greenfield-berry-farm" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-thisiscleveland.jpg" alt="Destination Cleveland feature" />
+              <div class="card-content">
+                <h3>Destination Cleveland</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="https://www.nps.gov/cuva/learn/farms.htm" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-nps.jpg" alt="NPS – Cuyahoga Valley Farms" />
+              <div class="card-content">
+                <h3>NPS: Cuyahoga Valley Farms</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="https://wanderlog.com/place/details/1654717/the-greenfield-berry-farm" target="_blank" rel="noopener">
+              <img src="{{ image_path }}/news-wanderlog.jpg" alt="Wanderlog travel guide" />
+              <div class="card-content">
+                <h3>Wanderlog: Travel Guide</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>Address: 2485 Major Road, Peninsula, OH 44264</p>
+      <p>Phone: (330) 657‑2924</p>
+      <p>Follow us on social media:</p>
+      <ul class="social">
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-facebook.png" alt="Facebook" /></a></li>
+        <li><a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-instagram.png" alt="Instagram" /></a></li>
+        <li><a href="https://www.yelp.com/biz/greenfield-berry-farm-peninsula" target="_blank" rel="noopener"><img src="{{ image_path }}/icon-yelp.png" alt="Yelp" /></a></li>
+      </ul>
+    </div>
+    <div class="footer-note">
+      <p>&copy; 2026 Greenfield Berry Farm. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
