@@ -107,36 +107,12 @@
                     { "stark_county": "3_2_3_35_76"}, 
                     { "summit_county": "3_2_3_35_77", 
                       "comunities": [
-                        { "akron": "3_2_3_35_77_1",
-                          "streets": [
-                            { "<street>": "<street_ID>", 
-                              "addresses": [
-                                { "<address>": "<address_ID>"}
-                              ]
-                            }
-                          ]
-                        }, 
+                        { "akron": "3_2_3_35_77_1"}, 
                         { "barberton": "3_2_3_35_77_2"}, 
-                        { "cuyahoga_falls": "3_2_3_35_77_3",
-                          "streets": [
-                            { "<street>": "<street_ID>", 
-                              "addresses": [
-                                { "<address>": "<address_ID>"}
-                              ]
-                            }
-                          ]
-                        }, 
+                        { "cuyahoga_falls": "3_2_3_35_77_3"}, 
                         { "fairlawn": "3_2_3_35_77_4"}, 
                         { "green": "3_2_3_35_77_5"}, 
-                        { "hudson": "3_2_3_35_77_6", 
-                          "streets": [
-                            { "<street>": "<street_ID>", 
-                              "addresses": [
-                                { "<address>": "<address_ID>"}
-                              ]
-                            }
-                          ]
-                        }, 
+                        { "hudson": "3_2_3_35_77_6"}, 
                         { "macedonia": "3_2_3_35_77_7"}, 
                         { "munroe_falls": "3_2_3_35_77_8"}, 
                         { "new_franklin": "3_2_3_35_77_9"}, 
