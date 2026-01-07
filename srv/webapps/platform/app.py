@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from typing import Any
 
 import requests
 from flask import Flask, request, jsonify, send_from_directory, abort, redirect, url_for
@@ -29,6 +30,7 @@ PLATFORM_ROOT = Path(__file__).resolve().parent  # NEW
 
 # NEW: directory for global shared data
 PLATFORM_DATA_DIR = PLATFORM_ROOT / "data"  # NEW
+PLATFORM_DATA_ALLOWLIST = {"msn_legal_entity.json"}
 
 def load_platform_json(filename: str) -> Any:  # NEW
     """
@@ -370,6 +372,21 @@ def backend_data(data_filename: str):
 
     save_json(target_path, payload)
     return jsonify({"status": "ok"})
+
+
+@app.route("/api/platform-data/<path:filename>")
+def platform_data(filename: str):
+    """Read allowlisted platform JSON data shared across tenants."""
+
+    if Path(filename).name != filename or filename not in PLATFORM_DATA_ALLOWLIST:
+        abort(404)
+
+    try:
+        payload = load_platform_json(filename)
+    except FileNotFoundError:
+        abort(404)
+
+    return jsonify(payload)
 
 
 # Fallback route: Serves default entry file (index.html) for client
