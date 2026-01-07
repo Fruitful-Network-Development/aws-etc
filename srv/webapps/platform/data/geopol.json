@@ -57,6 +57,11 @@
                           "addresses": [
                             { "9570_riverview_road": "3_2_3_17_18_2_1_1"}
                           ]
+                        }, 
+                        { "cleveland": "3_2_3_17_18_3", 
+                          "addresses": [
+                            { "4208_john_avenue": "3_2_3_17_18_3_1_1"}
+                          ]
                         }
                       ]
                     }, 
@@ -236,8 +241,9 @@
                             { "1845_sedro_street_unit_2": "3_2_3_17_77_3_129_1"}, 
                             { "1804_silver_lake_avenue_unit_2": "3_2_3_17_77_3_130_1"}, 
                             { "1625_streetate_road": "3_2_3_17_77_3_132_1"}, 
-                            { "1274_west_streeteels_corners_road": "3_2_3_17_77_3_133_1"}, 
-                            { "1204_west_streeteels_corners_road": "3_2_3_17_77_3_133_2"}, 
+                            { "1274_west_steels_corners_road": "3_2_3_17_77_3_133_1"}, 
+                            { "1204_west_steels_corners_road": "3_2_3_17_77_3_133_2"}, 
+                            { "210_west_steels_corners_road": "3_2_3_17_77_3_133_3"}, 
                             { "2270_streetone_street_unit_2": "3_2_3_17_77_3_134_2"}, 
                             { "470_streetow_avenue": "3_2_3_17_77_3_135_1"}, 
                             { "518_streetow_avenue_unit_2": "3_2_3_17_77_3_135_2"}, 
@@ -338,6 +344,7 @@
                             { "1019_streetsboro_road": "3_2_3_17_77_19_10_1"}, 
                             { "2485_major_road": "3_2_3_17_77_19_11_1"}, 
                             { "1619_mill_street": "3_2_3_17_77_19_12_1"}, 
+                            { "1403_west_hines_hill_road": "3_2_3_17_77_19_13_1"}
                           ]
                         }, 
                         { "reminderville": "3_2_3_17_77_20"}, 
