@@ -10,22 +10,22 @@
       "name_1": "beth", 
       "name_2": "lomske"
     }, 
-    { "msn_id": "458_hines_hill_road", 
+    { "msn_id": "3_2_3_17_77_6_14_1_1", 
       "title": "sasha_miller", 
       "name_1": "sasha", 
       "name_2": "miller"
     }, 
-    { "msn_id": "458_hines_hill_road", 
+    { "msn_id": "3_2_3_17_77_6_14_1_2", 
       "title": "Jimmy_miller", 
       "name_1": "jimmy", 
       "name_2": "miller"
     }, 
-    { "msn_id": "458_hines_hill_road", 
+    { "msn_id": "3_2_3_17_77_6_14_1_3", 
       "title": "ivan_miller", 
       "name_1": "ivan", 
       "name_2": "miller"
     }, 
-    { "msn_id": "458_hines_hill_road", 
+    { "msn_id": "3_2_3_17_77_6_14_1_4", 
       "title": "ohlen_miller", 
       "name_1": "ohlen", 
       "name_2": "miller"
@@ -118,15 +118,15 @@
 },
 { "legal_entity": 
   [
-    { "msn_id": "458_hines_hill_road", 
+    { "msn_id": "3_2_3_17_77_6_14_1_5", 
       "title": "purple_brown_farm_stead", 
       "name_2": "The Purple Brown Farm Stead", 
-      "principle_party_id": "miller", 
+      "principle_party_id": "3_2_3_17_77_6_14_1_1", 
     }, 
     { "msn_id": "3_2_3_17_77_19_12_1_1", 
       "title": "purple_brown_farm_store", 
       "name_2": "The Purple Brown Farm Store", 
-      "principle_party_id": "sasha_miller", 
+      "principle_party_id": "3_2_3_17_77_6_14_1_1", 
     }, 
     { "msn_id": "3_2_3_17_77_19_10_1_6", 
       "title": "trapp_family_farm", 
