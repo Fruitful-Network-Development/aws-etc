@@ -46,7 +46,20 @@
                     { "columbiana_county": "3_2_3_17_15"}, 
                     { "coshocton_county": "3_2_3_17_16"}, 
                     { "crawford_county": "3_2_3_17_17"}, 
-                    { "cuyahoga_county": "3_2_3_17_18"}, 
+                    { "cuyahoga_county": "3_2_3_17_18", 
+                      "comunities": [
+                        { "valley_view": "3_2_3_17_18_1", 
+                          "addresses": [
+                            { "6765_canal_road": "3_2_3_17_18_1_1_1"}
+                          ]
+                        }, 
+                        { "brecksville": "3_2_3_17_18_2", 
+                          "addresses": [
+                            { "9570_riverview_road": "3_2_3_17_18_2_1_1"}
+                          ]
+                        }
+                      ]
+                    }, 
                     { "darke_county": "3_2_3_17_19"}, 
                     { "defiance_county": "3_2_3_17_20"}, 
                     { "delaware_county": "3_2_3_17_21"}, 
@@ -107,7 +120,11 @@
                     { "stark_county": "3_2_3_17_76"}, 
                     { "summit_county": "3_2_3_17_77", 
                       "comunities": [
-                        { "akron": "3_2_3_17_77_1"}, 
+                        { "akron": "3_2_3_17_77_1", 
+                          "addresses": [
+                            { "3077_akron_peninsula_road": "3_2_3_17_77_1_1_1"}
+                          ]
+                        }, 
                         { "barberton": "3_2_3_17_77_2"}, 
                         { "cuyahoga_falls": "3_2_3_17_77_3", 
                           "addresses": [
@@ -249,7 +266,8 @@
                             { "220_wild_avenue": "3_2_3_17_77_3_158_1"}, 
                             { "1660_williams_street_unit_2": "3_2_3_17_77_3_159_1"}, 
                             { "3335_wilson_street_unit_2": "3_2_3_17_77_3_160_1"}, 
-                            { "4237_wyoga_lake_road": "3_2_3_17_77_3_161_1"}
+                            { "4237_wyoga_lake_road": "3_2_3_17_77_3_161_1"}, 
+                            { "777_south_lindley_avenue": "3_2_3_17_77_3_162_1"}
                           ]
                         }, 
                         { "fairlawn": "3_2_3_17_77_4"}, 
@@ -307,6 +325,7 @@
                             { "5394_akron_cleveland_road": "3_2_3_17_77_19_1_2"}, 
                             { "208_e_cuyahoga_falls_avenue": "3_2_3_17_77_19_2_1"}, 
                             { "1615_main_street": "3_2_3_17_77_19_3_1"}, 
+                            { "1582_main_street": "3_2_3_17_77_19_3_2"}, 
                             { "4704_quick_road": "3_2_3_17_77_19_4_1"}, 
                             { "6768_riverview_road": "3_2_3_17_77_19_5_1"}, 
                             { "5819_stanford_road": "3_2_3_17_77_19_6_1"}, 
