@@ -7,7 +7,7 @@
     "name_3": "Countryside",
     "principle_party_id": "3_2_3_17_77_3_162_1_1",
     "dns_id": "cuyahogavalleycountrysideconservancy.org",
-    "logo": "logo-3_2_3_17_77_6_14_1_5.png",
+    "logo": "/data/CVCC_entities/logo-3_2_3_17_77_6_14_1_5.png",
     "images": [""],
     "bio": [""],
     "sources": [
@@ -20,7 +20,7 @@
     "frontend_root": "frontend",
     "default_entry": "index.html",
     "backend_data": [
-      "participant_farms.json"
+      "/data/participant_farms.json"
     ],
     "compendium": {},
     "dossier": {},
