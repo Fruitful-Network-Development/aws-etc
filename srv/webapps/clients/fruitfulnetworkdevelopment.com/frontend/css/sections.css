@@ -186,6 +186,14 @@ section .triplets {
     width: 100%;
 }
 
+section .triplets-item--card {
+    background-color: var(--offwhite);
+    border: 1px solid var(--G-acnt-suttle);
+    border-radius: var(--space-2xs);
+    padding: var(--space-lg);
+    box-sizing: border-box;
+}
+
 section .stacked-trio .stacked-trio-item-1,
 section .stacked-trio .stacked-trio-item-2,
 section .stacked-trio .stacked-trio-item-3 {
