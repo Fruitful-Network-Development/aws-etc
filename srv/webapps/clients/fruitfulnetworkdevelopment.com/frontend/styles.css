@@ -1,23 +1,16 @@
 /* ======================================
    IMPORTS
   ====================================== */
+@import "css/utilities.css";
+@import "css/sections.css";
+
+@import "css/home.css";
+@import "css/research.css";
+@import "css/webservices.css";
+
 @import "css/header.css";
 @import "css/hero.css";
-@import "css/target.css";
-@import "css/aside.css";
-@import "css/process.css";
-@import "css/technology.css";
-@import "css/personnel.css";
 @import "css/footer.css";
-
-@import "css/services.css";
-@import "css/tables.css";
-@import "css/calendar.css";
-@import "css/roadmap.css";
-@import "css/timeline.css";
-@import "css/market.css";
-@import "css/proposal.css";
-
 *,
 *::before,
 *::after {
@@ -25,12 +18,13 @@
 }
 
 /* ======================================
-   GLOBAL TOLKEN STYLES
+   CSS VARIABLES (TOKENS)
+   Design system tokens for colors, spacing, typography
   ====================================== */
 :root {
   /* GLOBAL VALUES */
   /* COLOR TOKENS */
-  --nero: #252525;
+  --nero: #353535;
   --nero-light: #464646;
   --silverback: #afafaa;
   --mosswash: #f3f2e5;
@@ -44,6 +38,8 @@
   --camel: #8f6448;
   --walnut: #644332;
   --appleseed: #a67c52;
+  --collard: #8b6500;
+
   
   --red: #a32023;
   --terracottaroof: #a34547;
@@ -95,23 +91,16 @@
   --G-font: "Lato", sans-serif;
 }
 
+/* ======================================
+   BASE HTML ELEMENTS
+   Base styles for semantic HTML elements
+  ====================================== */
 body {
   margin: 0;
   font-family: var(--G-font);
   background-color: var(--G-bkg-clr);
   color: var(--G-txt-color);
   text-align: center;
-}
-
-section {
-  box-sizing: border-box;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-   background-color: transparent;
 }
 
 main {
@@ -123,384 +112,4 @@ main {
   gap: var(--space-lg);
   background-color: var(--G-bkg-clr);
   box-sizing: border-box;
-}
-
-/* ======================================
-   LAYOUT HELPERS
-  ====================================== */
-.section-block {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-}
-
-.stack-v {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.stack-sm {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-sm);
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ======================================
-   RESPONSIVE DESIGN FOR MAIN STYLES (if any)
-  ====================================== */
-
-/* BASE STYLES (Mobile ~ >= 0px) */
-/* TABLET STYLES (Don't use unless special use) */
-@media (min-width: 768px) {
-}
-/* DESKTOP STYLES */
-@media (min-width: 1024px) {
-}
-
-/* ======================================
-   UTILITY CLASSES
-  ====================================== */
-.divider {
-   border: none;
-   border-top: 1px solid var(--G-acnt-suttle);
-   margin: var(--space-2xs) 0;
-}
-
-.box {
-  border: 1px solid var(--G-acnt-suttle);
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-img {
-   width: 100%;
-   height: 100%;
-   object-fit: contain;
-   display: block;
-}
-
-/* Image container utilities */
-.img-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.img-container--cover img {
-  object-fit: cover;
-}
-
-.img-container--contain img {
-  object-fit: contain;
-}
-
-.imgbtn,
-.header__button,
-.footer__button {
-  box-sizing: border-box;
-  height: 1.5rem;
-  width: 1.5rem;
-  flex-shrink: 0;
-}
-
-a {
-   color: var(--G-link-clr);
-   text-decoration: none;
-}
-
-a:hover {
-   text-decoration: underline;
-}
-
-h2 {
-  font-weight: bold;
-  color: var(--blue-sour);
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-}
-
-h3 {
-  font-size: 1rem;
-  color: var(--blue-sour);
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-/*footer__block*/
-h4 {
-  color: var(--blue-sour);
-  justify-self: center;
-  font-weight: bold;
-}
-
-/*section-subtitle*/
-.muted {
-  color: var(--G-acnt-muted);
-  font-style: italic;
-  font-size: 0.75rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.border {
-  border: 1px solid var(--G-acnt-suttle);
-}
-
-.border-top {
-  border-top: 1px solid var(--G-acnt-suttle);
-}
-
-.border-bottom {
-  border-bottom: 1px solid var(--G-acnt-suttle);
-}
-
-.section-shell {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-lg);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.card {
-  border: 1px solid var(--silverback);
-  background: var(--offwhite);
-  border-radius: var(--space-2xs);
-}
-
-.card__header {
-  text-align: center;
-  padding: var(--space-sm);
-  font-weight: 700;
-  margin: 0;
-}
-
-.card__body {
-  padding: calc(var(--space-md) + var(--space-2xs));
-  margin: 0;
-}
-
-.card--shadow {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.panel,
-.content-section,
-.section-service_cards {
-  border: 1px solid var(--silverback);
-  padding: calc(var(--space-md) + var(--space-2xs));
-  display: flex;
-  flex-direction: column;
-}
-
-.content-section {
-  gap: var(--space-sm);
-}
-
-.section-heading {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2xs);
-}
-
-.section-heading h2 {
-  margin: 0;
-}
-
-.section-subtitle {
-  margin: 0;
-  font-style: italic;
-  color: var(--G-acnt-muted);
-}
-
-.stacked-text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  margin: 0;
-}
-
-.list-spacing {
-  padding-left: var(--space-md);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.section-overview {
-  font-family: "Georgia", serif;
-  color: var(--G-acnt-muted);
-  line-height: 1.4;
-  max-width: 900px;
-  padding: var(--space-lg);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.section-overview h2 {
-  font-family: "Arial", sans-serif;
-  color: var(--blue-sour);
-  font-size: 1.2rem;
-  border-bottom: 1px solid var(--blue-sour);
-  display: flex;
-  align-items: center;
-}
-
-.section-overview h3 {
-  font-family: "Arial", sans-serif;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  color: var(--nero);
-}
-
-.intro-text {
-  font-style: italic;
-  text-align: center;
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-}
-
-.dash-list {
-  list-style-type: none;
-  padding-left: 40px;
-}
-
-.dash-list li::before {
-  content: "-";
-  position: absolute;
-  margin-left: -20px;
-}
-
-.numbered-list {
-  padding-left: 20px;
-}
-
-.numbered-list li {
-  margin-bottom: 10px;
-}
-
-.no-indent {
-  padding-left: 20px;
-  margin-top: 5px;
-}
-
-.align-l {
-  text-align: left;
-}
-
-.align-r {
-  text-align: right;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2xs);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--space-2xs);
-  border: 1px solid transparent;
-  text-decoration: none;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.btn:hover {
-  text-decoration: none;
-  filter: brightness(1.05);
-}
-
-.btn--primary {
-  background-color: var(--blue);
-  border-color: var(--incremental);
-  color: var(--offwhite);
-}
-
-.btn--secondary {
-  background-color: var(--yellow);
-  border-color: var(--riverpanned);
-  color: var(--nero);
-}
-
-/* NAV LINKS */
-.btn_nav {
-  box-sizing: border-box;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.25rem 0.25rem;
-  
-  color: inherit;
-}
-
-.btn_nav:hover,
-.btn_nav--active {
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.btn_link {
-  height: 3rem;
-  min-width: calc(3rem * 2.5);
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.75rem 2.5rem;
-  box-sizing: border-box;
-  white-space: nowrap;
-
-  border-radius: 50%;
-  background-color: var(--G-acnt-linkbox);
-
-  font-weight: bold;
-  text-decoration: underline;
-  color: var(--G-txt-color);
-}
-
-.btn_link:hover {
-  background-color: var(--G-acnt-linkboxhvr);
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .stack-sm {
-    flex-direction: column;
-  }
 }
