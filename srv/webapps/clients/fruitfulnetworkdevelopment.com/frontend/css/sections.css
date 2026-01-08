@@ -246,8 +246,8 @@ section .dossier .tag {
 
 section .dossier .tag-icon {
   flex-shrink: 0;
-  width: 3rem;
-  height: 3rem;
+  width: var(--tag-icon-size, 3rem);
+  height: var(--tag-icon-size, 3rem);
 }
 
 section .dossier .tag-label {
