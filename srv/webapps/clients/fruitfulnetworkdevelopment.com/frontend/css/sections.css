@@ -203,10 +203,10 @@ section .duo {
     align-items: stretch;
 }
 
+/* Apply width ratios in page-specific CSS (e.g., flex: 2 1 0). */
 section .duo .duo-item-1,
 section .duo .duo-item-2 {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 1 1 0;
     min-width: min(300px, 100%);
 }
 
