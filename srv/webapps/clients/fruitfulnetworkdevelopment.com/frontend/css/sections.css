@@ -25,6 +25,16 @@ section .clever.clever--center {
     justify-items: center;
 }
 
+section .clever.clever--hug-right {
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content);
+    justify-items: end;
+}
+
+section .clever.clever--hug-right .clever-item-2,
+section .clever.clever--hug-right .clever-item-3 {
+    justify-self: end;
+}
+
 section .clever .clever-item-1 {
     grid-row: 1 / -1;
     grid-column: 1;

@@ -79,7 +79,7 @@
 }
 
 /* Icon container styling */
-.section-process .clever .clever-item-1.img-box {
+.section-process .clever.clever--hug-right .clever-item-1.img-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,24 +88,13 @@
 }
 
 /* Heading styling */
-.section-process .clever .clever-item-2 h3 {
+.section-process .clever.clever--hug-right .clever-item-2 h3 {
     margin: 0;
-    color: var(--nero);
-    font-weight: bold;
-    text-transform: uppercase;
-    white-space: normal;
 }
 
-/* Content paragraph styling */
-.section-process .clever .clever-item-3 {
-    white-space: normal;
-}
-
-.section-process .clever .clever-item-3 p {
+.section-process .clever.clever--hug-right .clever-item-3 p {
     margin: 0;
     line-height: 1.6;
-    color: var(--nero);
-    text-align: left;
 }
 
 @media (max-width: 767px) {
