@@ -17,6 +17,9 @@
 
 /* Icon container styling - olive green background */
 .section-target .triplets .triplets-item-1.img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--camo);
     border-radius: var(--space-md);
     width: 12rem;
@@ -33,7 +36,8 @@
 
 /* Content container styling */
 .section-target .triplets .triplets-item-3 {
-    text-align: left;
+    text-align: center;
+    max-width: 18rem;
 }
 
 .section-target .triplets .triplets-item-3 p {
@@ -123,6 +127,41 @@
 /* Down clever section with item 2 (bottom left) being a triplets section and item 3 (bottom right) being a twins section. Overrides and extention rules go here*/
 /* The item 3 twins section uses an image box for the top and a card anthology for the bottom. The card anthology uses the tag utility for each*/
 
+.section-personnel {
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-lg);
+}
+
+.section-personnel .down-clever-item-2 {
+    gap: var(--space-sm);
+}
+
+.section-personnel .down-clever-item-2 .triplets-item-1 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.section-personnel .down-clever-item-2 .triplets-item-1 h3 {
+    margin: 0;
+}
+
+.section-personnel .down-clever-item-2 .triplets-item-2 {
+    text-align: center;
+    font-style: italic;
+}
+
+.section-personnel .down-clever-item-2 .triplets-item-3 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.section-personnel .down-clever-item-2 .triplets-item-3 p {
+    margin: 0;
+}
+
 .section-personnel .down-clever-item-2 .triplets-item-1 .img-box{
     box-sizing: border-box;
     width: 4rem;
@@ -130,6 +169,10 @@
 
 .section-personnel .down-clever-item-2 .triplets-item-3 .btn_action{
     align-self: flex-end;
+}
+
+.section-personnel .down-clever-item-3 {
+    gap: var(--space-sm);
 }
 
 .section-personnel .down-clever-item-3 .twins-item-1 {
@@ -141,27 +184,47 @@
     object-fit: cover;
 }
 
+.section-personnel .dossier {
+    gap: var(--space-sm);
+}
+
+.section-personnel .dossier .tag {
+    border: 1px solid var(--silverback);
+    padding: var(--space-xs) var(--space-sm);
+}
+
+.section-personnel .dossier .tag-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 /* ======================================
    TECHNOLOGY - SECTION
   ====================================== */
 /* Triplets section. Overrides and extension of rules go here */
 .section-technology .triplets-item-1, 
 .section-technology .triplets-item-3 {
-    display: flex;
     width: 100%;
-    gap: 0;
 }
 
-.section-technology .triplets-item-1 .uno {
-    align-content: flex-start;
-    padding: 0;
-    gap: 0;
+.section-technology .uno {
+    padding: var(--space-xs) var(--space-md);
 }
 
-.section-technology .triplets-item-3 .uno {
-    justify-content: flex-end;
-    padding: 0;
-    gap: 0;
+.section-technology .uno p {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    white-space: normal;
+}
+
+.section-technology .uno .btn {
+    margin-left: auto;
+}
+
+.section-technology .triplets-item-2 {
+    padding: var(--space-md);
+    white-space: normal;
 }
 
 .section-technology .triplets-item-1 .btn {

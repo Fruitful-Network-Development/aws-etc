@@ -7,6 +7,35 @@
    HERO SECTION FOR NONE index.html
   ====================================== */
 
+.hero.clever {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: var(--space-xl);
+  min-height: 18rem;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero.clever .clever-item-1 {
+  justify-self: center;
+}
+
+.hero.clever .clever-item-2,
+.hero.clever .clever-item-3 {
+  justify-self: center;
+  text-align: center;
+  max-width: 28rem;
+  width: 100%;
+}
+
+.hero.clever .clever-item-2 {
+  margin: 0;
+}
+
+.hero.clever .clever-item-3 {
+  margin: 0;
+}
+
 .hero-panel {
   flex-direction: column;
   border: 1px solid var(--silverback);

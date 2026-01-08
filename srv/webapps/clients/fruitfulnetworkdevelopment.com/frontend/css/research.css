@@ -1,6 +1,6 @@
  /* ======================================
-    CALENDAR - SECTION
-   ====================================== */
+   CALENDAR - SECTION
+  ====================================== */
 /* Up-clever item-2. Overrides and extention rules go here*/
 /* Root variables for sizing */
 .section-calendar {
@@ -9,6 +9,61 @@
     font-family: "Lato", sans-serif;
      color: var(--nero);
   }
+
+/* ======================================
+   RESEARCH LAYOUTS
+  ====================================== */
+.section-research-overview,
+.section-research-timeline {
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.section-research-overview .excerpt,
+.section-research-timeline .excerpt {
+  max-width: 100%;
+  margin: 0;
+}
+
+.section-research-overview .section-roadmap,
+.section-research-overview .section-calendar {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--G-acnt-suttle);
+  background-color: var(--offwhite);
+}
+
+.section-research-overview .section-roadmap h3 {
+  margin-top: 0;
+}
+
+.section-research-timeline .section-timeline {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.section-research-timeline .timeline-layout {
+  align-items: start;
+}
+
+.section-research-timeline .timeline-key {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--G-acnt-suttle);
+  background-color: var(--offwhite);
+}
+
+.section-research-timeline .timeline-years {
+  justify-items: center;
+}
+
+.section-research-timeline .year-unit {
+  margin: 0;
+}
   
   /* Ensure tables have no inherent spacing */
   .section-calendar table {
@@ -412,11 +467,18 @@ section .proposal {
     display: flex;
     gap: var(--space-xl);
     width: 100%;
+    margin-bottom: var(--space-lg);
+}
+
+section .proposal .excerpt {
+    max-width: 100%;
+    margin: 0;
 }
 
 section .proposal.up-clever {
     display: grid;
     grid-template-columns: minmax(240px, 1fr) 3fr;
+    grid-auto-rows: auto;
     gap: var(--space-lg);
     background-color: var(--offwhite);
     border: 1px solid var(--silverback);
@@ -425,19 +487,21 @@ section .proposal.up-clever {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
     width: 100%;
     box-sizing: border-box;
+    align-items: start;
 }
 
 section .proposal .up-clever-item-1 {
     border: 2px dashed var(--blue-sour);
     border-radius: var(--space-2xs);
     background-color: var(--offwhite);
-    min-height: 220px;
+    min-height: 200px;
     padding: var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--nero-light);
     text-align: center;
+    white-space: normal;
 }
 
 /* Ensure top left and top right items work in grid */
@@ -459,10 +523,18 @@ section .proposal .up-clever-item-2 {
     flex-direction: column;
     gap: var(--space-md);
     box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+    white-space: normal;
 }
 
 section .proposal .up-clever-item-3 h3 {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+}
+
+section .proposal .dotted-box {
+    border: 2px dashed var(--blue-sour);
+    border-radius: var(--space-2xs);
+    min-height: 160px;
+    background-color: transparent;
 }
