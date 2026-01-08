@@ -17,6 +17,9 @@
 
 /* Icon container styling - olive green background */
 .section-target .triplets .triplets-item-1.img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--camo);
     border-radius: var(--space-md);
     width: 12rem;
@@ -33,7 +36,8 @@
 
 /* Content container styling */
 .section-target .triplets .triplets-item-3 {
-    text-align: left;
+    text-align: center;
+    max-width: 18rem;
 }
 
 .section-target .triplets .triplets-item-3 p {
