@@ -154,54 +154,43 @@ section .trio .triplets {
 /* ======================================
    TRIPLETS SECTION
    ====================================== */
-section .stacked-trio,
-section .triplets {
+section .stacked-trio {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
     width: 100%;
 }
 
+section .triplets {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: var(--space-md);
+    width: 100%;
+}
+
 section .stacked-trio .stacked-trio-item-1,
 section .stacked-trio .stacked-trio-item-2,
-section .stacked-trio .stacked-trio-item-3,
-section .triplets .triplets-item-1,
-section .triplets .triplets-item-2 {
+section .stacked-trio .stacked-trio-item-3 {
     flex: 1;
     min-width: 0;
 }
 
-section .stacked-trio .stacked-trio-item-3,
-section .triplets .triplets-item-3 {
+section .stacked-trio .stacked-trio-item-3 {
     flex: 1;
     margin-bottom: 0;
     min-width: 0;
 }
 
-/* General triplets item styling */
 section .triplets .triplets-item-1 {
-    /* Icon/image container - typically first item */
-    flex-shrink: 0;
+    min-width: 0;
 }
 
 section .triplets .triplets-item-2 {
-    /* Heading container - typically second item */
-    flex-shrink: 0;
+    min-width: 0;
 }
 
 section .triplets .triplets-item-3 {
-    /* Content container - typically third item */
-    flex: 1 1 auto;
-    white-space: normal;
-}
-
-section .triplets .triplets-item-3 p {
-    margin: 0;
-    margin-bottom: var(--space-sm);
-}
-
-section .triplets .triplets-item-3 p:last-child {
-    margin-bottom: 0;
+    min-width: 0;
 }
 
 /* ======================================
