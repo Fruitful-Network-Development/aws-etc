@@ -137,6 +137,10 @@
     width: 13rem;
 }
 
+.section-personnel .down-clever-item-3 .twins-item-1 img {
+    object-fit: cover;
+}
+
 /* ======================================
    TECHNOLOGY - SECTION
   ====================================== */
