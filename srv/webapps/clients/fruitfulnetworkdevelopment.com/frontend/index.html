@@ -1,3 +1,4 @@
+<!-- IGNORE: JOHN JOSEPH DEMORE"S 'little line': [end of the world/new start of society] -Ligma -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <!-- IGNORE: JOHN JOSEPH DEMORE"S 'little line': [end of the world/new start of society] -Ligma -->
   
   <body>
     <!-- ======================================
@@ -18,28 +18,25 @@
     ====================================== -->
     <header>
       <div class="header__left">
-        <div class="header__button img-container"><img src="assets/icons/icon.menu.png" alt="Menu"/></div>
-      <div><a href="home.html" class="header__button img-container"><img src="assets/logos/logo.fnd.png" alt="FND"/></a></div>
+        <div class="imgbtn img-box"><img src="assets/icons/icon.menu.png" alt="Menu"/></div>
+      <div><a href="home.html" class="imgbtn img-box"><img src="assets/logos/logo.fnd.png" alt="FND"/></a></div>
       </div>
       <div class="header__right">
         <a href="index.html"><p class="btn_nav btn_nav--active">Home</p></a>
         <a href="webservices.html"><p class="btn_nav">Webservices</p></a>
         <a href="research.html"><p class="btn_nav">Research</p></a>
-        <div class="header__button img-container"><img src="assets/icons/icon.search.png" alt="Search"/></div>
+        <div class="imgbtn img-box"><img src="assets/icons/icon.search.png" alt="Search"/></div>
       </div>
     </header>
     
-    <!-- MAIN CONTENT AREA -->
     <main> 
       <!-- ======================================
           HERO - SECTION
       ====================================== -->
-      <section class="hero hero--home section-block">
-        <div class="hero__logo flex-center"><img src="favicon.png" alt="FND"/></div>
-        <div class="hero__text flex-column flex-center">
-          <h1>FRUITFUL NETWORK DEVELOPMENT</h1>
-          <p id="tagline" class="hero__tagline muted">Empowering What's Better, To Out Compete What's Worse</p>
-        </div>
+      <section class="clever">
+        <div class="clever-item-1 hero__logo img-box" ><img src="favicon.png" alt="FND"/></div>
+        <h1 class="box clever-item-2">FRUITFUL NETWORK DEVELOPMENT</h1>
+        <p class="box clever-item-3 muted">Empowering What's Better, To Out Compete What's Worse</p>
       </section>
 
       <!-- DIVIDER LINE -->
@@ -48,22 +45,22 @@
       <!-- ======================================
           TARGET - SECTION
       ====================================== -->
-      <section class="section-target">
+      <section class="trio section-target">
         <!-- COLUMN 1 -->
-        <div class="target__card">
-          <div class="target__graphic img-container"><img src="assets/graphics/graphic-agriculture.png"/></div>
-          <h2 class="text-center">AGRICULTURE</h2>
-          <div class="target__message text-center">
+        <div class="triplets trio-item-1">
+          <div class="triplets-item-1 img-box"><img src="assets/graphics/graphic-agriculture.png"/></div>
+          <h2 class="triplets-item-2 box align-center">AGRICULTURE</h2>
+          <div class="triplets-item-3 box align-center">
             <p>Every year, the US economy loses out on $70B in output that small farm could have output. Meanwhile, monocrop agriculture and harmful practices costs the US $2.2T</p>
             <p>Our mission is to eliminate these damages and these losses. Allowing local economies to be the center of communities again.</p>
           </div>
         </div>
 
         <!-- COLUMN 2 -->
-        <div class="target__card">
-          <div class="target__graphic img-container"><img src="assets/graphics/graphic-farmers.png"/></div>
-          <h2 class="text-center">FARMERS</h2>
-          <div class="target__message text-center">
+        <div class="triplets trio-item-2">
+          <div class="triplets-item-1 img-box"><img src="assets/graphics/graphic-farmers.png"/></div>
+          <h2 class="triplets-item-2 box align-center">FARMERS</h2>
+          <div class="triplets-item-3 box align-center">
             <p>Small farms make up 90% of the US farmland and simultaneously profit 10% less/per acre than industrial farms; even despite less waste.</p>
             <p>Farmers can't plan to produce what they don't know they'll be able to sell.</p>
             <p>The demand, the people, and the product are all there; it's the coordination that's broken.</p>
@@ -71,10 +68,10 @@
         </div>
 
         <!-- COLUMN 3 -->
-        <div class="target__card">
-          <div class="target__graphic img-container"><img src="assets/graphics/graphic-consumers.png"/></div>
-          <h2 class="text-center">CONSUMERS</h2>
-          <div class="target__message text-center">
+        <div class="triplets trio-item-3">
+          <div class="triplets-item-1 img-box"><img src="assets/graphics/graphic-consumers.png"/></div>
+          <h2 class="triplets-item-2 box align-center">CONSUMERS</h2>
+          <div class="triplets-item-3 box align-center">
             <p>Since local farms can't capitalize on their full potential, our food system can only stock products affordably from industrial farms.</p>
             <p>We're building a world where individuals aren't barred from buying healthy local produce in logistics or cost.</p>
           </div>
@@ -87,7 +84,7 @@
       <!-- ======================================
           ASIDE SECTION (OPERATE)
       ====================================== -->
-      <div class="section-aside"><p class="aside__text text-center">We offer customers technology investment: hire us for web services at their current provider's price. We integrate 3rd parties with customer development for free; only charging for cloud hosting, as our ultimate goal is to provide free, open-source tools.</p></div>
+      <section class="box" styles="margin: 0; width: 100vw; max-width: 100vw;"><p class="muted align-center">We offer customers technology investment: hire us for web services at their current provider's price. We integrate 3rd parties with customer development for free; only charging for cloud hosting, as our ultimate goal is to provide free, open-source tools.</p></section>
 
       <!-- DIVIDER LINE -->
       <hr class="divider" />
@@ -95,38 +92,40 @@
       <!-- ======================================
           PROCESS - SECTION
       ====================================== -->
-      <section class="section-process">
-        <div class="section-shell">
-          <div class="process-grid">
-            <article class="card process-card stack-sm">
-              <div class="process-card__media img-container">
-                <img src="assets/graphics/graphic-consult.png" alt="Consult"/>
-              </div>
-              <div class="process-card__content">
-                <h3 class="card__header">CONSULT</h3>
-                <p class="card__body">We work with clients to understand the nuance of their business and develop the tools their website uses Integrate what they have, and never pay for what they don't.</p>
-              </div>
-            </article>
-            
-            <article class="card process-card stack-sm">
-              <div class="process-card__media img-container">
-                <img src="assets/graphics/graphic-demo.png" alt="Demo"/>
-              </div>
-              <div class="process-card__content">
-                <h3 class="card__header">DEMO</h3>
-                <p class="card__body">This centralized application reduces logistical workload by syncing online sales, farm plans, and CSA fulfillment with supply invoices, inventory, weather data, and work calendars—eliminating duplicate data entry.</p>
-              </div>
-            </article>
-            
-            <article class="card process-card stack-sm">
-              <div class="process-card__media img-container">
-                <img src="assets/graphics/graphic-dev.png" alt="Development"/>
-              </div>
-              <div class="process-card__content">
-                <h3 class="card__header">DEV</h3>
-                <p class="card__body">FND uses this new Application Framework to be flexible and customizable to create visual ontologies of a business and its operations and what a customer may want.</p>
-              </div>
-            </article>
+      <section class="triplets section-process">
+        <div class="clever triplets-item-1">
+          <div class="clever-item-1 img-box">
+            <img src="assets/graphics/graphic-consult.png" alt="Consult"/>
+          </div>
+          <div class="clever-item-2">
+            <h3>CONSULT</h3>
+          </div>
+          <div class="clever-item-3">
+            <p class="align-l">We work with clients to understand the nuance of their business and develop the tools their website uses Integrate what they have, and never pay for what they don't.</p>
+          </div>
+        </div>
+        
+        <div class="clever triplets-item-2">
+          <div class="clever-item-1 img-box">
+            <img src="assets/graphics/graphic-demo.png" alt="Demo"/>
+          </div>
+          <div class="clever-item-2">
+            <h3>DEMO</h3>
+          </div>
+          <div class="clever-item-3">
+            <p class="align-center">This centralized application reduces logistical workload by syncing online sales, farm plans, and CSA fulfillment with supply invoices, inventory, weather data, and work calendars—eliminating duplicate data entry.</p>
+          </div>
+        </div>
+        
+        <div class="clever triplets-item-3">
+          <div class="clever-item-1 img-box">
+            <img src="assets/graphics/graphic-dev.png" alt="Development"/>
+          </div>
+          <div class="clever-item-2">
+            <h3>DEV</h3>
+          </div>
+          <div class="clever-item-3">
+            <p class="align-r">FND uses this new Application Framework to be flexible and customizable to create visual ontologies of a business and its operations and what a customer may want.</p>
           </div>
         </div>
       </section>
@@ -137,7 +136,7 @@
       <!-- ======================================
           ASIDE SECTION (OPERATE)
       ====================================== -->
-      <div class="section-aside"><p class="aside__text text-center">We are developing a digital system for local producers to list current/projected supply using farm management data. This shared data infrastructure mimics the efficiency of big agriculture. FND currently funds the project by offering basic hosting at market price, contributing to a decentralized network. Our 2-year goal is to deploy across 12 NE Ohio counties, aiming to recover $28 million in estimated local economic losses.</p></div>
+      <section class="box" styles="margin: 0; width: 100vw; max-width: 100vw;"><p class="muted align-center">We are developing a digital system for local producers to list current/projected supply using farm management data. This shared data infrastructure mimics the efficiency of big agriculture. FND currently funds the project by offering basic hosting at market price, contributing to a decentralized network. Our 2-year goal is to deploy across 12 NE Ohio counties, aiming to recover $28 million in estimated local economic losses.</p></section>
 
       <!-- DIVIDER LINE -->
       <hr class="divider" />
@@ -145,47 +144,46 @@
       <!-- ======================================
           PERSONNEL - SECTION
       ====================================== -->
-      <section class="section-personnel">
-        <div class="section-personnel__inner">
-          <div class="personnel__top box flex-center">
-            <h2>PERSONNEL</h2>
+      <section class="down-clever section-personnel">
+        <h2 class="down-clever-item-1 box align-center">PERSONNEL</h2>
+    
+        <div class="down-clever-item-2 triplets">
+          <div class="box triplets-item-1">
+            <div class="box img-box"><img src="assets/icons/icon.personnel.png"/></div>
+            <h3>Dylan Montgomery</h3>
           </div>
-      
-          <div class="personnel_biography">
-            <div class="box biography__title">
-              <div class="biography__title-icon img-container"><img src="assets/icons/icon.personnel.png"/></div>
-              <h3 class="biography__title-name">Dylan Montgomery</h3>
-            </div>
-            <div class="box biography__quote"><p class="text-center">"Tend to the part of the garden you can touch," - Jack Kornfield</p></div>
-            <div class="box biography__message">
-              <p>I’m Dylan Montgomery, founder of Fruitful Network Development and creator of the Mycite Framework. For the past three years, I have been building the data software framework that FND is on a mission to use to bridge small business and community.</p>
-              <p>I like to think my most unique/particular work skill is being able to see the potential in change and being able to bring that potential to life. Accomplishing that is always a challenge because the path is always uncertain, but the key to success is finding joy in the process. If you can do that, anything is possible.</p>
-            </div>
+          <div class="box triplets-item-2"><p class="align-center muted">"Tend to the part of the garden you can touch," - Jack Kornfield</p></div>
+          <div class="box triplets-item-3">
+            <p>      I'm a Computer Engineering and Applied Mathematics student at the University of Akron, with a passion for building technology that empowers local communities and small organizations to thrive. Whether through data frameworks for agricultural networks, custom hardware interfaces, or applied mathematical models, my work is driven by one goal: making complex systems accessible and useful for real people.</p>,
+            <p>      My projects have ranged from modular ECU dashboards to salable ETL pipelines, but the common thread has always been bridging the gap between technical depth and practical application. I've spent the last few years exploring how open-source tools and semantic frameworks can help local agriculture operate with the same efficiency as large corporations; without sacrificing independence, transparency, or values.</p>,
+            <p>      I am the creator and CEO of FRUITFUL NETWORK DEVELOPMENT LLC, a Computer Engineering Contract firm that provides server and data framework services. Currently the company's aim to employ a newly created data framework to assist small to midsize farms and agricultural communities compete to provide their products to US, with out changing who's in charge or how they stay individual businesses. This is being accomplish by providing the FND sweet of tools that use a single source of data for updating and for informing. No subscriptions, only a new paradigm that we hope to allow for a new paradigm of food brokerage that utilizes local agriculture. At the same price as what is offered with harmful chemicals and no return to local economies. Out competing harmful practices in the private sector.</p>,
+            <p>      I like to think my most unique/particular work skill is being able to see the potential in change and being able to bring that potential to life. Accomplishing that is always a challenge because the path is always uncertain, but the key to success is finding joy in the process. If you can do that, anything is possible.</p>
+            <a href="/assets/docs/resume.pdf" download="resume.pdf"><button class="btn_action" onclick="downloadResume()">Resume<img class="img-box imgbtn" src="assets/icons/icon.download.png"/></button></a>
           </div>
-      
-          <div class="profile box">
-            <div class="profile__image img-container img-container--cover"><img src="assets/imgs/img.dylan-montgomery.jpeg"/></div>
-            <div class="profile__footer box">
-              <div class="profile__tag">
-                <div class="profile__tag-icon box img-container"><img src="assets/icons/icon.organization.png"/></div>
-                <p>Fruitful Network Development</p>
-              </div>
-              <div class="profile__tag">
-                <div class="profile__tag-icon box img-container"><img src="assets/icons/icon.position.png"/></div>
-                <p>Founder & Managing Partner</p>
-              </div>
-              <div class="profile__tag">
-                <div class="profile__tag-icon box img-container"><img src="assets/icons/icon.location.png"/></div>
-                <p>Cuyahoga Valley</p>
-              </div>
-              <div class="profile__tag">
-                <div class="profile__tag-icon box img-container"><img src="assets/icons/icon.degree.png"/></div>
-                <p>Computer Engineering & Mathematics</p>
-              </div>
-              <div class="profile__tag">
-                <div class="profile__tag-icon box img-container"><img src="assets/icons/icon.education.png"/></div>
-                <p>University of Akron</p>
-              </div>
+        </div>
+    
+        <div class="twins box down-clever-item-3">
+          <div class="img-box cover twins-item-1"><img src="assets/imgs/img.dylan-montgomery.jpeg"/></div>
+          <div class="box twins-item-2 dossier">
+            <div class="tag">
+              <div class="tag-icon box img-box"><img src="assets/icons/icon.organization.png"/></div>
+              <p>Fruitful Network Development</p>
+            </div>
+            <div class="tag">
+              <div class="tag-icon box img-box"><img src="assets/icons/icon.position.png"/></div>
+              <p class="tag-label">Founder & Managing Partner</p>
+            </div>
+            <div class="tag">
+              <div class="tag-icon box img-box"><img src="assets/icons/icon.location.png"/></div>
+              <p class="tag-label">Cuyahoga Valley</p>
+            </div>
+            <div class="tag">
+              <div class="tag-icon box img-box"><img src="assets/icons/icon.degree.png"/></div>
+              <p class="tag-label">Computer Engineering & Mathematics</p>
+            </div>
+            <div class="tag">
+              <div class="tag-icon box img-box"><img src="assets/icons/icon.education.png"/></div>
+              <p class="tag-label">University of Akron</p>
             </div>
           </div>
         </div>
@@ -197,20 +195,22 @@
       <!-- ======================================
           TECHNOLOGY - SECTION
       ====================================== -->
-      <section class="section-technology">
-        <div class="section-technology__inner">
-          <div class="technology__box technology__top">
+      <section class="triplets section-technology">
+        <div class="triplets-item-1">
+          <div class="uno box">
             <p>The Mission</p>
-            <a href="research.html" class="btn btn--secondary">READ MORE -&gt;</a>
+            <a href="research.html" class="btn">READ MORE -&gt;</a>
           </div>
-      
-          <div class="technology__box technology__middle">
-            <p>FND's novel data technology is a system where local producers can digitally offer up their supply (in stock or expected) from the same data they manage their farm operations. This creates a shared data infrastructure that is just as seamless and efficient as what big agriculture uses in a top down model. This enables them to improve local economies, maintain a personal touch, and compete on product quality; without giving up any autonomy or control of their farming operations or their digital rights. There is a public demand for sustainably grown, local, healthy options and but the current system makes it financially and logistically hard to incorporate local producers. As a result, these farms under perform their industrial counterparts at about 10% per acre; just with respect to output of perishable crops that can't be  planned for growth due to isolated suppliers, buyers  and middle shops. Producers manage their website, inventory, POS, taxes, farm planning, and events through our desktop application. This aims to revolutionize the industry by creating the first refrigerated trucking and produce brokerage optimized for small agricultural producers at the same level as large industrial partners.</p>
-          </div>
+        </div>
+    
+        <div class="triplets-item-2 box">
+          <p>FND's novel data technology is a system where local producers can digitally offer up their supply (in stock or expected) from the same data they manage their farm operations. This creates a shared data infrastructure that is just as seamless and efficient as what big agriculture uses in a top down model. This enables them to improve local economies, maintain a personal touch, and compete on product quality; without giving up any autonomy or control of their farming operations or their digital rights. There is a public demand for sustainably grown, local, healthy options and but the current system makes it financially and logistically hard to incorporate local producers. As a result, these farms under perform their industrial counterparts at about 10% per acre; just with respect to output of perishable crops that can't be  planned for growth due to isolated suppliers, buyers  and middle shops. Producers manage their website, inventory, POS, taxes, farm planning, and events through our desktop application. This aims to revolutionize the industry by creating the first refrigerated trucking and produce brokerage optimized for small agricultural producers at the same level as large industrial partners.</p>
+        </div>
 
-          <div class="technology__box technology__bottom">
+        <div class="triplets-item-3">
+          <div class="uno box">
             <p>The Code</p>
-            <a href="https://github.com/dylcmonty/Mycite" class="btn btn--primary">SEE MORE -&gt;</a>
+            <a href="https://github.com/dylcmonty/Mycite" class="btn">SEE MORE -&gt;</a>
           </div>
         </div>
       </section>
@@ -223,18 +223,18 @@
     <!-- ======================================
         FOOTER - SECTION
     ====================================== -->
-    <footer>
-      <div class="footer__left">
-        <div><a href="https://www.instagram.com/dylcmonty/" class="footer__button img-container"><img src="assets/logos/logo.instagram.png"/></a></div>
-        <div><a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="footer__button img-container"><img src="assets/logos/logo.linkedin.png"/></a></div>
-        <div><a href="github.com/Fruitful-Network-Development" class="footer__button img-container"><img src="assets/logos/logo.github.png"/></a></div>
+    <footer class="duo">
+      <div class="duo-item-1 trio">
+        <a href="https://www.instagram.com/dylcmonty/" class="imgbtn img-box trio-item-1"><img src="assets/logos/logo.instagram.png"/></a>
+        <a href="https://www.linkedin.com/in/dylan-montgomery-352813196/" class="imgbtn img-box trio-item-2"><img src="assets/logos/logo.linkedin.png"/></a>
+        <a href="github.com/Fruitful-Network-Development" class="imgbtn img-box trio-item-3"><img src="assets/logos/logo.github.png"/></a>
       </div>
       
       <!-- FOOTER RIGHT -->
-      <div class="footer__right">
+      <div class="duo-item-2 trio">
       
         <!-- COLUMN 1 -->
-        <div class="footer__block">
+        <div class="trio-item-1 box">
           <h4>Contact: </h4>
           <p>Dylan Montgomery - Founder of FND</p>
           <div><a href="mailto:dcmontgomery@fruifulnetworkdevelopment.com">dcmontgomery@fruifulnetworkdevelopment.com</a></div>
@@ -242,7 +242,7 @@
         </div>
         
         <!-- COLUMN 2 -->
-        <div class="footer__block">
+        <div class="trio-item-2 box">
           <h4>Copyright: </h4>
           <p>Copyright 2025 Dylan Montgomery</p>
           <p>Licensed under the Apache License, Version 2.0</p>
@@ -251,10 +251,10 @@
         </div>
         
         <!-- COLUMN 3 -->
-        <div class="footer__block contact">
+        <div class="trio-item-3 box">
           <h4>Contact: </h4>
           <p>Consider After a Free Consultation: </p>
-          <div class="footer__connect-button"><a href="#">SEND A MESSAGE</a></div>
+          <div class="btn_action"><a href="#">SEND A MESSAGE</a></div>
         </div>
         
       </div>
