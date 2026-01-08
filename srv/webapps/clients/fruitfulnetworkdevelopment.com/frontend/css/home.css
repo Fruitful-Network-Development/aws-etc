@@ -228,15 +228,7 @@
 }
 
 .section-technology .triplets-item-1 .btn {
-    background-color: var(--blue);
-    border-color: var(--incremental);
-    color: var(--offwhite);
-    padding: var(--space-2xs), var(--space-xs);
 }
 
 .section-technology .triplets-item-3 .btn {
-    background-color: var(--yellow);
-    border-color: var(--riverpanned);
-    color: var(--nero);
-    padding: var(--space-2xs), var(--space-xs);
 }

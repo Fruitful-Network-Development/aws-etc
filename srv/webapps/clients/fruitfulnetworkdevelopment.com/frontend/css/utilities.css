@@ -80,21 +80,6 @@
     justify-content: center;
   }
   
-  .stacked-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    margin: 0;
-  }
-  
-  .list-spacing {
-    padding-left: var(--space-md);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-  
   ul {
     list-style-type: none;
     padding-left: 40px;
@@ -123,37 +108,43 @@
      EXCERPT SECTION STYLES
     ====================================== */
   
-    .excerpt {
-      max-width: 900px;
-      padding: var(--space-lg);
-      margin: 0 auto;
-      overflow: hidden;
-      font-family: "Georgia", serif;
-      color: var(--G-acnt-muted);
-      line-height: 1.4;
-    }
-    
-    .excerpt h2 {
-      font-family: "Times New Roman", sans-serif;
-      margin: 0;
-      color: var(--nero);
-    }
-    
-    .excerpt h3 {
-      font-family: "Times New Roman", sans-serif;
-      margin-top: 20px;
-      margin-bottom: 5px;
-      color: var(--nero);
-      margin: 0;
-      color: var(--nero-light);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    
-    .excerpt.intro {
-      font-size: 0.95rem;
-      margin-bottom: 25px;
-    }
+.excerpt {
+   max-width: 900px;
+   padding: var(--space-lg);
+   margin: 0 auto;
+   overflow: hidden;
+   font-family: "Times New Roman", sans-serif;
+   line-height: 1.4;
+}
+
+.excerpt h1,
+.excerpt h2, 
+.excerpt h3, {
+   font-family: "Times New Roman", sans-serif;
+   text-transform: uppercase;
+   color: var(--blue-sour);
+}
+
+.excerpt h1,
+.excerpt h2, {
+   font-weight: bold;
+   margin-top: 20px;
+   margin-bottom: 5px;
+}
+
+.excerpt h1 {
+   text-align: center;
+}
+
+.excerpt h2 {
+   text-align: left;
+}
+
+.excerpt h3 {
+   text-align: left;
+   font-style: italic;
+   text-decoration: underline;
+}
   
   /* ======================================
      IMAGE UTILITIES
