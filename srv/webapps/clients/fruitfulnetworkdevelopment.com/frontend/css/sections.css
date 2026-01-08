@@ -282,19 +282,6 @@ section .dossier .tag-label {
 }
 
 /* ======================================
-   QUARTET SECTION
-   ====================================== */
-section .quartet {
-}
-
-section .quartet .quartet-item-1, 
-section .quartet .quartet-item-2, 
-section .quartet .quartet-item-3, 
-section .quartet .quartet-item-4, {
-}
-
-
-/* ======================================
    ANTHOLOGY SECTION
    ====================================== */
 section .anthology {
