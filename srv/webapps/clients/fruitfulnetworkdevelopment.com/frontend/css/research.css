@@ -532,6 +532,10 @@ section .proposal .up-clever-item-3 h3 {
     letter-spacing: 0.06em;
 }
 
+section .proposal .proposal-heading {
+    font-size: 1rem;
+}
+
 section .proposal .dotted-box {
     border: 2px dashed var(--blue-sour);
     border-radius: var(--space-2xs);
