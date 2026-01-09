@@ -118,15 +118,15 @@
 }
 
 .excerpt h1,
-.excerpt h2, 
-.excerpt h3, {
+.excerpt h2,
+.excerpt h3 {
    font-family: "Times New Roman", sans-serif;
    text-transform: uppercase;
    color: var(--blue-sour);
 }
 
 .excerpt h1,
-.excerpt h2, {
+.excerpt h2 {
    font-weight: bold;
    margin-top: 20px;
    margin-bottom: 5px;
