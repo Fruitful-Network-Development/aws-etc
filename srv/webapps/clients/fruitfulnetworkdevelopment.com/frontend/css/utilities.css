@@ -166,7 +166,7 @@
     aspect-ratio: 1;
   }
 
-  .img-box cover {
+  .img-box.cover {
     object-fit: cover; /* override of img-box utility */
   }
   
