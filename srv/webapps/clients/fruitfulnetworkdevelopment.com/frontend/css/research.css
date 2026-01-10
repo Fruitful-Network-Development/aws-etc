@@ -690,15 +690,17 @@
   gap: var(--space-xl);
 }
 
-.proposal-layout {
+.proposal-layout,
+.section-proposal {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) 3fr;
+  grid-template-columns: minmax(220px, 1fr) 3fr minmax(200px, 0.9fr);
   gap: var(--space-lg);
   background-color: var(--offwhite);
   border: 1px solid var(--silverback);
   border-radius: var(--space-2xs);
   padding: var(--space-lg);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  align-items: start;
 }
 
 .proposal-sidebar {
@@ -716,6 +718,32 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+.proposal-sidebar .custom-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.proposal-sidebar .custom-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.4;
+}
+
+.proposal-sidebar .custom-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: transparent;
+  border: 1px solid var(--nero);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .proposal-prompt-list {
@@ -737,6 +765,10 @@
   border: 1px solid var(--silverback);
   border-radius: var(--space-2xs);
   padding: var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: "Times New Roman", serif;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -769,6 +801,37 @@
   color: var(--nero-light);
 }
 
+.proposal-document h1,
+.proposal-document h2,
+.proposal-document h3 {
+  font-family: "Times New Roman", serif;
+  text-transform: uppercase;
+  color: var(--blue-sour);
+}
+
+.proposal-document h1,
+.proposal-document h2 {
+  font-weight: bold;
+  margin-top: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.proposal-document h1 {
+  text-align: center;
+}
+
+.proposal-document h2 {
+  text-align: left;
+}
+
+.proposal-document h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  text-align: left;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 .proposal-section {
   display: flex;
   flex-direction: column;
@@ -776,14 +839,9 @@
   line-height: 1.65;
 }
 
-.proposal-section h2 {
-  margin: 0;
-  color: var(--nero);
-}
-
+.proposal-section h2,
 .proposal-section h3 {
-  margin: 0;
-  color: var(--nero-light);
+  color: var(--blue-sour);
 }
 
 .proposal-cuebx {
@@ -804,7 +862,8 @@
 }
 
 @media (max-width: 960px) {
-  .proposal-layout {
+  .proposal-layout,
+  .section-proposal {
     grid-template-columns: 1fr;
   }
 }
