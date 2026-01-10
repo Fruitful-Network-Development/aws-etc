@@ -464,8 +464,6 @@
 .concept__header h1 {
   margin: 0;
   color: var(--blue-sour);
-  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
-  line-height: 1.2;
 }
 
 .concept__header p {
@@ -609,10 +607,6 @@
   background-color: var(--mosswash);
   display: grid;
   grid-template-rows: 1fr auto;
-}
-
-.info-card__media--expanded {
-  min-height: 320px;
 }
 
 .info-card__media img {
