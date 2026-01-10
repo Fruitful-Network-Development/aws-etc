@@ -859,12 +859,101 @@
   background-color: transparent;
   min-height: 10rem;
   padding: var(--space-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flow-root;
   color: var(--nero-light);
   text-align: center;
   grid-column: 1 / -1;
+}
+
+.proposal-graphic,
+.proposal-graphics {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  width: clamp(200px, 40%, 300px);
+  border: 1px solid var(--nero-light);
+  background-color: var(--silverback);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.proposal-graphic .img-container,
+.proposal-graphics .img-container {
+  width: 100%;
+  border-bottom: 1px solid var(--nero-light);
+  background-color: var(--offwhite);
+  display: block;
+}
+
+.proposal-graphic img,
+.proposal-graphics img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proposal-graphic .caption,
+.proposal-graphics .caption {
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: var(--nero);
+}
+
+.proposal-cuebx .market-section__header,
+.proposal-cuebx .market-text-grid {
+  display: block;
+  width: auto;
+  text-align: left;
+}
+
+.proposal-cuebx .market-section__eyebrow,
+.proposal-cuebx .market-section__header h2 {
+  text-align: center;
+}
+
+.proposal-cuebx ul.diamond-set {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.proposal-cuebx ul.diamond-set li {
+  position: relative;
+  padding-left: 2rem;
+  line-height: 1.5;
+}
+
+.proposal-cuebx ul.diamond-set > li::before {
+  content: "\2756";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--nero);
+}
+
+.proposal-cuebx ul.diamond-set ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-top: var(--space-xs);
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.proposal-cuebx ul.diamond-set ul li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.proposal-cuebx ul.diamond-set ul li::before {
+  content: "\27A2";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--nero);
 }
 
 .proposal-notes {
