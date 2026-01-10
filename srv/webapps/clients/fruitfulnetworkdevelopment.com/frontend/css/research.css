@@ -574,7 +574,7 @@
 }
 
 /* ======================================
-   MARKET - SUBPAGE
+   MARKET - SECTION
   ====================================== */
 .market-page {
   display: flex;
@@ -583,7 +583,7 @@
 }
 
 .market-section {
-  background-color: var(--white);
+  background-color: var(--offwhite);
   border: 1px solid var(--silverback);
   border-radius: var(--space-2xs);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
@@ -628,7 +628,7 @@
 }
 
 .market-feature-card {
-  background-color: var(--offwhite);
+  background-color: var(--mosswash);
   border: 1px solid var(--silverback);
   border-radius: var(--space-2xs);
   padding: var(--space-md);
@@ -645,7 +645,7 @@
 
 .market-placeholder {
   border: 1px dashed var(--silverback);
-  background-color: var(--mosswash);
+  background-color: var(--offwhite);
   color: var(--nero-light);
   border-radius: var(--space-2xs);
   padding: var(--space-md);
