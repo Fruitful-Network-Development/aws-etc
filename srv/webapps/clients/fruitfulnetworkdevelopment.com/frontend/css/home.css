@@ -430,6 +430,81 @@
   gap: calc(var(--space-xl) + var(--space-md));
 }
 
+.local-agriculture .hero--panel {
+  border: 1px solid var(--silverback);
+  background: linear-gradient(135deg, rgba(240, 238, 220, 0.9), rgba(228, 245, 255, 0.95));
+}
+
+.concept {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.concept__header {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--silverback);
+  background-color: var(--offwhite);
+  position: relative;
+  overflow: hidden;
+}
+
+.concept__header::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(30, 108, 147, 0.08);
+}
+
+.concept__header h1 {
+  margin: 0;
+  color: var(--blue-sour);
+}
+
+.concept__header p {
+  margin: 0;
+  max-width: 75ch;
+  color: var(--nero-light);
+}
+
+.concept-group {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.concept-group > .info-card {
+  height: 100%;
+}
+
+.concept--historic .concept__header {
+  border-left: 6px solid var(--camo);
+}
+
+.concept--regional-hub .concept__header {
+  border-left: 6px solid var(--blue-sour);
+}
+
+.concept--specialization .concept__header {
+  border-left: 6px solid var(--terracottaroof);
+}
+
+.concept--aggregate .concept__header {
+  border-left: 6px solid var(--green);
+}
+
+.concept--waste-to-value .concept__header {
+  border-left: 6px solid var(--camel);
+}
+
+.concept--regional-grocery .concept__header {
+  border-left: 6px solid var(--purple);
+}
+
 .local-agriculture__intro {
   display: grid;
   gap: var(--space-sm);
@@ -466,6 +541,7 @@
   border: 1px solid var(--silverback);
   background-color: var(--offwhite);
   box-shadow: 0 12px 28px rgba(53, 53, 53, 0.08);
+  border-radius: 0.75rem;
 }
 
 .info-card__header {
@@ -522,6 +598,8 @@
   border: 1px solid var(--silverback);
   min-height: 220px;
   background-color: var(--mosswash);
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 .info-card__media img {
@@ -533,6 +611,18 @@
   font-size: 0.85rem;
   color: var(--gray);
   background-color: rgba(240, 238, 220, 0.9);
+}
+
+.info-card--timeline {
+  background: linear-gradient(180deg, rgba(240, 238, 220, 0.9), rgba(243, 242, 229, 0.95));
+}
+
+.info-card--split .info-card__layout--split {
+  align-items: stretch;
+}
+
+.info-card--dual .info-card__layout--columns {
+  align-items: start;
 }
 
 .info-card__links {
@@ -667,6 +757,17 @@
 
   .info-card {
     padding: var(--space-md);
+  }
+}
+
+@media (min-width: 900px) {
+  .concept-group--local-history,
+  .concept-group--cooperative,
+  .concept-group--regenerative-retail,
+  .concept-group--amish-network,
+  .concept-group--aggregated-csa,
+  .concept-group--rail-models {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
   
