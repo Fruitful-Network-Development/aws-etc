@@ -1,281 +1,601 @@
-<!--
-This HTML file contains a collection of info cards summarizing
-various business models and historical examples of equitable
-approaches to local agriculture in Northeast Ohio.  Each card
-highlights a unique organization or practice, describes its
-mission or historical significance, and ends with clickable
-source links.  Comments throughout the markup explain the
-layout vision for each card (e.g. two‑column grids, image
-placements, or sub‑sections).  No CSS is included because
-styling will be handled externally; however, structural classes
-are added for future styling (e.g. `.info_card`, `.subsection`).
--->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>Local Agriculture</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!--
+  This HTML file contains a collection of info cards summarizing
+  various business models and historical examples of equitable
+  approaches to local agriculture in Northeast Ohio. Each card
+  highlights a unique organization or practice, describes its
+  mission or historical significance, and ends with clickable
+  source links. Comments throughout the markup explain the
+  layout vision for each card (e.g. two-column grids, image
+  placements, or sub-sections). No CSS is included because
+  styling will be handled externally; however, structural classes
+  are added for future styling (e.g. `.info-card`, `.subsection`).
+  -->
+  <!-- ======================================
+      HEADER - SECTION
+  ====================================== -->
+  <header>
+    <div class="header__left">
+      <div class="header__button img-container"><img src="../assets/icons/icon-menu.png" alt="Menu"/></div>
+      <div><a href="../home.html" class="header__button img-container"><img src="../assets/logos/logo-fnd.png" alt="FND"/></a></div>
+    </div>
+    <div class="header__right">
+      <a href="../index.html"><p class="header__nav-link header__nav-link--active">Home</p></a>
+      <a href="../webservices.html"><p class="header__nav-link">Webservices</p></a>
+      <a href="../research.html"><p class="header__nav-link">Research</p></a>
+      <div class="header__button img-container"><img src="../assets/icons/icon-search.png" alt="Search"/></div>
+    </div>
+  </header>
 
-<main>
+  <main class="local-agriculture">
+    <section class="local-agriculture__intro">
+      <p class="local-agriculture__eyebrow">Fruitful Network Development</p>
+      <h1>Local Agriculture Equity Models</h1>
+      <p class="local-agriculture__lead">A curated scan of Northeast Ohio organizations and practices that keep value local, expand market access, and build resilient food systems. Each card highlights a different model for equitable agriculture, from shared infrastructure and cooperative networks to waste-to-fertilizer loops and farmer-led retail.</p>
+    </section>
+
   <!-- Oberlin Food Hub Card -->
-  <section class="info_card">
-    <h2>Oberlin Food Hub</h2>
-    <!-- This card uses a simple two‑column layout: text on the left and a placeholder image on the right. -->
-    <div style="display:flex; flex-wrap:wrap; gap:1rem;">
-      <div style="flex:1 1 300px;">
-        <p>The Oberlin Food Hub is a nonprofit founded in 2017 to build an efficient, equitable regional food system.  It supports sustainable agriculture and small- and mid‑size producers while ensuring consistent access to healthy, affordable food for communities.  The hub offers a centralized ordering platform and manages logistics—aggregation, cold storage, invoicing and customer service—so farmers can focus on growing food.  It purchases products from area farms and supplies them to food banks, independent grocers, colleges, restaurants and farm stores.</p>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Regional food hub</p>
+      <h2>Oberlin Food Hub</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>The Oberlin Food Hub is a nonprofit founded in 2017 to build an efficient, equitable regional food system. It supports sustainable agriculture and small- and mid-size producers while ensuring consistent access to healthy, affordable food for communities. The hub offers a centralized ordering platform and manages logistics—aggregation, cold storage, invoicing and customer service—so farmers can focus on growing food. It purchases products from area farms and supplies them to food banks, independent grocers, colleges, restaurants and farm stores.</p>
         <div class="subsection">
           <h3>Equity Focus</h3>
-          <p>By pooling supply from many small farms and handling logistics centrally, the Food Hub creates fair market access for growers who might otherwise struggle to reach wholesale buyers.  The organization emphasizes fairness, transparency and shared prosperity; it plans to expand services with a shared‑use kitchen incubator to process Grade B produce and build climate resilience.</p>
+          <p>By pooling supply from many small farms and handling logistics centrally, the Food Hub creates fair market access for growers who might otherwise struggle to reach wholesale buyers. The organization emphasizes fairness, transparency and shared prosperity; it plans to expand services with a shared-use kitchen incubator to process Grade B produce and build climate resilience.</p>
         </div>
       </div>
-      <div style="flex:0 0 200px;">
-        <img src="placeholder.jpg" alt="photo of Oberlin Food Hub here" style="width:100%; height:auto;">
-      </div>
+      <figure class="info-card__media img-container img-container--cover">
+        <img src="placeholder.jpg" alt="photo of Oberlin Food Hub here">
+        <figcaption>Centralized ordering and storage keep small farms competitive.</figcaption>
+      </figure>
     </div>
-    <!-- Source links -->
-    <a class="link_pill" href="https://www.oberlinfoodhub.com/">Source</a>
-    <a class="link_pill" href="https://clevelandhistorical.org/items/show/713">Source</a>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.oberlinfoodhub.com/">Source</a>
+      <a class="link_pill" href="https://clevelandhistorical.org/items/show/713">Source</a>
+    </div>
   </section>
 
   <!-- Rosby Companies Card -->
-  <section class="info_card">
-    <h2>Rosby Companies</h2>
-    <!-- Layout: single column with subcards for each operation (agriculture & recycling). -->
-    <p>Rosby Companies operate an agricultural, horticultural and recycling business on a scenic 70‑acre site in Brooklyn Heights near Cleveland.  They produce their own soils, mulches, organic humus and compost, and run a resource recycling program that reclaims construction and demolition debris from the waste stream.  The operation integrates farming with environmental stewardship by turning waste into inputs for local growers.</p>
-    <div class="subsection">
-      <h3>Waste‑to‑Value Model</h3>
-      <p>The company’s composting facility returns organic matter to the soil while diverting material from landfills.  By producing mulches and humus locally, Rosby Companies reduce the need for imported soil amendments and support circular nutrient cycles within the regional food system.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Waste-to-value agriculture</p>
+      <h2>Rosby Companies</h2>
+    </header>
+    <p>Rosby Companies operate an agricultural, horticultural and recycling business on a scenic 70-acre site in Brooklyn Heights near Cleveland. They produce their own soils, mulches, organic humus and compost, and run a resource recycling program that reclaims construction and demolition debris from the waste stream. The operation integrates farming with environmental stewardship by turning waste into inputs for local growers.</p>
+    <div class="info-card__grid">
+      <article class="info-card__mini">
+        <h3>Compost + Soil Blends</h3>
+        <p>Locally produced mulches and humus keep nutrients cycling within the region while lowering costs for growers who need soil amendments.</p>
+      </article>
+      <article class="info-card__mini">
+        <h3>Recycling Hub</h3>
+        <p>Construction and demolition debris is diverted from landfills to feed reclaimed material and compost streams.</p>
+      </article>
     </div>
-    <img src="placeholder.jpg" alt="photo of Rosby Companies here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.rosbycompanies.com/index2.htm">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Rosby Companies here">
+      <figcaption>Turning waste into fertility for regional farms.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.rosbycompanies.com/index2.htm">Source</a>
+    </div>
   </section>
 
   <!-- Stutzman Farms Card -->
-  <section class="info_card">
-    <h2>Stutzman Farms</h2>
-    <!-- Layout: grid listing key features of the farm and its partnerships with Amish growers. -->
-    <p>Stutzman Farms in Millersburg, Ohio, produces certified organic flours, oats and other grains using an on‑site mill.  The family‑run business supplies organic granolas and flours to local markets and partners with about 20 certified organic farmers—many of them Amish with 10‑ to 15‑acre fields—to grow grains.  Grain is milled with old‑fashioned equipment, and sprouted grains and gluten‑free options are available.</p>
-    <div class="subsection">
-      <h3>Partnerships with Amish Farmers</h3>
-      <p>Stutzman Farms sells most of its products through Amish bulk food stores across several states.  By providing seed and a market for small producers, the company helps sustain a network of independent farms.  The farm’s puffer machine, used to make puffed cereals, illustrates how small innovations can add value to local grain crops.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Amish grain network</p>
+      <h2>Stutzman Farms</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>Stutzman Farms in Millersburg, Ohio, produces certified organic flours, oats and other grains using an on-site mill. The family-run business supplies organic granolas and flours to local markets and partners with about 20 certified organic farmers—many of them Amish with 10- to 15-acre fields—to grow grains. Grain is milled with old-fashioned equipment, and sprouted grains and gluten-free options are available.</p>
+        <div class="subsection">
+          <h3>Partnerships with Amish Farmers</h3>
+          <p>Stutzman Farms sells most of its products through Amish bulk food stores across several states. By providing seed and a market for small producers, the company helps sustain a network of independent farms. The farm’s puffer machine, used to make puffed cereals, illustrates how small innovations can add value to local grain crops.</p>
+        </div>
+      </div>
+      <div class="info-card__stats">
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Partner farms</p>
+          <p class="info-card__stat-value">~20 organic growers</p>
+        </div>
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Field size</p>
+          <p class="info-card__stat-value">10-15 acre plots</p>
+        </div>
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Products</p>
+          <p class="info-card__stat-value">Flours, grains, granola</p>
+        </div>
+      </div>
     </div>
-    <img src="placeholder.jpg" alt="photo of Stutzman Farms here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://freshforkmarket.com/">Source</a>
-    <a class="link_pill" href="https://www.are.na/block/42489134">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Stutzman Farms here">
+      <figcaption>Small-field grain production with shared milling access.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://freshforkmarket.com/">Source</a>
+      <a class="link_pill" href="https://www.are.na/block/42489134">Source</a>
+    </div>
   </section>
 
   <!-- Cleveland Greenhouse Industry Card -->
-  <section class="info_card">
-    <h2>Cleveland’s Greenhouse Industry (Historical)</h2>
-    <!-- Layout: timeline subsection to convey historical growth and decline. -->
-    <p>From the late 19th century through the mid‑20th century, Greater Cleveland became the “Greenhouse Capital of America.”  Martin Ruetenik built the first greenhouse in Brooklyn Heights in 1885, and by the mid‑1920s about 50 businesses maintained 80 acres of greenhouses, growing tomatoes, lettuce and cucumbers.  The industry expanded to 400 acres under glass by the early 1960s, employing roughly 1,000 hothouse farmers—many of them Puerto Rican migrants.  Produce was sold through roadside stands, markets and the Northern Ohio Food Terminal, enabling restaurants and households to enjoy fresh vegetables year‑round.</p>
-    <div class="subsection">
-      <h3>Rise and Decline</h3>
-      <p>Greenhouse farming was laborious and expensive, requiring misting systems, boiler‑heated steam pipes and careful pollination.  Cheap coal initially made heating affordable, but rising energy costs and pollution in the 1960s and 1970s, coupled with competition from Canadian subsidized greenhouse producers, led to a rapid decline.  Many greenhouses closed or switched to flowers and ornamental plants.  The R.O. Apelt Sons operation, once a 3.5‑acre hothouse producing cucumbers, dismantled its greenhouse in 2016 after switching to hydroponic cucumbers in 2000.</p>
+  <section class="info-card info-card--timeline">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Historic infrastructure</p>
+      <h2>Cleveland’s Greenhouse Industry (Historical)</h2>
+    </header>
+    <p>From the late 19th century through the mid-20th century, Greater Cleveland became the “Greenhouse Capital of America.” Martin Ruetenik built the first greenhouse in Brooklyn Heights in 1885, and by the mid-1920s about 50 businesses maintained 80 acres of greenhouses, growing tomatoes, lettuce and cucumbers. The industry expanded to 400 acres under glass by the early 1960s, employing roughly 1,000 hothouse farmers—many of them Puerto Rican migrants. Produce was sold through roadside stands, markets and the Northern Ohio Food Terminal, enabling restaurants and households to enjoy fresh vegetables year-round.</p>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="subsection">
+        <h3>Rise and Decline</h3>
+        <p>Greenhouse farming was laborious and expensive, requiring misting systems, boiler-heated steam pipes and careful pollination. Cheap coal initially made heating affordable, but rising energy costs and pollution in the 1960s and 1970s, coupled with competition from Canadian subsidized greenhouse producers, led to a rapid decline. Many greenhouses closed or switched to flowers and ornamental plants. The R.O. Apelt Sons operation, once a 3.5-acre hothouse producing cucumbers, dismantled its greenhouse in 2016 after switching to hydroponic cucumbers in 2000.</p>
+      </div>
+      <ol class="info-card__timeline">
+        <li><strong>1885</strong> First greenhouse established in Brooklyn Heights.</li>
+        <li><strong>1920s</strong> Roughly 50 businesses operating 80 acres under glass.</li>
+        <li><strong>1960s</strong> Peak at 400 acres and ~1,000 greenhouse farmers.</li>
+        <li><strong>2016</strong> One of the last major houses dismantled.</li>
+      </ol>
     </div>
-    <img src="placeholder.jpg" alt="photo of Cleveland greenhouse industry here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://clevelandhistorical.org/items/show/713">Source</a>
-    <a class="link_pill" href="https://westparkkamms.org">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Cleveland greenhouse industry here">
+      <figcaption>Year-round produce once defined Cleveland’s food economy.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://clevelandhistorical.org/items/show/713">Source</a>
+      <a class="link_pill" href="https://westparkkamms.org">Source</a>
+    </div>
   </section>
 
   <!-- International Specialty Produce (ISP) Card -->
-  <section class="info_card">
-    <h2>International Specialty Produce (ISP)</h2>
-    <!-- Layout: bullet list summarizing services and logistics. -->
-    <p>International Specialty Produce, Inc. is a Cleveland‑based wholesale distributor that imports hydroponic, organic and conventional produce from around the world.  Founded in 1994, the company sources tomatoes, cucumbers, peppers, eggplant and numerous other fruits and vegetables.  Over time it expanded to include ISP Services, Cleveland Tofu and ISP Logistics.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Distribution backbone</p>
+      <h2>International Specialty Produce (ISP)</h2>
+    </header>
+    <p>International Specialty Produce, Inc. is a Cleveland-based wholesale distributor that imports hydroponic, organic and conventional produce from around the world. Founded in 1994, the company sources tomatoes, cucumbers, peppers, eggplant and numerous other fruits and vegetables. Over time it expanded to include ISP Services, Cleveland Tofu and ISP Logistics.</p>
     <div class="subsection">
       <h3>Warehousing & Logistics</h3>
       <ul>
         <li>Warehouse near the Cleveland Food Terminal with refrigerated, frozen and dry storage.</li>
-        <li>Cross‑docking, re‑palletizing, boxing, labelling, shrink‑wrapping and federal inspection services.</li>
-        <li>Freight brokerage with on‑call staff available 24/7/365, using 53‑foot refrigerated trailers and experienced drivers.</li>
+        <li>Cross-docking, re-palletizing, boxing, labelling, shrink-wrapping and federal inspection services.</li>
+        <li>Freight brokerage with on-call staff available 24/7/365, using 53-foot refrigerated trailers and experienced drivers.</li>
         <li>Helps customers minimize border crossing delays, detention pay and fuel costs while eliminating the need for their own trucks.</li>
       </ul>
       <p>Although ISP’s model is not specifically an equity program, its logistics capabilities provide a backbone for moving fresh produce into and out of Northeast Ohio, enabling small retailers and restaurants to access a wide variety of foods.</p>
     </div>
-    <img src="placeholder.jpg" alt="photo of International Specialty Produce here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.isp3800.com/company/">Source</a>
-    <a class="link_pill" href="https://www.isp3800.com/warehouse/">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of International Specialty Produce here">
+      <figcaption>Infrastructure that connects local buyers to global supply.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.isp3800.com/company/">Source</a>
+      <a class="link_pill" href="https://www.isp3800.com/warehouse/">Source</a>
+    </div>
   </section>
 
   <!-- ACEnet Card -->
-  <section class="info_card">
-    <h2>ACEnet & Nelsonville Food Hub</h2>
-    <!-- Layout: two sub‑columns for facilities and network impacts. -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+  <section class="info-card info-card--dual">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Shared-use kitchen</p>
+      <h2>ACEnet & Nelsonville Food Hub</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--columns">
       <div>
-        <p>ACEnet (Appalachian Center for Economic Networks) operates the Athens Food Ventures Center—one of the first shared‑use commercial kitchens in the U.S.—and the Nelsonville Food Hub and Business Incubator.  The Ventures Center houses a central kitchen, dry packaging room, thermal processing room and warehouse.  Approximately 65 food entrepreneurs per year use the facility, which holds multiple licenses for food service, cold storage and frozen food operations.</p>
+        <p>ACEnet (Appalachian Center for Economic Networks) operates the Athens Food Ventures Center—one of the first shared-use commercial kitchens in the U.S.—and the Nelsonville Food Hub and Business Incubator. The Ventures Center houses a central kitchen, dry packaging room, thermal processing room and warehouse. Approximately 65 food entrepreneurs per year use the facility, which holds multiple licenses for food service, cold storage and frozen food operations.</p>
       </div>
       <div>
-        <p>As a business incubator, ACEnet provides affordable production space, cooler and freezer storage, and assistance with product development and licensing.  Through the Appalachian Accessible Food Network (a partnership with Rural Action and Community Food Initiatives), ACEnet helps accelerate distribution of local foods in Appalachian Ohio, strengthening access, production and consumption while reducing barriers for startups.</p>
+        <p>As a business incubator, ACEnet provides affordable production space, cooler and freezer storage, and assistance with product development and licensing. Through the Appalachian Accessible Food Network (a partnership with Rural Action and Community Food Initiatives), ACEnet helps accelerate distribution of local foods in Appalachian Ohio, strengthening access, production and consumption while reducing barriers for startups.</p>
       </div>
     </div>
-    <img src="placeholder.jpg" alt="photo of ACEnet shared kitchen here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://acenetworks.org/">Source</a>
-    <a class="link_pill" href="https://ruralaction.org/">Source</a>
+    <div class="info-card__grid">
+      <article class="info-card__mini">
+        <h3>Production Space</h3>
+        <p>Shared kitchens and packaging rooms let entrepreneurs scale without massive capital investment.</p>
+      </article>
+      <article class="info-card__mini">
+        <h3>Food Hub Access</h3>
+        <p>Shared distribution infrastructure connects rural producers with regional buyers.</p>
+      </article>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of ACEnet shared kitchen here">
+      <figcaption>Incubation spaces reduce barriers for new food businesses.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://acenetworks.org/">Source</a>
+      <a class="link_pill" href="https://ruralaction.org/">Source</a>
+    </div>
   </section>
 
   <!-- Northern Ohio Food Terminal & Sanson Company Card -->
-  <section class="info_card">
-    <h2>Northern Ohio Food Terminal & Sanson Company</h2>
-    <!-- Layout: highlight historical statistics then modern operations. -->
-    <p>The Northern Ohio Food Terminal opened in June 1929 on a 34‑acre site and once housed 100 merchants, employing about 1,500 people and handling roughly $140 million worth of food annually.  During the late 1950s and early 1960s the terminal distributed nearly $200 million in produce each year, making it a vital organizing hub for regional agriculture.  Produce arrived via railcars and trucks and moved quickly to wholesalers and retailers.</p>
-    <div class="subsection">
-      <h3>Today’s Role</h3>
-      <p>While most of the original merchants have closed, Sanson Company—founded in 1914—remains the anchor wholesaler.  Sanson provides retail, wholesale and food‑service customers with fresh produce backed by safety and quality programs.  The company distributes local, organic and specialty produce to grocery stores and warehouses, supports local growers by purchasing their products, and operates a 25,000‑square‑foot certified organic facility.</p>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Wholesale market anchor</p>
+      <h2>Northern Ohio Food Terminal & Sanson Company</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>The Northern Ohio Food Terminal opened in June 1929 on a 34-acre site and once housed 100 merchants, employing about 1,500 people and handling roughly $140 million worth of food annually. During the late 1950s and early 1960s the terminal distributed nearly $200 million in produce each year, making it a vital organizing hub for regional agriculture. Produce arrived via railcars and trucks and moved quickly to wholesalers and retailers.</p>
+        <div class="subsection">
+          <h3>Today’s Role</h3>
+          <p>While most of the original merchants have closed, Sanson Company—founded in 1914—remains the anchor wholesaler. Sanson provides retail, wholesale and food-service customers with fresh produce backed by safety and quality programs. The company distributes local, organic and specialty produce to grocery stores and warehouses, supports local growers by purchasing their products, and operates a 25,000-square-foot certified organic facility.</p>
+        </div>
+      </div>
+      <div class="info-card__stats">
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Opened</p>
+          <p class="info-card__stat-value">1929</p>
+        </div>
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Peak merchants</p>
+          <p class="info-card__stat-value">100</p>
+        </div>
+        <div class="info-card__stat">
+          <p class="info-card__stat-label">Annual volume</p>
+          <p class="info-card__stat-value">$140M+</p>
+        </div>
+      </div>
     </div>
-    <img src="placeholder.jpg" alt="photo of Northern Ohio Food Terminal here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.lagazzettaitaliana.com/history-culture/9527-northern-ohio-food-terminal">Source</a>
-    <a class="link_pill" href="https://www.sansonco.com/">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Northern Ohio Food Terminal here">
+      <figcaption>Wholesale infrastructure keeps regional growers visible to buyers.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.lagazzettaitaliana.com/history-culture/9527-northern-ohio-food-terminal">Source</a>
+      <a class="link_pill" href="https://www.sansonco.com/">Source</a>
+    </div>
   </section>
 
   <!-- Rust Belt Riders Card -->
-  <section class="info_card">
-    <h2>Rust Belt Riders</h2>
-    <!-- Layout: story narrative with call‑out for regulatory challenges. -->
-    <p>Rust Belt Riders is a Cleveland‑based service that collects organic waste from restaurants and redistributes it to local farms and gardens as fertilizer.  The company began with co‑founders Daniel Brown and Michael Robinson riding a bicycle with a trailer to pick up food scraps from restaurants.  By turning waste into compost, they close the loop between urban eateries and regional farms.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Urban compost loop</p>
+      <h2>Rust Belt Riders</h2>
+    </header>
+    <p>Rust Belt Riders is a Cleveland-based service that collects organic waste from restaurants and redistributes it to local farms and gardens as fertilizer. The company began with co-founders Daniel Brown and Michael Robinson riding a bicycle with a trailer to pick up food scraps from restaurants. By turning waste into compost, they close the loop between urban eateries and regional farms.</p>
     <div class="subsection">
       <h3>Scaling Up Through Policy & Partnership</h3>
-      <p>Composting at scale required a Class II composting permit and a suitable site.  Rust Belt Riders worked with the Ohio EPA to expand the exemption for community compost piles from 300 to 500 square feet, enabling more gardens to compost legally.  They later partnered with Kurtz Brothers to secure the Cloverleaf Composting Facility, allowing them to produce more compost in one month than they previously could in a year.  Their potting mixes have been ranked among the best in research trials, and they were named Best Small‑Scale Composter in the U.S.</p>
+      <p>Composting at scale required a Class II composting permit and a suitable site. Rust Belt Riders worked with the Ohio EPA to expand the exemption for community compost piles from 300 to 500 square feet, enabling more gardens to compost legally. They later partnered with Kurtz Brothers to secure the Cloverleaf Composting Facility, allowing them to produce more compost in one month than they previously could in a year. Their potting mixes have been ranked among the best in research trials, and they were named Best Small-Scale Composter in the U.S.</p>
     </div>
-    <img src="placeholder.jpg" alt="photo of Rust Belt Riders here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://freshdirtmag.org/">Source</a>
-    <a class="link_pill" href="https://www.rustbeltriders.com/">Source</a>
+    <blockquote class="info-card__quote">“Close the loop between restaurants and farms by returning food waste as soil.”</blockquote>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Rust Belt Riders here">
+      <figcaption>Local composting keeps organic matter in the region.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://freshdirtmag.org/">Source</a>
+      <a class="link_pill" href="https://www.rustbeltriders.com/">Source</a>
+    </div>
   </section>
 
   <!-- Green Field Farms Cooperative Card -->
-  <section class="info_card">
-    <h2>Green Field Farms Cooperative</h2>
-    <!-- Layout: two sub‑sections for cooperative mission and fertilizer division. -->
-    <p>Green Field Farms is a cooperative founded in 2003 by Amish and Conservative Mennonite farmers and businessmen to revitalize family farms through sustainable agriculture.  The cooperative emphasizes culture, sustainability and community, aiming to foster economic stability for member families while supplying fresh, nutritious food under a trustworthy brand.</p>
-    <div class="subsection">
-      <h3>Natural Fertilizer & Soil Health</h3>
-      <p>The cooperative launched a natural fertilizer division that offers soil testing and custom‑blended fertilizers tailored to individual farm needs.  These blends help over 1,000 farmers improve soil health and balance nutrient levels, emphasizing long‑term generational benefits.  The program underscores the cooperative’s commitment to regenerative practices and provides an equitable alternative to conventional chemical inputs.</p>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Farmer-owned cooperative</p>
+      <h2>Green Field Farms Cooperative</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>Green Field Farms is a cooperative founded in 2003 by Amish and Conservative Mennonite farmers and businessmen to revitalize family farms through sustainable agriculture. The cooperative emphasizes culture, sustainability and community, aiming to foster economic stability for member families while supplying fresh, nutritious food under a trustworthy brand.</p>
+        <div class="subsection">
+          <h3>Natural Fertilizer & Soil Health</h3>
+          <p>The cooperative launched a natural fertilizer division that offers soil testing and custom-blended fertilizers tailored to individual farm needs. These blends help over 1,000 farmers improve soil health and balance nutrient levels, emphasizing long-term generational benefits. The program underscores the cooperative’s commitment to regenerative practices and provides an equitable alternative to conventional chemical inputs.</p>
+        </div>
+      </div>
+      <div class="info-card__mini info-card__mini--accent">
+        <h3>Soil Testing Access</h3>
+        <p>Custom blends and nutrient balance tools let small farms compete without expensive inputs.</p>
+      </div>
     </div>
-    <img src="placeholder.jpg" alt="photo of Green Field Farms here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://gffarms.com/">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Green Field Farms here">
+      <figcaption>Cooperative-led soil health investments sustain member farms.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://gffarms.com/">Source</a>
+    </div>
   </section>
 
   <!-- Parker Bosley Card -->
-  <section class="info_card">
-    <h2>Parker Bosley – Cleveland’s Local Food Pioneer</h2>
-    <!-- Layout: narrative with highlighted quotes. -->
-    <p>Parker Bosley, often called the “grandfather of Cleveland’s local food,” grew up on a dairy farm and studied cooking in Paris before opening Parker’s New American Bistro.  Over two decades he built a menu that relied exclusively on foods produced by Ohio and nearby Pennsylvania farmers.  His menu changed daily to reflect what was in season, and he visited farms to encourage specific varieties and breeds.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Farm-to-table advocacy</p>
+      <h2>Parker Bosley – Cleveland’s Local Food Pioneer</h2>
+    </header>
+    <p>Parker Bosley, often called the “grandfather of Cleveland’s local food,” grew up on a dairy farm and studied cooking in Paris before opening Parker’s New American Bistro. Over two decades he built a menu that relied exclusively on foods produced by Ohio and nearby Pennsylvania farmers. His menu changed daily to reflect what was in season, and he visited farms to encourage specific varieties and breeds.</p>
     <div class="subsection">
       <h3>Fair Prices & Farmer Relationships</h3>
-      <p>Bosley cultivated a network of cheese producers and small farms, paying farmers a premium (e.g., $10 per pound for artisan cheese) to ensure profits flowed directly back to them.  He championed small‑scale, sustainable farming and challenged the notion that cheap food should come at the expense of natural resources and rural economies.  His advocacy laid the groundwork for Cleveland’s farm‑to‑table movement.</p>
+      <p>Bosley cultivated a network of cheese producers and small farms, paying farmers a premium (e.g., $10 per pound for artisan cheese) to ensure profits flowed directly back to them. He championed small-scale, sustainable farming and challenged the notion that cheap food should come at the expense of natural resources and rural economies. His advocacy laid the groundwork for Cleveland’s farm-to-table movement.</p>
     </div>
-    <img src="placeholder.jpg" alt="photo of Parker Bosley here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.farmanddairy.com/">Source</a>
-    <a class="link_pill" href="https://clevelandmagazine.com/">Source</a>
+    <blockquote class="info-card__quote">“Local food isn’t cheap; it’s fair.”</blockquote>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Parker Bosley here">
+      <figcaption>Paying farmers a premium kept local agriculture thriving.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.farmanddairy.com/">Source</a>
+      <a class="link_pill" href="https://clevelandmagazine.com/">Source</a>
+    </div>
   </section>
 
   <!-- Shagbark Seed & Mill Card -->
-  <section class="info_card">
-    <h2>Shagbark Seed & Mill</h2>
-    <!-- Layout: sub‑cards for products and history. -->
-    <p>Shagbark Seed & Mill offers single‑source, Ohio‑grown certified organic heirloom grains and dry beans.  Since 2010, the mill has connected family farms to grocers, restaurants, schools and health centers, and sells to food access sites at rock‑bottom pricing.  Shagbark advocates for a “Staple Foods Revolution,” arguing that large seed and chemical corporations have reduced flavor, nutrition and climate resilience in staple crops.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Staple crop revival</p>
+      <h2>Shagbark Seed & Mill</h2>
+    </header>
+    <p>Shagbark Seed & Mill offers single-source, Ohio-grown certified organic heirloom grains and dry beans. Since 2010, the mill has connected family farms to grocers, restaurants, schools and health centers, and sells to food access sites at rock-bottom pricing. Shagbark advocates for a “Staple Foods Revolution,” arguing that large seed and chemical corporations have reduced flavor, nutrition and climate resilience in staple crops.</p>
+    <div class="info-card__grid">
+      <article class="info-card__mini">
+        <h3>Heirloom Staples</h3>
+        <p>Single-source beans and grains help local farms secure predictable demand.</p>
+      </article>
+      <article class="info-card__mini">
+        <h3>Collaborative Network</h3>
+        <p>Farmers, millers and bakers coordinate to keep processing and profits local.</p>
+      </article>
+    </div>
     <div class="subsection">
       <h3>Community & History</h3>
-      <p>Founders Michelle Ajamian and Brandon Jaeger tested high‑nutrition bean and grain varieties with a USDA grant in 2007 and launched the Appalachian Staple Foods Collaborative in 2009.  Community volunteers, lenders and friends helped them build the first certified organic mill in Ohio in 2010.  Shagbark emphasizes that local grain systems require collaboration between farmers, millers, bakers and consumers.</p>
+      <p>Founders Michelle Ajamian and Brandon Jaeger tested high-nutrition bean and grain varieties with a USDA grant in 2007 and launched the Appalachian Staple Foods Collaborative in 2009. Community volunteers, lenders and friends helped them build the first certified organic mill in Ohio in 2010. Shagbark emphasizes that local grain systems require collaboration between farmers, millers, bakers and consumers.</p>
     </div>
-    <img src="placeholder.jpg" alt="photo of Shagbark Seed & Mill here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://shagbarkmill.com/">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Shagbark Seed & Mill here">
+      <figcaption>Regional grains become market-ready with shared milling.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://shagbarkmill.com/">Source</a>
+    </div>
   </section>
 
   <!-- Purplebrown Farm Store Card -->
-  <section class="info_card">
-    <h2>Purplebrown Farm Store</h2>
-    <!-- Layout: two paragraphs describing farm origins and store philosophy. -->
-    <p>Purplebrown Farm Store in Peninsula sources food exclusively from Northeast Ohio growers and regenerative, organic and sustainable artisans.  Founded by Sasha and Jimmy Miller, the venture began as Purplebrown Farmstead—a 12‑acre diversified permaculture farm established in 2016 within the Cuyahoga Valley National Park.  The farm grows mushrooms, pasture‑raised pork, eggs, cider apples, berries and perennial produce using permaculture principles, and is certified organic.</p>
-    <p>In 2021, the Millers expanded from a farm stand to a brick‑and‑mortar store to collaborate with other producers and make local food more accessible.  The store aims to provide everything needed for nourishing meals while supporting the Ohio food and farm community.  It also features beverages from B‑Certified and carbon‑neutral producers, reflecting a commitment to sustainability.</p>
-    <img src="placeholder.jpg" alt="photo of Purplebrown Farm Store here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://purplebrownfarmstore.com/">Source</a>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Regenerative retail</p>
+      <h2>Purplebrown Farm Store</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>Purplebrown Farm Store in Peninsula sources food exclusively from Northeast Ohio growers and regenerative, organic and sustainable artisans. Founded by Sasha and Jimmy Miller, the venture began as Purplebrown Farmstead—a 12-acre diversified permaculture farm established in 2016 within the Cuyahoga Valley National Park. The farm grows mushrooms, pasture-raised pork, eggs, cider apples, berries and perennial produce using permaculture principles, and is certified organic.</p>
+        <p>In 2021, the Millers expanded from a farm stand to a brick-and-mortar store to collaborate with other producers and make local food more accessible. The store aims to provide everything needed for nourishing meals while supporting the Ohio food and farm community. It also features beverages from B-Certified and carbon-neutral producers, reflecting a commitment to sustainability.</p>
+      </div>
+      <div class="info-card__tags">
+        <span>Permaculture</span>
+        <span>Organic produce</span>
+        <span>Local vendors</span>
+        <span>Prepared foods</span>
+      </div>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Purplebrown Farm Store here">
+      <figcaption>Retail that centers regional growers and artisans.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://purplebrownfarmstore.com/">Source</a>
+    </div>
   </section>
 
   <!-- Harbor Gardens Card -->
-  <section class="info_card">
-    <h2>Harbor Gardens</h2>
-    <!-- Layout: highlight community education and vendor list. -->
-    <p>Located in Ashtabula County, Harbor Gardens is a local food market and demonstration kitchen designed to build community around self‑reliance and food security.  The general store offers products sustainably grown and made in the county and hosts more than 50 local vendors.  Shoppers find seasonal produce, grains, beans, cheese, sourdough bread, maple syrup, handmade items and more.</p>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Community food education</p>
+      <h2>Harbor Gardens</h2>
+    </header>
+    <p>Located in Ashtabula County, Harbor Gardens is a local food market and demonstration kitchen designed to build community around self-reliance and food security. The general store offers products sustainably grown and made in the county and hosts more than 50 local vendors. Shoppers find seasonal produce, grains, beans, cheese, sourdough bread, maple syrup, handmade items and more.</p>
     <div class="subsection">
       <h3>Classes & Knowledge Sharing</h3>
-      <p>Beyond retail, Harbor Gardens provides tours and classes on cooking, canning and fermentation, helping residents learn practical skills for preserving and preparing local food.  This educational component underscores equity by empowering community members to participate in food production and preservation.</p>
+      <p>Beyond retail, Harbor Gardens provides tours and classes on cooking, canning and fermentation, helping residents learn practical skills for preserving and preparing local food. This educational component underscores equity by empowering community members to participate in food production and preservation.</p>
     </div>
-    <img src="placeholder.jpg" alt="photo of Harbor Gardens here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://harborgardens.com/">Source</a>
+    <div class="info-card__grid">
+      <article class="info-card__mini">
+        <h3>Vendor Mix</h3>
+        <p>Produce, grains, dairy, sourdough, maple syrup and artisan goods.</p>
+      </article>
+      <article class="info-card__mini">
+        <h3>Community Kitchen</h3>
+        <p>Hands-on classes that transfer food preparation skills.</p>
+      </article>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Harbor Gardens here">
+      <figcaption>Local retail paired with food skill-building.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://harborgardens.com/">Source</a>
+    </div>
   </section>
 
   <!-- Fresh Fork Market Card -->
-  <section class="info_card">
-    <h2>Fresh Fork Market</h2>
-    <!-- Layout: bullet points summarizing CSA features. -->
-    <p>Fresh Fork Market is a weekly subscription service connecting more than 100 family farms within 75 miles of Cleveland to consumers.  Members choose from omnivore, carnivore, vegetarian or vegan bags and pick up a weekly box of groceries at over 20 locations.  Each box contains seasonal produce, pasture‑raised meats, whole grains, eggs, dairy and value‑added items.</p>
-    <ul>
-      <li>Weekly subscription fosters consistent income for small farms.</li>
-      <li>Customization allows families to select the right size and dietary style.</li>
-      <li>Online shop offers additional local items such as honey, jam and artisanal products.</li>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Aggregated CSA model</p>
+      <h2>Fresh Fork Market</h2>
+    </header>
+    <p>Fresh Fork Market is a weekly subscription service connecting more than 100 family farms within 75 miles of Cleveland to consumers. Members choose from omnivore, carnivore, vegetarian or vegan bags and pick up a weekly box of groceries at over 20 locations. Each box contains seasonal produce, pasture-raised meats, whole grains, eggs, dairy and value-added items.</p>
+    <ul class="info-card__bullet-grid">
+      <li>Weekly subscriptions create consistent farm income.</li>
+      <li>Bag options serve diverse household needs.</li>
+      <li>Pickups across 20+ locations improve access.</li>
     </ul>
     <p>Over 15 years, Fresh Fork has built relationships with farmers and refined its distribution to serve the community, effectively functioning as a modern CSA with flexible pickup points.</p>
-    <img src="placeholder.jpg" alt="photo of Fresh Fork Market here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://freshforkmarket.com/">Source</a>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Fresh Fork Market here">
+      <figcaption>Aggregating 100+ farms into a single weekly pickup.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://freshforkmarket.com/">Source</a>
+    </div>
   </section>
 
   <!-- Ohio City Provisions Card -->
-  <section class="info_card">
-    <h2>Ohio City Provisions</h2>
-    <!-- Layout: split description of butcher and grocery. -->
-    <p>Ohio City Provisions combines a whole‑animal butcher shop with a local grocery.  The butcher features freshly cut, pasture‑raised meats and sausages from heritage breed pork and pasture‑raised chicken, while the grocery stocks all‑local goods: seasonal produce, whole grains, flours, dried beans, sourdough breads, eggs, yogurts, milk, fermented foods and canned goods.</p>
-    <p>By sourcing exclusively from nearby farmers and producers, the shop shortens the supply chain and ensures fair pay to growers.  The model demonstrates how small urban retailers can sustain local agriculture through direct purchasing and transparent pricing.</p>
-    <img src="placeholder.jpg" alt="photo of Ohio City Provisions here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://ohiocityprovisions.com/">Source</a>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Butcher + grocery hybrid</p>
+      <h2>Ohio City Provisions</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>Ohio City Provisions combines a whole-animal butcher shop with a local grocery. The butcher features freshly cut, pasture-raised meats and sausages from heritage breed pork and pasture-raised chicken, while the grocery stocks all-local goods: seasonal produce, whole grains, flours, dried beans, sourdough breads, eggs, yogurts, milk, fermented foods and canned goods.</p>
+        <p>By sourcing exclusively from nearby farmers and producers, the shop shortens the supply chain and ensures fair pay to growers. The model demonstrates how small urban retailers can sustain local agriculture through direct purchasing and transparent pricing.</p>
+      </div>
+      <div class="info-card__tags">
+        <span>Whole-animal butcher</span>
+        <span>Local grocery</span>
+        <span>Heritage meats</span>
+        <span>Pantry staples</span>
+      </div>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Ohio City Provisions here">
+      <figcaption>Direct retail that keeps farmers visible to consumers.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://ohiocityprovisions.com/">Source</a>
+    </div>
   </section>
 
   <!-- Keller Meats Card -->
-  <section class="info_card">
-    <h2>Keller Meats</h2>
-    <!-- Layout: simple narrative with mission statement. -->
-    <p>Keller Meats began as a family farm and now operates a custom processing butcher shop with two market locations.  The company’s mission is sustainability: they use the whole animal, strive for zero waste and support local sources.  Keller Meats believes in building a community that knows its food and farmers and acts as stewards of the land.</p>
-    <p>By connecting consumers directly to farmers and emphasizing transparent sourcing, Keller Meats fosters a deeper appreciation for ethical meat production and encourages responsible consumption.</p>
-    <img src="placeholder.jpg" alt="photo of Keller Meats here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://kellermeats.com/">Source</a>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Zero-waste processing</p>
+      <h2>Keller Meats</h2>
+    </header>
+    <p>Keller Meats began as a family farm and now operates a custom processing butcher shop with two market locations. The company’s mission is sustainability: they use the whole animal, strive for zero waste and support local sources. Keller Meats believes in building a community that knows its food and farmers and acts as stewards of the land.</p>
+    <div class="info-card__mini info-card__mini--accent">
+      <h3>Whole-Animal Stewardship</h3>
+      <p>By processing locally and using every cut, Keller Meats keeps value on farms and lowers waste.</p>
+    </div>
+    <p>By connecting consumers directly to farmers and emphasizing transparent sourcing, Keller Meats fosters a deeper appreciation for ethical meat production and encourages responsible consumption.</p>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Keller Meats here">
+      <figcaption>Local processing anchored in zero-waste values.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://kellermeats.com/">Source</a>
+    </div>
   </section>
 
   <!-- The Farmer’s Rail Card -->
-  <section class="info_card">
-    <h2>The Farmer’s Rail</h2>
-    <!-- Layout: story describing evolution from farm to butcher and restaurant. -->
-    <p>The Farmer’s Rail grew out of Brunty Farms, where Jeff and Melanie Brunty began raising pasture‑raised animals nearly 20 years ago to offer neighbors meat they could trust.  As their farm expanded, they realized the need to control processing and opened a farmer‑owned butcher shop in 2018.  Today the Farmer’s Rail includes restaurants with from‑scratch kitchens and continues to supply Brunty Farms’ meats alongside products from other local vendors.</p>
-    <p>This vertical integration—from pasture to butcher to table—ensures transparency and fair compensation to farmers while providing consumers with high‑quality, locally sourced meals.  The business model also builds community around food, celebrating the connection between farmers and diners.</p>
-    <img src="placeholder.jpg" alt="photo of The Farmer’s Rail here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://thefarmersrail.com/">Source</a>
+  <section class="info-card info-card--split">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Pasture-to-plate model</p>
+      <h2>The Farmer’s Rail</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--split">
+      <div class="info-card__content stack-v">
+        <p>The Farmer’s Rail grew out of Brunty Farms, where Jeff and Melanie Brunty began raising pasture-raised animals nearly 20 years ago to offer neighbors meat they could trust. As their farm expanded, they realized the need to control processing and opened a farmer-owned butcher shop in 2018. Today the Farmer’s Rail includes restaurants with from-scratch kitchens and continues to supply Brunty Farms’ meats alongside products from other local vendors.</p>
+        <p>This vertical integration—from pasture to butcher to table—ensures transparency and fair compensation to farmers while providing consumers with high-quality, locally sourced meals. The business model also builds community around food, celebrating the connection between farmers and diners.</p>
+      </div>
+      <div class="info-card__mini info-card__mini--accent">
+        <h3>Integrated Supply Chain</h3>
+        <p>Farmer-owned processing and restaurants keep margins local instead of external.</p>
+      </div>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of The Farmer’s Rail here">
+      <figcaption>Vertically integrated meat sourcing and retail.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://thefarmersrail.com/">Source</a>
+    </div>
   </section>
 
   <!-- Heinen’s Card -->
-  <section class="info_card">
-    <h2>Heinen’s</h2>
-    <!-- Layout: emphasise long‑term farmer relationships and in‑store farmers markets. -->
-    <p>Heinen’s is a regional grocery chain that has long supported local farmers.  Each summer, their produce departments transform into daily farmers markets, featuring the best fruits and vegetables from local fields.  The company maintains relationships with farmers they have been buying from for decades, ensuring a reliable market for growers.</p>
-    <p>Heinen’s buyers frequently travel to Wayne County to purchase produce from Amish growers at auctions, and selections often arrive in stores the next morning.  This direct farm‑to‑store supply chain minimizes handling and preserves freshness, demonstrating how a larger retailer can sustain local agriculture.</p>
-    <img src="placeholder.jpg" alt="photo of Heinen’s store here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.heinens.com/">Source</a>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Retail partnerships</p>
+      <h2>Heinen’s</h2>
+    </header>
+    <div class="info-card__layout info-card__layout--columns">
+      <div>
+        <p>Heinen’s is a regional grocery chain that has long supported local farmers. Each summer, their produce departments transform into daily farmers markets, featuring the best fruits and vegetables from local fields. The company maintains relationships with farmers they have been buying from for decades, ensuring a reliable market for growers.</p>
+      </div>
+      <div>
+        <p>Heinen’s buyers frequently travel to Wayne County to purchase produce from Amish growers at auctions, and selections often arrive in stores the next morning. This direct farm-to-store supply chain minimizes handling and preserves freshness, demonstrating how a larger retailer can sustain local agriculture.</p>
+      </div>
+    </div>
+    <div class="info-card__tags">
+      <span>Daily farmers markets</span>
+      <span>Long-term farm contracts</span>
+      <span>Amish auctions</span>
+      <span>Next-day delivery</span>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Heinen’s store here">
+      <figcaption>Retail scale that keeps local produce visible and fresh.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.heinens.com/">Source</a>
+    </div>
   </section>
 
   <!-- Buehler’s Fresh Foods Card -->
-  <section class="info_card">
-    <h2>Buehler’s Fresh Foods</h2>
-    <!-- Layout: highlight history and local auction purchasing. -->
-    <p>Family‑owned since 1932, Buehler’s Fresh Foods is an Ohio grocery chain recognized for supporting local farmers.  The company provides locally grown produce and natural meats from providers such as Gerber Poultry and the Mt. Hope Farmer’s Produce Auction.  Buehler’s is the largest purchaser at the Mt. Hope auction, helping sustain growers from Holmes and Wayne counties.</p>
-    <p>This commitment to sourcing from nearby farmers not only guarantees freshness but also keeps dollars within rural communities.  Buehler’s history of community engagement illustrates how a mid‑sized retailer can anchor local food systems.</p>
-    <img src="placeholder.jpg" alt="photo of Buehler’s Fresh Foods here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://www.eatwellguide.org/listings/72726/locations/28517">Source</a>
+  <section class="info-card">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Auction-backed sourcing</p>
+      <h2>Buehler’s Fresh Foods</h2>
+    </header>
+    <p>Family-owned since 1932, Buehler’s Fresh Foods is an Ohio grocery chain recognized for supporting local farmers. The company provides locally grown produce and natural meats from providers such as Gerber Poultry and the Mt. Hope Farmer’s Produce Auction. Buehler’s is the largest purchaser at the Mt. Hope auction, helping sustain growers from Holmes and Wayne counties.</p>
+    <div class="info-card__mini info-card__mini--accent">
+      <h3>Largest Mt. Hope Buyer</h3>
+      <p>Anchor purchasing keeps Amish and small-scale growers moving steady volume.</p>
+    </div>
+    <p>This commitment to sourcing from nearby farmers not only guarantees freshness but also keeps dollars within rural communities. Buehler’s history of community engagement illustrates how a mid-sized retailer can anchor local food systems.</p>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Buehler’s Fresh Foods here">
+      <figcaption>Regional grocer sustaining small growers through auction demand.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://www.eatwellguide.org/listings/72726/locations/28517">Source</a>
+    </div>
   </section>
 
   <!-- Food Terminals & Produce Auctions (Historic) Card -->
-  <section class="info_card">
-    <h2>Food Terminals & Produce Auctions (Historic)</h2>
-    <!-- Layout: description of rail‑based distribution and its impact on local agriculture. -->
-    <p>In the early 20th century, food terminals were the primary organizing facet of local agriculture.  Cleveland once hosted seven or eight terminals, relying on local farms to supply these bustling hubs.  Produce trains from the West Coast—called “fruit blocks”—traveled east with perishable goods that often had priority over passenger trains.  The Pennsylvania Railroad Fruit Auction & Sales Building in Pittsburgh’s Strip District, built around 1926, stretched 1,500 feet and spanned four city blocks.  Fruit and produce were unloaded from railcars and auctioned in the early morning so goods reached markets and restaurants by opening time.</p>
-    <p>These terminals thrived thanks to the proximity of rail lines, but as refrigerated trucking became widespread, rail‑based produce distribution declined.  Many terminals were demolished or repurposed; only a handful of operations, like the Northern Ohio Food Terminal (now Sanson Company) and the Consumers Produce facility in Pittsburgh, remain today.  The history underscores how infrastructure shaped regional food economies and how transportation innovations can shift the balance between local and industrial supply chains.</p>
-    <img src="placeholder.jpg" alt="photo of Pittsburgh Strip District Terminal here" style="width:100%; height:auto;">
-    <a class="link_pill" href="https://pittsburghmainline.weebly.com/train-nerds-blog/historic-pittsburgh-produce-terminal">Source</a>
-    <a class="link_pill" href="https://www.stripdistrictterminal.com/about/history">Source</a>
+  <section class="info-card info-card--timeline">
+    <header class="info-card__header">
+      <p class="info-card__eyebrow">Historic supply chains</p>
+      <h2>Food Terminals & Produce Auctions (Historic)</h2>
+    </header>
+    <p>In the early 20th century, food terminals were the primary organizing facet of local agriculture. Cleveland once hosted seven or eight terminals, relying on local farms to supply these bustling hubs. Produce trains from the West Coast—called “fruit blocks”—traveled east with perishable goods that often had priority over passenger trains. The Pennsylvania Railroad Fruit Auction & Sales Building in Pittsburgh’s Strip District, built around 1926, stretched 1,500 feet and spanned four city blocks. Fruit and produce were unloaded from railcars and auctioned in the early morning so goods reached markets and restaurants by opening time.</p>
+    <div class="info-card__layout info-card__layout--split">
+      <div>
+        <p>These terminals thrived thanks to the proximity of rail lines, but as refrigerated trucking became widespread, rail-based produce distribution declined. Many terminals were demolished or repurposed; only a handful of operations, like the Northern Ohio Food Terminal (now Sanson Company) and the Consumers Produce facility in Pittsburgh, remain today. The history underscores how infrastructure shaped regional food economies and how transportation innovations can shift the balance between local and industrial supply chains.</p>
+      </div>
+      <ol class="info-card__timeline">
+        <li><strong>1926</strong> Pittsburgh’s produce terminal spans four city blocks.</li>
+        <li><strong>1930s</strong> Cleveland hosts seven or eight terminals.</li>
+        <li><strong>1960s+</strong> Refrigerated trucking displaces rail-based auctions.</li>
+        <li><strong>Today</strong> A handful of terminals still anchor regional wholesale.</li>
+      </ol>
+    </div>
+    <figure class="info-card__media img-container img-container--cover">
+      <img src="placeholder.jpg" alt="photo of Pittsburgh Strip District Terminal here">
+      <figcaption>Rail-based distribution once made local produce mainstream.</figcaption>
+    </figure>
+    <div class="info-card__links">
+      <a class="link_pill" href="https://pittsburghmainline.weebly.com/train-nerds-blog/historic-pittsburgh-produce-terminal">Source</a>
+      <a class="link_pill" href="https://www.stripdistrictterminal.com/about/history">Source</a>
+    </div>
   </section>
-
 </main>
+</body>
+</html>
